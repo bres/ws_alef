@@ -111,3 +111,6 @@ static_collected
 
 #macos attributes of folders that
 .DS_Store
+
+#remove runtime settings
+runtime.txt
