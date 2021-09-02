@@ -113,4 +113,5 @@ static_collected
 .DS_Store
 
 #remove runtime settings
-runtime.txt
+.runtime.txt
+runtime.text
