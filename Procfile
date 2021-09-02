@@ -1,1 +1,1 @@
-web:gunicorn alef.wsgi
+web: gunicorn alef.wsgi
