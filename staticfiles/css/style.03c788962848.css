@@ -33362,38 +33362,6 @@ video {
   transition-duration: 1000ms;
 }
 
-.group:hover .group-hover\:duration-75 {
-  transition-duration: 75ms;
-}
-
-.group:hover .group-hover\:duration-100 {
-  transition-duration: 100ms;
-}
-
-.group:hover .group-hover\:duration-150 {
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:duration-200 {
-  transition-duration: 200ms;
-}
-
-.group:hover .group-hover\:duration-300 {
-  transition-duration: 300ms;
-}
-
-.group:hover .group-hover\:duration-500 {
-  transition-duration: 500ms;
-}
-
-.group:hover .group-hover\:duration-700 {
-  transition-duration: 700ms;
-}
-
-.group:hover .group-hover\:duration-1000 {
-  transition-duration: 1000ms;
-}
-
 .ease-linear {
   transition-timing-function: linear;
 }
@@ -65762,38 +65730,6 @@ video {
     transition-duration: 1000ms;
   }
 
-  .group:hover .sm\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
   .sm\:ease-linear {
     transition-timing-function: linear;
   }
@@ -98156,38 +98092,6 @@ video {
   }
 
   .md\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -130556,38 +130460,6 @@ video {
     transition-duration: 1000ms;
   }
 
-  .group:hover .lg\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
   .lg\:ease-linear {
     transition-timing-function: linear;
   }
@@ -162953,38 +162825,6 @@ video {
     transition-duration: 1000ms;
   }
 
-  .group:hover .xl\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
   .xl\:ease-linear {
     transition-timing-function: linear;
   }
@@ -195347,38 +195187,6 @@ video {
   }
 
   .\32xl\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 

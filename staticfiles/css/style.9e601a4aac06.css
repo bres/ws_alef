@@ -6798,6 +6798,90 @@ video {
   display: none;
 }
 
+.group:focus .group-focus\:block {
+  display: block;
+}
+
+.group:focus .group-focus\:inline-block {
+  display: inline-block;
+}
+
+.group:focus .group-focus\:inline {
+  display: inline;
+}
+
+.group:focus .group-focus\:flex {
+  display: flex;
+}
+
+.group:focus .group-focus\:inline-flex {
+  display: inline-flex;
+}
+
+.group:focus .group-focus\:table {
+  display: table;
+}
+
+.group:focus .group-focus\:inline-table {
+  display: inline-table;
+}
+
+.group:focus .group-focus\:table-caption {
+  display: table-caption;
+}
+
+.group:focus .group-focus\:table-cell {
+  display: table-cell;
+}
+
+.group:focus .group-focus\:table-column {
+  display: table-column;
+}
+
+.group:focus .group-focus\:table-column-group {
+  display: table-column-group;
+}
+
+.group:focus .group-focus\:table-footer-group {
+  display: table-footer-group;
+}
+
+.group:focus .group-focus\:table-header-group {
+  display: table-header-group;
+}
+
+.group:focus .group-focus\:table-row-group {
+  display: table-row-group;
+}
+
+.group:focus .group-focus\:table-row {
+  display: table-row;
+}
+
+.group:focus .group-focus\:flow-root {
+  display: flow-root;
+}
+
+.group:focus .group-focus\:grid {
+  display: grid;
+}
+
+.group:focus .group-focus\:inline-grid {
+  display: inline-grid;
+}
+
+.group:focus .group-focus\:contents {
+  display: contents;
+}
+
+.group:focus .group-focus\:list-item {
+  display: list-item;
+}
+
+.group:focus .group-focus\:hidden {
+  display: none;
+}
+
 .h-0 {
   height: 0px;
 }
@@ -33256,48 +33340,6 @@ video {
   transition-duration: 150ms;
 }
 
-.group:hover .group-hover\:transition-none {
-  transition-property: none;
-}
-
-.group:hover .group-hover\:transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-shadow {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-transform {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .delay-75 {
   transition-delay: 75ms;
 }
@@ -33359,38 +33401,6 @@ video {
 }
 
 .duration-1000 {
-  transition-duration: 1000ms;
-}
-
-.group:hover .group-hover\:duration-75 {
-  transition-duration: 75ms;
-}
-
-.group:hover .group-hover\:duration-100 {
-  transition-duration: 100ms;
-}
-
-.group:hover .group-hover\:duration-150 {
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:duration-200 {
-  transition-duration: 200ms;
-}
-
-.group:hover .group-hover\:duration-300 {
-  transition-duration: 300ms;
-}
-
-.group:hover .group-hover\:duration-500 {
-  transition-duration: 500ms;
-}
-
-.group:hover .group-hover\:duration-700 {
-  transition-duration: 700ms;
-}
-
-.group:hover .group-hover\:duration-1000 {
   transition-duration: 1000ms;
 }
 
@@ -39610,6 +39620,90 @@ video {
   }
 
   .group:hover .sm\:group-hover\:hidden {
+    display: none;
+  }
+
+  .group:focus .sm\:group-focus\:block {
+    display: block;
+  }
+
+  .group:focus .sm\:group-focus\:inline-block {
+    display: inline-block;
+  }
+
+  .group:focus .sm\:group-focus\:inline {
+    display: inline;
+  }
+
+  .group:focus .sm\:group-focus\:flex {
+    display: flex;
+  }
+
+  .group:focus .sm\:group-focus\:inline-flex {
+    display: inline-flex;
+  }
+
+  .group:focus .sm\:group-focus\:table {
+    display: table;
+  }
+
+  .group:focus .sm\:group-focus\:inline-table {
+    display: inline-table;
+  }
+
+  .group:focus .sm\:group-focus\:table-caption {
+    display: table-caption;
+  }
+
+  .group:focus .sm\:group-focus\:table-cell {
+    display: table-cell;
+  }
+
+  .group:focus .sm\:group-focus\:table-column {
+    display: table-column;
+  }
+
+  .group:focus .sm\:group-focus\:table-column-group {
+    display: table-column-group;
+  }
+
+  .group:focus .sm\:group-focus\:table-footer-group {
+    display: table-footer-group;
+  }
+
+  .group:focus .sm\:group-focus\:table-header-group {
+    display: table-header-group;
+  }
+
+  .group:focus .sm\:group-focus\:table-row-group {
+    display: table-row-group;
+  }
+
+  .group:focus .sm\:group-focus\:table-row {
+    display: table-row;
+  }
+
+  .group:focus .sm\:group-focus\:flow-root {
+    display: flow-root;
+  }
+
+  .group:focus .sm\:group-focus\:grid {
+    display: grid;
+  }
+
+  .group:focus .sm\:group-focus\:inline-grid {
+    display: inline-grid;
+  }
+
+  .group:focus .sm\:group-focus\:contents {
+    display: contents;
+  }
+
+  .group:focus .sm\:group-focus\:list-item {
+    display: list-item;
+  }
+
+  .group:focus .sm\:group-focus\:hidden {
     display: none;
   }
 
@@ -65656,48 +65750,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .sm\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .sm\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .sm\:delay-75 {
     transition-delay: 75ms;
   }
@@ -65759,38 +65811,6 @@ video {
   }
 
   .sm\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -72007,6 +72027,90 @@ video {
   }
 
   .group:hover .md\:group-hover\:hidden {
+    display: none;
+  }
+
+  .group:focus .md\:group-focus\:block {
+    display: block;
+  }
+
+  .group:focus .md\:group-focus\:inline-block {
+    display: inline-block;
+  }
+
+  .group:focus .md\:group-focus\:inline {
+    display: inline;
+  }
+
+  .group:focus .md\:group-focus\:flex {
+    display: flex;
+  }
+
+  .group:focus .md\:group-focus\:inline-flex {
+    display: inline-flex;
+  }
+
+  .group:focus .md\:group-focus\:table {
+    display: table;
+  }
+
+  .group:focus .md\:group-focus\:inline-table {
+    display: inline-table;
+  }
+
+  .group:focus .md\:group-focus\:table-caption {
+    display: table-caption;
+  }
+
+  .group:focus .md\:group-focus\:table-cell {
+    display: table-cell;
+  }
+
+  .group:focus .md\:group-focus\:table-column {
+    display: table-column;
+  }
+
+  .group:focus .md\:group-focus\:table-column-group {
+    display: table-column-group;
+  }
+
+  .group:focus .md\:group-focus\:table-footer-group {
+    display: table-footer-group;
+  }
+
+  .group:focus .md\:group-focus\:table-header-group {
+    display: table-header-group;
+  }
+
+  .group:focus .md\:group-focus\:table-row-group {
+    display: table-row-group;
+  }
+
+  .group:focus .md\:group-focus\:table-row {
+    display: table-row;
+  }
+
+  .group:focus .md\:group-focus\:flow-root {
+    display: flow-root;
+  }
+
+  .group:focus .md\:group-focus\:grid {
+    display: grid;
+  }
+
+  .group:focus .md\:group-focus\:inline-grid {
+    display: inline-grid;
+  }
+
+  .group:focus .md\:group-focus\:contents {
+    display: contents;
+  }
+
+  .group:focus .md\:group-focus\:list-item {
+    display: list-item;
+  }
+
+  .group:focus .md\:group-focus\:hidden {
     display: none;
   }
 
@@ -98053,48 +98157,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .md\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .md\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .md\:delay-75 {
     transition-delay: 75ms;
   }
@@ -98156,38 +98218,6 @@ video {
   }
 
   .md\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -104404,6 +104434,90 @@ video {
   }
 
   .group:hover .lg\:group-hover\:hidden {
+    display: none;
+  }
+
+  .group:focus .lg\:group-focus\:block {
+    display: block;
+  }
+
+  .group:focus .lg\:group-focus\:inline-block {
+    display: inline-block;
+  }
+
+  .group:focus .lg\:group-focus\:inline {
+    display: inline;
+  }
+
+  .group:focus .lg\:group-focus\:flex {
+    display: flex;
+  }
+
+  .group:focus .lg\:group-focus\:inline-flex {
+    display: inline-flex;
+  }
+
+  .group:focus .lg\:group-focus\:table {
+    display: table;
+  }
+
+  .group:focus .lg\:group-focus\:inline-table {
+    display: inline-table;
+  }
+
+  .group:focus .lg\:group-focus\:table-caption {
+    display: table-caption;
+  }
+
+  .group:focus .lg\:group-focus\:table-cell {
+    display: table-cell;
+  }
+
+  .group:focus .lg\:group-focus\:table-column {
+    display: table-column;
+  }
+
+  .group:focus .lg\:group-focus\:table-column-group {
+    display: table-column-group;
+  }
+
+  .group:focus .lg\:group-focus\:table-footer-group {
+    display: table-footer-group;
+  }
+
+  .group:focus .lg\:group-focus\:table-header-group {
+    display: table-header-group;
+  }
+
+  .group:focus .lg\:group-focus\:table-row-group {
+    display: table-row-group;
+  }
+
+  .group:focus .lg\:group-focus\:table-row {
+    display: table-row;
+  }
+
+  .group:focus .lg\:group-focus\:flow-root {
+    display: flow-root;
+  }
+
+  .group:focus .lg\:group-focus\:grid {
+    display: grid;
+  }
+
+  .group:focus .lg\:group-focus\:inline-grid {
+    display: inline-grid;
+  }
+
+  .group:focus .lg\:group-focus\:contents {
+    display: contents;
+  }
+
+  .group:focus .lg\:group-focus\:list-item {
+    display: list-item;
+  }
+
+  .group:focus .lg\:group-focus\:hidden {
     display: none;
   }
 
@@ -130450,48 +130564,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .lg\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .lg\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .lg\:delay-75 {
     transition-delay: 75ms;
   }
@@ -130553,38 +130625,6 @@ video {
   }
 
   .lg\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -136801,6 +136841,90 @@ video {
   }
 
   .group:hover .xl\:group-hover\:hidden {
+    display: none;
+  }
+
+  .group:focus .xl\:group-focus\:block {
+    display: block;
+  }
+
+  .group:focus .xl\:group-focus\:inline-block {
+    display: inline-block;
+  }
+
+  .group:focus .xl\:group-focus\:inline {
+    display: inline;
+  }
+
+  .group:focus .xl\:group-focus\:flex {
+    display: flex;
+  }
+
+  .group:focus .xl\:group-focus\:inline-flex {
+    display: inline-flex;
+  }
+
+  .group:focus .xl\:group-focus\:table {
+    display: table;
+  }
+
+  .group:focus .xl\:group-focus\:inline-table {
+    display: inline-table;
+  }
+
+  .group:focus .xl\:group-focus\:table-caption {
+    display: table-caption;
+  }
+
+  .group:focus .xl\:group-focus\:table-cell {
+    display: table-cell;
+  }
+
+  .group:focus .xl\:group-focus\:table-column {
+    display: table-column;
+  }
+
+  .group:focus .xl\:group-focus\:table-column-group {
+    display: table-column-group;
+  }
+
+  .group:focus .xl\:group-focus\:table-footer-group {
+    display: table-footer-group;
+  }
+
+  .group:focus .xl\:group-focus\:table-header-group {
+    display: table-header-group;
+  }
+
+  .group:focus .xl\:group-focus\:table-row-group {
+    display: table-row-group;
+  }
+
+  .group:focus .xl\:group-focus\:table-row {
+    display: table-row;
+  }
+
+  .group:focus .xl\:group-focus\:flow-root {
+    display: flow-root;
+  }
+
+  .group:focus .xl\:group-focus\:grid {
+    display: grid;
+  }
+
+  .group:focus .xl\:group-focus\:inline-grid {
+    display: inline-grid;
+  }
+
+  .group:focus .xl\:group-focus\:contents {
+    display: contents;
+  }
+
+  .group:focus .xl\:group-focus\:list-item {
+    display: list-item;
+  }
+
+  .group:focus .xl\:group-focus\:hidden {
     display: none;
   }
 
@@ -162847,48 +162971,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .xl\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .xl\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .xl\:delay-75 {
     transition-delay: 75ms;
   }
@@ -162950,38 +163032,6 @@ video {
   }
 
   .xl\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -169198,6 +169248,90 @@ video {
   }
 
   .group:hover .\32xl\:group-hover\:hidden {
+    display: none;
+  }
+
+  .group:focus .\32xl\:group-focus\:block {
+    display: block;
+  }
+
+  .group:focus .\32xl\:group-focus\:inline-block {
+    display: inline-block;
+  }
+
+  .group:focus .\32xl\:group-focus\:inline {
+    display: inline;
+  }
+
+  .group:focus .\32xl\:group-focus\:flex {
+    display: flex;
+  }
+
+  .group:focus .\32xl\:group-focus\:inline-flex {
+    display: inline-flex;
+  }
+
+  .group:focus .\32xl\:group-focus\:table {
+    display: table;
+  }
+
+  .group:focus .\32xl\:group-focus\:inline-table {
+    display: inline-table;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-caption {
+    display: table-caption;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-cell {
+    display: table-cell;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-column {
+    display: table-column;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-column-group {
+    display: table-column-group;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-footer-group {
+    display: table-footer-group;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-header-group {
+    display: table-header-group;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-row-group {
+    display: table-row-group;
+  }
+
+  .group:focus .\32xl\:group-focus\:table-row {
+    display: table-row;
+  }
+
+  .group:focus .\32xl\:group-focus\:flow-root {
+    display: flow-root;
+  }
+
+  .group:focus .\32xl\:group-focus\:grid {
+    display: grid;
+  }
+
+  .group:focus .\32xl\:group-focus\:inline-grid {
+    display: inline-grid;
+  }
+
+  .group:focus .\32xl\:group-focus\:contents {
+    display: contents;
+  }
+
+  .group:focus .\32xl\:group-focus\:list-item {
+    display: list-item;
+  }
+
+  .group:focus .\32xl\:group-focus\:hidden {
     display: none;
   }
 
@@ -195244,48 +195378,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .\32xl\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .\32xl\:delay-75 {
     transition-delay: 75ms;
   }
@@ -195347,38 +195439,6 @@ video {
   }
 
   .\32xl\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 

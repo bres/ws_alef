@@ -20,6 +20,14 @@ module.exports = {
         }
       },
   },
-  variants: {},
+  variants: {
+    // The 'active' variant will be generated in addition to the defaults
+    extend: {
+      display: ['group-hover'],
+      transitionDuration: ['group-hover'],
+      transitionProperty: ['group-hover' ]
+
+    }
+  },
   plugins: [],
 }

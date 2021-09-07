@@ -33256,48 +33256,6 @@ video {
   transition-duration: 150ms;
 }
 
-.group:hover .group-hover\:transition-none {
-  transition-property: none;
-}
-
-.group:hover .group-hover\:transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-shadow {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:transition-transform {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .delay-75 {
   transition-delay: 75ms;
 }
@@ -33359,38 +33317,6 @@ video {
 }
 
 .duration-1000 {
-  transition-duration: 1000ms;
-}
-
-.group:hover .group-hover\:duration-75 {
-  transition-duration: 75ms;
-}
-
-.group:hover .group-hover\:duration-100 {
-  transition-duration: 100ms;
-}
-
-.group:hover .group-hover\:duration-150 {
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:duration-200 {
-  transition-duration: 200ms;
-}
-
-.group:hover .group-hover\:duration-300 {
-  transition-duration: 300ms;
-}
-
-.group:hover .group-hover\:duration-500 {
-  transition-duration: 500ms;
-}
-
-.group:hover .group-hover\:duration-700 {
-  transition-duration: 700ms;
-}
-
-.group:hover .group-hover\:duration-1000 {
   transition-duration: 1000ms;
 }
 
@@ -65656,48 +65582,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .sm\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .sm\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .sm\:delay-75 {
     transition-delay: 75ms;
   }
@@ -65759,38 +65643,6 @@ video {
   }
 
   .sm\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .sm\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -98053,48 +97905,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .md\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .md\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .md\:delay-75 {
     transition-delay: 75ms;
   }
@@ -98156,38 +97966,6 @@ video {
   }
 
   .md\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .md\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -130450,48 +130228,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .lg\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .lg\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .lg\:delay-75 {
     transition-delay: 75ms;
   }
@@ -130553,38 +130289,6 @@ video {
   }
 
   .lg\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .lg\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -162847,48 +162551,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .xl\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .xl\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .xl\:delay-75 {
     transition-delay: 75ms;
   }
@@ -162950,38 +162612,6 @@ video {
   }
 
   .xl\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .xl\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
@@ -195244,48 +194874,6 @@ video {
     transition-duration: 150ms;
   }
 
-  .group:hover .\32xl\:group-hover\:transition-none {
-    transition-property: none;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
   .\32xl\:delay-75 {
     transition-delay: 75ms;
   }
@@ -195347,38 +194935,6 @@ video {
   }
 
   .\32xl\:duration-1000 {
-    transition-duration: 1000ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-75 {
-    transition-duration: 75ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-100 {
-    transition-duration: 100ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-150 {
-    transition-duration: 150ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-200 {
-    transition-duration: 200ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-300 {
-    transition-duration: 300ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-500 {
-    transition-duration: 500ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-700 {
-    transition-duration: 700ms;
-  }
-
-  .group:hover .\32xl\:group-hover\:duration-1000 {
     transition-duration: 1000ms;
   }
 
