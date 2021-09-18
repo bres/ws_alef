@@ -28,7 +28,35 @@
         font-family: 'Karla', sans-serif;  
 
         }
-        </style>
+
+
+.image1 {
+  background-image: url('{% static "img/leather.jpg" %}');
+}
+.image2 {
+  background-image: url('{% static "img/pouch.jpg" %}');
+}
+.image3 {
+  background-image: url('{% static "img/hobo.jpg" %}');
+}
+.image4 {
+  background-image: url('{% static "img/clutch.jpg" %}');
+}
+.image5 {
+  background-image: url('{% static "img/backpack.jpg" %}');
+}
+.image6 {
+  background-image: url('{% static "img/key.jpg" %}');
+}
+.image7 {
+  background-image: url('{% static "img/keys.jpg" %}');
+}
+ 
+.imgdef {
+  background-image: url('{% static "img/bags.jpg" %}');
+}
+
+</style>
 
 </head>
 
@@ -102,47 +130,41 @@
                                 Bags
                             </a>
                             <div  class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
+
                                 <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-10  shadow-md">
 
                                     <div class="col-span-1 pt-6">
-
-                                        <div class="flex flex-col space-y-4">
+                                     <div class="flex flex-col space-y-4">
                                         <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                                        
+                                  
                                         <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                                        
+                                  
                                         <a href="#" class="text-sm font-bold uppercase">offers</a>
-                                        
+                                  
                                         <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                                        </div>
+                                      </div>
+                                    </div>
+                                  
+                                    <div class="link col-span-2 pt-6">
+                                       <div class="flex flex-col space-y-4 w-32">
+                                        <p id="image1">Leather Bags</p>
+                                        <p id="image2">Pouches</p>
+                                        <p id="image3">Hobo Bags</p>
+                                        <p id="image2">Clutches</p>
+                                        <p id="image3">Back Packs</p>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-4 preview ">
+                                      <div class="flex justify-end h-full">
+                                        <p class="effect h-64 w-64 bg-cover bg-center filter brightness-90 bg-no-repeat">
+                                        </p>
+                                  
+                                      </div>
+                                    </div>
+                                  
+                                  </div>
 
-                                    </div>
-                                    <div class="row1 col-span-2 pt-6">
-                                        <div class="flex flex-col space-y-4 w-32">
-                                            <a href="#" class="image" id="image1" data-img="{% static 'img/leather.jpg' %}">
-                                            Leather Bags
-                                            </a>
-                                            <a href="#" class="image" id="image2" data-img="{% static 'img/pouch.jpg' %}">
-                                            Pouches
-                                            </a>
-                                            <a href="#" class="image" id="image3" data-img="{% static 'img/hobo.jpg' %}">
-                                            Hobo Bags
-                                            </a>
-                                            <a href="#" class="image" id="image4" data-img="{% static 'img/clutch.jpg' %}">
-                                            Clutches
-                                            </a>
-                                            <a href="#" class="image" id="image5" data-img="{% static 'img/backpack.jpg' %}">
-                                            Back Packs
-                                            </a>
-                                        </div>
 
-                                    </div>
-                                    <div class="col-span-4">
-                                        <div class=" flex justify-end">
-                                            <img src='{% static "img/bags.jpg" %}' id="srcImage1" class="h-64 object-cover filter brightness-90"/>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </li>
 
@@ -531,14 +553,14 @@
          });
 
         //hover on grid mega menu
-         
+        /*$(document).ready(function() {
             $("div.row1 a.image").hover(function(){
             $("#srcImage1").attr('src', $(this).data('img'));
  
-            });
+            })
              
 
-        
+        });
           
         
         //FIXME: i am repeating my self..
@@ -550,6 +572,25 @@
              
 
         });
+        */
+        $(document).ready(function() {
+        $(".preview").find(".effect").addClass("imgdef");
+
+        $(".link p").hover(
+        function () {
+        $(".preview").find(".effect").removeClass("imgdef");
+        $(".preview").find(".effect").addClass(this.id);
+        console.log(this.id);
+        },
+        function () {
+        $(".preview").find(".effect").addClass("imgdef");
+        $(".preview").find(".effect").removeClass(this.id);
+        }
+        );
+    });
+
+
+
 
 
 
