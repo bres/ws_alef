@@ -29,32 +29,9 @@
 
         }
 
-
-.image1 {
-  background-image: url('{% static "img/leather.jpg" %}');
-}
-.image2 {
-  background-image: url('{% static "img/pouch.jpg" %}');
-}
-.image3 {
-  background-image: url('{% static "img/hobo.jpg" %}');
-}
-.image4 {
-  background-image: url('{% static "img/clutch.jpg" %}');
-}
-.image5 {
-  background-image: url('{% static "img/backpack.jpg" %}');
-}
-.image6 {
-  background-image: url('{% static "img/key.jpg" %}');
-}
-.image7 {
-  background-image: url('{% static "img/keys.jpg" %}');
-}
- 
-.imgdef {
-  background-image: url('{% static "img/bags.jpg" %}');
-}
+        .mydiv {
+        display: none;
+        }
 
 </style>
 
@@ -110,7 +87,7 @@
                 <div class="hidden lg:flex justify-end items-center">
 
     <input type="text" name="name" placeholder="search"
-        class="w-1/3 py-2 border-b text-xs border-gray-400 outline-none focus:border-gray-500">
+        class="w-40 py-2 border-b text-xs border-gray-400 outline-none focus:border-gray-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-600" fill="none" viewBox="0 0 24 24"
         stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -133,41 +110,51 @@
 
                                 <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-10  shadow-md">
 
-                                    <div class="col-span-1 pt-6">
-                                     <div class="flex flex-col space-y-4">
+                                    <div class="cols-span-1 pt-6">
+                                      <div class="flex flex-col space-y-4">
                                         <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                                  
                                         <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                                  
                                         <a href="#" class="text-sm font-bold uppercase">offers</a>
-                                  
                                         <a href="#" class="text-sm font-bold uppercase">collection x</a>
                                       </div>
                                     </div>
                                   
-                                    <div class="link col-span-2 pt-6">
-                                       <div class="flex flex-col space-y-4 w-32">
-                                        <p id="image1">Leather Bags</p>
-                                        <p id="image2">Pouches</p>
-                                        <p id="image3">Hobo Bags</p>
-                                        <p id="image2">Clutches</p>
-                                        <p id="image3">Back Packs</p>
-                                       </div>
-                                    </div>
-                                    <div class="col-span-4 preview ">
-                                      <div class="flex justify-end h-full">
-                                        <p class="effect h-64 w-64 bg-cover bg-center filter brightness-90 bg-no-repeat">
-                                        </p>
+                                    <div class="col-span-2 pt-6">
+                                      <div class="flex flex-col space-y-4 w-32">
+                                        <a href="#" class="mymultiplediv" id="one">Leather Bags</a>
+                                        <a href="#" class="mymultiplediv" id="two">Pouches</a>
+                                        <a href="#" class="mymultiplediv" id="three">Hobo Bags</a>
+                                        <a href="#" class="mymultiplediv" id="fore">Clutches</a>
+                                        <a href="#" class="mymultiplediv" id="five">Back Packs</a>
                                   
                                       </div>
                                     </div>
                                   
-                                  </div>
-
-
+                                    <div class="col-span-4">
+                                      <div class="flex justify-end h-full">
+                                        <div>
+                                            <img id="srcImage1" src='{% static "img/bags.jpg" %}' href="" class="">
+                                        <div>
+                                        <div class="mydiv "id="divone">
+                                          <img src='{% static "img/leather.jpg" %}'  alt="Manager" class="h-64 w-64 object-cover object-center" />
+                                        </div>
+                                        <div class="mydiv" id="divtwo">
+                                          <img src='{% static "img/pouches.jpg" %}'  alt="HR" class="h-64 w-64 object-cover object-center" />
+                                        </div>
+                                        <div class="mydiv" id="divthree">
+                                          <img src='{% static "img/hobo.jpg" %}' alt="Developer" class="h-64 w-64 object-cover object-center" />
+                                        </div>
+                                        <div class="mydiv" id="divfore">
+                                          <img src='{% static "img/clutch.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
+                                        </div>
+                                        <div class="mydiv" id="divfive">
+                                          <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
+                                        </div>
+                                  
+                                      </div>
+                                    </div>
                             </div>
                         </li>
-
 
                         <li>
                             <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800  uppercase"
@@ -175,44 +162,45 @@
                                 Accessories
                             </a>
                             <div  class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
+
                                 <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-10  shadow-md">
 
-                                    <div class="col-span-1 pt-6">
-
-                                        <div class="flex flex-col space-y-4">
+                                    <div class="cols-span-1 pt-6">
+                                      <div class="flex flex-col space-y-4">
                                         <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                                        
                                         <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                                        
                                         <a href="#" class="text-sm font-bold uppercase">offers</a>
-                                        
                                         <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                                        </div>
-
+                                      </div>
                                     </div>
-                                    <div class="row2 col-span-2 pt-6">
-                                        <div class="flex flex-col space-y-4 w-32">
-                                            <a href="#" class="image" id="image11" data-img="{% static 'img/key.jpg'%}">
-                                            Key Holders
-                                            </a>
-                                            <a href="#" class="image" id="image12" data-img="{% static 'img/pouch.jpg'%}">
-                                            Pouches
-                                            </a>
-                                          
-                                         
-                                        </div>
-
+                                  
+                                    <div class="col-span-2 pt-6">
+                                      <div class="flex flex-col space-y-4 w-32">
+                                        <a href="#" class="mymultiplediv" id="six">Key Holders</a>
+                                        <a href="#" class="mymultiplediv" id="seven">Small Accessories</a>
+                                       
+                                  
+                                      </div>
                                     </div>
+                                  
                                     <div class="col-span-4">
-                                        <div class=" flex justify-end">
-                                            <img src='{% static "img/keys.jpg" %}' id="srcImage2" class="h-64 object-cover filter brightness-90"/>
+                                      <div class="flex justify-end h-full">
+                                        <div>
+                                            <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
+                                        <div>
+                                        <div class="mydiv "id="divsix">
+                                          <img src='{% static "img/key.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
                                         </div>
+                                        <div class="mydiv" id="divseven">
+                                          <img src='{% static "img/pouch.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
+                                        </div>
+                                        
+                                  
+                                      </div>
                                     </div>
-                                </div>
                             </div>
                         </li>
-
-
+                       
                             <li>
                     <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
                         About
@@ -228,7 +216,7 @@
                         Contact
                     </a>
                         </li>
-                         </ul>
+                     </ul>
                 </nav>
             </div>
         </div>
@@ -350,15 +338,15 @@
             </h1>
             <div class="flex justify-center max-w-lg mx-auto text-center py-2 uppercase space-x-12">
                 <button
-                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b-2 border-transparent transition duration-200 tracking-widest">
+                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b border-transparent transition duration-200 tracking-widest">
                     Latest
                 </button>
                 <button
-                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b-2 border-transparent transition duration-200 tracking-widest">
+                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b border-transparent transition duration-200 tracking-widest">
                     Trending
                 </button>
                 <button
-                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b-2 border-transparent transition duration-200 tracking-widest">
+                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b border-transparent transition duration-200 tracking-widest">
                     Discounts
                 </button>
             </div>
@@ -531,68 +519,42 @@
     <script>
 
         //toggle mega menu
-
         $('.mega-menu').hide();
         $(window).ready(function() {
         $("nav.inline-menu ul li").click(function () {
-
         $(this).siblings().find(".mega-menu").hide();
         $(this).find(".mega-menu").toggle();
-
         });
 
+        // hide grid mega menu after click anywhere on the page
         $("html").click(function(event) {
-        if ($(event.target).closest('nav.inline-menu ul li').length === 0) {
-        $('.mega-menu').hide();
-        $("#srcImage1").attr('src','{% static "img/bags.jpg" %}');
-        $("#srcImage2").attr('src','{% static "img/keys.jpg" %}');
+        if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
+            $('.mega-menu').hide();
+        }
+        });
+        });
 
+        //restore main image on grid mega menu after click event anywhere on the page
+        $("html").click(function(event) {
+        if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
+            $("#srcImage1").show();
+            $("#srcImage2").show();
+
+            $("div.mydiv").hide();    
         }
         });
 
-         });
+        //change image on hover inside on grid mega menu
+        $(document).ready(function () {
+        $(".mymultiplediv").mouseover(function () {
+        $("#srcImage1").hide();
+        $("#srcImage2").hide();
 
-        //hover on grid mega menu
-        /*$(document).ready(function() {
-            $("div.row1 a.image").hover(function(){
-            $("#srcImage1").attr('src', $(this).data('img'));
- 
-            })
-             
-
+        myvar = this.id;
+        $("div.mydiv").hide();
+        $("#div" + myvar).show();
         });
-          
-        
-        //FIXME: i am repeating my self..
-        $(document).ready(function() {
-            $("div.row2 a.image").hover(function(){
-            $("#srcImage2").attr('src', $(this).data('img'));
- 
-            })
-             
-
         });
-        */
-        $(document).ready(function() {
-        $(".preview").find(".effect").addClass("imgdef");
-
-        $(".link p").hover(
-        function () {
-        $(".preview").find(".effect").removeClass("imgdef");
-        $(".preview").find(".effect").addClass(this.id);
-        console.log(this.id);
-        },
-        function () {
-        $(".preview").find(".effect").addClass("imgdef");
-        $(".preview").find(".effect").removeClass(this.id);
-        }
-        );
-    });
-
-
-
-
-
 
         // grab everything we need
         const btn = document.querySelector(".mobile-menu-button");
@@ -608,10 +570,6 @@
             var para = document.getElementById("scroll");
             para.classList.toggle("noscrollClass");
         };
-
-    
-        
-
 
     </script>
 
