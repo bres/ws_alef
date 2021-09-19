@@ -4,34 +4,37 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap" rel="stylesheet">
-    <title>ALEF HANDMADE</title>
-    <style>
-        .noscrollClass {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            filter: grayscale(100%);
-        }
+<meta charset="UTF-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<title>ALEF HANDMADE</title>
+<style>
 
-        body {
-        font-family: 'Karla', sans-serif; 
-            }
-        h1, h2, h3, h4, h5, h6 {
-        font-family: 'Karla', sans-serif;  
+    @font-face {
+    font-family: "Karla";
+    src: url('{% static "fonts/Karla/Karla-Regular.ttf" %}');
+    }
 
-        }
+    .noscrollClass {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        filter: grayscale(100%);
+    }
 
-        .mydiv {
-        display: none;
+    body {
+    font-family: 'Karla', sans-serif; 
         }
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Karla', sans-serif;  
+
+    }
+
+    .mydiv {
+    display: none;
+    }
 
 </style>
 
@@ -276,19 +279,19 @@
         <img class="object-cover object-center h-screen w-full filter brightness-90" src='{% static "img/hero.jpg" %}'
             alt="Architecture">
         <h1
-            class="text-white md:leading-relaxed lg:leading-relaxed text-center md:text-7xl text-3xl mt-10 md:pt-12 uppercase absolute z-10 font-bold ">
+            class="text-white md:leading-relaxed lg:leading-relaxed text-center font-bold text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl mt-10 md:pt-12 uppercase absolute z-10  ">
             We create bags<br />
             To carry our worlds...</h1>
 
 
     </header>
     <!-- gallery -->
-    <section class="pt-6 ">
-        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+    <section class="pt-5 xl:pt-8">
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-5 xl:gap-8">
             <div class="bg-white relative">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-136 2xl:h-152 w-full object-cover filter brightness-90"
+                        class="h-80 sm:h-96 lg:h-112 xl:h-152 2xl:h-176 w-full object-cover filter brightness-90"
                         src='{% static "img/g1.jpg" %}' />
                     <p
                         class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-medium">
@@ -298,7 +301,7 @@
             <div class="bg-white relative">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80  sm:h-96 lg:h-112 xl:h-136 2xl:h-152 w-full object-cover filter brightness-90"
+                        class="h-80  sm:h-96 lg:h-112 xl:h-152 2xl:h-176 w-full object-cover filter brightness-90"
                         src='{% static "img/g2.jpg" %}' />
                     <p
                         class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-medium">
@@ -309,7 +312,7 @@
             <div class="bg-white relative">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80  sm:h-96 lg:h-112 xl:h-136 2xl:h-152 w-full object-cover filter brightness-90"
+                        class="h-80  sm:h-96 lg:h-112 xl:h-152 2xl:h-176 w-full object-cover filter brightness-90"
                         src='{% static "img/g3.jpg" %}' />
                     <p
                         class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-medium">
@@ -320,11 +323,11 @@
             <div class="bg-white md:col-span-2">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-96 sm:h-112 lg:h-136 xl:h-152 2xl:h-200 w-full object-cover filter brightness-90"
+                        class="h-96 sm:h-112 lg:h-136 xl:h-176 2xl:h-200 w-full object-cover filter brightness-90"
                         src='{% static "img/g4.jpg" %}' />
                 </a>
             </div>
-            <div class="bg-white border border-gray-900 h-96 sm:h-112 lg:h-136 xl:h-152 2xl:h-200 mx-4 sm:mx-0">
+            <div class="bg-white border border-gray-900 h-96 sm:h-112 lg:h-136 xl:h-176 2xl:h-200 mx-4 sm:mx-0">
                 <span
                     class="text-gray-900 text-center text-4xl lg:text-5xl w-full h-full flex justify-center items-center">SUMMER
                     OFFERS</span>
@@ -338,15 +341,15 @@
             </h1>
             <div class="flex justify-center max-w-lg mx-auto text-center py-2 uppercase space-x-12">
                 <button
-                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b border-transparent transition duration-200 tracking-widest">
+                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 py-1 border-b border-transparent transition duration-200 tracking-widest">
                     Latest
                 </button>
                 <button
-                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b border-transparent transition duration-200 tracking-widest">
+                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 py-1 border-b border-transparent transition duration-200 tracking-widest">
                     Trending
                 </button>
                 <button
-                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 border-b border-transparent transition duration-200 tracking-widest">
+                    class="text-gray-600 hover:text-gray-800 hover:border-gray-800 py-1 border-b border-transparent transition duration-200 tracking-widest">
                     Discounts
                 </button>
             </div>
@@ -511,7 +514,7 @@
             <hr class="h-px my-6 bg-gray-300 border-none dark:bg-gray-700">
 
             <div>
-                <p class="text-center text-gray-800 dark:text-white">© alef__handmade 2020 - All rights reserved</p>
+                <p class="text-center text-gray-800 dark:text-white">© Alef Handmade 2021 - All rights reserved</p>
             </div>
         </div>
     </footer>
