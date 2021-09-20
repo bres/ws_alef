@@ -4,41 +4,48 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<meta charset="UTF-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-<title>ALEF HANDMADE</title>
-<style>
-
-    @font-face {
-    font-family: "Karla";
-    font-style: normal;
-    src: url('{% static "fonts/Karla/Karla-Regular.ttf" %}');
-    font-display:block;
-    }
-
-  
-
-    body {
-    font-family: 'Karla', sans-serif; 
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <title>ALEF HANDMADE</title>
+    <style>
+        @font-face {
+            font-family: "Karla";
+            font-style: normal;
+            src: url('{% static "fonts/Karla/Karla-Regular.ttf" %}');
+            font-display: block;
         }
-    h1, h2, h3, h4, h5, h6 {
-    font-family: 'Karla', sans-serif;  
 
-    }
 
-    .mydiv {
-    display: none;
-    }
-    .noscrollClass {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        filter: grayscale(100%);
-    }
-</style>
+
+        body {
+            font-family: 'Karla', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Karla', sans-serif;
+
+        }
+
+        .mydiv {
+            display: none;
+        }
+
+        .noscrollClass {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            filter: grayscale(100%);
+        }
+    </style>
 
 </head>
 
@@ -55,9 +62,29 @@
         <!--  Two Levels Menu -->
         <div class="w-full flex flex-col items-center space-y-1">
             <!-- three columns top horizontal menu on a grid -->
-            <div class="w-full grid items-center grid-cols-3 py-2 px-4 lg:px-10">
+            <div class="w-full grid items-center grid-cols-3 py-2 px-4 lg:px-12">
                 <!-- first column on the left with flex for social links -->
-                <div class="items-center hidden space-x-4 lg:flex">
+                <div class="hidden lg:flex  items-center">
+                   
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text" name="name" placeholder="search"
+                    class="w-32 py-2 border-b text-xs border-gray-500 outline-none focus:border-gray-600">
+                     
+                </div>
+                <!-- second and centered column with the brand name -->
+                <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
+                    <h1 class="lg:text-4xl text-3xl text-gray-700 font-semibold text-center tracking-widest uppercase">
+                        alef
+                    </h1>
+                    <!--   <img class="object-contain object-center w-16 h-16" src='{% static "img/logo.png" %}'
+alt="Architecture" />-->
+                </a>
+                <!-- third column on the right with flex for search -->
+                <div class="items-center hidden space-x-4 lg:flex   justify-end ">
                     <a aria-label="Instagram Link" href="https://www.instagram.com/alef__handmade/?hl=el"
                         title="Instagram">
                         <?xml version="1.0" encoding="UTF-8"?>
@@ -78,28 +105,6 @@
                         </svg>
                     </a>
                 </div>
-                <!-- second and centered column with the brand name -->
-                <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-                    <h1 class="lg:text-3xl text-2xl text-gray-700 font-semibold text-center tracking-widest uppercase">
-                        alef
-                    </h1>
-                 <!--   <img class="object-contain object-center w-16 h-16" src='{% static "img/logo.png" %}'
-                        alt="Architecture" />-->
-                </a>
-                <!-- third column on the right with flex for search -->
-
-
-                <div class="hidden lg:flex justify-end items-center">
-
-    <input type="text" name="name" placeholder="search"
-        class="w-40 py-2 border-b text-xs border-gray-400 outline-none focus:border-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-600" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-    </svg>
-</div>
-
             </div>
             <!-- horizontal second menu -->
             <div class="hidden relative justify-center lg:flex w-full py-1 text-gray-700">
@@ -107,121 +112,128 @@
                     <!-- hidden dropdown  with javascript configuration -->
                     <ul class="flex">
                         <li>
-                            <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800  uppercase"
-                                href="#">
+                            <a class="mx-6 py-1 border-b border-transparent hover:border-gray-800  uppercase" href="#">
                                 Bags
                             </a>
-                            <div  class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
+                            <div
+                                class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
 
-                                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-10  shadow-md">
+                                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-12  shadow-md">
 
                                     <div class="cols-span-1 pt-6">
-                                      <div class="flex flex-col space-y-4">
-                                        <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                                        <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                                        <a href="#" class="text-sm font-bold uppercase">offers</a>
-                                        <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                                      </div>
+                                        <div class="flex flex-col space-y-4">
+                                            <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
+                                            <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
+                                            <a href="#" class="text-sm font-bold uppercase">offers</a>
+                                            <a href="#" class="text-sm font-bold uppercase">collection x</a>
+                                        </div>
                                     </div>
-                                  
+
                                     <div class="col-span-2 pt-6">
-                                      <div class="flex flex-col space-y-4 w-32">
-                                        <a href="#" class="mymultiplediv" id="one">Leather Bags</a>
-                                        <a href="#" class="mymultiplediv" id="two">Pouches</a>
-                                        <a href="#" class="mymultiplediv" id="three">Hobo Bags</a>
-                                        <a href="#" class="mymultiplediv" id="fore">Clutches</a>
-                                        <a href="#" class="mymultiplediv" id="five">Back Packs</a>
-                                  
-                                      </div>
+                                        <div class="flex flex-col space-y-4 w-32">
+                                            <a href="#" class="mymultiplediv" id="one">Leather Bags</a>
+                                            <a href="#" class="mymultiplediv" id="two">Pouches</a>
+                                            <a href="#" class="mymultiplediv" id="three">Hobo Bags</a>
+                                            <a href="#" class="mymultiplediv" id="fore">Clutches</a>
+                                            <a href="#" class="mymultiplediv" id="five">Back Packs</a>
+
+                                        </div>
                                     </div>
-                                  
+
                                     <div class="col-span-4">
-                                      <div class="flex justify-end h-full">
-                                        <div>
-                                            <img id="srcImage1" src='{% static "img/bags.jpg" %}' href="" class="">
-                                        <div>
-                                        <div class="mydiv "id="divone">
-                                          <img src='{% static "img/leather.jpg" %}'  alt="Manager" class="h-64 w-64 object-cover object-center" />
+                                        <div class="flex justify-end h-full">
+                                            <div>
+                                                <img id="srcImage1" src='{% static "img/bags.jpg" %}' href="" class="">
+                                                <div>
+                                                    <div class="mydiv " id="divone">
+                                                        <img src='{% static "img/leather.jpg" %}' alt="Manager"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+                                                    <div class="mydiv" id="divtwo">
+                                                        <img src='{% static "img/pouches.jpg" %}' alt="HR"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+                                                    <div class="mydiv" id="divthree">
+                                                        <img src='{% static "img/hobo.jpg" %}' alt="Developer"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+                                                    <div class="mydiv" id="divfore">
+                                                        <img src='{% static "img/clutch.jpg" %}' alt="Designer"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+                                                    <div class="mydiv" id="divfive">
+                                                        <img src='{% static "img/backpack.jpg" %}' alt="Designer"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mydiv" id="divtwo">
-                                          <img src='{% static "img/pouches.jpg" %}'  alt="HR" class="h-64 w-64 object-cover object-center" />
-                                        </div>
-                                        <div class="mydiv" id="divthree">
-                                          <img src='{% static "img/hobo.jpg" %}' alt="Developer" class="h-64 w-64 object-cover object-center" />
-                                        </div>
-                                        <div class="mydiv" id="divfore">
-                                          <img src='{% static "img/clutch.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
-                                        </div>
-                                        <div class="mydiv" id="divfive">
-                                          <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
-                                        </div>
-                                  
-                                      </div>
-                                    </div>
-                            </div>
                         </li>
 
                         <li>
-                            <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800  uppercase"
-                                href="#">
+                            <a class="mx-6 py-1 border-b border-transparent hover:border-gray-800  uppercase" href="#">
                                 Accessories
                             </a>
-                            <div  class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
+                            <div
+                                class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
 
-                                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-10  shadow-md">
+                                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-12  shadow-md">
 
                                     <div class="cols-span-1 pt-6">
-                                      <div class="flex flex-col space-y-4">
-                                        <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                                        <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                                        <a href="#" class="text-sm font-bold uppercase">offers</a>
-                                        <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                                      </div>
+                                        <div class="flex flex-col space-y-4">
+                                            <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
+                                            <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
+                                            <a href="#" class="text-sm font-bold uppercase">offers</a>
+                                            <a href="#" class="text-sm font-bold uppercase">collection x</a>
+                                        </div>
                                     </div>
-                                  
+
                                     <div class="col-span-2 pt-6">
-                                      <div class="flex flex-col space-y-4 w-32">
-                                        <a href="#" class="mymultiplediv" id="six">Key Holders</a>
-                                        <a href="#" class="mymultiplediv" id="seven">Small Accessories</a>
-                                       
-                                  
-                                      </div>
+                                        <div class="flex flex-col space-y-4 w-32">
+                                            <a href="#" class="mymultiplediv" id="six">Key Holders</a>
+                                            <a href="#" class="mymultiplediv" id="seven">Small Accessories</a>
+
+
+                                        </div>
                                     </div>
-                                  
+
                                     <div class="col-span-4">
-                                      <div class="flex justify-end h-full">
-                                        <div>
-                                            <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
-                                        <div>
-                                        <div class="mydiv "id="divsix">
-                                          <img src='{% static "img/key.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                                        <div class="flex justify-end h-full">
+                                            <div>
+                                                <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
+                                                <div>
+                                                    <div class="mydiv " id="divsix">
+                                                        <img src='{% static "img/key.jpg" %}' alt="Manager"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+                                                    <div class="mydiv" id="divseven">
+                                                        <img src='{% static "img/pouch.jpg" %}' alt="HR"
+                                                            class="h-64 w-64 object-cover object-center" />
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mydiv" id="divseven">
-                                          <img src='{% static "img/pouch.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
-                                        </div>
-                                        
-                                  
-                                      </div>
-                                    </div>
-                            </div>
                         </li>
-                       
-                            <li>
-                    <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
-                        About
-                    </a>
-                            </li>
+
                         <li>
-                    <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
-                        Materials
-                    </a>
-                            </li>
-                        <li>
-                    <a class="mx-10 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
-                        Contact
-                    </a>
+                            <a class="mx-6 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
+                                About
+                            </a>
                         </li>
-                     </ul>
+                        <li>
+                            <a class="mx-6 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
+                                Materials
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mx-6 py-1 border-b border-transparent hover:border-gray-800 uppercase" href="#">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         </div>
@@ -287,26 +299,26 @@
 
 
     </header>
-    <!-- gallery -->
-    <section class="pt-5 xl:pt-8">
-        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-5 xl:gap-8">
+    <!-- First gallery section -->
+    <section class="pt-4 xl:pt-5">
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5">
             <div class="bg-white relative">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-160 2xl:h-192 w-full object-cover filter brightness-90"
+                        class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-172 w-full object-cover filter brightness-90"
                         src='{% static "img/g1.jpg" %}' />
                     <p
-                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-medium">
+                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
                         x COLLECTION</p>
                 </a>
             </div>
             <div class="bg-white relative">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-160 2xl:h-192 w-full object-cover filter brightness-90"
+                        class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-172 w-full object-cover filter brightness-90"
                         src='{% static "img/g2.jpg" %}' />
                     <p
-                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-medium">
+                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
                         x COLLECTION
                     </p>
                 </a>
@@ -314,10 +326,10 @@
             <div class="bg-white relative">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-160 2xl:h-192 w-full object-cover filter brightness-90"
+                        class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-172 w-full object-cover filter brightness-90"
                         src='{% static "img/g3.jpg" %}' />
                     <p
-                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-medium">
+                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
                         x COLLECTION
                     </p>
                 </a>
@@ -325,19 +337,19 @@
             <div class="bg-white md:col-span-2">
                 <a aria-label="View Item" href="/">
                     <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-96 sm:h-112 lg:h-160 xl:h-192 2xl:h-224 w-full object-cover filter brightness-90"
+                        class="h-96 sm:h-112 lg:h-136 xl:h-172 2xl:h-192 w-full object-cover filter brightness-90"
                         src='{% static "img/g4.jpg" %}' />
                 </a>
             </div>
-            <div class="bg-white border border-gray-900 h-96 sm:h-112 lg:h-160 xl:h-192 2xl:h-224 mx-4 sm:mx-0">
+            <div class="bg-white border border-gray-900 h-96 sm:h-112 lg:h-136 xl:h-172 2xl:h-192 mx-4 sm:mx-0">
                 <span
-                    class="text-gray-900 text-center text-4xl lg:text-5xl w-full h-full flex justify-center items-center">SUMMER
+                    class="text-gray-900 text-center text-4xl lg:text-5xl w-full h-full flex justify-center items-center font-bold">SUMMER
                     OFFERS</span>
             </div>
         </div>
     </section>
     <!-- Latest section -->
-    <section class="px-4 lg:px-10 py-24">
+    <section class="px-4 lg:px-12 py-24">
         <div class="space-y-8">
             <h1 class="lg:text-3xl text-2xl text-gray-800 font-bold text-center tracking-widest uppercase">Our Latest
             </h1>
@@ -357,7 +369,7 @@
             </div>
         </div>
         <div class="py-4 lg:py-4">
-            <div class="grid gap-6 xl:gap-14 sm:row-gap-6 row-gap-5  sm:grid-cols-1 md:grid-cols-3 mb-8">
+            <div class="grid gap-5 xl:gap-8 sm:row-gap-6 row-gap-5  sm:grid-cols-1 md:grid-cols-3 mb-8">
                 <a aria-label="View Item" href="/">
                     <div class="relative overflow-hidden transition duration-200 shadow-sm">
                         <img alt="" class=" object-cover object-center w-full h-80 lg:h-88 xl:h-104 2xl:h-128"
@@ -374,7 +386,7 @@
                 <a aria-label="View Item" href="/">
                     <div class="relative overflow-hidden transition duration-200">
                         <img alt="" class="object-cover object-center w-full h-80 lg:h-88 xl:h-104 2xl:h-128"
-                            src='{% static "img/l1.jpg" %}'/>
+                            src='{% static "img/l1.jpg" %}' />
                         <div
                             class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                             <p class="mb-4 text-lg font-bold text-gray-100">The Starry Night</p>
@@ -390,7 +402,7 @@
                 <a aria-label="View Item" href="/">
                     <div class="relative overflow-hidden transition duration-200">
                         <img alt="" class="object-cover object-center w-full h-80 lg:h-88 xl:h-104 2xl:h-128"
-                            src='{% static "img/l1.jpg" %}'/>
+                            src='{% static "img/l1.jpg" %}' />
                         <div
                             class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                             <p class="mb-4 text-lg font-bold text-gray-100">The Kiss</p>
@@ -403,12 +415,12 @@
                             </p>
                         </div>
                     </div>
-                </a> 
-            
+                </a>
+
             </div>
             <div class="text-center pt-10">
                 <a aria-label=""
-                    class="text-sm font-bold px-8 py-4 text-gray-500 border border-gray-500 hover:bg-gray-100 transition duration-200"
+                    class="text-sm font-bold px-8 py-4 text-gray-500 border hover:text-white border-gray-900 hover:bg-gray-900 transition duration-200"
                     href="/">
                     VIEW GALLERY
                 </a>
@@ -435,19 +447,19 @@
     </section>
     <!-- footer section-->
     <footer class="bg-gray-100 border-t border-gray-200">
-        <div class="px-4  lg:px-10 py-8 ">
+        <div class="px-4  lg:px-12 py-8 ">
             <div class="lg:flex">
                 <div class="w-full -mx-6 lg:w-2/5">
                     <div class="px-6">
                         <div>
-                            <a href="#"
-                                class="text-xl font-bold text-gray-600   hover:text-gray-700  ">Alef Handmade</a>
+                            <a href="#" class="text-xl font-bold text-gray-600   hover:text-gray-700  ">Alef
+                                Handmade</a>
                         </div>
 
                         <p class="max-w-md mt-2 text-gray-500 ">WE CREATE BAGS</br>
                             TO CARRY OUR WORLDS...</p>
 
-              
+
                     </div>
                 </div>
 
@@ -455,44 +467,35 @@
                     <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
                         <div>
                             <h3 class="text-gray-600 uppercase font-semibold">Bags</h3>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Leather Bags</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Pouches</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Hobo Bags</a>
-                                <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Clutches</a>
-                                <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Bag Packs</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Leather Bags</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Pouches</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Hobo Bags</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Clutches</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Bag Packs</a>
                         </div>
 
                         <div>
                             <h3 class="text-gray-600 uppercase font-semibold">Accessories</h3>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Key Holders</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">Small Accessories</a>
-                           
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Key Holders</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">Small Accessories</a>
+
                         </div>
 
                         <div>
                             <h3 class="text-gray-600 uppercase font-semibold">Infos</h3>
-                            <a href="#" 
-                                class="block mt-2 text-sm text-gray-500  hover:underline">About
-                                </a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">About
+                            </a>
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">
                                 Materials</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-500  hover:underline">
+                            <a href="#" class="block mt-2 text-sm text-gray-500  hover:underline">
                                 Corporation</a>
                         </div>
 
                         <div>
                             <h3 class="text-gray-600 uppercase font-semibold">Contact</h3>
                             <span class="block mt-2 text-sm text-gray-500 ">+30 6947-885132</span>
-                            <span class="block mt-2 text-sm text-gray-500 ">Kolokotrwni THeodwrou 9,15233 Xalandri Attikis </span>
+                            <span class="block mt-2 text-sm text-gray-500 ">Kolokotrwni THeodwrou 9,15233 Xalandri
+                                Attikis </span>
                             <span class="block mt-2 text-sm text-gray-500 ">alef@email.com</span>
                         </div>
                     </div>
@@ -508,43 +511,42 @@
     </footer>
 
     <script>
-
         //toggle mega menu
         $('.mega-menu').hide();
-        $(window).ready(function() {
-        $("nav.inline-menu ul li").click(function () {
-        $(this).siblings().find(".mega-menu").hide();
-        $(this).find(".mega-menu").toggle();
-        });
+        $(window).ready(function () {
+            $("nav.inline-menu ul li").click(function () {
+                $(this).siblings().find(".mega-menu").hide();
+                $(this).find(".mega-menu").toggle();
+            });
 
-        // hide grid mega menu after click anywhere on the page
-        $("html").click(function(event) {
-        if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
-            $('.mega-menu').hide();
-        }
-        });
+            // hide grid mega menu after click anywhere on the page
+            $("html").click(function (event) {
+                if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
+                    $('.mega-menu').hide();
+                }
+            });
         });
 
         //restore main image on grid mega menu after click event anywhere on the page
-        $("html").click(function(event) {
-        if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
-            $("#srcImage1").show();
-            $("#srcImage2").show();
+        $("html").click(function (event) {
+            if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
+                $("#srcImage1").show();
+                $("#srcImage2").show();
 
-            $("div.mydiv").hide();    
-        }
+                $("div.mydiv").hide();
+            }
         });
 
         //change image on hover inside on grid mega menu
         $(document).ready(function () {
-        $(".mymultiplediv").mouseover(function () {
-        $("#srcImage1").hide();
-        $("#srcImage2").hide();
+            $(".mymultiplediv").mouseover(function () {
+                $("#srcImage1").hide();
+                $("#srcImage2").hide();
 
-        myvar = this.id;
-        $("div.mydiv").hide();
-        $("#div" + myvar).show();
-        });
+                myvar = this.id;
+                $("div.mydiv").hide();
+                $("#div" + myvar).show();
+            });
         });
 
         // grab everything we need
@@ -561,7 +563,6 @@
             var para = document.getElementById("scroll");
             para.classList.toggle("noscrollClass");
         };
-
     </script>
 
 </body>
