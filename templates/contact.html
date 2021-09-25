@@ -3,60 +3,55 @@
 {% block title %} Welcome to | {% endblock%}
 {% block content %}
 {% load static %}
- 
+<div class="flex flex-wrap justify-center  focus-within: mx-auto container px-32">
 
-
-
-
-
-<section class="relative h-full">
-  <div class="absolute inset-0 filter brightness-90">
-    <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style=""></iframe>
-  </div>
-  <div class="container px-0 py-4 xl:py-8 mx-auto flex">
-    <div class="relative  mx-auto ">
-
-       <div class="w-120 xl:w-160 mt-2 xl:mt-16 bg-white p-3 xl:p-7 rounded-md shadow-md">
-            <div class="text-center">
-                <h1 class="my-3 text-3xl font-semibold text-gray-700  ">Contact Us</h1>
-                <p class="text-gray-600 ">Fill up the form below to send us a message.</p>
-            </div>
-            <div class="m-7">
-                <form action="https://api.web3forms.com/submit" method="POST" id="form">
-
-                    <input type="hidden" name="apikey" value="YOUR_ACCESS_KEY_HERE">
-                    <input type="hidden" name="subject" value="New Submission from Web3Forms">
-                    <input type="checkbox" name="botcheck" id="" style="display: none;">
-
-
-                    <div class="mb-6">
-                        <label for="name" class="block mb-2 text-sm text-gray-600 ">Full Name</label>
-                        <input type="text" name="name" id="name" placeholder="John Doe" required class="w-full px-3 py-2 xl:py-3.5 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-100 focus:border-gray-300 dark:bg-gray-700 " />
-                    </div>
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 text-sm text-gray-600 ">Email Address</label>
-                        <input type="email" name="email" id="email" placeholder="you@company.com" required class="w-full px-3 py-2 xl:py-3 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-100 focus:border-gray-300 dark:bg-gray-700 " />
-                    </div>
-                  
-                    <div class="mb-6">
-                        <label for="message" class="block mb-2 text-sm text-gray-600 ">Your Message</label>
-
-                        <textarea   rows="4" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-1 xl:py-3 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-100 focus:border-gray-300 dark:bg-gray-700 " required></textarea>
-                    </div>
-                    <div class="mb-6">
-                        <button type="submit" class="w-full px-3 py-4 text-white bg-gray-700 rounded-md focus:bg-gray-900 focus:outline-none">Send Message</button>
-                    </div>
-                    <p class="text-base text-center text-gray-400" id="result">
-                    </p>
-                </form>
-            </div>
-        </div>
-
-
-
+    <div class="max-w-lg mx-auto py-12 md:py-32 ">
+      <div class="mb-8">
+        <span class="inline-block mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current text-gray-600 h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+        </span>
+        <h3 class="mb-2 text-lg text-gray-500">Address</h3>
+        <p class="text-2xl text-gray-600 font-heading">Kolokotrwni theodwrou 9 & Gkini Andrea 6</p>
+        <p class="text-2xl text-gray-600 font-heading">Chalandri, 15233</p>
+      </div>
+      <div>
+        <span class="inline-block mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current  text-gray-600 h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+        </span>
+        <h3 class="mb-2 text-lg text-gray-600">Contacts</h3>
+        <a class="inline-block text-2xl text-gray-600 font-heading" href="mailto:hello@shuffle.dev">info@alefhandmade.com</a>
+        <p class="text-2xl text-gray-600 font-heading py-1 ">+30-6947 885132</p>
+      </div>
     </div>
+  
+    <div class="max-w-lg mx-auto py-12 md:py-32 ">
+            <h2 class="mb-4 text-3xl text-gray-600 uppercase font-heading">Have questions?</h2>
+            <p class="mb-8 text-lg text-gray-500">What can we help you with?</p>
+            <div>
+              <input class="w-full mb-4 py-4 px-6 bg-gray-50 rounded-md border text-gray-600 font-medium outline-none placeholder-gray-300" type="text" placeholder="Type your full name">
+              <input class="w-full mb-6 py-4 px-6 bg-gray-50 rounded-md border text-gray-600 font-medium outline-none placeholder-gray-300" type="email" placeholder="Type your e-mail">
+              <textarea class="w-full h-40 mb-6 py-4 px-6 bg-gray-50 rounded-md border text-gray-600 font-medium resize-none outline-none placeholder-gray-300" placeholder="Your message..."></textarea>
+              <label class="block mb-6" for="">
+                <input type="checkbox">
+                <span class="text-sm text-gray-600">
+                  <span>By signing up, you agree to our</span>
+                  <a class="text-gray-600 hover:underline" href="#">Terms, Data Policy and Cookies Policy.</a>
+                </span>
+              </label>
+              <a class="inline-flex items-center justify-center py-4 px-6 rounded-md bg-gray-900 hover:bg-gray-800 transform duration-200" href="#">
+                <svg class="mr-3 h-4 w-4"   viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.01 3.16553H0V5.24886H12.01V8.37386L16 4.20719L12.01 0.0405273V3.16553Z" fill="white"></path>
+                </svg>
+                <span class="text-sm text-white font-heading">Send your message</span>
+              </a>
+            </div>
+          </div>
   </div>
-</section>
  
 
     
