@@ -3,57 +3,92 @@
 {% block title %} Welcome to | {% endblock%}
 {% block content %}
 {% load static %}
-<div class="flex flex-wrap justify-center  focus-within: mx-auto container px-32">
+ 
+<!-- 
 
-    <div class="max-w-lg mx-auto py-12 md:py-32 ">
-      <div class="mb-8">
-        <span class="inline-block mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current text-gray-600 h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-        </span>
-        <h3 class="mb-2 text-lg text-gray-500">Address</h3>
-        <p class="text-2xl text-gray-600 font-heading">Kolokotrwni theodwrou 9 & Gkini Andrea 6</p>
-        <p class="text-2xl text-gray-600 font-heading">Chalandri, 15233</p>
-      </div>
-      <div>
-        <span class="inline-block mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current  text-gray-600 h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-        </span>
-        <h3 class="mb-2 text-lg text-gray-600">Contacts</h3>
-        <a class="inline-block text-2xl text-gray-600 font-heading" href="mailto:hello@shuffle.dev">info@alefhandmade.com</a>
-        <p class="text-2xl text-gray-600 font-heading py-1 ">+30-6947 885132</p>
+<section class="py-20">
+    <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap justify-center -mx-4">
+
+        <div class="w-full lg:w-96 px-4 mb-12 lg:mb-0">
+          <div class="max-w-md">
+            <h2 class="mb-12 text-4xl font-semibold font-heading">Have questions?</h2>
+            <h3 class="mb-4 text-2xl font-semibold">Address</h3>
+            <a href="https://goo.gl/maps/ickKR1bWCTmPz5YPA" class="text-gray-500">Kolokotrwni theodwrou 9 & Gkini Andrea 6,</a>
+            <p class="mb-10 text-gray-500">Chalandri 15341</p>
+            <h3 class="mb-4 text-2xl font-semibold">Contact Us</h3>
+            <p class="text-gray-500">info@alefhandmade.com</p>
+            <p class="text-gray-500">+ 7-843-672-431</p>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-96 px-4">
+          <form action="#">
+            <div class="relative flex flex-wrap mb-6">
+              <input class="relative mb-2 md:mb-0 w-full py-4 pl-4 text-sm border rounded" type="text" placeholder="Daniel">
+              <span class="absolute top-0 left-0 ml-4 -mt-2 px-1 inline-block bg-white text-gray-500 text-xs">Name</span>
+            </div>
+            <div class="relative flex flex-wrap mb-6">
+              <input class="relative mb-2 md:mb-0 w-full py-4 pl-4 text-sm border rounded" type="email" placeholder="e.g username@provider.com">
+              <span class="absolute top-0 left-0 ml-4 -mt-2 px-1 inline-block bg-white text-gray-500 text-xs">Your email address</span>
+            </div>
+            <div class="relative flex flex-wrap mb-6">
+              <textarea class="relative mb-2 md:mb-0 w-full py-4 pl-4 text-sm border rounded resize-none" id="1" type="message" cols="30" rows="10" placeholder="Message..."></textarea>
+              <span class="absolute top-0 left-0 ml-4 -mt-2 px-1 inline-block bg-white text-gray-500 text-xs">Your message</span>
+            </div>
+            <button class="w-full inline-block px-6 py-4 text-sm text-white bg-black hover:bg-gray-800 rounded transition duration-200">Send message</button>
+          </form>
+        </div>
+
+
       </div>
     </div>
-  
-    <div class="max-w-lg mx-auto py-12 md:py-32 ">
-            <h2 class="mb-4 text-3xl text-gray-600 uppercase font-heading">Have questions?</h2>
-            <p class="mb-8 text-lg text-gray-500">What can we help you with?</p>
-            <div>
-              <input class="w-full mb-4 py-4 px-6 bg-gray-50 rounded-md border text-gray-600 font-medium outline-none placeholder-gray-300" type="text" placeholder="Type your full name">
-              <input class="w-full mb-6 py-4 px-6 bg-gray-50 rounded-md border text-gray-600 font-medium outline-none placeholder-gray-300" type="email" placeholder="Type your e-mail">
-              <textarea class="w-full h-40 mb-6 py-4 px-6 bg-gray-50 rounded-md border text-gray-600 font-medium resize-none outline-none placeholder-gray-300" placeholder="Your message..."></textarea>
-              <label class="block mb-6" for="">
-                <input type="checkbox">
-                <span class="text-sm text-gray-600">
-                  <span>By signing up, you agree to our</span>
-                  <a class="text-gray-600 hover:underline" href="#">Terms, Data Policy and Cookies Policy.</a>
-                </span>
-              </label>
-              <a class="inline-flex items-center justify-center py-4 px-6 rounded-md bg-gray-900 hover:bg-gray-800 transform duration-200" href="#">
-                <svg class="mr-3 h-4 w-4"   viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.01 3.16553H0V5.24886H12.01V8.37386L16 4.20719L12.01 0.0405273V3.16553Z" fill="white"></path>
-                </svg>
-                <span class="text-sm text-white font-heading">Send your message</span>
-              </a>
-            </div>
-          </div>
-  </div>
- 
+  </section>
 
-    
+<section class=" flex justify-center    py-20">
+    <div class="w-224 h-96"> 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.0440209203575!2d23.79679171452795!3d38.02275320562794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a198f758801c5d%3A0xd2d138270a60c1d7!2sAndrea%20Gkini%206%2C%20Chalandri%20152%2033!5e0!3m2!1sen!2sgr!4v1632696495326!5m2!1sen!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</section>
+
+-->
+
+
+<div class="grid sm:grid-cols-1 md:grid-cols-2  container mx-auto px-4 md:px-40 xl:px-56 3xl:px-80 gap-4 my-24">
+    <div class="w-full max-w-xl">
+      <h2 class="mb-12 text-4xl font-semibold font-heading">Have questions?</h2>
+      <h3 class="mb-4 text-2xl font-semibold">Address</h3>
+      <a href="https://goo.gl/maps/ickKR1bWCTmPz5YPA" class="text-gray-500">Kolokotrwni theodwrou 9 & Gkini Andrea 6,</a>
+      <p class="mb-10 text-gray-500">Chalandri 15341</p>
+      <h3 class="mb-4 text-2xl font-semibold">Contact Us</h3>
+      <p class="text-gray-500">info@alefhandmade.com</p>
+      <p class="text-gray-500">+ 7-843-672-431</p>
+    </div>
+  
+    <div class="w-full max-w-xl md:justify-self-end">
+      <form action="#">
+        <div class="relative flex flex-wrap mb-6">
+          <input class="relative mb-2 md:mb-0 w-full py-4 pl-4 text-sm border rounded" type="text" placeholder="Daniel">
+          <span class="absolute top-0 left-0 ml-4 -mt-2 px-1 inline-block bg-white text-gray-500 text-xs">Name</span>
+        </div>
+        <div class="relative flex flex-wrap mb-6">
+          <input class="relative mb-2 md:mb-0 w-full py-4 pl-4 text-sm border rounded" type="email" placeholder="e.g username@provider.com">
+          <span class="absolute top-0 left-0 ml-4 -mt-2 px-1 inline-block bg-white text-gray-500 text-xs">Your email address</span>
+        </div>
+        <div class="relative flex flex-wrap mb-6">
+          <textarea class="relative mb-2 md:mb-0 w-full py-4 pl-4 text-sm border rounded resize-none" id="1" type="message" cols="30" rows="10" placeholder="Message..."></textarea>
+          <span class="absolute top-0 left-0 ml-4 -mt-2 px-1 inline-block bg-white text-gray-500 text-xs">Your message</span>
+        </div>
+        <button class="w-full inline-block px-6 py-4 text-sm text-white bg-gray-900 hover:bg-gray-700 rounded transition duration-200">Send message</button>
+      </form>
+    </div>
+    <div class="md:col-span-2 max-w-xl md:max-w-full h-96 mt-4 md:mt-14 filter grayscale	">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.0440209204453!2d23.796791715616816!3d38.02275320562591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a198f758801c5d%3A0xd2d138270a60c1d7!2zzpHOvc60z4HOrc6xIM6TzrrOr869zrcgNiwgzqfOsc67zqzOvc60z4HOuSAxNTIgMzM!5e0!3m2!1sel!2sgr!4v1632738577538!5m2!1sel!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+  
+      </iframe>
+  
+    </div>
+  
+  </div>
 
     {% endblock %}
