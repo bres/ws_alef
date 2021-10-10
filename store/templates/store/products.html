@@ -1,37 +1,35 @@
 
 {% extends 'base.html' %}
-{% block title %} Welcome to | {% endblock%}
+{% block title %} Products of | {% endblock%}
 {% block content %}
 {% load static %}
- <section class="px-4 lg:px-12 py-6 bg-white">
-  
-    <div class="flex justify-between mb-4 items-center">
-  <div class="w-full lg:w-1/5 mb-4 sm:mb-0">
-    <p>Categories</p>
-  </div>
-  <div class="w-full  lg:w-4/5 flex-wrap items-center">
-    <div class="w-full flex justify-between items-center mb-4 sm:mb-0">
-      <nav class="text-black" aria-label="Breadcrumb">
-        <ul class="list-none p-0 inline-flex">
-          <li class="flex items-center">
-            <a href="#">Home</a>
-            <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-              <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
-            </svg>
-          </li>
-          <li class="flex items-center">
-            <a href="#">Bags</a>
-          </li>
-        </ul>
-      </nav>
-      <select class="px-2 py-4 bg-transparent  focus:outline-white   items-center " name="" id="">
+ <section class="px-4 xl:px-24 py-6 bg-white">
+
+  <div class="grid grid-cols-5">
+    <div class="flex items-center">
+      <ul class="list-none p-0 inline-flex">
+        <li class="flex items-center">
+          <a class="inline-block  font-medium font-heading capitalize text-gray-400" href="{% url 'home' %}">Home</a>
+          <svg class="fill-current text-gray-400 w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+          </svg>
+        </li>
+        <li class="flex items-center">
+          <a class="inline-block  font-medium font-heading capitalize text-gray-400" href="{% url 'store:all_products' %}">All Bags</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-start-2 col-span-6 flex justify-between items-center mb-4 sm:mb-0">
+      <div class="" aria-label="Create a product">
+        <a class="font-mono text-sm px-2 underline" href="{% url 'store:create_product' %}">Create a product</a>
+      </div>
+      <select class="px-2 py-4 bg-transparent  focus:outline-white text-gray-400  items-center " name="" id="">
         <option value="1">Sort by newest</option>
         <option value="2">Sort by price</option>
         <option value="3">Sort by most popular</option>
       </select>
     </div>
   </div>
-</div>
 
 
     <div class="flex flex-wrap mb-24">
@@ -41,12 +39,12 @@
             <div class="py-6 px-2 text-center bg-white">
               <a class="font-bold font-heading" href="#">Category</a>
               <ul class="hidden text-left mt-6">
-                <li class="mb-4"><a href="#">Leather bags</a></li>
-                <li class="mb-4"><a href="#">Pouches</a></li>
-                <li class="mb-4"><a href="#">Hobo Bags</a></li>
-                <li class="mb-4"><a href="#">Clutches</a></li>
-                <li class="mb-4"><a href="#">Back Packs</a></li>
-             
+                <li class="mb-4"><a href="#">ALL</a></li>
+                {% for c in categories %}
+                <li class="mb-4">
+                  <a href="{{ c.get_absolute_url }}">{{ c.name|title}} </a>
+                </li>
+                 {% endfor %}
                </ul>
             </div>
           </div>
@@ -148,17 +146,18 @@
         <div class="mb-6 py-2 ">
           <h3 class="mb-6 text-2xl font-bold font-heading">BAGS</h3>
           <ul>
-                <li class="mb-4"><a href="#">Leather bags</a></li>
-                <li class="mb-4"><a href="#">Pouches</a></li>
-                <li class="mb-4"><a href="#">Hobo Bags</a></li>
-                <li class="mb-4"><a href="#">Clutches</a></li>
-                <li class="mb-4"><a href="#">Back Packs</a></li>
+            <li class="mb-4"><a href="#">ALL</a></li>
+            {% for c in categories %}
+            <li class="mb-4">
+              <a href="{{ c.get_absolute_url }}">{{ c.name|title}} </a>
+            </li>
+             {% endfor %}
           </ul>
              <h3 class="mb-6 text-2xl font-bold font-heading mt-6">ACCESSORIES</h3>
           <ul>
              <li class="mb-4"><a href="#">Pouch</a></li>
              <li class="mb-4"><a href="#">Small Accessories</a></li>
-             
+
           </ul>
         </div>
         <div class="mb-6 py-2 pr-10 bg-white">
@@ -191,70 +190,41 @@
           </div>
         </div>
      </div>
-   
-       
+
+
       </div>
       <div class="w-full lg:w-4/5  py-2 ">
         <div class="flex flex-wrap  ">
-            <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
-                <a class="block mb-2" href="#">
-                <img class="mb-5 h-64 xl:h-72  w-full object-contain" src='{% static "img/box.jpg" %}' alt="">
-                <h3 class="mb-2 text-xl font-bold">BRILE water filter</h3>
-                <p class="text-lg font-bold font-heading text-blue-500">
-                $29.89
-                <span class="text-xs text-gray-500 font-semibold font-heading line-through">$33.69</span>
-                </p>
+          {% for product in products %}
+          <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
+            <a class="block mb-2" href="{{ product.get_absolute_url }} ">
+              <img class="mb-5 h-64 xl:h-72  w-full object-contain" src="{{ product.image.url }}" alt="">
+
+              <div class="flex justify-between items-center">
+                <h3 class="text-lg font-semibold items-center capitalize"> {{ product.title}} </h3>
+                <a class="flex items-center justify-center border border-gray-400 hover:border-gray-600 rounded-md p-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
                 </a>
-                <a class="ml-auto mr-2 flex items-center justify-center w-12 h-12 border rounded-lg hover:border-gray-500" href="#">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" width="2" height="12" fill="#161616"></rect><rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616"></rect></svg>
-                </a>
+              </div>
+              <p class="text-xl font-bold text-gray-700">
+                ${{ product.price }}
+                <span class="text-sm text-gray-400 font-semibold line-through"> $55 </span>
+              </p>
+            </a>
+            <div class="flex justify-center my-4 font-mono text-sm space-x-2">
+              <p><a href="{% url 'store:update_product' product.slug %}">Update</a><span> / <span><a href="{% url 'store:delete_product' product.slug %}">Delete</a></p>
             </div>
-            <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
-                <a class="block mb-2" href="#">
-                <img class="mb-5 h-64 xl:h-72  w-full object-contain" src='{% static "img/box.jpg" %}' alt="">
-                <h3 class="mb-2 text-xl font-bold font-heading">Bicycle S20</h3>
-                <p class="text-lg font-bold font-heading text-blue-500">
-                $14.30
-                <span class="text-xs text-gray-500 font-semibold font-heading line-through">$15.90</span>
-                </p>
-                </a>
-                <a class="ml-auto mr-2 flex items-center justify-center w-12 h-12 border rounded-lg hover:border-gray-500" href="#">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" width="2" height="12" fill="#161616"></rect><rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616"></rect></svg>
-                </a>
-            </div>
-            <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
-                <a class="block mb-2" href="#">
-                <img class="mb-5 h-64 xl:h-72 w-full object-contain" src='{% static "img/box.jpg" %}' alt="">
-                <h3 class="mb-2 text-xl font-bold font-heading">Nike basketball ball</h3>
-                <p class="text-lg font-bold font-heading text-blue-500">
-                $34.89
-                <span class="text-xs text-gray-500 font-semibold font-heading line-through">$33.69</span>
-                </p>
-                </a>
-                <a class="ml-auto mr-2 flex items-center justify-center w-12 h-12 border rounded-lg hover:border-gray-500" href="#">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" width="2" height="12" fill="#161616"></rect><rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616"></rect></svg>
-                </a>
-           </div>
-            <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
-                <a class="block mb-2" href="#">
-                <img class="mb-5 h-64 xl:h-72  w-full object-contain" src='{% static "img/box.jpg" %}' alt="">
-                <h3 class="mb-2 text-xl font-bold font-heading">Nike basketball ball</h3>
-                <p class="text-lg font-bold font-heading text-blue-500">
-                $34.89
-                <span class="text-xs text-gray-500 font-semibold font-heading line-through">$33.69</span>
-                </p>
-                </a>
-                <a class="ml-auto mr-2 flex items-center justify-center w-12 h-12 border rounded-lg hover:border-gray-500" href="#">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" width="2" height="12" fill="#161616"></rect><rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616"></rect></svg>
-                </a>
-            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
     <div class="text-center">
       <a class="inline-block bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase" href="#">Show More</a>
     </div>
- 
+
 </section>
 
 

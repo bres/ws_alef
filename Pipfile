@@ -10,6 +10,8 @@ whitenoise = "*"
 sqlparse = "*"
 pytz = "*"
 asgiref = "*"
+crispy-tailwind = "*"
+pillow = "*"
 
 [dev-packages]
 

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Welcome to | {% endblock%}
+{% block content %}
+{% load static %}
+{% load tailwind_filters %}
+
+
+
+
+
+<section class="w-full max-w-xl p-4 mt-8 xl:mt-12 mb-32  container mx-auto ">
+  <div class="p-10 border rounded-md shadow-md border-gray-200  ">   
+  <p class="text-3xl py-4 font-semibold">Sign up</p>
+  <form method="POST" action="{% url 'accounts:signup' %}">
+    {% csrf_token %}
+     {{ account_form|crispy }}
+     <input type="submit" value="Signup" class="w-full mt-3 text-sm font-bold   py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
+  </form>
+</div>
+</section>
+
+
+
+
+{% endblock %}          
