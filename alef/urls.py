@@ -3,7 +3,7 @@ from django.urls import path,include
 from .import views
 from django.conf import settings #for development
 from django.conf.urls.static import static #for development
- 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
@@ -11,6 +11,7 @@ urlpatterns = [
     path('about/',views.about,name='about'),
     path('products/', include('store.urls',namespace='store')),
     path('accounts/', include('accounts.urls',namespace='accounts')),
+    path('search/',views.product_search,name="product_search"),
 
 
 

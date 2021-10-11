@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 # Create your models here.
- 
+
 class Category(models.Model):
     name = models.CharField(max_length=255,db_index=True)
     slug = models.SlugField(max_length=255,unique=True)
@@ -21,7 +21,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
-    created_by = models.ForeignKey(User, related_name='product_creator', on_delete=models.CASCADE,default = None)
+    #created_by = models.ForeignKey(User, related_name='product_creator', on_delete=models.CASCADE,default = None)
     title = models.CharField(max_length=255)
     color = models.CharField(max_length=255)
     description = models.TextField(blank=True)
@@ -41,4 +41,4 @@ class Product(models.Model):
         return reverse('store:product_detail', args=[self.slug])
 
     def __str__(self):
-        return self.title 
+        return self.title

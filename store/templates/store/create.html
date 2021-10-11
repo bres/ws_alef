@@ -10,7 +10,7 @@
 
 
 <section class="w-full max-w-5xl p-4 m-4 mb-32  container mx-auto ">
-  <div class="py-6 px-6 lg:px-12 border rounded-md shadow-md border-gray-200  ">   
+  <div class="py-6 px-6 lg:px-12 border rounded-md shadow-md border-gray-200  ">
     <p class="text-2xl pt-2 pb-4 font-semibold">Create a product</p>
       <form method="POST" enctype="multipart/form-data" >
       {% csrf_token %}
@@ -22,22 +22,21 @@
             <li> {{  form.slug|as_crispy_field  }}</li>
             <li> {{  form.price|as_crispy_field }}</li>
             <li> {{  form.color|as_crispy_field }} </li>
-            </ul>        
+            </ul>
           </div>
           <div class="w-full lg:w-1/2 flex flex-col">
             <ul>
             <li> {{  form.description|as_crispy_field  }}</li>
-            <li> {{  form.created_by|as_crispy_field }}</li>
             <li class="flex space-x-6"> {{  form.in_stock|as_crispy_field }} <span> {{ form.is_active|as_crispy_field }}</span></li>
             <li> {{  form.image|as_crispy_field }} </li>
             <ul>
           </div>
         </div>
-        <input type="submit" value="Create" 
+        <input type="submit" value="Create"
         class="w-full  mt-3 text-sm font-bold py-3 rounded-md text-white bg-gray-900 hover:bg-gray-700 transition duration-200">
       </form>
   </div>
 </section>
-  
+
 
 {% endblock %}

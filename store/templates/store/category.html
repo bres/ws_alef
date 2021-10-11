@@ -4,9 +4,9 @@
 {% block content %}
 {% load static %}
  <section class="px-4 xl:px-24 py-6 bg-white">
-  
-    <div class="flex justify-between mb-4 items-center">
- 
+
+  <div class="flex justify-between mb-4 items-center">
+
   <div class="w-full  lg:w-5/5 flex-wrap items-center">
     <div class="w-full flex justify-between items-center mb-4 sm:mb-0">
       <nav class="" aria-label="Breadcrumb">
@@ -157,7 +157,7 @@
           <ul>
              <li class="mb-4"><a href="#">Pouch</a></li>
              <li class="mb-4"><a href="#">Small Accessories</a></li>
-             
+
           </ul>
         </div>
         <div class="mb-6 py-2 pr-10 bg-white">
@@ -190,11 +190,11 @@
           </div>
         </div>
      </div>
-   
-       
+
+
       </div>
       <div class="w-full lg:w-4/5  py-2 ">
-        <div class="flex flex-wrap  "> 
+        <div class="flex flex-wrap  ">
           {% for product in products %}
             <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
                 <a class="block mb-2" href="{{ product.get_absolute_url }} ">
@@ -216,7 +216,7 @@
     <div class="text-center">
       <a class="inline-block bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase" href="#">Show More</a>
     </div>
- 
+
 </section>
 
 

@@ -1,8 +1,14 @@
-
 {% extends 'base.html' %}
 {% block title %} Products of | {% endblock%}
 {% block content %}
 {% load static %}
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
+
+
+{% if searched %}
+<h1 class="text-center">You serched for  "{{ searched}}"</h1>
+
 <section class="px-4 xl:px-24 py-6 bg-white">
   <div class="grid grid-cols-5">
     <div class="flex items-center">
@@ -191,6 +197,10 @@
     </div>
     <div class="w-full lg:w-4/5  py-2 ">
       <div class="flex flex-wrap  ">
+
+
+
+
         {% for product in products %}
         <div class="w-full sm:w-1/2 md:w-1/4 mb-8 px-8">
           <a class="block mb-2" href="{{ product.get_absolute_url }} ">
@@ -222,5 +232,11 @@
   </div>
 </section>
 
+{% else %}
+<div class="mx-auto container flex justify-center h-full ">
+<h1 class="text-4xl border p-48 shadow-md ">You must search for something..</h1>
+</div
+{% endif %}
 
-{% endblock%}
+
+{% endblock %}

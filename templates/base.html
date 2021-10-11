@@ -4,88 +4,90 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <title>{% block title %} {% endblock%}Alef Handmade</title>
-    <style>
-        @font-face {
-            font-family: "Karla";
-            font-style: normal;
-            src: url('{% static "fonts/Karla/Karla-Regular.ttf" %}');
-            font-display: block;
-        }
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-        body {
-            font-family: 'Karla', sans-serif;
-        }
+  <title>{% block title %} {% endblock %}Alef Handmade</title>
+  <style>
+    @font-face {
+      font-family: "Karla";
+      font-style: normal;
+      src: url('{% static "fonts/Karla/Karla-Regular.ttf" %}');
+      font-display: block;
+    }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Karla', sans-serif;
+    body {
+      font-family: 'Karla', sans-serif;
+    }
 
-        }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Karla', sans-serif;
 
-        .mydiv {
-            display: none;
-        }
+    }
 
-        .noscrollClass {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            filter: grayscale(100%);
-        }
-    </style>
+    .mydiv {
+      display: none;
+    }
+
+    .noscrollClass {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      filter: grayscale(100%);
+    }
+  </style>
 
 </head>
 
 <body class="antialiased" id="scroll">
-    <!-- Information Bar-->
-    <div class="hidden lg:block w-full py-2 items-center bg-gray-100 border-b border-gray-200">
-        <p class="text-xs text-center  text-black font-medium roboto uppercase">
-            Free delivery from 50 € and easy returns!
-        </p>
-    </div>
-    <!-- Navbar -->
-    <div class="w-full sticky top-0 flex justify-between lg:justify-center bg-white shadow-sm z-40">
-        <!--  Two Levels Menu -->
-        <div class="w-full flex flex-col items-center space-y-1">
-            <!-- three columns top horizontal menu on a grid -->
-           <div class="w-full grid items-center grid-cols-3 py-2 px-4 xl:px-24">
-               
-                <div class="hidden lg:flex  items-center">
-                   <p class="text-gray-500">En / <span class="text-gray-300">Gr</span></p>
-                    
-                </div>
-               
-                <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-                    <h1 class="lg:text-4xl text-3xl text-gray-700 font-semibold text-center tracking-widest uppercase">
-                        alef
-                    </h1>
-                    
-                </a>
-                
-                <div class="items-center hidden space-x-5 lg:flex justify-end">
-                    <a href=""> 
-                        <svg class="fill-current text-gray-500 w-5 h-5" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>                    
-                    </a>
-                    <a href=""> 
-                        <svg class="fill-current text-gray-500 w-5 h-5" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 512 512"><path d="M448 160h-64v-4.5C384 87 329 32 260.5 32h-8C184 32 128 87 128 155.5v4.5H64L32 480h448l-32-320zm-288-4.5c0-50.7 41.8-91.5 92.5-91.5h8c50.7 0 91.5 40.8 91.5 91.5v4.5H160v-4.5zM67.8 448l24.9-256H128v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9 256H67.8z"/></svg>                   
-                     </a>
-                    <a  href="">
-                        <svg class="fill-current text-gray-500 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="log-in"><rect width="24" height="24" opacity="0" transform="rotate(-90 12 12)"/><path d="M19 4h-2a1 1 0 0 0 0 2h1v12h-1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM11.8 7.4a1 1 0 0 0-1.6 1.2L12 11H4a1 1 0 0 0 0 2h8.09l-1.72 2.44a1 1 0 0 0 .24 1.4 1 1 0 0 0 .58.18 1 1 0 0 0 .81-.42l2.82-4a1 1 0 0 0 0-1.18z"/></g></g></svg>
-                    </a>
-                </div>
-            </div>
- <!-- 
+  <!-- Information Bar-->
+  <div class="hidden lg:block w-full py-2 items-center bg-gray-100 border-b border-gray-200">
+    <p class="text-xs text-center  text-black font-medium roboto uppercase">
+      Free delivery from 50 € and easy returns!
+    </p>
+  </div>
+  <!-- Navbar -->
+  <div class="w-full sticky top-0 flex justify-between lg:justify-center bg-white shadow-sm z-40">
+    <!--  Two Levels Menu -->
+    <div class="w-full flex flex-col items-center space-y-1">
+      <!-- three columns top horizontal menu on a grid -->
+      <div class="w-full grid grid-cols-3 py-2 px-4 xl:px-24">
+        <div class="hidden lg:flex items-center">
+          <p class="text-gray-500">En / <span class="text-gray-300">Gr</span></p>
+        </div>
+        <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
+          <h1 class="lg:text-4xl text-3xl text-gray-700 font-semibold text-center tracking-widest uppercase">
+            alef
+          </h1>
+        </a>
+        <div class=" hidden items-center lg:flex justify-end space-x-4">
+          <form class="my-4 flex" method="POST" action="{% url 'product_search' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="Search by product" name="search" class="text-sm border-b  focus:border-gray-700 outline-none">
+            <button type="submit" value="search" class="">
+              <i class="fal fa-search text-gray-500"></i>
+            </button>
+          </form>
+
+          <a class="" href="">
+            <i class="fal fa-shopping-bag text-gray-500"></i>
+          </a>
+
+          <a href="">
+            <i class="fal fa-sign-in-alt text-gray-500"></i>
+          </a>
+        </div>
+      </div>
+      <!--
             <div class="w-full  items-center  py-2 px-4 xl:px-24 ">
 
                 <div class="relative w-full flex justify-center">
@@ -94,9 +96,9 @@
                       alef
                     </h1>
                   </a>
-               
-              
-                
+
+
+
                 <div class="flex items-center absolute right-0 top-0 bottom-0 items-center">
                   <a aria-label=" " href=" " title=" ">
                     <?xml version="1.0" encoding="UTF-8"?>
@@ -111,290 +113,253 @@
  -->
 
 
-            <!-- horizontal second menu -->
-            <div class="hidden relative justify-center lg:flex w-full py-1 text-gray-700">
-                <nav class="inline-menu flex text-sm xl:text-md h-10  items-center">
-                    <!-- hidden dropdown  with javascript configuration -->
-                    <ul class="flex">
-                        <li>
-                            <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700  uppercase"
-                                href="#">
-                                Bags
-                            </a>
-                            <div
-                                class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
-
-                                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-24  shadow-md">
-
-                                    <div class="cols-span-1 pt-6">
-                                        <div class="flex flex-col space-y-2">
-                                            <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                                            <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
-                                            <a href="#" class="text-sm font-bold uppercase ">offers</a>
-                                            <a href="#" class="text-sm font-bold uppercase ">collection x</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-span-2 pt-6 w-24">
-                                        <ul class="flex flex-col space-y-2">
-                                            <li class=""><a href="{% url 'store:all_products' %}" class="mymultiplediv" id="zero">ALL</a></li>
-                                            {% for c in categories %}
-                                            <li class="mb-4">
-                                                <a href="{{ c.get_absolute_url }}" class="mymultiplediv"
-                                                    id="{{ c.divnumber }}">{{ c.name|title}} </a>
-                                            </li>
-                                            {% endfor %}
-
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-span-4">
-                                        <div class="flex justify-end h-full">
-                                            <div>
-                                                <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
-                                                <div>
-                                                    <div class="mydiv " id="divzero">
-                                                        <img src='{% static "img/bags.jpg" %}' alt="Manager"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                    <div class="mydiv " id="divone">
-                                                        <img src='{% static "img/leather.jpg" %}' alt="Manager"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                    <div class="mydiv" id="divtwo">
-                                                        <img src='{% static "img/pouches.jpg" %}' alt="HR"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                    <div class="mydiv" id="divthree">
-                                                        <img src='{% static "img/hobo.jpg" %}' alt="Developer"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                    <div class="mydiv" id="divfore">
-                                                        <img src='{% static "img/clutch.jpg" %}' alt="Designer"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                    <div class="mydiv" id="divfive">
-                                                        <img src='{% static "img/backpack.jpg" %}' alt="Designer"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                        </li>
-
-                        <li>
-                            <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700  uppercase"
-                                href="#">
-                                Accessories
-                            </a>
-                            <div
-                                class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
-
-                                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-24  shadow-md">
-
-                                    <div class="cols-span-1 pt-6">
-                                        <div class="flex flex-col space-y-4">
-                                            <a href="#" class="text-sm font-bold uppercase">new arrivals</a>
-                                            <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                                            <a href="#" class="text-sm font-bold uppercase">offers</a>
-                                            <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-span-2 pt-6 w-24">
-                                        <div class="flex flex-col space-y-2">
-                                            <a href="#" class="mymultiplediv" id="six"> <span
-                                                    class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Leather
-                                                    Bags</span></a>
-                                            <a href="#" class="mymultiplediv" id="seven"> <span
-                                                    class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Pouches</span></a>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-span-4">
-                                        <div class="flex justify-end h-full">
-                                            <div>
-                                                <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
-                                                <div>
-                                                    <div class="mydiv " id="divsix">
-                                                        <img src='{% static "img/key.jpg" %}' alt="Manager"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                    <div class="mydiv" id="divseven">
-                                                        <img src='{% static "img/pouch.jpg" %}' alt="HR"
-                                                            class="h-64 w-64 object-cover object-center" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                        </li>
-
-                        <li>
-                            <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase"
-                                href="#">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase"
-                                href="#">
-                                Materials
-                            </a>
-                        </li>
-                        <li>
-                            <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase"
-                                href="{% url 'contact' %}">
-                                Contact
-                            </a>
-                        </li>
+      <!-- horizontal second menu -->
+      <div class="hidden relative justify-center lg:flex w-full py-1 text-gray-700">
+        <nav class="inline-menu flex text-sm xl:text-md h-10  items-center">
+          <!-- hidden dropdown  with javascript configuration -->
+          <ul class="flex">
+            <li>
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700  uppercase" href="#">
+                Bags
+              </a>
+              <div class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
+                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-24  shadow-md">
+                  <div class="cols-span-1 pt-6">
+                    <div class="flex flex-col space-y-2">
+                      <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
+                      <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
+                      <a href="#" class="text-sm font-bold uppercase ">offers</a>
+                      <a href="#" class="text-sm font-bold uppercase ">collection x</a>
+                    </div>
+                  </div>
+                  <div class="col-span-2 pt-6 w-24">
+                    <ul class="flex flex-col space-y-2">
+                      <li class=""><a href="{% url 'store:all_products' %}" class="mymultiplediv" id="zero">ALL</a></li>
+                      {% for c in categories %}
+                      <li class="mb-4">
+                        <a href="{{ c.get_absolute_url }}" class="mymultiplediv" id="{{ c.divnumber }}">{{ c.name|title}} </a>
+                      </li>
+                      {% endfor %}
                     </ul>
-                </nav>
-            </div>
-        </div>
-        <!-- right button for mobile-screens with flex -->
-        <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
-            <!--FIXME:FIX THE ONFOCUS  -->
-            <button class="mobile-menu-button text-gray-800" onclick="myFunc()">
-                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                    </path>
-                </svg>
-            </button>
-        </div>
-    </div>
-    <!-- Navbar ends -->
-    <!-- Mobile responsive -->
-    <div
-        class="sidebar min-h-screen lg:hidden absolute transform -translate-x-full transition left-0 top-0 duration-300 ease-in-out w-64 rounded-tr-md bg-gradient-to-bl from-white to-gray-50 border-r border-gray-200 shadow-md z-50">
-        <nav class="px-8">
-            <div>
-                <p
-                    class="text-gray-800 tracking-widest text-center text-md font-bold py-4 border-b pb-10 border-gray-300 mb-6">
-                    search area..
-                </p>
-                <p class="text-gray-400 tracking-wide text-xl font-medium ml-2 w-full">
-                    BAGS
-                </p>
-                <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">Eco Leather
-                        Bags</span>
-                </a>
-                <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">BackPacks</span>
-                </a>
-                <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">Pouches</span>
-                </a>
-                <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">CLUTCHES</span>
-                </a>
-                <a class="text-gray-800 flex items-center p-2 mt-2 mb-4" href="#"><span class="text-sm">Hobo Bags</span>
-                </a>
-            </div>
-            <div>
-                <p
-                    class="text-gray-400 font-medium tracking-wide text-md ml-2 w-full border-b pb-2 border-gray-300 mb-4">
-                    INFORMATIONS
-                </p>
-                <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span
-                        class="text-sm font-normal">About</span></a> <a class="text-gray-800 flex items-center p-2 my-2"
-                    href="#"><span class="text-sm font-normal">Materials</span></a> <a
-                    class="text-gray-800 flex items-center p-2 my-2" href="#"><span
-                        class="text-sm font-normal">Contact</span></a>
-            </div>
+                  </div>
+                  <div class="col-span-4">
+                    <div class="flex justify-end h-full">
+                      <div>
+                        <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
+                        <div>
+                          <div class="mydiv " id="divzero">
+                            <img src='{% static "img/bags.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                          <div class="mydiv " id="divone">
+                            <img src='{% static "img/leather.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                          <div class="mydiv" id="divtwo">
+                            <img src='{% static "img/pouches.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                          <div class="mydiv" id="divthree">
+                            <img src='{% static "img/hobo.jpg" %}' alt="Developer" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                          <div class="mydiv" id="divfore">
+                            <img src='{% static "img/clutch.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                          <div class="mydiv" id="divfive">
+                            <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </li>
+            <li>
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700  uppercase" href="#">
+                Accessories
+              </a>
+              <div class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
+
+                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-24  shadow-md">
+
+                  <div class="cols-span-1 pt-6">
+                    <div class="flex flex-col space-y-4">
+                      <a href="#" class="text-sm font-bold uppercase">new arrivals</a>
+                      <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
+                      <a href="#" class="text-sm font-bold uppercase">offers</a>
+                      <a href="#" class="text-sm font-bold uppercase">collection x</a>
+                    </div>
+                  </div>
+                  <div class="col-span-2 pt-6 w-24">
+                    <div class="flex flex-col space-y-2">
+                      <a href="#" class="mymultiplediv" id="six"> <span class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Leather
+                          Bags</span></a>
+                      <a href="#" class="mymultiplediv" id="seven"> <span class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Pouches</span></a>
+                    </div>
+                  </div>
+                  <div class="col-span-4">
+                    <div class="flex justify-end h-full">
+                      <div>
+                        <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
+                        <div>
+                          <div class="mydiv " id="divsix">
+                            <img src='{% static "img/key.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                          <div class="mydiv" id="divseven">
+                            <img src='{% static "img/pouch.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </li>
+            <li>
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase" href="#">
+                About
+              </a>
+            </li>
+            <li>
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase" href="#">
+                Materials
+              </a>
+            </li>
+            <li>
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase" href="{% url 'contact' %}">
+                Contact
+              </a>
+            </li>
+          </ul>
         </nav>
+      </div>
     </div>
-    <!-- block content-->
-    {% block content %}
+    <!-- right button for mobile-screens with flex -->
+    <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
+      <!--FIXME:FIX THE ONFOCUS  -->
+      <button class="mobile-menu-button text-gray-800" onclick="myFunc()">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Navbar ends -->
+  <!-- Mobile responsive -->
+  <div class="sidebar min-h-screen lg:hidden absolute transform -translate-x-full transition left-0 top-0 duration-300 ease-in-out w-64 rounded-tr-md bg-gradient-to-bl from-white to-gray-50 border-r border-gray-200 shadow-md z-50">
+    <nav class="px-8">
+      <div>
+        <p class="text-gray-800 tracking-widest text-center text-md font-bold py-4 border-b pb-10 border-gray-300 mb-6">
+          search area..
+        </p>
+        <p class="text-gray-400 tracking-wide text-xl font-medium ml-2 w-full">
+          BAGS
+        </p>
+        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">Eco Leather
+            Bags</span>
+        </a>
+        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">BackPacks</span>
+        </a>
+        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">Pouches</span>
+        </a>
+        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">CLUTCHES</span>
+        </a>
+        <a class="text-gray-800 flex items-center p-2 mt-2 mb-4" href="#"><span class="text-sm">Hobo Bags</span>
+        </a>
+      </div>
+      <div>
+        <p class="text-gray-400 font-medium tracking-wide text-md ml-2 w-full border-b pb-2 border-gray-300 mb-4">
+          INFORMATIONS
+        </p>
+        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm font-normal">About</span></a> <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm font-normal">Materials</span></a> <a
+          class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm font-normal">Contact</span></a>
+      </div>
+    </nav>
+  </div>
+  <!-- block content-->
+  {% block content %}
 
-    {% endblock %}
-    <!-- end block content-->
+  {% endblock %}
+  <!-- end block content-->
 
-    <!-- footer section-->
-  
-    <section class="px-4 xl:px-24 py-12 bg-gray-100 border-t border-gray-200">
-        <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
-         <div class="w-full lg:w-2/5 px-3 mb-6 lg:mb-0">
-           <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
-                 <p class="text-gray-600 text-lg">Alef Handmade</p>
-                 <p class="text-gray-600 mt-4 text-2xl font-medium">WE CREATE BAGS<br>
-                     TO CARRY OUR WORLDS...</p>
-           </a>
-         </div>
-         <div class="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
-             <p class="mb-2 lg:mb-4 lg:text-lg font-semibold font-heading text-gray-600">Social</p>
-             <p class="lg:text-lg text-gray-500"> Instagram</p>
-             <p class="lg:text-lg text-gray-500"> Etsy</p>
-         </div>
-         <div class="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
-           <p class="mb-2 lg:mb-4 lg:text-lg font-semibold font-heading text-gray-600">Office</p>
-           <p class="lg:text-lg text-gray-500">Kolokotrwni theodwrou 9 & <br>Gkini Andrea 6, Chalandri</p>
-         </div>
-         <div class="w-full lg:w-1/5 pr-3">
-           <p class="mb-2 lg:mb-4 lg:text-lg font-semibold font-heading text-gray-600">Contacts</p>
-           <p class="lg:text-lg text-gray-500">info@alefhandmade.com</p>
-           <p class="lg:text-lg text-gray-500">+30 6980-256899</p>
-         </div>
-     
-       </div>
-       <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-gray-300">
-         <p class="mt-6 text-xs text-gray-500">© 2020. All rights reserved.</p>
-       </div>
-    </section>
-    <script>
-        //toggle mega menu
-        $('.mega-menu').hide();
-        $(window).ready(function () {
-            $("nav.inline-menu ul li").click(function () {
-                $(this).siblings().find(".mega-menu").hide();
-                $(this).find(".mega-menu").toggle();
-            });
+  <!-- footer section-->
 
-            // hide grid mega menu after click anywhere on the page
-            $("html").click(function (event) {
-                if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
-                    $('.mega-menu').hide();
-                }
-            });
-        });
+  <section class="px-4 xl:px-24 py-12 bg-gray-100 border-t border-gray-200">
+    <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
+      <div class="w-full lg:w-2/5 px-3 mb-6 lg:mb-0">
+        <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
+          <p class="text-gray-600 text-lg">Alef Handmade</p>
+          <p class="text-gray-600 mt-4 text-2xl font-medium">WE CREATE BAGS<br>
+            TO CARRY OUR WORLDS...</p>
+        </a>
+      </div>
+      <div class="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
+        <p class="mb-2 lg:mb-4 lg:text-lg font-semibold font-heading text-gray-600">Social</p>
+        <p class="lg:text-lg text-gray-500"> Instagram</p>
+        <p class="lg:text-lg text-gray-500"> Etsy</p>
+      </div>
+      <div class="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
+        <p class="mb-2 lg:mb-4 lg:text-lg font-semibold font-heading text-gray-600">Office</p>
+        <p class="lg:text-lg text-gray-500">Kolokotrwni theodwrou 9 & <br>Gkini Andrea 6, Chalandri</p>
+      </div>
+      <div class="w-full lg:w-1/5 pr-3">
+        <p class="mb-2 lg:mb-4 lg:text-lg font-semibold font-heading text-gray-600">Contacts</p>
+        <p class="lg:text-lg text-gray-500">info@alefhandmade.com</p>
+        <p class="lg:text-lg text-gray-500">+30 6980-256899</p>
+      </div>
 
-        //restore main image on grid mega menu after click event anywhere on the page
-        $("html").click(function (event) {
-            if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
-                $("#srcImage1").show();
-                $("#srcImage2").show();
+    </div>
+    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-gray-300">
+      <p class="mt-6 text-xs text-gray-500">© 2020. All rights reserved.</p>
+    </div>
+  </section>
+  <script>
+    //toggle mega menu
+    $('.mega-menu').hide();
+    $(window).ready(function() {
+      $("nav.inline-menu ul li").click(function() {
+        $(this).siblings().find(".mega-menu").hide();
+        $(this).find(".mega-menu").toggle();
+      });
 
-                $("div.mydiv").hide();
-            }
-        });
+      // hide grid mega menu after click anywhere on the page
+      $("html").click(function(event) {
+        if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
+          $('.mega-menu').hide();
+        }
+      });
+    });
 
-        //change image on hover inside on grid mega menu
-        $(document).ready(function () {
-            $(".mymultiplediv").mouseover(function () {
-                $("#srcImage1").hide();
-                $("#srcImage2").hide();
+    //restore main image on grid mega menu after click event anywhere on the page
+    $("html").click(function(event) {
+      if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
+        $("#srcImage1").show();
+        $("#srcImage2").show();
 
-                myvar = this.id;
-                $("div.mydiv").hide();
-                $("#div" + myvar).show();
-            });
-        });
+        $("div.mydiv").hide();
+      }
+    });
 
-        // grab everything we need
-        const btn = document.querySelector(".mobile-menu-button");
-        const menu = document.querySelector(".sidebar");
-        // add event listeners
-        //Toggle Nav //
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("-translate-x-full");
-        });
+    //change image on hover inside on grid mega menu
+    $(document).ready(function() {
+      $(".mymultiplediv").mouseover(function() {
+        $("#srcImage1").hide();
+        $("#srcImage2").hide();
 
-        //toggle noscroll
-        function myFunc() {
-            var para = document.getElementById("scroll");
-            para.classList.toggle("noscrollClass");
-        };
-    </script>
+        myvar = this.id;
+        $("div.mydiv").hide();
+        $("#div" + myvar).show();
+      });
+    });
+
+    // grab everything we need
+    const btn = document.querySelector(".mobile-menu-button");
+    const menu = document.querySelector(".sidebar");
+    // add event listeners
+    //Toggle Nav //
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("-translate-x-full");
+    });
+
+    //toggle noscroll
+    function myFunc() {
+      var para = document.getElementById("scroll");
+      para.classList.toggle("noscrollClass");
+    };
+  </script>
 
 </body>
 
