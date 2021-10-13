@@ -8,18 +8,28 @@
 
 
 
+
+
 <section class="w-full max-w-xl p-4 mt-8 xl:mt-12 mb-32  container mx-auto ">
-  <div class="p-10 border rounded-md shadow-md border-gray-200  ">   
+  <div class="p-10 border rounded-md shadow-md border-gray-200  ">
+    {% if not request.user.is_authenticated %}
+
   <p class="text-3xl py-4 font-semibold">Sign up</p>
-  <form method="POST" action="{% url 'accounts:signup' %}">
+  <form method="POST" action="">
     {% csrf_token %}
      {{ account_form|crispy }}
-     <input type="submit" value="Signup" class="w-full mt-3 text-sm font-bold   py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
+     <input type="submit" value="Sign up" class="w-full mt-3 text-sm font-bold   py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
   </form>
+  <p>Already have an account? Please <a class="text-gray-400 underline" href='/login'>Log in </a>
+  {% else %}
+
+  <p>You are already logged in and cannot sign up.Would you like to <a href="{% url 'accounts:logout' %}" class="underline">logout</a> ?</p>
+
+  {% endif %}
 </div>
 </section>
 
 
 
 
-{% endblock %}          
+{% endblock %}

@@ -146,8 +146,7 @@
         <div class="mb-6 py-2 ">
           <h3 class="mb-6 text-2xl font-bold font-heading">BAGS</h3>
           <ul>
-            <li class="mb-4"><a href="{% url 'store:all_products' %} ">ALL</a></li>
-            {% for c in categories %}
+             {% for c in categories %}
             <li class="mb-4">
               <a href="{{ c.get_absolute_url }}">{{ c.name|title }} </a>
             </li>

@@ -10,7 +10,7 @@ urlpatterns = [
     path('contact/',views.contact,name='contact'),
     path('about/',views.about,name='about'),
     path('products/', include('store.urls',namespace='store')),
-    path('accounts/', include('accounts.urls',namespace='accounts')),
+    path('', include('accounts.urls',namespace='accounts')),
     path('search/',views.product_search,name="product_search"),
 
 

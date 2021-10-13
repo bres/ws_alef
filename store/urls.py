@@ -6,10 +6,11 @@ app_name = 'store'
 urlpatterns = [
 
 path('',views.all_products,name='all_products'),
-path('item/<slug:slug>/',views.product_detail, name='product_detail'),
-path('search/<slug:category_slug>/',views.category_list,name="category_list"),
 path('create-product/',views.create_product,name="create_product"),
 path('update-product/<slug:slug>/',views.update_product,name="update_product"),
 path('delete-product/<slug:slug>/',views.delete_product,name="delete_product"),
+path('item/<slug:slug>/',views.product_detail, name='product_detail'),
+path('search/<slug:category_slug>/',views.category_list,name="category_list"),
+
 
 ]
