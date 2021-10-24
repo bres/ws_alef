@@ -9,12 +9,9 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('contact/',views.contact,name='contact'),
     path('about/',views.about,name='about'),
-    path('products/', include('store.urls',namespace='store')),
+    #path('products/', include('store.urls',namespace='store')),
     path('', include('accounts.urls',namespace='accounts')),
-    path('search/',views.product_search,name="product_search"),
-
-
-
+    path('shop/', include('shop.urls', namespace='shop')),
 ]
 
 if settings.DEBUG:

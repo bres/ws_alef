@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}{% if category %}{{ category.name }}{% else %}Products{% endif %}{% endblock %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+    <section class="bg-white min-h-screen">
+        <div class=" px-4 xl:px-24 py-8  ">
+            <div class="lg:flex lg:-mx-2">
+                <div class="space-y-3 lg:w-1/5 lg:px-2 lg:space-y-4">
+                <h3>Categories</h3>
+                <ul class="pb-10">
+                <li {% if not category %}class="selected"{% endif %}>
+                <a href="{% url "shop:product_list" %}">All</a>
+                </li>
+                {% for c in categories %}
+                <li {% if category.slug == c.slug %}class="selected"
+                {% endif %}>
+                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+                {% endfor %}
+                </ul>
+                 {% if user.is_authenticated and user.is_superuser %}
+                 <a class="text-md underline" href="{% url 'shop:create_product' %}">Create a product</a>
+                  {% endif %}
+                </div>
+
+                <div class="mt-6 lg:mt-0 lg:px-2 lg:w-4/5 ">
+
+                    <div class="flex items-center justify-between text-sm tracking-widest uppercase ">
+                        <p class="text-gray-500 dark:text-gray-300"> {% if category %}{{ category.name }}{% else %}Products
+       {% endif %} </p>
+                        <div class="flex items-center">
+                            <p class="text-gray-500 dark:text-gray-300">Sort</p>
+                            <select class="font-medium text-gray-700 bg-transparent dark:text-gray-500 focus:outline-none">
+                                <option value="#">Recommended</option>
+                                <option value="#">Size</option>
+                                <option value="#">Price</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+                        {% for product in products %}
+                            <div class="group relative">
+        <div class="w-full  aspect-w-1 aspect-h-1 rounded-sm overflow-hidden  ">
+          <img src="{% if product.image %}{{ product.image.url }}
+                    {% else %}
+                    {% static "img/default.png" %}
+                    {% endif %}" alt="" class="w-full h-full object-center object-cover ">
+        </div>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ product.get_absolute_url }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                {{ product.name }}
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Black</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">${{ product.marked_price }}</p>
+        </div>
+                            </div>
+
+
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

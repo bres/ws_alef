@@ -4,29 +4,31 @@
 {% load static %}
 {% load tailwind_filters %}
 
-<section class="w-full max-w-xl p-4 mt-8 xl:mt-12 mb-32  container mx-auto ">
-  <div class="p-10 border rounded-md shadow-md border-gray-200  ">
-    {% if not request.user.is_authenticated %}
-
-    <p class="text-3xl py-4 font-semibold">Log in</p>
-    <form method="POST" action="{% url 'accounts:login' %}">
-      {% csrf_token %}
-      {{ account_form|crispy }}
-      {% if request.GET.next %}
-      <input type="hidden" name="next" value="{{ request.GET.next }}"/>
-      {% endif %}
 
 
-      <input type="submit" value="Log in" class="w-full mt-3 text-sm font-bold py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
-    </form>
-    <p>Need an account? Please <a class="text-gray-400 underline" href='/signup'>Sign up</a>
 
-      {% else %}
-
-    <p>You are already logged in.Would you like to <a href="{% url 'accounts:logout' %}" class="underline">logout</a> ?</p>
-
-    {% endif %}
-  </div>
+<section class="min-h-screen w-full  flex  ">
+<div class="w-full lg:w-2/5 p-4 xl:px-24">
+{% if not request.user.is_authenticated %}
+<p class="text-3xl py-4 font-semibold">Log in</p>
+<form method="POST" action="{% url 'accounts:login' %}">
+{% csrf_token %}
+{{ account_form|crispy }}
+{% if request.GET.next %}
+<input type="hidden" name="next" value="{{ request.GET.next }}"/>
+{% endif %}
+<input type="submit" value="Log in" class="w-full mt-3 text-sm font-bold py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
+</form>
+<p>Need an account? Please <a class="text-gray-400 underline" href='/signup'>Sign up</a>
+{% else %}
+<p>You are already logged in.Would you like to <a href="{% url 'accounts:logout' %}" class="underline">logout</a> ?</p>
+{% endif %}
+</div>
+<div class="hidden lg:block w-3/5  bg-blue-600">
+<div class="flex items-center h-full">
+<img class="object-cover w-full h-full" src="{% static "img/signup.jpg" %}" alt="">
+</div>
+</div>
 </section>
 
 {% endblock %}

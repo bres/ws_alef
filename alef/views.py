@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import ContactForm,ProductSearchForm
-from store.models import Product
+
 # Create your views here.
 
 def home(request):
@@ -23,12 +23,4 @@ def about(request):
     return render(request,'about.html')
 
 
-def product_search(request):
-    if request.method == 'POST':
-        searched = request.POST.get('search')
-        products=Product.objects.filter(title__icontains=searched)
-        context = { 'searched':searched ,'products':products }
-        return render(request, 'product_search.html', context)
 
-    else:
-        return render(request, 'product_search.html')

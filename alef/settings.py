@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "crispy_forms",  #new
     "crispy_tailwind", #new
-    'store', #new
     'accounts', #new
+    'shop', #new
  ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
@@ -73,7 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'store.views.categories',
+
             ],
         },
     },
@@ -134,8 +134,10 @@ STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # new
 
+#MEDIA_URL is the reference URL for browser to access the files over Http.
 MEDIA_URL = '/media/'
-MEDIA_ROOT =os.path.join(BASE_DIR, 'media/')
+#MEDIA_ROOT is for server path to store files in the computer.
+MEDIA_ROOT =os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

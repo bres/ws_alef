@@ -5,7 +5,7 @@
 {% load static %}
 {% load tailwind_filters %}
  
-<div class="grid sm:grid-cols-1 md:grid-cols-2  container mx-auto px-4 md:px-40 xl:px-56 3xl:px-80 gap-4 my-24">
+<section class="container mx-auto px-4 md:px-40 xl:px-56 3xl:px-80 min-h-screen grid sm:grid-cols-1 md:grid-cols-2 gap-4 ">
     <div class="w-full max-w-xl">
       <h2 class="mb-12 text-4xl font-semibold font-heading">Have questions?</h2>
       <h3 class="mb-4 text-2xl font-semibold">Address</h3>
@@ -22,13 +22,14 @@
          <button class="w-full mt-3 text-sm font-bold   py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">Send</button>
       </form>
     </div>
-    <div class="md:col-span-2 max-w-xl md:max-w-full h-96 mt-4 md:mt-14 ">
+
+    <div class="md:col-span-2 max-w-xl md:max-w-full h-96 mt-4  ">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.0440209204453!2d23.796791715616816!3d38.02275320562591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a198f758801c5d%3A0xd2d138270a60c1d7!2zzpHOvc60z4HOrc6xIM6TzrrOr869zrcgNiwgzqfOsc67zqzOvc60z4HOuSAxNTIgMzM!5e0!3m2!1sel!2sgr!4v1632738577538!5m2!1sel!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
   
       </iframe>
   
     </div>
   
-  </div>
+  </section>
 
     {% endblock %}

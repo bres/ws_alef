@@ -10,7 +10,7 @@ def signup_view(request):
             account_form.save()
             user = account_form.save() # i do not need get because user is inside on the form
             login(request,user)   #log the user in
-            return redirect("store:all_products")
+            return redirect("home")
     else: #if it is a get request
         account_form = UserCreationForm() # creating a fresh blank form
     return render(request,'accounts/signup.html',{'account_form':account_form})
@@ -24,7 +24,7 @@ def login_view(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
-                return redirect("store:all_products")
+                return redirect("home")
     else: #if it is a get request
         account_form = AuthenticationForm()
     return render(request,'accounts/login.html',{'account_form':account_form})
