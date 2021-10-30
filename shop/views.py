@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404,render,redirect,HttpResponse
 from django.contrib.auth.decorators import  login_required
-from .models import Category, Product
+from .models import Product
+from category.models import Category
 from .forms import ProductForm
 
 # Create your views here.

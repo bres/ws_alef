@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "crispy_tailwind", #new
     'accounts', #new
     'shop', #new
+    'carts', #new
+    'category', #new
  ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
