@@ -7,8 +7,8 @@
 
  <!-- Header -->
     <header class="flex justify-center items-center">
-        <img class="object-cover object-center w-screen  h-screen   lg:h-160  2xl:h-208 3xl:h-296 filter brightness-90" src='{% static "img/hero.jpg" %}'
-            alt="Architecture">
+        <img class="object-cover object-center w-screen h-screen lg:h-160 2xl:h-208 3xl:h-296 filter brightness-90" src='{% static "img/hero.jpg" %}'
+            alt="Hero image">
         <h1
             class="text-white md:leading-relaxed lg:leading-relaxed text-center font-bold text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl mt-10 md:pt-12 uppercase absolute z-10  ">
             We create bags<br />
@@ -126,7 +126,7 @@
           <div class="text-center pt-10">
             <a aria-label=""
                 class="text-sm font-bold px-8 py-4 text-white bg-gray-900  hover:bg-gray-700 transition duration-200"
-                href="/">
+                href="{% url 'store:product_list' %}">
                 VIEW GALLERY
             </a>
         </div>

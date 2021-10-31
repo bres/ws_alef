@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     "crispy_forms",  #new
     "crispy_tailwind", #new
     'accounts', #new
-    'shop', #new
-    'carts', #new
     'category', #new
+    'store', #new
+
  ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'category.context_processors.menu_links', #new
 
             ],
         },
@@ -83,6 +84,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alef.wsgi.application'
 
+#custom user models
+AUTH_USER_MODEL ='accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

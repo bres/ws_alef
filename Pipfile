@@ -12,6 +12,7 @@ pytz = "*"
 asgiref = "*"
 crispy-tailwind = "*"
 pillow = "*"
+blank = "*"
 
 [dev-packages]
 

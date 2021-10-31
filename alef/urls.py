@@ -11,8 +11,10 @@ urlpatterns = [
     path('about/',views.about,name='about'),
     #path('products/', include('store.urls',namespace='store')),
     path('', include('accounts.urls',namespace='accounts')),
-    path('shop/', include('shop.urls', namespace='shop')),
-    path('cart/', include('carts.urls', namespace='carts')),
+    #path('category/', include('category.urls', namespace='category')),
+
+    path('store/', include('store.urls', namespace='store')),
+    #path('cart/', include('carts.urls', namespace='carts')),
 
 ]
 
