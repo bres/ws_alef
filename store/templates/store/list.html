@@ -29,33 +29,37 @@
                             </select>
                         </div>
                     </div>
-                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                         {% for product in products %}
-                            <div class="group relative border p-2">
-                                <div class="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden">
-                                    <a href="{{ product.get_url }}"> <img src="{% if product.images %}{{ product.images.url }}
-                                                {% else %}
-                                                {% static "img/default.png" %}
-                                                {% endif %}" alt="" class="w-full h-full object-center object-cover">
-                                    </a>
-                                </div>
-                                <div class="mt-4 flex justify-between">
-                                    <div>
-                                        <h3 class="text-md text-gray-700 capitalize">
-                                            <a href="{{ product.get_url }}">
-                                                    {{ product.product_name }}
-                                            </a>
-                                        </h3>
-                                    <p class="text-md font-medium text-gray-900">€ {{ product.price }}</p>
-                                    </div>
-                                    {% if product.stock <= 0 %}
-                                    <small class="font-medium capitalize">out of stock</small>
-                                    {% else %}
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 border-2 border-gray-500 rounded-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                    </svg>
-                                    {% endif %}
-                                </div>
+                            <div class="border border-gray-200 p-2 xl:p-4">
+                            <div class="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden">
+                            <a href="{{ product.get_url }}"> <img src="{% if product.images %}{{ product.images.url }}
+                            {% else %}
+                            {% static "img/default.png" %}
+                            {% endif %}" alt="" class="w-full h-full object-center object-cover">
+                            </a>
+                            </div>
+                            <div class="mt-4 flex justify-between">
+
+                            <h3 class="text-sm xl:text-md text-gray-700 capitalize">
+                            <a href="{{ product.get_url }}">
+                            {{ product.product_name }}
+                            </a>
+                            </h3>
+                            <p class="text-sm xl:text-md font-medium text-gray-900">€ {{ product.price }}</p>
+                            </div>
+
+                            {% if product.stock <= 0 %}
+                            <small class="text-center font-medium text-red-500 capitalize">out of stock</small>
+                            {% else %}
+                            <div class="w-full flex justify-center items-center ">
+                            <a aria-label=""
+                                class="capitalize text-xs xl:text-sm rounded-sm font-bold my-2 px-4 py-2 xl:px-6 xl:py-3  text-white bg-gray-900  hover:bg-gray-700 transition duration-200"
+                                href="{{ product.get_url }}">
+                                details
+                            </a>
+                            </div>
+                            {% endif %}
                             </div>
                         {% endfor %}
                     </div>
