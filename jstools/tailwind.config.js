@@ -40,10 +40,7 @@ module.exports = {
   variants: {
     // The 'active' variant will be generated in addition to the defaults
     extend: {
-      display: ['group-hover'],
-      transitionDuration: ['group-hover'],
-      transitionProperty: ['group-hover' ]
-
+      backgroundColor: ['active'],
     }
   },
   plugins: [require('@tailwindcss/aspect-ratio')],

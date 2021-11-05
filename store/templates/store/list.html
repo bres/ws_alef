@@ -3,22 +3,31 @@
 {% load static %}
 {% block content %}
 
-    <section class="bg-white min-h-screen">
-        <div class="px-4 xl:px-24 py-8">
+
+
+    <section class="bg-white min-h-screen ">
+        <div class="px-4 xl:px-32 py-8">
             <div class="lg:flex lg:-mx-2">
-                <div class="space-y-3 lg:w-1/5 lg:px-2 lg:space-y-4 border border-gray-200 rounded-md">
-                    <h1 class="p-2 font-semibold text-lg text-gray-700">Categories</h1>
-                    <ul class="pl-2 pb-10 space-y-1">
+                <div class="lg:w-1/5 lg:px-2">
+                  {% if 'search' in request.path %}
+                  <p class="w-full bg-gray-900 py-1 font-bold text-xl text-gray-100 text-center uppercase tracking-widest">search results</p>
+                  {% else %}
+                  <p class="w-full bg-gray-900 py-1 font-bold text-xl text-gray-100 text-center uppercase tracking-widest">Store</p>
+                  {% endif %}
+                  <div class="space-y-3 lg:space-y-4 border border-gray-200 rounded-md p-4 mt-6 ">
+                    <h1 class="pt-2 font-semibold text-lg text-gray-700">Categories</h1>
+                    <ul class="pb-10 space-y-1">
                         <li class="capitalize text-gray-700"><a href="{% url 'store:product_list' %}">all products</a></li>
                         {% for category in links %}
                         <li class="capitalize text-gray-700"><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
                         {% endfor %}
                     </ul>
                     <a class="p-2 text-md underline capitalize" href="">Create a product</a>
+                    </div>
                 </div>
-                <div class="mt-6 lg:mt-0 lg:px-4 lg:w-4/5 ">
-                    <div class="flex items-center justify-between text-sm tracking-widest capitalize border-b border-gray-200 pb-2 ">
-                        <p class="text-gray-500 "><span class="font-semibold ">{{ product_count }}</span> Products Found
+                <div class="lg:mt-0 lg:px-4 lg:w-4/5 ">
+                    <div class="bg-gray-900 flex justify-between items-center  text-sm tracking-widest capitalize border-b border-gray-200 ">
+                        <p class="text-white text-xl py-1"><span class="font-semibold pl-4">{{ product_count }}</span> Products Found
                         </p>
                         <div class="flex items-center">
                             <p class="text-gray-500 dark:text-gray-300">Sort</p>
@@ -29,7 +38,8 @@
                             </select>
                         </div>
                     </div>
-                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+                      {% if products %}
                         {% for product in products %}
                             <div class="border border-gray-200 p-2 xl:p-4">
                             <div class="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden">
@@ -41,12 +51,12 @@
                             </div>
                             <div class="mt-4 flex justify-between">
 
-                            <h3 class="text-sm xl:text-md text-gray-700 capitalize">
+                            <h3 class="text-md xl:text-md text-gray-700 capitalize">
                             <a href="{{ product.get_url }}">
                             {{ product.product_name }}
                             </a>
                             </h3>
-                            <p class="text-sm xl:text-md font-medium text-gray-900">€ {{ product.price }}</p>
+                            <p class="text-md xl:text-md font-medium text-gray-900">€ {{ product.price }}</p>
                             </div>
 
                             {% if product.stock <= 0 %}
@@ -62,11 +72,52 @@
                             {% endif %}
                             </div>
                         {% endfor %}
+                        {% else %}
+                        <p class="text-xl px-4 pt-10 font-medium tracking-wide">No result found. Please try again.</p>
+                        {% endif %}
                     </div>
+                  <div class="mx-auto container mt-20">
+                  {% if products.has_other_pages %}
+                  <div class="flex  ">
+                  {% if products.has_previous %}
+                  <a href="?page={{products.previous_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-sm   hover:bg-gray-900  hover:text-white border border-gray-900 ">
+                  previous
+                  </a>
+                  {% else %}
+                  <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 bg-white border border-gray-900 rounded-sm   cursor-not-allowed">
+                  previous
+                  </a>
+                  {% endif %}
+                  {% for i in products.paginator.page_range %}
+                  {% if products.number == i %}
+                  <a href="#" class="bg-gray-900 flex  items-center px-4 py-2 mx-1 text-white transition-colors duration-200 transform border border-gray-900 rounded-sm hover:bg-gray-900 hover:text-white">
+                  {{i}}
+                  </a>
+                  {% else %}
+                  <a href="?page={{i}}" class="  flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-gray-900 rounded-sm   hover:bg-gray-900  hover:text-white">
+                  {{i}}
+                  </a>
+                  {% endif %}
+                  {% endfor %}
+                  {% if products.has_next %}
+                  <a href="?page={{products.next_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-gray-900 rounded-sm   hover:bg-gray-900  hover:text-white ">
+                  Next
+                  </a>
+                  {% else %}
+                  <a href="#" class="cursor-not-allowed flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-gray-900 rounded-sm   hover:bg-gray-900  hover:text-white ">
+                  Next
+                  </a>
+                  {% endif%}
+                  </div>
+                  {% endif %}
+                  </div>
                 </div>
             </div>
+
+
         </div>
     </section>
+
 
 
 {% endblock %}
