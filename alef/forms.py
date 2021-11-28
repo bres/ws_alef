@@ -13,6 +13,4 @@ class ContactForm(forms.Form):
             raise forms.ValidationError("email must be gmail")
         return email
 
-
-class ProductSearchForm(forms.Form):
-    q = forms.CharField()
+ 

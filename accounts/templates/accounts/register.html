@@ -7,17 +7,20 @@
 
 <section class="min-h-screen w-full  flex  ">
 <div class="w-full lg:w-2/5 p-4 xl:px-32">
-{% if not request.user.is_authenticated %}
-<p class="text-3xl py-6 font-semibold">Sign up</p>
-<form method="POST" action="">
+ <p class="text-3xl py-4 font-semibold">Sign up</p>
+{% include 'includes/alert.html' %}
+<form method="POST" action="{% url 'accounts:register' %}">
 {% csrf_token %}
-{{ account_form|crispy }}
-<input type="submit" value="Sign up" class="w-full mt-3 text-sm font-bold   py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
+{{ form |crispy}}
+<input type="submit" value="Register" class="w-full mt-3 text-sm font-bold py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
 </form>
-<p>Already have an account? Please <a class="text-gray-400 underline" href='/login'>Log in </a>
-{% else %}
+
+    {{ form.email.errors }}
+    {{ form.non_field_errors }}
+    <p class="mt-4">Have an account? <a href="{% url 'accounts:login' %}">Log In</a></p>
+
 <p>You are already logged in and cannot sign up.Would you like to <a href="{% url 'accounts:logout' %}" class="underline">logout</a> ?</p>
-{% endif %}
+
 </div>
 
 <div class="hidden lg:block w-3/5  bg-blue-600">
@@ -26,5 +29,9 @@
 </div>
 </div>
 </section>
+
+
+
+
 
 {% endblock %}

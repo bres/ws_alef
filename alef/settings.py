@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -26,8 +25,7 @@ SECRET_KEY = 'django-insecure-xhqx%2z$qkcfb60h0u3*r7=t7rx)+7_g8o@xzz!dz%gdfj-t19
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wsalef.herokuapp.com','127.0.0.1']
-
+ALLOWED_HOSTS = ['wsalef.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -37,17 +35,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic', # new
+    'whitenoise.runserver_nostatic',  # new
     'django.contrib.staticfiles',
-    "crispy_forms",  #new
-    "crispy_tailwind", #new
-    'accounts', #new
-    'category', #new
-    'store', #new
-    'carts', #new
+    "crispy_forms",  # new
+    "crispy_tailwind",  # new
+    'accounts',  # new
+    'category',  # new
+    'store',  # new
+    'carts',  # new
 
-
- ]
+]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
@@ -55,7 +52,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # new
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -64,7 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'alef.urls'
-LOGIN_URL='/login/'
+LOGIN_URL = '/login/'
 
 TEMPLATES = [
     {
@@ -77,8 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'category.context_processors.menu_links', #new
-                'carts.context_processors.counter', #new
+                'category.context_processors.menu_links',  # new
+                'carts.context_processors.counter',  # new
 
             ],
         },
@@ -87,8 +84,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alef.wsgi.application'
 
-#custom user models
-AUTH_USER_MODEL ='accounts.Account'
+# custom user models
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -99,7 +96,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -119,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -133,21 +128,34 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # new
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # new
 
-#MEDIA_URL is the reference URL for browser to access the files over Http.
+# MEDIA_URL is the reference URL for browser to access the files over Http.
 MEDIA_URL = '/media/'
-#MEDIA_ROOT is for server path to store files in the computer.
-MEDIA_ROOT =os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT is for server path to store files in the computer.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'bg-red-600',
+}
+
+
+#smtp configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'geobres@gmail.com'
+EMAIL_HOST_PASSWORD='agreatdev1978'
+EMAIL_USE_TLS=True

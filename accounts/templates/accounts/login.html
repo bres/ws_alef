@@ -6,7 +6,7 @@
 
 
 
-
+ <!-- 
 <section class="min-h-screen w-full  flex  ">
 <div class="w-full lg:w-2/5 p-4 xl:px-32">
 {% if not request.user.is_authenticated %}
@@ -19,11 +19,48 @@
 {% endif %}
 <input type="submit" value="Log in" class="w-full mt-3 text-sm font-bold py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
 </form>
-<p>Need an account? Please <a class="text-gray-400 underline" href='/signup'>Sign up</a>
+<p>Need an account? Please <a class="text-gray-400 underline" href="{% url 'accounts:register' %}">Sign up</a>
 {% else %}
 <p>You are already logged in.Would you like to <a href="{% url 'accounts:logout' %}" class="underline">logout</a> ?</p>
 {% endif %}
 </div>
+<div class="hidden lg:block w-3/5  bg-blue-600">
+<div class="flex items-center h-full">
+<img class="object-cover w-full h-full" src="{% static "img/signup.jpg" %}" alt="">
+</div>
+</div>
+</section> -->
+
+
+
+
+<section class="min-h-screen w-full  flex  ">
+<div class="w-full lg:w-2/5 p-4 xl:px-32">
+ <p class="text-3xl py-4 font-semibold">Log in</p>
+    {% include 'includes/alert.html' %}
+
+<form method="POST" action="{% url 'accounts:login' %}" class="space-y-3">
+{% csrf_token %}
+{{ form|crispy }}
+{% if request.GET.next %}
+<input type="hidden" name="next" value="{{ request.GET.next }}"/>
+{% endif %}
+<div>
+<label class="text-sm font-semibold text-gray-600">Email*</label>
+<input type="email" placeholder="Email Address" name="email" class="w-full mt-3 text-sm font-bold py-2 px-4 rounded-md  border border-gray-300 text-gray-900 placeholder-gray-300">
+</div>
+<div>
+<label class="text-sm font-semibold text-gray-600">Password*</label>
+<input type="password" placeholder="Password" name="password" class="w-full mt-3 text-sm font-bold py-2 px-4 rounded-md  border border-gray-300 text-gray-900 placeholder-gray-300">
+</div>
+<input type="submit" value="Log in" class="w-full mt-3 text-sm font-bold py-3 rounded-md  text-white bg-gray-900  hover:bg-gray-700 transition duration-200">
+</form>
+<p class="my-4">Don't have account? <a href="{% url 'accounts:register' %}">Sign up</a></p>
+<p>You are already logged in.Would you like to <a href="{% url 'accounts:logout' %}" class="underline">logout</a> ?</p>
+
+</div>
+
+
 <div class="hidden lg:block w-3/5  bg-blue-600">
 <div class="flex items-center h-full">
 <img class="object-cover w-full h-full" src="{% static "img/signup.jpg" %}" alt="">

@@ -1,0 +1,31 @@
+
+<div  class="container mx-auto my-4">
+  {% for message in messages %}
+
+  <div
+      class="message flex justify-between text-white rounded p-3 bg-green-600">
+
+    <p class="self-center">
+      <strong>{{ message }} </strong>
+    </p>
+    <strong class="text-xl align-center cursor-pointer alert-del"
+      >&times;</strong>
+  </div>
+  {% endfor %}
+
+</div>
+
+<script>
+  // Script For Close alert
+
+   var alert_del = document.querySelectorAll('.alert-del');
+   alert_del.forEach((x) =>
+     x.addEventListener('click', function () {
+       x.parentElement.classList.add('hidden');
+     })
+   );
+
+
+
+
+  </script>

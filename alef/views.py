@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import ContactForm,ProductSearchForm
-
+from .forms import ContactForm
 # Create your views here.
 
 def home(request):
@@ -21,6 +20,3 @@ def contact(request):
 def about(request):
     #return HttpResponse('this is the home page')
     return render(request,'about.html')
-
-
-
