@@ -32,7 +32,18 @@
 </section> -->
 
 
+{% if request.GET.command == 'verification' %}
+ <section class="min-h-screen w-full max-w-xl p-4 mt-8 xl:mt-12 mb-32  container mx-auto ">
+  <div class="p-10 border rounded-md shadow-md border-gray-200  ">
+ 
+  <p class="text-lg py-4 font-medium text-center">Thank you for registering with us.<br>
+  We have sent you a verification email in your email address <span class="font-semibold text-md">'{{request.GET.email}}'</span>.</p>
+<p class="text-center">Already verified? <a href="{% url 'accounts:login' %}"><span class="underline">Login</span></a></p>
+ 
+</div>
+</section> 
 
+{% else %}
 
 <section class="min-h-screen w-full  flex  ">
 <div class="w-full lg:w-2/5 p-4 xl:px-32">
@@ -67,5 +78,7 @@
 </div>
 </div>
 </section>
+
+{% endif %}
 
 {% endblock %}
