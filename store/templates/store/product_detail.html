@@ -81,29 +81,7 @@
                 <small class="font-medium text-red-500 px-2 w-full lg:w-2/5 mb-4 lg:mb-0 capitalize">out of stock</small>
                 {% else %}
 
-                {% if in_cart %}
-
-                <div class="flex justify-between space-x-4">
-                <!-- view cart -->
-                <div class="w-full xl:w-1/2">
-                <a class="flex justify-center block w-full py-4 px-8 text-center text-gray-900 font-bold bg-white hover:bg-gray-900 hover:text-white border border-gray-300 rounded-sm uppercase transition duration-200" href="{% url 'carts:cart' %}">
-                cart
-                <small class="px-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                </small>
-                </a>
-                </div>
-                <!-- added to cart -->
-                <div class="w-full xl:w-1/2">
-                <a class="block bg-gray-200 text-center text-gray-500 font-bold  py-4 px-8 rounded-sm uppercase cursor-not-allowed" href="#">
-                Added to cart
-                </a>
-                </div>
-                </div>
-                {% else %}
+               
 
                 <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 mb-10 pb-10 border-b">
                    
@@ -130,9 +108,6 @@
                       </button>
                   </div>
 
-       
-
-                {% endif %}
                 {% endif %}
                </form>
         </div>

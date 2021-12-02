@@ -52,11 +52,15 @@
                     <img class="w-full h-full" src="{{ cart_item.product.images.url }}" alt="" />
                   </div>
                   <div class="flex flex-1 flex-col ml-3">
-                    <a href="{{ cart_item.product.get_url }}" class="text-gray-900">
+                    <a href="{{ cart_item.product.get_url }}" class="text-gray-900 capitalize">
                       {{cart_item.product.product_name}}
                     </a>
-                    <p class="text-gray-900">
-                      blue
+                    <p class="text-gray-900 capitalize">
+                      {% if cart_item.variations.all %}
+                        {% for item in cart_item.variations.all %}
+                            {{item.variation_category }} : {{ item.variation_value }}<br>
+                        {% endfor %}
+                      {% endif %}
                     </p>
                     <small class="text-gray-900 flex flex-1 items-end">
                       In stock
