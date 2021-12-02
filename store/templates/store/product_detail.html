@@ -50,7 +50,7 @@
         </div>
         </div>
         <div class="w-full md:w-1/2 px-4">
-               <form method="GET" action="{% url 'carts:add_cart' single_product.id  %}">
+               <form method="POST" action="{% url 'carts:add_cart' single_product.id  %}">
                  {% csrf_token %}
                 <div class="mb-10 pb-10 border-b">
                 <span class="text-gray-700 text-lg capitalize">{{ single_product.product_name }}</span>
@@ -107,16 +107,19 @@
 
                 <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 mb-10 pb-10 border-b">
                    
-                  <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-center text-black font-bold  py-4 px-8 rounded-sm uppercase transition duration-200" name="hardware">
-                    <option value="gold">Gold</option>
-                    <option value="black">Black</option>
-                   </select>
+                  <select required class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-sm text-center text-black font-bold  py-4 px-6 rounded-sm uppercase transition duration-200" name="hardware">
+                    <option value="" disabled selected>Choose Hardware</option>
+                    {% for i in single_product.variation_set.hardwares %}
+                    <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+                    {% endfor %}
+                    </select>
 
               
-
                   <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-center text-black font-bold  py-4 px-8 rounded-sm uppercase transition duration-200" name="strap">
-                    <option value="small">Small</option>
-                    <option value="large">Large</option>
+                    <option value="" disabled selected>Choose Strap</option>
+                    {% for i in single_product.variation_set.straps %}
+                    <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+                    {% endfor %}
                    </select>
 
                     <button type="submit" class="flex justify-center w-full block bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200">

@@ -14,11 +14,10 @@ def _cart_id(request):
 
 
 def add_cart(request, product_id):
-    hardware=request.GET['hardware']
-    strap=request.GET['strap']
-
-    return HttpResponse(hardware + ' ' + strap)
-    exit()
+    if request.method == 'POST':
+        hardware=request.POST['hardware']
+        strap=request.POST['strap']
+        print(hardware,strap)
 
     product=Product.objects.get(id=product_id) #get the product
     try:
