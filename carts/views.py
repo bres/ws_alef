@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect,get_object_or_404
 from store.models import Product
 from .models import Cart,CartItem
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 from django.http import HttpResponse
 
@@ -13,6 +14,12 @@ def _cart_id(request):
 
 
 def add_cart(request, product_id):
+    hardware=request.GET['hardware']
+    strap=request.GET['strap']
+
+    return HttpResponse(hardware + ' ' + strap)
+    exit()
+
     product=Product.objects.get(id=product_id) #get the product
     try:
         cart=Cart.objects.get(cart_id=_cart_id(request)) #get the cart using the cart_id present in the session_key
@@ -82,7 +89,7 @@ def cart(request, total=0, quantity=0, cart_items=None):
 
     return render(request,"carts/cart.html",context)
 
-
+@login_required(login_url='accounts:login')
 def checkout(request,total=0, quantity=0, cart_items=None):
     try:
         shipping=0
