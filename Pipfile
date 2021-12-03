@@ -13,6 +13,7 @@ asgiref = "*"
 crispy-tailwind = "*"
 pillow = "*"
 blank = "*"
+requests = "*"
 
 [dev-packages]
 

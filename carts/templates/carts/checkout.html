@@ -178,11 +178,15 @@
                                 <img class="w-full h-full" src="{{ cart_item.product.images.url }}" alt="" />
                               </div>
                               <div class="flex flex-1 flex-col ml-3">
-                                <a href="{{ cart_item.product.get_url }}" class="text-gray-900">
+                                <a href="{{ cart_item.product.get_url }}" class="text-gray-900 capitalize">
                                   {{cart_item.product.product_name}}
                                 </a>
-                                <p class="text-gray-900">
-                                  blue
+                                <p class="text-gray-900 capitalize">
+                                  {% if cart_item.variations.all %}
+                                  {% for item in cart_item.variations.all %}
+                                      {{item.variation_category }} : {{ item.variation_value }}<br>
+                                  {% endfor %}
+                                {% endif %}
                                 </p>
                                 <small class="text-gray-900 flex flex-1 items-end">
                                   In stock
@@ -196,7 +200,7 @@
                      
                           <td class="px-2 sm:px-4 py-5  text-center  text-md">
                             <p class="text-gray-900">
-                              ${{ cart_item.sub_total }}
+                              €{{ cart_item.sub_total }}
                             </p>
                           </td>
                           
@@ -214,25 +218,20 @@
                 <div class="py-3 px-10 bg-blue-50 rounded-full">
                   <div class="flex justify-between">
                     <span class="font-medium">Subtotal</span>
-                    <span class="font-bold font-heading">$89.67</span>
+                    <span class="font-bold font-heading">€{{ total }}</span>
                   </div>
                 </div>
                 <div class="py-3 px-10 rounded-full">
                   <div class="flex justify-between">
                     <span class="font-medium">Shipping</span>
-                    <span class="font-bold font-heading">$11.00</span>
+                    <span class="font-bold font-heading">€{{ shipping }}</span>
                   </div>
                 </div>
-                <div class="py-3 px-10 bg-blue-50 rounded-full">
-                  <div class="flex justify-between">
-                    <span class="font-medium">Tax</span>
-                    <span class="font-bold font-heading">$0.00</span>
-                  </div>
-                </div>
+                
                 <div class="py-3 px-10 rounded-full">
                   <div class="flex justify-between">
                     <span class="text-base md:text-xl font-bold font-heading">Total</span>
-                    <span class="font-bold font-heading">$100.67</span>
+                    <span class="font-bold font-heading">€{{ grand_total }}</span>
                   </div>
                 </div>
               </div>
