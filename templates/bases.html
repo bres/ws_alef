@@ -67,16 +67,16 @@
 
 <body class="antialiased bg-black" id="scroll">
   <!-- Information Bar-->
-  <div class="hidden lg:block w-full py-1 items-center bg-yellow-400 border-b border-yellow-500">
+  <div class="hidden   lg:block w-full py-1 items-center bg-yellow-400 border-b border-yellow-500">
     <p class="text-sm text-center text-black font-medium uppercase">
       Free delivery from 50 € and easy returns!
     </p>
   </div>
-  <!-- Navbar -->
-  <div class="w-full sticky top-0 flex justify-between lg:justify-center bg-black shadow-md z-40 ">
-    <!--  Two Levels Menu -->
+<!-- Navbar -->
+  <div   class="w-full  sticky top-0 bg-black shadow-md z-50">
+<!--  Two Levels Menu -->
     <div class="w-full flex flex-col items-center space-y-1">
-      <!-- three columns top horizontal menu on a grid -->
+<!-- three columns top horizontal menu on a grid -->
       <div class="w-full grid grid-cols-3 py-2 px-4 xl:px-32 ">
 
       <form class="hidden items-center lg:flex my-4" method='GET' action="{% url 'store:search'%}">
@@ -93,6 +93,7 @@
             alef
           </h1>
         </a>
+
         <div class="hidden items-center lg:flex justify-end space-x-6">
           <a href="{% url 'carts:cart' %}" class="relative text-yellow-400" aria-label="Cart">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,8 +136,9 @@
           </a>
           {% endif %}
         </div>
+
       </div>
-      <!-- horizontal second menu -->
+<!-- horizontal second menu -->
       <div class="hidden relative justify-center lg:flex w-full py-1 text-yellow-400">
         <nav class="inline-menu flex text-sm xl:text-md h-10 items-center">
           <!-- hidden dropdown  with javascript configuration -->
@@ -147,28 +149,26 @@
               </a>
               <div class="mega-menu absolute left-0 right-0 top-12 text-yellow-400 bg-black border-t border-yellow-400">
                 <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  shadow-md">
-                  <div class="cols-span-1 pt-6">
+                    <div class="cols-span-1 pt-6">
                     <div class="flex flex-col space-y-2">
-                      <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                      <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
-                      <a href="#" class="text-sm font-bold uppercase ">offers</a>
-                      <a href="#" class="text-sm font-bold uppercase ">collection x</a>
+                    <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
+                    <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
+                    <a href="#" class="text-sm font-bold uppercase ">offers</a>
+                    <a href="#" class="text-sm font-bold uppercase ">collection x</a>
                     </div>
-                  </div>
-                  <div class="col-span-2 pt-6 w-24">
-                  <!-- maybe li -->
+                    </div>
+                    <div class="col-span-2 pt-6 w-24">
+                    <!-- maybe li -->
                     <ul class="flex flex-col space-y-2 capitalize">
                     <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a></li>
-                        {%  for category in links  %}
-                            <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a></li>
-                        {% endfor %}
+                    {%  for category in links  %}
+                      <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a></li>
+                    {% endfor %}
                     </ul>
-                  </div>
-                  <div class="col-span-4">
-                    <div class="flex justify-end h-full">
-                      <div>
-                        <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
-                        <div>
+                    </div>
+                    <div class="col-span-4">
+                          <div class="flex justify-end h-full">
+                          <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
                           <div class="mydiv " id="divzero">
                             <img src='{% static "img/bags.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
                           </div>
@@ -187,48 +187,12 @@
                           <div class="mydiv" id="divfive">
                             <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
                           </div>
-                        </div>
-                      </div>
-                    </div>
-            </li>
-            <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700  uppercase" href="#">
-                Accessories
-              </a>
-              <div class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
-
-                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  shadow-md">
-
-                  <div class="cols-span-1 pt-6">
-                    <div class="flex flex-col space-y-4">
-                      <a href="#" class="text-sm font-bold uppercase">new arrivals</a>
-                      <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                      <a href="#" class="text-sm font-bold uppercase">offers</a>
-                      <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                    </div>
-                  </div>
-                  <div class="col-span-2 pt-6 w-24">
-                    <div class="flex flex-col space-y-2">
-                      <a href="#" class="mymultiplediv" id="six"> <span class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Leather
-                          Bags</span></a>
-                      <a href="#" class="mymultiplediv" id="seven"> <span class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Pouches</span></a>
-                    </div>
-                  </div>
-                  <div class="col-span-4">
-                    <div class="flex justify-end h-full">
-                      <div>
-                        <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
-                        <div>
-                          <div class="mydiv " id="divsix">
-                            <img src='{% static "img/key.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
                           </div>
-                          <div class="mydiv" id="divseven">
-                            <img src='{% static "img/pouch.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                        </div>
-                      </div>
                     </div>
+                </div> 
+              </div>
             </li>
+           
             <li>
               <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700 uppercase" href="#">
                 About
@@ -248,6 +212,7 @@
         </nav>
       </div>
     </div>
+    
     <!-- right button for mobile-screens with flex -->
     <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
       <!--FIXME:FIX THE ONFOCUS  -->
@@ -298,7 +263,6 @@
   <!-- end block content-->
 
   <!-- footer section-->
-
   <section class="px-4 xl:px-32 py-12 bg-yellow-400 border-t border-yellow-500">
     <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
@@ -381,6 +345,8 @@
       var para = document.getElementById("scroll");
       para.classList.toggle("noscrollClass");
     };
+
+   
   </script>
 
 </body>
