@@ -5,16 +5,16 @@
 
 
 
-    <section class="bg-white min-h-screen ">
+    <section class="min-h-screen ">
         <div class="px-4 xl:px-32 py-8">
             <div class="lg:flex lg:-mx-2">
                 <div class="lg:w-1/5 lg:px-2">
                   {% if 'search' in request.path %}
-                  <p class="w-full bg-gray-900 py-1 font-bold text-xl text-gray-100 text-center uppercase tracking-widest">search results</p>
+                  <p class="w-full bg-gray-900 py-1 font-bold text-xl text-yellow-400 text-center uppercase tracking-widest">search results</p>
                   {% else %}
-                  <p class="w-full bg-gray-900 py-1 font-bold text-xl text-gray-100 text-center uppercase tracking-widest">Store</p>
+                  <p class="w-full bg-gray-900 py-1 font-bold text-xl text-yellow-400 text-center uppercase tracking-widest">Store</p>
                   {% endif %}
-                  <div class="space-y-3 lg:space-y-4 border border-gray-200 rounded-md p-4 mt-6 ">
+                  <div class="space-y-3 lg:space-y-4 bg-white rounded-md shadow-md border border-gray-200 rounded-md p-4 mt-6 ">
                     <h1 class="pt-2 font-semibold text-lg text-gray-700">Categories</h1>
                     <ul class="pb-10 space-y-1">
                         <li class="capitalize text-gray-700"><a href="{% url 'store:product_list' %}">all products</a></li>
@@ -26,12 +26,12 @@
                     </div>
                 </div>
                 <div class="lg:mt-0 lg:px-4 lg:w-4/5 ">
-                    <div class="bg-gray-900 flex justify-between items-center  text-sm tracking-widest capitalize border-b border-gray-200 ">
-                        <p class="text-white text-xl py-1"><span class="font-semibold pl-4">{{ product_count }}</span> Products Found
+                    <div class="bg-gray-900 flex justify-between items-center  text-sm tracking-widest capitalize ">
+                        <p class="text-yellow-400 text-xl py-1"><span class="font-semibold pl-4">{{ product_count }}</span> Products Found
                         </p>
                         <div class="flex items-center">
-                            <p class="text-gray-500 dark:text-gray-300">Sort</p>
-                            <select class="font-medium text-gray-700 bg-transparent dark:text-gray-500 focus:outline-none">
+                            <p class="text-yellow-400">Sort</p>
+                            <select class="font-medium text-yellow-400 bg-transparent dark:text-gray-500 focus:outline-none">
                                 <option value="#">Recommended</option>
                                 <option value="#">Size</option>
                                 <option value="#">Price</option>
@@ -41,7 +41,7 @@
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
                       {% if products %}
                         {% for product in products %}
-                            <div class="border border-gray-200 p-2 xl:p-4">
+                            <div class=" border border-gray-200 p-2 xl:p-4">
                             <div class="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden">
                             <a href="{{ product.get_url }}"> <img src="{% if product.images %}{{ product.images.url }}
                             {% else %}
@@ -64,7 +64,7 @@
                             {% else %}
                             <div class="w-full flex justify-center items-center ">
                             <a aria-label=""
-                                class="capitalize text-xs xl:text-sm rounded-sm font-bold my-2 px-4 py-2 xl:px-6 xl:py-3  text-white bg-gray-900  hover:bg-gray-700 transition duration-200"
+                                class="capitalize text-xs xl:text-sm rounded-sm font-bold my-2 px-4 py-2 xl:px-6 xl:py-3  text-yellow-400 bg-gray-900  hover:bg-gray-700 transition duration-200"
                                 href="{{ product.get_url }}">
                                 details
                             </a>
