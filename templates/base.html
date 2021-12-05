@@ -20,7 +20,7 @@
   input[type="search"]::-webkit-search-results-button,
   input[type="search"]::-webkit-search-results-decoration { display: none; }
 
-  @font-face {
+    @font-face {
       font-family: "Roboto";
       font-style: normal;
       src: url('{% static "fonts/Roboto/Roboto-regular.ttf" %}');
@@ -65,41 +65,41 @@
 
 </head>
 
-<body class="antialiased bg-black" id="scroll">
+<body class="antialiased py-14 md:py-32 bg-yellow-400" id="scroll">
   <!-- Information Bar-->
-  <div class="hidden lg:block w-full py-1 items-center bg-yellow-400 border-b border-yellow-500">
-    <p class="text-sm text-center text-black font-medium uppercase">
+  <!-- <div class="hidden lg:block w-full py-1 items-center bg-black border-b border-gray-200">
+    <p class="text-sm text-center text-white font-medium uppercase">
       Free delivery from 50 € and easy returns!
     </p>
-  </div>
+  </div> -->
   <!-- Navbar -->
-  <div class="w-full sticky top-0 flex justify-between lg:justify-center bg-black shadow-md z-40 ">
+  <div class="w-full fixed inset-x-0 top-0 h-14  md:h-32 flex justify-between lg:justify-center bg-black shadow-md z-40">
     <!--  Two Levels Menu -->
-    <div class="w-full flex flex-col items-center space-y-1">
+    <div class="w-full flex flex-col items-center space-y-1 text-yellow-400">
       <!-- three columns top horizontal menu on a grid -->
       <div class="w-full grid grid-cols-3 py-2 px-4 xl:px-32 ">
 
       <form class="hidden items-center lg:flex my-4" method='GET' action="{% url 'store:search'%}">
         {% csrf_token %}
-        <button type="submit" value="search" class="text-yellow-400">
-          <svg class="h-7 w-7" fill="#f6e05e" stroke="currentColor" enable-background="new 0 0 48 48"  viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g id="_x32_-Magnifying_Glass"><path d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z"/></g>
+        <button type="submit" value="search" class="">
+          <svg class="h-6 w-6" enable-background="new 0 0 48 48"  viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g id="_x32_-Magnifying_Glass"><path d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z"/></g>
           </svg>
         </button>
         <input type="search" placeholder="Search by product" name="keyword" class="pl-1 text-sm border-b border-transparent transition duration-700  focus:border-gray-400 outline-none">
       </form>
 
         <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-          <h1 class="text-3xl lg:text-5xl text-yellow-400 font-semibold text-center tracking-widest uppercase">
+          <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
             alef
           </h1>
         </a>
         <div class="hidden items-center lg:flex justify-end space-x-6">
-          <a href="{% url 'carts:cart' %}" class="relative text-yellow-400" aria-label="Cart">
+          <a href="{% url 'carts:cart' %}" class="relative text-black" aria-label="Cart">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
             <span class="absolute bottom-5 ml-5">
-              <div class="inline-flex justify-center  items-center w-6 h-6 p-0.5  rounded-full text-sm font-semibold leading-4 bg-yellow-400 text-black">
+              <div class="inline-flex justify-center  items-center w-6 h-6 p-0.5  rounded-full text-sm font-semibold leading-4 bg-gray-900 text-white">
                 {{ cart_count }}
               </div>
             </span>
@@ -108,7 +108,7 @@
 
           {% if user.id is not None %}
           <a href="{% url 'accounts:dashboard' %}">
-            <svg class="h-7 w-7" fill="#f6e05e" stroke="#f6e05e" viewBox="0 0 24 24" id="dashboard_layout_screen" data-name="dashboard layout screen" xmlns="http://www.w3.org/2000/svg">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" id="dashboard_layout_screen" data-name="dashboard layout screen" xmlns="http://www.w3.org/2000/svg">
             <rect id="Mask" width="24" height="24" fill="none"/>
             <g id="Group_2" data-name="Group 2" transform="translate(4 4)">
             <rect id="Rectangle_15" data-name="Rectangle 15" width="6" height="9" rx="1" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
@@ -118,7 +118,7 @@
             </svg>
           </a>
           <a href="{% url 'accounts:logout' %}">
-            <svg  class="h-7 w-7" fill="#f6e05e" stroke="#f6e05e"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            <svg  class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 471.2 471.2" style="enable-background:new 0 0 471.2 471.2;" xml:space="preserve">
             <g><g><path d="M227.619,444.2h-122.9c-33.4,0-60.5-27.2-60.5-60.5V87.5c0-33.4,27.2-60.5,60.5-60.5h124.9c7.5,0,13.5-6,13.5-13.5
             s-6-13.5-13.5-13.5h-124.9c-48.3,0-87.5,39.3-87.5,87.5v296.2c0,48.3,39.3,87.5,87.5,87.5h122.9c7.5,0,13.5-6,13.5-13.5
@@ -131,13 +131,13 @@
            <p class="text-sm capitalize">Welcome {{ user.first_name }} </p>
           {% else %}
           <a href="{% url 'accounts:login' %}">
-          <svg class="h-7 w-7" fill="#f6e05e" stroke="#f6e05e" viewBox="0 0 74 74" xmlns="http://www.w3.org/2000/svg"><path d="m32 32a15 15 0 1 1 15-15 15.017 15.017 0 0 1 -15 15zm0-28a13 13 0 1 0 13 13 13.015 13.015 0 0 0 -13-13z"/><path d="m57 72a11 11 0 1 1 11-11 11.013 11.013 0 0 1 -11 11zm0-20a9 9 0 1 0 9 9 9.01 9.01 0 0 0 -9-9z"/><path d="m47 62h-40a1 1 0 0 1 -1-1v-12a15.017 15.017 0 0 1 15-15 1 1 0 0 1 .707.293l10.293 10.293 10.293-10.293a1 1 0 0 1 .707-.293 15.017 15.017 0 0 1 15 15v2h-2v-2a13.016 13.016 0 0 0 -12.592-12.994l-10.7 10.7a1 1 0 0 1 -1.414 0l-10.7-10.7a13.016 13.016 0 0 0 -12.594 12.994v11h39z"/><path d="m50 60h14v2h-14z"/><path d="m56 54h2v14h-2z"/></svg>
+          <svg class="h-7 w-7" viewBox="0 0 74 74" xmlns="http://www.w3.org/2000/svg"><path d="m32 32a15 15 0 1 1 15-15 15.017 15.017 0 0 1 -15 15zm0-28a13 13 0 1 0 13 13 13.015 13.015 0 0 0 -13-13z"/><path d="m57 72a11 11 0 1 1 11-11 11.013 11.013 0 0 1 -11 11zm0-20a9 9 0 1 0 9 9 9.01 9.01 0 0 0 -9-9z"/><path d="m47 62h-40a1 1 0 0 1 -1-1v-12a15.017 15.017 0 0 1 15-15 1 1 0 0 1 .707.293l10.293 10.293 10.293-10.293a1 1 0 0 1 .707-.293 15.017 15.017 0 0 1 15 15v2h-2v-2a13.016 13.016 0 0 0 -12.592-12.994l-10.7 10.7a1 1 0 0 1 -1.414 0l-10.7-10.7a13.016 13.016 0 0 0 -12.594 12.994v11h39z"/><path d="m50 60h14v2h-14z"/><path d="m56 54h2v14h-2z"/></svg>
           </a>
           {% endif %}
         </div>
       </div>
       <!-- horizontal second menu -->
-      <div class="hidden relative justify-center lg:flex w-full py-1 text-yellow-400">
+      <div class="hidden relative justify-center lg:flex w-full py-1 ">
         <nav class="inline-menu flex text-sm xl:text-md h-10 items-center">
           <!-- hidden dropdown  with javascript configuration -->
           <ul class="flex">
@@ -145,7 +145,7 @@
               <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-gray-700  uppercase" href="#">
                 Bags
               </a>
-              <div class="mega-menu absolute left-0 right-0 top-12 text-yellow-400 bg-black border-t border-yellow-400">
+              <div class="mega-menu absolute left-0 right-0 top-12 bg-white border-t border-gray-100">
                 <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  shadow-md">
                   <div class="cols-span-1 pt-6">
                     <div class="flex flex-col space-y-2">
@@ -299,33 +299,33 @@
 
   <!-- footer section-->
 
-  <section class="px-4 xl:px-32 py-12 bg-yellow-400 border-t border-yellow-500">
+  <section class="px-4 xl:px-32 py-12 bg-black text-yellow-400 border-t border-gray-200">
     <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
         <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
-          <p class="text-black text-lg">Alef Handmade</p>
-          <p class="text-black mt-4 text-2xl font-medium">WE CREATE BAGS<br>
+          <p class="text-lg">Alef Handmade</p>
+          <p class="mt-4 text-2xl font-medium">WE CREATE BAGS<br>
             TO CARRY OUR WORLDS...</p>
         </a>
       </div>
       <div class="w-full lg:w-1/4  lg:pl-24 mb-8 lg:mb-0">
-        <p class="mb-2 lg:mb-4 lg:text-md font-semibold font-heading text-black">Social</p>
-        <p class="lg:text-md text-gray-900"> Instagram</p>
-        <p class="lg:text-md text-gray-900"> Etsy</p>
+        <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Social</p>
+        <p class="lg:text-md"> Instagram</p>
+        <p class="lg:text-md"> Etsy</p>
       </div>
       <div class="w-full lg:w-1/4 px-3 mb-8 lg:mb-0">
-        <p class="mb-2 lg:mb-4 lg:text-md font-semibold font-heading text-black">Office</p>
-        <p class="lg:text-md text-gray-900">Kolokotrwni theodwrou 9  <br>& Gkini Andrea 6, Chalandri</p>
+        <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Office</p>
+        <p class="lg:text-md">Kolokotrwni theodwrou 9  <br>& Gkini Andrea 6, Chalandri</p>
       </div>
       <div class="w-full lg:w-1/4 pr-3">
-        <p class="mb-2 lg:mb-4 lg:text-md font-semibold font-heading text-black">Contacts</p>
-        <p class="lg:text-md text-gray-900">info@alefhandmade.com</p>
-        <p class="lg:text-md text-gray-900">+30 6980-256899</p>
+        <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Contacts</p>
+        <p class="lg:text-md">info@alefhandmade.com</p>
+        <p class="lg:text-md">+30 6980-256899</p>
       </div>
 
     </div>
-    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-gray-900">
-      <p class="mt-6 text-xs text-gray-900">© 2020. All rights reserved.</p>
+    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-yellow-400">
+      <p class="mt-6 text-xs">© 2020. All rights reserved.</p>
     </div>
   </section>
   <script>
