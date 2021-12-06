@@ -75,9 +75,9 @@
 
                   </a>
                   <input class="w-10 m-0 px-2 py-2 text-center text-lg border-0 focus:ring-transparent focus:outline-none rounded-md" type="text" value="{{ cart_item.quantity }}">
-                
 
-                  <form class="box-border h-full pt-4 " action="{%  url 'carts:add_cart' cart_item.product.id  %}" method="POST"> 
+
+                  <form class="box-border h-full pt-4 " action="{%  url 'carts:add_cart' cart_item.product.id  %}" method="POST">
                     {% csrf_token %}
                     {% for item in cart_item.variations.all %}
                     <input type="hidden" name="{{ item.variation_category }}" value="{{ item.variation_value}}">
@@ -85,7 +85,7 @@
 
                     <button type="submit" class=" hover:text-gray-700">
                     <i class="fa fa-plus" style="font-size:18px"></i>
-                    </button>   
+                    </button>
                   </form>
 
 
@@ -127,13 +127,13 @@
             </div>
             <h4 class="mb-2 text-xl font-medium capitalize text-gray-900">Shipping</h4>
             <div class="flex mb-2 justify-between items-center">
-              <span class="text-gray-700">Greece</span>
-               <span class="text-xl font-medium capitalize text-gray-900">€{{ shipping }}</span>
+              <span class="text-gray-700">Greece </span>
+               <span class="text-xl font-medium capitalize text-gray-900">Free Shipping</span>
             </div>
-            <div class="flex mb-10 justify-between items-center">
+            <!-- <div class="flex mb-10 justify-between items-center">
               <span class="text-gray-700">From store</span>
               <span class="text-xl font-medium capitalize text-gray-900">Free</span>
-            </div>
+            </div> -->
             <div class="flex mb-10 justify-between items-center">
               <span class="text-xl font-medium capitalize text-gray-900">Order total <small>( Includes V.A.T )</small> </span>
               <span class="text-xl font-medium capitalize text-gray-900">€{{ grand_total }}</span>

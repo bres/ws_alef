@@ -23,7 +23,7 @@ def add_cart(request, product_id):
             for item in request.POST:
                 key=item
                 value=request.POST[key]
-                
+
                 try:
                     variation=Variation.objects.get(product=product,variation_category__iexact=key, variation_value__iexact=value)
                     product_variation.append(variation)
@@ -34,7 +34,7 @@ def add_cart(request, product_id):
         is_cart_item_exists =CartItem.objects.filter(product=product, user=current_user).exists()
         if is_cart_item_exists:
             cart_item=CartItem.objects.filter(product=product,user=current_user)
-         
+
             ex_var_list=[]
             id=[]
             for item in cart_item:
@@ -43,10 +43,10 @@ def add_cart(request, product_id):
                 id.append(item.id)
 
             if product_variation in ex_var_list:
-                #increase the cart item quantity   
+                #increase the cart item quantity
                 index = ex_var_list.index(product_variation)
                 item_id=id[index]
-                item=CartItem.objects.get(product=product,id=item_id)     
+                item=CartItem.objects.get(product=product,id=item_id)
                 item.quantity +=1
                 item.save()
             else:
@@ -56,7 +56,7 @@ def add_cart(request, product_id):
                     item.variations.clear()
                     item.variations.add(*product_variation)
                 item.save()
-        else: 
+        else:
             cart_item=CartItem.objects.create(
             product=product,
             quantity=1,
@@ -74,7 +74,7 @@ def add_cart(request, product_id):
             for item in request.POST:
                 key=item
                 value=request.POST[key]
-                
+
                 try:
                     variation=Variation.objects.get(product=product,variation_category__iexact=key, variation_value__iexact=value)
                     product_variation.append(variation)
@@ -105,10 +105,10 @@ def add_cart(request, product_id):
             print(ex_var_list)
 
             if product_variation in ex_var_list:
-                #increase the cart item quantity   
+                #increase the cart item quantity
                 index = ex_var_list.index(product_variation)
                 item_id=id[index]
-                item=CartItem.objects.get(product=product,id=item_id)     
+                item=CartItem.objects.get(product=product,id=item_id)
                 item.quantity +=1
                 item.save()
             else:
@@ -118,7 +118,7 @@ def add_cart(request, product_id):
                     item.variations.clear()
                     item.variations.add(*product_variation)
                 item.save()
-        else: 
+        else:
             cart_item=CartItem.objects.create(
             product=product,
             quantity=1,
@@ -172,7 +172,7 @@ def cart(request, total=0, quantity=0, cart_items=None):
         for cart_item in cart_items:
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
-        shipping=(2*total)/100
+        shipping=0      #(2*total)/100
         grand_total=total+shipping
 
     except ObjectDoesNotExist:
@@ -201,7 +201,7 @@ def checkout(request,total=0, quantity=0, cart_items=None):
         for cart_item in cart_items:
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
-        shipping=(2*total)/100
+        shipping=0   #(2*total)/100
         grand_total=total+shipping
 
     except ObjectDoesNotExist:
@@ -216,4 +216,3 @@ def checkout(request,total=0, quantity=0, cart_items=None):
     }
 
     return render(request, 'carts/checkout.html', context)
-
