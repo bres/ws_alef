@@ -65,187 +65,159 @@
 
 </head>
 
-<body class="antialiased py-12 sm:py-32 bg-gray-50" id="scroll">
+<body class="antialiased py-12 sm:py-40  bg-gray-50" id="scroll">
   <!-- Information Bar-->
-  <!-- <div class="hidden lg:block w-full py-1 items-center bg-black border-b border-gray-200">
-    <p class="text-sm text-center text-white font-medium uppercase">
+  <!-- <div class="hidden lg:block w-full py-1 items-center bg-white  ">
+    <p class="text-sm text-center text-black font-medium uppercase">
       Free delivery from 50 € and easy returns!
     </p>
   </div> -->
   <!-- Navbar -->
   <!--FIXME:SMALL SCREEN  -->
 
-  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-32 flex justify-between lg:justify-center bg-black border-b border-black shadow-md z-40">
-    <!--  Two Levels Menu -->
-    <div class="w-full flex flex-col items-center space-y-1 text-white ">
-      <!-- three columns top horizontal menu on a grid -->
-      <div class="w-full grid grid-cols-3 my-2 px-4 xl:px-32 ">
+  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-40 flex justify-between lg:justify-center bg-black border-b-4 border-gray-100 shadow-md  z-40 ">
 
-      <form class="hidden items-center lg:flex my-4" method='GET' action="{% url 'store:search'%}">
+      <!--  Two Levels Menu -->
+      <div class="w-full flex flex-col    text-white ">
+        <div class="hidden lg:flex w-full  justify-center items-center bg-white h-10">
+          <p class="text-sm text-center text-black font-medium uppercase">
+            Free delivery from 50 € and easy returns!
+          </p>
+        </div>
+        <!-- three columns top horizontal menu on a grid -->
+        <div class="w-full grid grid-cols-3  px-4 xl:px-32 h-20">
+        <form class="hidden items-center lg:flex mt-4" method='GET' action="{% url 'store:search'%}">
         {% csrf_token %}
         <button type="submit" value="search" class="text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        </svg>
         </button>
         <input type="search" placeholder="Search by product" name="keyword" class="pl-1 text-sm bg-black placeholder-white border-b border-black transition duration-700  focus:border-gray-400 outline-none">
-      </form>
+        </form>
+
+
+
 
         <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-          <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
-            alef
-          </h1>
+        <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
+        alef
+        </h1>
         </a>
         <div class="hidden items-center lg:flex justify-end">
-          <a href="{% url 'carts:cart' %}" class="relative text-white mr-6" aria-label="Cart">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-          </svg>
-            <span class="absolute bottom-5 ml-5">
-              <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-white text-black">
-                {{ cart_count }}
+        <a href="{% url 'carts:cart' %}" class="relative text-white mr-6" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+        </svg>
+        <span class="absolute bottom-5 ml-5">
+          <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-white text-black">
+            {{ cart_count }}
+          </div>
+        </span>
+        </a>
+
+
+        {% if user.id is not None %}
+        <a href="{% url 'accounts:dashboard' %}" class="text-white mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
+        </svg>
+        </a>
+        <a href="{% url 'accounts:logout' %}" class="text-white mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+        </svg>
+        </a>
+        <p class="text-md capitalize">Welcome <span class="font-bold">{{ user.first_name }}</span> </p>
+        {% else %}
+        <a href="{% url 'accounts:login' %}" class="text-white mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+        </a>
+        <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
+
+        {% endif %}
+        </div>
+        </div>
+        <!-- horizontal second menu -->
+        <div class="hidden relative justify-center lg:flex w-full h-12 ">
+        <nav class="inline-menu flex text-sm xl:text-md items-center">
+        <!-- hidden dropdown  with javascript configuration -->
+        <ul class="flex">
+        <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 ease-in-out border-b border-transparent hover:border-white uppercase" href="#">
+            Bags
+          </a>
+          <div class="mega-menu absolute left-0 right-0 top-12 bg-black border-b border-white shadow-md ">
+            <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  ">
+              <div class="cols-span-1 pt-6">
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
+                  <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
+                  <a href="#" class="text-sm font-bold uppercase ">offers</a>
+                  <a href="#" class="text-sm font-bold uppercase ">collection x</a>
+                </div>
               </div>
-            </span>
-          </a>
+              <div class="col-span-2 pt-6 w-24">
+                <ul class="flex flex-col space-y-2 capitalize">
+                  <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a>
+                  </li>
+                      {%  for category in links  %}
+                          <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a>
+                          </li>
+                      {% endfor %}
+                </ul>
+              </div>
+              <div class="col-span-4">
+                <div class="flex justify-end h-full">
+                  <div>
+                    <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
 
+                      <div class="mydiv " id="divzero">
+                        <img src='{% static "img/bags.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                      </div>
+                      <div class="mydiv " id="divone">
+                        <img src='{% static "img/leather.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                      </div>
+                      <div class="mydiv" id="divtwo">
+                        <img src='{% static "img/pouches.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
+                      </div>
+                      <div class="mydiv" id="divthree">
+                        <img src='{% static "img/hobo.jpg" %}' alt="Developer" class="h-64 w-64 object-cover object-center" />
+                      </div>
+                      <div class="mydiv" id="divfore">
+                        <img src='{% static "img/clutch.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
+                      </div>
+                      <div class="mydiv" id="divfive">
+                        <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
+                      </div>
 
-          {% if user.id is not None %}
-          <a href="{% url 'accounts:dashboard' %}" class="text-white mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
-            </svg>
-          </a>
-          <a href="{% url 'accounts:logout' %}" class="text-white mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
-          </svg>
-          </a>
-           <p class="text-md capitalize">Welcome <span class="font-bold">{{ user.first_name }}</span> </p>
-          {% else %}
-          <a href="{% url 'accounts:login' %}" class="text-white mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-          </a>
-          <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
+                  </div>
+                </div>
+        </li>
 
-          {% endif %}
+        <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-white  uppercase" href="#">
+            About
+          </a>
+        </li>
+        <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-white  uppercase" href="#">
+            Materials
+          </a>
+        </li>
+        <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-white  uppercase" href="{% url 'contact' %}">
+            Contact
+          </a>
+        </li>
+        </ul>
+        </nav>
         </div>
       </div>
-      <!-- horizontal second menu -->
-      <div class="hidden relative justify-center lg:flex w-full py-0 ">
-        <nav class="inline-menu flex text-sm xl:text-md h-9 items-center">
-          <!-- hidden dropdown  with javascript configuration -->
-          <ul class="flex">
-            <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-200 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
-                Bags
-              </a>
-              <div class="mega-menu absolute left-0 right-0 top-12 bg-black border-b border-black shadow-md">
-                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  ">
-                  <div class="cols-span-1 pt-6">
-                    <div class="flex flex-col space-y-2">
-                      <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                      <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
-                      <a href="#" class="text-sm font-bold uppercase ">offers</a>
-                      <a href="#" class="text-sm font-bold uppercase ">collection x</a>
-                    </div>
-                  </div>
-                  <div class="col-span-2 pt-6 w-24">
-                  <!-- maybe li -->
-                    <ul class="flex flex-col space-y-2 capitalize">
-                    <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a></li>
-                        {%  for category in links  %}
-                            <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a></li>
-                        {% endfor %}
-                    </ul>
-                  </div>
-                  <div class="col-span-4">
-                    <div class="flex justify-end h-full">
-                      <div>
-                        <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
-                        <div>
-                          <div class="mydiv " id="divzero">
-                            <img src='{% static "img/bags.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                          <div class="mydiv " id="divone">
-                            <img src='{% static "img/leather.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                          <div class="mydiv" id="divtwo">
-                            <img src='{% static "img/pouches.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                          <div class="mydiv" id="divthree">
-                            <img src='{% static "img/hobo.jpg" %}' alt="Developer" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                          <div class="mydiv" id="divfore">
-                            <img src='{% static "img/clutch.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                          <div class="mydiv" id="divfive">
-                            <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            </li>
-            <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black   uppercase" href="#">
-                Accessories
-              </a>
-              <div class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
-
-                <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  shadow-md">
-
-                  <div class="cols-span-1 pt-6">
-                    <div class="flex flex-col space-y-4">
-                      <a href="#" class="text-sm font-bold uppercase">new arrivals</a>
-                      <a href="#" class="text-sm font-bold uppercase">winter 2021</a>
-                      <a href="#" class="text-sm font-bold uppercase">offers</a>
-                      <a href="#" class="text-sm font-bold uppercase">collection x</a>
-                    </div>
-                  </div>
-                  <div class="col-span-2 pt-6 w-24">
-                    <div class="flex flex-col space-y-2">
-                      <a href="#" class="mymultiplediv" id="six"> <span class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Leather
-                          Bags</span></a>
-                      <a href="#" class="mymultiplediv" id="seven"> <span class="transition duration-150 ease-in-out border-transparent border-b hover:border-gray-700 py-1">Pouches</span></a>
-                    </div>
-                  </div>
-                  <div class="col-span-4">
-                    <div class="flex justify-end h-full">
-                      <div>
-                        <img id="srcImage2" src='{% static "img/keys.jpg" %}' href="" class="">
-                        <div>
-                          <div class="mydiv " id="divsix">
-                            <img src='{% static "img/key.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                          <div class="mydiv" id="divseven">
-                            <img src='{% static "img/pouch.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            </li>
-            <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
-                About
-              </a>
-            </li>
-            <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
-                Materials
-              </a>
-            </li>
-            <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="{% url 'contact' %}">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <!-- right button for mobile-screens with flex -->
-    <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
+      <!-- right button for mobile-screens with flex -->
+      <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
       <!--FIXME:FIX THE ONFOCUS  -->
       <button class="mobile-menu-button text-white" onclick="myFunc()">
         <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -253,7 +225,7 @@
           </path>
         </svg>
       </button>
-    </div>
+      </div>
   </div>
   <!-- Navbar ends -->
   <!-- Mobile responsive -->
@@ -295,7 +267,7 @@
 
   <!-- footer section-->
 
-  <section class="px-4 xl:px-32 py-12 bg-black text-white border-t border-black">
+  <section class="px-4 xl:px-32 py-12 bg-black text-white border-t border-white">
     <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
         <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
@@ -320,7 +292,7 @@
       </div>
 
     </div>
-    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-black">
+    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-white">
       <p class="mt-6 text-xs">© 2020. All rights reserved.</p>
     </div>
   </section>

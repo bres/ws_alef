@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'category',  # new
     'store',  # new
     'carts',  # new
+    'orders', #new
 
 ]
 
