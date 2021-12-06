@@ -75,20 +75,20 @@
   <!-- Navbar -->
   <!--FIXME:SMALL SCREEN  -->
 
-  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-32 flex justify-between lg:justify-center bg-black shadow-md z-40">
+  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-32 flex justify-between lg:justify-center bg-black border-b border-black shadow-md z-40">
     <!--  Two Levels Menu -->
-    <div class="w-full flex flex-col items-center space-y-1 text-yellow-400 ">
+    <div class="w-full flex flex-col items-center space-y-1 text-white ">
       <!-- three columns top horizontal menu on a grid -->
       <div class="w-full grid grid-cols-3 my-2 px-4 xl:px-32 ">
 
       <form class="hidden items-center lg:flex my-4" method='GET' action="{% url 'store:search'%}">
         {% csrf_token %}
-        <button type="submit" value="search" class="text-yellow-400">
+        <button type="submit" value="search" class="text-white">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
           </svg>
         </button>
-        <input type="search" placeholder="Search by product" name="keyword" class="pl-1 text-sm bg-black placeholder-yellow-400 border-b border-yellow-400 transition duration-700  focus:border-gray-400 outline-none">
+        <input type="search" placeholder="Search by product" name="keyword" class="pl-1 text-sm bg-black placeholder-white border-b border-black transition duration-700  focus:border-gray-400 outline-none">
       </form>
 
         <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
@@ -97,12 +97,12 @@
           </h1>
         </a>
         <div class="hidden items-center lg:flex justify-end">
-          <a href="{% url 'carts:cart' %}" class="relative text-yellow-400 mr-6" aria-label="Cart">
+          <a href="{% url 'carts:cart' %}" class="relative text-white mr-6" aria-label="Cart">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
           <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
           </svg>
             <span class="absolute bottom-5 ml-5">
-              <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-yellow-400 text-black">
+              <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-white text-black">
                 {{ cart_count }}
               </div>
             </span>
@@ -110,19 +110,19 @@
 
 
           {% if user.id is not None %}
-          <a href="{% url 'accounts:dashboard' %}" class="text-yellow-400 mr-4">
+          <a href="{% url 'accounts:dashboard' %}" class="text-white mr-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
             <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
             </svg>
           </a>
-          <a href="{% url 'accounts:logout' %}" class="text-yellow-400 mr-4">
+          <a href="{% url 'accounts:logout' %}" class="text-white mr-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
           </svg>
           </a>
            <p class="text-md capitalize">Welcome <span class="font-bold">{{ user.first_name }}</span> </p>
           {% else %}
-          <a href="{% url 'accounts:login' %}" class="text-yellow-400 mr-4">
+          <a href="{% url 'accounts:login' %}" class="text-white mr-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
@@ -138,10 +138,10 @@
           <!-- hidden dropdown  with javascript configuration -->
           <ul class="flex">
             <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-200 ease-in-out border-b border-transparent hover:border-yellow-400  uppercase" href="#">
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-200 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
                 Bags
               </a>
-              <div class="mega-menu absolute left-0 right-0 top-12 bg-black border-b border-yellow-400 shadow-md">
+              <div class="mega-menu absolute left-0 right-0 top-12 bg-black border-b border-black shadow-md">
                 <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  ">
                   <div class="cols-span-1 pt-6">
                     <div class="flex flex-col space-y-2">
@@ -188,7 +188,7 @@
                     </div>
             </li>
             <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-yellow-400   uppercase" href="#">
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black   uppercase" href="#">
                 Accessories
               </a>
               <div class="mega-menu absolute left-0 right-0 top-12 text-gray-700 bg-white border-t border-gray-100">
@@ -226,17 +226,17 @@
                     </div>
             </li>
             <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-yellow-400  uppercase" href="#">
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
                 About
               </a>
             </li>
             <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-yellow-400  uppercase" href="#">
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
                 Materials
               </a>
             </li>
             <li>
-              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-yellow-400  uppercase" href="{% url 'contact' %}">
+              <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="{% url 'contact' %}">
                 Contact
               </a>
             </li>
@@ -247,7 +247,7 @@
     <!-- right button for mobile-screens with flex -->
     <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
       <!--FIXME:FIX THE ONFOCUS  -->
-      <button class="mobile-menu-button text-yellow-400" onclick="myFunc()">
+      <button class="mobile-menu-button text-white" onclick="myFunc()">
         <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
           </path>
@@ -295,7 +295,7 @@
 
   <!-- footer section-->
 
-  <section class="px-4 xl:px-32 py-12 bg-black text-yellow-400 border-t border-gray-200">
+  <section class="px-4 xl:px-32 py-12 bg-black text-white border-t border-black">
     <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
         <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
@@ -311,16 +311,16 @@
       </div>
       <div class="w-full lg:w-1/4 px-3 mb-8 lg:mb-0">
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Office</p>
-        <p class="lg:text-md">Kolokotrwni theodwrou 9  <br>& Gkini Andrea 6, Chalandri</p>
+        <p class="lg:text-md">Kolokotroni 9, Chalandri 152 33</p>
       </div>
       <div class="w-full lg:w-1/4 pr-3">
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Contacts</p>
-        <p class="lg:text-md">info@alefhandmade.com</p>
+        <p class="lg:text-md">info@alefatelier.com</p>
         <p class="lg:text-md">+30 6980-256899</p>
       </div>
 
     </div>
-    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-yellow-400">
+    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-black">
       <p class="mt-6 text-xs">© 2020. All rights reserved.</p>
     </div>
   </section>
