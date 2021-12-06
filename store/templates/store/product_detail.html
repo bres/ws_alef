@@ -81,18 +81,18 @@
                 <small class="font-medium text-red-500 px-2 w-full lg:w-2/5 mb-4 lg:mb-0 capitalize">out of stock</small>
                 {% else %}
 
-               
+
 
                 <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 mb-10 pb-10 border-b">
-                   
-                  <select required class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-sm text-center text-black font-bold  py-4 px-6 rounded-sm uppercase transition duration-200" name="hardware">
+
+                  <select class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-sm text-center text-black font-bold  py-4 px-6 rounded-sm uppercase transition duration-200" name="hardware">
                     <option value="" disabled selected>Choose Hardware</option>
                     {% for i in single_product.variation_set.hardwares %}
                     <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
                     {% endfor %}
                     </select>
 
-              
+
                   <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-center text-black font-bold  py-4 px-8 rounded-sm uppercase transition duration-200" name="strap">
                     <option value="" disabled selected>Choose Strap</option>
                     {% for i in single_product.variation_set.straps %}
