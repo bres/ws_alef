@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'category',  # new
     'store',  # new
     'carts',  # new
+    'orders', #new
 
 ]
 
@@ -149,7 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
-    messages.ERROR: 'bg-red-600',
+    messages.ERROR:'bg-red-600',
 }
 
 

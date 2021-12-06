@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}cart{% endblock %}
+{% load static %}
+{% block content %}
+
+<section class="pt-10 bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 xl:px-32">
+
+
+
+    <div class="p-8 lg:p-10 bg-white shadow-sm border border-gray-200 rounded-md">
+      <h2 class="mb-12 text-4xl font-bold font-heading">Your cart</h2>
+      <div class="flex flex-wrap ">
+        <div class="w-full xl:w-8/12 mb-8 xl:mb-0 px-2 space-y-4 ">
+
+          <div class="max-w-6xl px-8 py-4 mx-auto bg-gray-50 border border-gray-200 rounded-md shadow-md">
+              <div class="mt-2 space-y-2">
+                  <a href="#" class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">Billing Address</a>
+                  <p class="text-gray-600 capitalize ">{{ order.full_name }}</p>
+                  <p class="text-gray-600 capitalize">{{ order.address }} , {{ order.municipality }} ,{{ order.zip_code}}</p>
+                  <p class="text-gray-600 capitalize">{{ order.city }} ,{{ order.state }} ,{{ order.country }}</p>
+                  <p class="text-gray-600 capitalize  border-t-2  py-1 font-semibold">
+                    {% if order.order_note %}
+                    <p class="font-bold text-lg traking-wider">Note :</p>
+                    <p>{{ order.order_note }}</p>
+                       {% endif %}
+                  </p>
+              </div>
+          </div>
+          <div class="max-w-6xl px-8 py-4 mx-auto bg-gray-50 border border-gray-200 rounded-md shadow-md">
+              <div class="mt-2">
+                  <a href="#" class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">Payment Method</a>
+                  <p class="mt-2 text-gray-600 dark:text-gray-300">
+                    PayPal
+                  </p>
+              </div>
+          </div>
+          <div class="max-w-6xl px-8 py-4 mx-auto bg-gray-50 border border-gray-200 rounded-md shadow-md">
+              <div class="mt-2">
+                  <a href="#" class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">Review Products</a>
+                  <p class="mt-2 text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+              </div>
+          </div>
+
+          </div>
+
+        <div class="w-full xl:w-4/12 px-2">
+          <div class="p-6 md:p-12 bg-gray-50 border border-gray-200 rounded-md shadow-md">
+            <h2 class="mb-6 text-4xl font-semibold capitalize text-gray-900">Cart totals</h2>
+            <div class="flex mb-8 items-center justify-between pb-5 border-b border-gray-300">
+              <span class="text-gray-700">Subtotal <small>( Includes V.A.T )</small></span>
+              <span class="text-xl font-medium capitalize text-gray-900">€{{ total }}</span>
+            </div>
+            <h4 class="mb-2 text-xl font-medium capitalize text-gray-900">Shipping</h4>
+            <div class="flex mb-2 justify-between items-center">
+              <span class="text-gray-700">Greece</span>
+               <span class="text-xl font-medium capitalize text-gray-900">€{{ shipping }}</span>
+            </div>
+            <div class="flex mb-10 justify-between items-center">
+              <span class="text-gray-700">From store</span>
+              <span class="text-xl font-medium capitalize text-gray-900">Free</span>
+            </div>
+            <div class="flex mb-10 justify-between items-center">
+              <span class="text-xl font-medium capitalize text-gray-900">Order total <small>( Includes V.A.T )</small> </span>
+              <span class="text-xl font-medium capitalize text-gray-900">€{{ grand_total }}</span>
+            </div>
+            <a class="block w-full py-3 bg-gray-900 hover:bg-gray-700 text-center text-white font-semibold capitalize uppercase rounded-md transition duration-200" href="{% url 'carts:checkout' %}">Make Payment</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}
