@@ -3,9 +3,9 @@
 {% load static %}
 {% block content %}
 
-<section class="py-20 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="mb-14 text-5xl font-bold font-heading">Checkout</h2>
+<section class="py-20 ">
+    <div class="container mx-auto px-10 bg-white rounded shadow-md border border-gray-200">
+      <h2 class="mb-14 text-5xl font-bold font-heading py-6 ">Checkout</h2>
       <form action="" method="POST">
         {% csrf_token %}
 
@@ -14,96 +14,97 @@
         <div class="w-full lg:w-1/2 px-4">
 
             <div class="flex mb-10 items-center">
-              <span class="inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-blue-300 text-white">1</span>
-              <h3 class="text-2xl font-bold font-heading">Delivery</h3>
+               <h3 class="text-2xl font-bold font-heading">Delivery</h3>
             </div>
             <div class="mb-12">
                 <div class="flex flex-wrap -mx-4 mb-10">
                     <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
                       <label class="font-bold font-heading text-gray-600" for="">Email</label>
-                      <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="email" type="email">
+                      <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="email" type="email">
                     </div>
                     <div class="w-full md:w-1/2 px-4">
                       <label class="font-bold font-heading text-gray-600" for="">Phone Number</label>
-                      <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="phone_number" type="text">
+                      <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="phone_number" type="text">
                     </div>
                   </div>
             </div>
             <div class="flex mb-10 items-center">
-              <span class="inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-purple-300 text-white">2</span>
-              <h3 class="text-2xl font-bold font-heading">Shipping informations</h3>
+               <h3 class="text-2xl font-bold font-heading">Shipping informations</h3>
             </div>
             <div class="mb-12">
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
                   <label class="font-bold font-heading text-gray-600" for="">First name</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="first_name" type="text">
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="first_name" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
                   <label class="font-bold font-heading text-gray-600" for="">Last name</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="last_name" type="text">
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="last_name" type="text">
                 </div>
-              </div>
-              <div class="mb-10">
-                <label class="font-bold font-heading text-gray-600" for="">Address</label>
-                <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="address" type="text">
               </div>
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
-                  <label class="font-bold font-heading text-gray-600" for="">Area</label>
-                  <input required  class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="area" type="text">
+                  <label class="font-bold font-heading text-gray-600" for="">Street Address</label>
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="address" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                  <label class="font-bold font-heading text-gray-600" for="">Zip Code</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="zip_codde" type="text">
+                  <label class="font-bold font-heading text-gray-600" for="">Post Code</label>
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="post_code" type="text">
+                </div>
+              </div>
+
+              <div class="flex flex-wrap -mx-4 mb-10">
+                <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
+                  <label class="font-bold font-heading text-gray-600" for="">Municipality</label>
+                  <input required  class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="Municipality" type="text">
+                </div>
+                <div class="w-full md:w-1/2 px-4">
+                  <label class="font-bold font-heading text-gray-600" for="">State</label>
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="state" type="text">
                 </div>
               </div>
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
                   <label class="font-bold font-heading text-gray-600" for="">City</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="city" type="text">
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="city" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
                   <label class="font-bold font-heading text-gray-600" for="">Country</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="country" type="text">
+                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="country" type="text">
                 </div>
             </div>
             <div class="mb-10">
                 <label class="font-bold font-heading text-gray-600" for="">Order Note</label>
-                 <textarea class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="order_note" rows="3"></textarea>
+                 <textarea class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="order_note" rows="3"></textarea>
             </div>
 
 
             </div>
             <div class="flex mb-10 items-center">
-              <span class="inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-yellow-300 text-white">3</span>
-              <h3 class="text-2xl font-bold font-heading">Shipping methods</h3>
+               <h3 class="text-2xl font-bold font-heading">Shipping methods</h3>
             </div>
             <div class="mb-12">
               <div class="mb-2 py-3 px-8 bg-white rounded-full">
                 <div class="flex flex-wrap items-center">
                   <label class="inline-flex mb-1 pr-4 py-2 items-center sm:border-r" for="">
-                    <input type="radio" name="deliveryType" value="" checked="">
+                    <input type="radio" name="free_delivery" value="" checked="">
                     <span class="ml-4 text-sm font-bold font-heading">Standard delivery</span>
                   </label>
-                  <p class="order-last w-full sm:w-auto pl-4 text-sm text-gray-500">3-4 business days</p>
-                  <span class="sm:order-last ml-auto text-blue-300 font-bold font-heading">$3.00</span>
+                  <span class="sm:order-last ml-auto text-black font-bold font-heading">Free on Greece</span>
                 </div>
               </div>
               <div class="py-3 px-8 bg-white rounded-full">
                 <div class="flex flex-wrap items-center">
                   <label class="inline-flex mb-1 pr-4 py-2 items-center sm:border-r" for="">
-                    <input type="radio" name="deliveryType" value="">
-                    <span class="ml-4 text-sm font-bold font-heading">Express</span>
+                    <input type="radio" name="store_pickup" value="">
+                    <span class="ml-4 text-sm font-bold font-heading">Pick up from store</span>
                   </label>
-                  <p class="order-last w-full sm:w-auto pl-4 text-sm text-gray-500">Next day</p>
-                  <span class="sm:order-last ml-auto text-blue-300 font-bold font-heading">$20.00</span>
+                   <span class="sm:order-last ml-auto text-black font-bold font-heading"> Call and arrange a pick up from the store</span>
                 </div>
               </div>
             </div>
             <div class="flex mb-10 items-center">
-              <span class="inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-green-300 text-white">4</span>
-              <h3 class="text-2xl font-bold font-heading">Order summary</h3>
+               <h3 class="text-2xl font-bold font-heading">Order summary</h3>
             </div>
             <div>
               <div class="flex flex-wrap -mx-4 mb-10">
@@ -146,23 +147,24 @@
 
         </div>
         <div class="w-full lg:w-1/2 px-4">
-          <div class="py-16 px-6 md:px-14 bg-white">
+          <div class="py-16 px-6 md:px-14 bg-gray-50 border border-gray-200">
             <div class="flex mb-8 items-center">
               <h2 class="text-4xl font-bold font-heading">Order summary</h2>
-              <span class="flex-shrink-0 inline-flex ml-4 w-8 h-8 items-center justify-center rounded-full bg-red-300 text-white">2</span>
+              <span class="flex-shrink-0 inline-flex ml-4 w-8 h-8 items-center justify-center rounded-full bg-black text-white">            {{ cart_count }}
+              </span>
             </div>
             <div class="mb-10 pb-16 border-b">
-                <div class="inline-block w-full bg-gray-100">
+                <div class="inline-block w-full bg-black">
                     <table class="w-full border-collapse ">
                       <thead>
                         <tr class="border-b-2 border-gray-200">
-                          <th class="px-2 sm:px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase ">
+                          <th class="px-2 sm:px-4 py-3 text-left text-xs font-semibold text-white uppercase ">
                           </th>
-                          <th class="px-2 sm:px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase ">
+                          <th class="px-2 sm:px-4 py-3 text-center text-xs font-semibold text-white uppercase ">
                             quantity
                           </th>
 
-                          <th class=" px-2 sm:px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase" >
+                          <th class=" px-2 sm:px-4 py-3 text-center text-xs font-semibold text-white uppercase" >
                             total price
                           </th>
 
