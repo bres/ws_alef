@@ -75,18 +75,20 @@
   <!-- Navbar -->
   <!--FIXME:SMALL SCREEN  -->
 
-  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-40 flex justify-between lg:justify-center bg-black border-b-4 border-gray-100 shadow-md  z-40 ">
+  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-40 flex justify-between lg:justify-center bg-black border-b-4 border-gray-100 shadow z-40 ">
 
       <!--  Two Levels Menu -->
       <div class="w-full flex flex-col    text-white ">
-        <div class="hidden lg:flex w-full  justify-center items-center bg-white h-10">
+        <div class="hidden lg:flex w-full  justify-center items-center bg-gray-200 h-10">
           <p class="text-sm text-center text-black font-medium uppercase">
             Free delivery from 50 € and easy returns!
           </p>
         </div>
         <!-- three columns top horizontal menu on a grid -->
         <div class="w-full grid grid-cols-3  px-4 xl:px-32 h-20">
-        <form class="hidden items-center lg:flex mt-4" method='GET' action="{% url 'store:search'%}">
+
+
+        <!-- <form class="hidden items-center lg:flex mt-4" method='GET' action="{% url 'store:search'%}">
         {% csrf_token %}
         <button type="submit" value="search" class="text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
@@ -94,9 +96,21 @@
         </svg>
         </button>
         <input type="search" placeholder="Search by product" name="keyword" class="pl-1 text-sm bg-black placeholder-white border-b border-black transition duration-700  focus:border-gray-400 outline-none">
-        </form>
+        </form> -->
 
+        <form class="hidden w-full max-w-xsitems-center lg:flex mt-4" method='GET' action="{% url 'store:search'%}">
+            {% csrf_token %}
+      <div class="flex items-center border-b border-white py-2">
 
+        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 text-sm text-white py-1 px-2 rounded" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="white">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+        </button>
+         <input class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none placeholder-gray-100 transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
+
+      </div>
+    </form>
 
 
         <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
