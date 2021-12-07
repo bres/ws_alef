@@ -6,7 +6,7 @@
 <section class="py-20 ">
     <div class="container mx-auto px-10 bg-white rounded shadow-md border border-gray-200">
       <h2 class="mb-14 text-5xl font-bold font-heading py-6 ">Checkout</h2>
-      <form action="" method="POST">
+      <form action="{% url 'orders:place_order' %}" method="POST">
         {% csrf_token %}
 
       <div class="flex flex-wrap -mx-4">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="w-full md:w-1/2 px-4">
                       <label class="font-bold font-heading text-gray-600" for="">Phone Number</label>
-                      <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="phone_number" type="text">
+                      <input required class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="phone" type="text">
                     </div>
                   </div>
             </div>
@@ -56,7 +56,7 @@
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
                   <label class="font-bold font-heading text-gray-600" for="">Municipality</label>
-                  <input required  class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="Municipality" type="text">
+                  <input required  class="block w-full mt-4 py-4 px-4 bg-gray-50 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="municipality" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
                   <label class="font-bold font-heading text-gray-600" for="">State</label>
@@ -80,6 +80,7 @@
 
 
             </div>
+
             <div class="flex mb-10 items-center">
                <h3 class="text-2xl font-bold font-heading">Shipping methods</h3>
             </div>
@@ -88,24 +89,25 @@
                 <div class="flex flex-wrap items-center">
                   <label class="inline-flex mb-1 pr-4 py-2 items-center sm:border-r" for="">
                     <input type="radio" name="shipping_method" value="">
-                    <span class="ml-4 text-sm font-bold font-heading">Standard delivery</span>
+                    <span class="ml-4 text-sm font-bold  ">Standard delivery</span>
                   </label>
-                  <span class="sm:order-last ml-auto text-black font-bold font-heading">Free on Greece</span>
+                  <span class="sm:order-last ml-auto text-black  ">Free on Greece</span>
                 </div>
               </div>
               <div class="py-3  bg-white rounded-full">
                 <div class="flex flex-wrap items-center">
                   <label class="inline-flex mb-1 pr-4 py-2 items-center sm:border-r" for="">
                     <input type="radio" name="shipping_method" value="">
-                    <span class="ml-4 text-sm font-bold font-heading">Pick up from store</span>
+                    <span class="ml-4 text-sm font-bold  ">Pick up from store</span>
                   </label>
-                   <span class="sm:order-last ml-auto text-black font-bold font-heading"> Call and arrange a pick up from the store</span>
+                   <span class="sm:order-last ml-auto text-black  "> Call and arrange a pick up from the store</span>
                 </div>
               </div>
             </div>
             <div class="flex mb-10 items-center">
                <h3 class="text-2xl font-bold font-heading">Order summary</h3>
             </div>
+
             <div>
               <div class="flex flex-wrap -mx-4 mb-10">
                 <label class="flex px-4 w-full sm:w-auto items-center" for="">
@@ -216,7 +218,7 @@
 
             </div>
             <div class="mb-12 bg-white border border-gray-200">
-              <div class="mb-10">
+
                 <div class="py-3 px-10 ">
                   <div class="flex justify-between">
                     <span class="font-medium">Subtotal <small>( Includes V.A.T )</small></span>
@@ -236,7 +238,7 @@
                     <span class="text-base md:text-xl font-bold ">€{{ grand_total }}</span>
                   </div>
                 </div>
-              </div>
+
             </div>
             <div class="mb-10">
               <span class="inline-block mb-4 font-medium">Apply discount code:</span>
