@@ -8,59 +8,48 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <!-- Include JQUERY-->
   <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-  <!-- Include the PayPal JavaScript SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AUyQSFsn8xyBWnsGDzrquCB5UZspMNOzlwmCpbpATMyoErvX10CzuyWJKo7fCNxg_-hjuGJHt66GUdoH&currency=EUR"></script>
+
+<!-- Include the PayPal JavaScript SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=ATjpLJCgZ2UMDbyVYVeE7zT9gvmR-N6eaJRdFn1MdDhbXGpe16ac1eH-9RQbD_hQbeh7VGi2HDVwcGHS&currency=EUR"></script>
+
+  
   <!-- Include google fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
   <title>{% block title %} {% endblock %}Alef Handmade</title>
+
   <style>
-  .paypal {position: relative;
-  z-index: 0;
-}
+      .paypal {
+      position: relative;
+      z-index: 0;
+      }
 
-  /* clears the ‘X’ from Internet Explorer */
-  input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
-  input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
-  /* clears the ‘X’ from Chrome */
-  input[type="search"]::-webkit-search-decoration,
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-results-button,
-  input[type="search"]::-webkit-search-results-decoration { display: none; }
+      /* clears the ‘X’ from Internet Explorer */
+      input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+      input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+      /* clears the ‘X’ from Chrome */
+      input[type="search"]::-webkit-search-decoration,
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-results-button,
+      input[type="search"]::-webkit-search-results-decoration { display: none; }
 
-font-family: 'Syne', sans-serif;
+      .mydiv {
+      display: none;
+      }
 
-    @font-face {
-      font-family: "Roboto";
-      font-style: normal;
-      src: url('{% static "fonts/Roboto/Roboto-regular.ttf" %}');
-      font-display: block;
-    }
- @font-face {
-      font-family: "Cabin";
-      font-style: normal;
-      src: url('{% static "fonts/Cabin/Cabin-regular.ttf" %}');
-      font-display: block;
-    }
-
-
-    .mydiv {
-          display: none;
-    }
-
-    .hero{
-        height:800px;
-    }
-    .noscrollClass {
-          position: fixed;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          filter: grayscale(100%);
-    }
+      .hero{
+      height:800px;
+      }
+      .noscrollClass {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      filter: grayscale(100%);
+      }
 
 
   </style>
@@ -80,9 +69,9 @@ font-family: 'Syne', sans-serif;
   <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-40 flex justify-between lg:justify-center bg-black border-b-4 border-gray-100 shadow z-50 ">
 
       <!--  Two Levels Menu -->
-      <div class="w-full flex flex-col    text-white ">
-        <div class="hidden lg:flex w-full  justify-center items-center bg-gray-200 h-10">
-          <p class="text-sm text-center text-black font-medium uppercase">
+      <div class="w-full flex flex-col text-white">
+        <div class="hidden lg:flex w-full  justify-center items-center bg-gray-100 h-10">
+          <p class="text-xs text-center text-black uppercase">
             Free delivery from 50 € and easy returns!
           </p>
         </div>
