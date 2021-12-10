@@ -1,0 +1,10 @@
+{% autoescape off %}
+ALEF ATELIER
+
+Hello {{ user.last_name|capfirst }} {{ user.first_name|capfirst }},
+your order has been received.
+
+Order Number:{{ order.order_number }}.
+
+Thank you!
+{% endautoescape %}
