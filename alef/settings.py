@@ -160,3 +160,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'geobres@gmail.com'
 EMAIL_HOST_PASSWORD='agreatdev1978'
 EMAIL_USE_TLS=True
+
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
