@@ -56,7 +56,7 @@
 
 </head>
 
-<body class="antialiased py-12 sm:py-40  bg-gray-50 Syne" id="scroll">
+<body class="antialiased py-12 sm:py-40 Syne" id="scroll">
   <!-- Information Bar-->
   <!-- <div class="hidden lg:block w-full py-1 items-center bg-white  ">
     <p class="text-sm text-center text-black font-medium uppercase">
@@ -79,37 +79,27 @@
         <div class="w-full grid grid-cols-3  px-4 xl:px-32 h-20">
 
 
-        <!-- <form class="hidden items-center lg:flex mt-4" method='GET' action="{% url 'store:search'%}">
-        {% csrf_token %}
-        <button type="submit" value="search" class="text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-        </svg>
-        </button>
-        <input type="search" placeholder="Search by product" name="keyword" class="pl-1 text-sm bg-black placeholder-white border-b border-black transition duration-700  focus:border-gray-400 outline-none">
-        </form> -->
-
         <form  class="hidden w-full max-w-xs items-center lg:flex mt-3" method='GET' action="{% url 'store:search'%}"  />
             {% csrf_token %}
       <div class="flex items-center border-b border-white py-2">
 
-        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 text-sm text-white py-0 px-2 rounded" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="white">
+        <button class="flex-shrink-0 bg-white hover:bg-gray-100 text-sm  py-0 px-2 rounded" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
           </svg>
         </button>
-         <input class="appearance-none bg-transparent border-none w-full text-white mr-3  px-2 leading-tight focus:outline-none placeholder-gray-100 transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
+         <input class="appearance-none bg-transparent border-none w-full text-white mr-3  px-2 leading-tight focus:bg-transparent
+           focus:outline-none  placeholder-gray-100 transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
 
       </div>
     </form>
 
 
         <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-{#        <h1 class="text-3xl lg:text-6xl  font-semibold text-center tracking-widest uppercase">#}
-{#        alef#}
-{#        </h1>#}
-               <img class="object-contain object-center w-16 lg:w-28 p-2 " src='{% static "img/logo.png" %}'
-            alt="Hero image">
+       <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
+       alef
+        </h1>
+      <!-- <img class="object-contain object-center w-20 lg:w-32 p-2 " src='{% static "img/logo.png" %}' alt="Hero image"> -->
         </a>
         <div class="hidden items-center lg:flex justify-end">
         <a href="{% url 'carts:cart' %}" class="relative text-white mr-6" aria-label="Cart">
@@ -236,33 +226,45 @@
   </div>
   <!-- Navbar ends -->
   <!-- Mobile responsive -->
-  <div class="sidebar min-h-screen lg:hidden absolute transform -translate-x-full transition left-0 top-0 duration-300 ease-in-out w-64 rounded-tr-md bg-gradient-to-bl from-white to-gray-50 border-r border-gray-200 shadow-md z-50">
+  <div class="sidebar min-h-screen lg:hidden absolute transform -translate-x-full transition left-0 top-0 duration-300 ease-in-out w-64 rounded-tr-md bg-white border-r border-gray-200 shadow-md z-50">
     <nav class="px-8">
       <div>
-        <p class="text-gray-800 tracking-widest text-center text-md font-bold py-4 border-b pb-10 border-gray-300 mb-6">
+        <!-- <p class="text-gray-800 tracking-widest text-center text-md font-bold py-4 border-b pb-10 border-gray-300 mb-6">
           search area..
-        </p>
-        <p class="text-gray-400 tracking-wide text-xl font-medium ml-2 w-full">
+        </p> -->
+
+        <form  class="w-full max-w-xs items-center my-2" method='GET' action="{% url 'store:search'%}"  />
+            {% csrf_token %}
+      <div class="flex items-center border-b border-black py-2">
+        <button class="flex-shrink-0  text-sm py-0 px-2 rounded" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+        </button>
+         <input class="appearance-none w-full text-black mr-3  px-2 leading-tight focus:outline-none placeholder-black transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
+      </div>
+    </form>
+        <p class="text-gray-400 font-medium tracking-wide text-md mt-6">
           BAGS
         </p>
-        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">Eco Leather
-            Bags</span>
-        </a>
-        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">BackPacks</span>
-        </a>
-        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">Pouches</span>
-        </a>
-        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm">CLUTCHES</span>
-        </a>
-        <a class="text-gray-800 flex items-center p-2 mt-2 mb-4" href="#"><span class="text-sm">Hobo Bags</span>
-        </a>
+        <ul class="flex flex-col space-y-2 capitalize text-gray-800  p-2 my-2 text-sm">
+          <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a></li>
+              {%  for category in links  %}
+                  <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a>
+                  </li>
+              {% endfor %}
+        </ul>
       </div>
       <div>
-        <p class="text-gray-400 font-medium tracking-wide text-md ml-2 w-full border-b pb-2 border-gray-300 mb-4">
+        <p class="text-gray-400 font-medium tracking-wide text-md mt-6  ">
           INFORMATIONS
         </p>
-        <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm font-normal">About</span></a> <a class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm font-normal">Materials</span></a> <a
-          class="text-gray-800 flex items-center p-2 my-2" href="#"><span class="text-sm font-normal">Contact</span></a>
+        <ul class="flex flex-col space-y-2 capitalize text-gray-800  p-2 my-2 text-sm">
+          <li class="capitalize"><a href="">About</a></li>
+          <li class="capitalize"><a href="">Materials</a></li>
+          <li class="capitalize"><a href="">Contact</a></li>
+        </ul>
+   
       </div>
     </nav>
   </div>
