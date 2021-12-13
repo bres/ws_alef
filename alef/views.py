@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import ContactForm
-from store.models import Product
+from store.models import Product,Category
 # Create your views here.
 
 def home(request):
     #return HttpResponse('this is the home page')
     products = Product.objects.filter().order_by('-created_date')[0:4]
+    #categories=Category.objects.all()
     context={
             'products': products,
+            #'categories':categories
 
     }
     return render(request,'homepage.html',context)

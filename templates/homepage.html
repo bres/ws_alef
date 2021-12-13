@@ -19,72 +19,56 @@
 
     </section>
     <!-- First gallery section -->
-    <section class=" pt-4 xl:pt-5 3xl:pt-6">
-        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
-            <div class="relative">
-                <a aria-label="View Item" href="">
-                    <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-160 3xl:h-192 w-full object-cover filter brightness-75"
-                        src='{% static "img/shoulder.jpg" %}' />
-                    <p
-                        class=" text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                    Shoulder Bags
-                    </p>
-                </a>
-            </div>
-            <div class="relative">
-                <a aria-label="View Item" href="/">
-                    <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-160 3xl:h-192 w-full object-cover filter brightness-75"
-                        src='{% static "img/hobo.jpg" %}' />
-                    <p
-                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                        Hobo Bags
-                    </p>
-                </a>
-            </div>
-            <div class="relative">
-                <a aria-label="View Item" href="/">
-                    <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-160 3xl:h-192 w-full object-cover filter brightness-75"
-                        src='{% static "img/clutches.jpg" %}' />
-                    <p
-                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                        Clutches
-                    </p>
-                </a>
-            </div>
-            <div class="relative md:col-span-2">
-                <a aria-label="View Item" href="/">
-                    <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-75"
-                        src='{% static "img/backpacks.jpg" %}' />
-                        <p
-                        class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                        BackPacks
-                    </p>
-                </a>
-            </div>
-            <div class="relative">
-              <a aria-label="View Item" href="/">
-                  <img alt="Grapefruit slice atop a pile of other slices"
-                      class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-75"
-                      src='{% static "img/pouches.jpg" %}' />
-                  <p
-                      class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                      Pouches
-                  </p>
-              </a>
-          </div>
-            <!-- <div class=" border border-gray-900 h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 mx-4 sm:mx-0">
-                <span
-                    class="text-white text-center text-4xl lg:text-5xl   h-full flex justify-center items-center font-bold uppercase">
+  
+<section class=" pt-4 xl:pt-5 3xl:pt-6">
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
+        {% for category in links %}
+        {% if  forloop.counter <= 3 %}  <!-- Here you can control the iteration-->
 
-                    <h2 class="font-display font-bold text-4xl mb-6 max-w-lg">Speed: A jogging stroller that keeps up with you</h2>
-                     <a href="#" class="inline-block border-2 border-yellow-800 font-light text-yellow-800 text-sm uppercase tracking-widest py-3 px-8 hover:bg-yellow-800 hover:text-white">View model</a></span>
-            </div> -->
+        <div class="relative">
+            <a aria-label="View Item" href="{{ category.get_url }}">
+                <img alt="Grapefruit slice atop a pile of other slices"
+                    class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-160 3xl:h-192 w-full object-cover filter brightness-75"
+                    src="{{ category.cat_image.url }}"/>
+                <p
+                    class=" text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+                    {{ category.category_name }}
+                </p>
+            </a>
         </div>
-    </section>
+       
+        {% elif forloop.counter == 4 %}
+        <div class="relative md:col-span-2">
+            <a aria-label="View Item" href="{{ category.get_url }}">
+                <img alt="Grapefruit slice atop a pile of other slices"
+                    class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-75"
+                    src="{{ category.cat_image.url }}" />
+                    <p
+                    class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+                    {{ category.category_name }}
+                </p>
+            </a>
+        </div>
+   {% else %}
+
+   <div class="relative">
+    <a aria-label="View Item" href="{{ category.get_url }}">
+        <img alt="Grapefruit slice atop a pile of other slices"
+            class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-75"
+            src="{{ category.cat_image.url }}" />
+        <p
+            class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+            {{ category.category_name }}
+        </p>
+    </a>
+</div>
+{% endif %}
+        {% endfor %}
+     
+    
+  
+    </div>
+</section>
 
 <!-- Latest section -->
     <section class="px-4 xl:px-32 py-16 lg:py-20 mt-6 bg-black">
@@ -116,9 +100,9 @@
         <div class="relative overflow-hidden transition duration-200  hover:shadow-xl border-4 border-white">
         <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="{{ product.images.url }}" alt="" />
         <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-        <p class="mb-4 text-lg font-bold text-gray-100">Mona Lisa</p>
-        <p class="text-sm tracking-wide text-gray-300">
-        Painted between 1503 and 1517, Da Vinci’s alluring portrait has been dogged by two questions since the day it was made: Who’s the subject and why is she smiling?
+        <p class="mb-4 text-lg font-bold text-gray-100 capitalize">{{ product.product_name }}</p>
+        <p class="text-sm tracking-wide text-gray-300  ">
+            {{ product.description|capfirst }}
         </p>
         </div>
         </div>
@@ -153,7 +137,7 @@
   </div>
 </section>
 
-
+<!-- sign up-->
 <section class="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-gray-800">
     <div class="container py-6">
         <h1 class="text-lg font-bold text-center lg:text-2xl">
@@ -173,5 +157,13 @@
     
     </div>
 </section>
+
+ 
+
+
+
+
+
+
 
 {% endblock %}
