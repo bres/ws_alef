@@ -4,6 +4,11 @@ from .import views
 from django.conf import settings #for development
 from django.conf.urls.static import static #for development
 
+from django.contrib import admin
+
+admin.autodiscover()
+admin.site.enable_nav_sidebar = False
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
