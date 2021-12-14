@@ -34,10 +34,10 @@
       input[type="search"]::-webkit-search-cancel-button,
       input[type="search"]::-webkit-search-results-button,
       input[type="search"]::-webkit-search-results-decoration { display: none; }
-
+/* 
       .mydiv {
       display: none;
-      }
+      } */
 
       .hero{
       height:800px;
@@ -96,10 +96,10 @@
 
 
         <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-       <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
+      <!-- <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
        alef
-        </h1>
-      <!-- <img class="object-contain object-center w-20 lg:w-32 p-2 " src='{% static "img/logo.png" %}' alt="Hero image"> -->
+        </h1>-->
+       <img class="object-contain object-center w-20 lg:w-32 p-2 " src='{% static "img/logo.png" %}' alt="Hero image"> 
         </a>
         <div class="hidden items-center lg:flex justify-end">
         <a href="{% url 'carts:cart' %}" class="relative text-white mr-6" aria-label="Cart">
@@ -157,40 +157,23 @@
                 </div>
               </div>
               <div class="col-span-2 pt-6 w-24">
-                <ul class="flex flex-col space-y-2 capitalize">
-                  <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a>
-                  </li>
-                      {%  for category in links  %}
-                          <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a>
-                          </li>
-                      {% endfor %}
-                </ul>
+                <div class="flex flex-col space-y-2 capitalize">
+                <a href="{% url 'store:product_list' %}" class="mymultiplediv capitalize">all products</a>
+                  {%  for category in links  %}
+                        <a href="{{ category.get_url }}" class="mymultiplediv" id="{{category.slug}}"> {{ category.category_name }} </a>
+                  {% endfor %}
+                </div>
               </div>
               <div class="col-span-4">
                 <div class="flex justify-end h-full">
-                  <div>
                     <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
+                  {%  for category in links  %}
+                    <div class="mydiv " id="div{{category.slug}}">
+                    <img src='{{ category.cat_image.url }}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                    </div>
+                  {% endfor %}
 
-                      <div class="mydiv " id="divzero">
-                        <img src='{% static "img/bags.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
-                      </div>
-                      <div class="mydiv " id="divone">
-                        <img src='{% static "img/leather.jpg" %}' alt="Manager" class="h-64 w-64 object-cover object-center" />
-                      </div>
-                      <div class="mydiv" id="divtwo">
-                        <img src='{% static "img/pouches.jpg" %}' alt="HR" class="h-64 w-64 object-cover object-center" />
-                      </div>
-                      <div class="mydiv" id="divthree">
-                        <img src='{% static "img/hobo.jpg" %}' alt="Developer" class="h-64 w-64 object-cover object-center" />
-                      </div>
-                      <div class="mydiv" id="divfore">
-                        <img src='{% static "img/clutch.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
-                      </div>
-                      <div class="mydiv" id="divfive">
-                        <img src='{% static "img/backpack.jpg" %}' alt="Designer" class="h-64 w-64 object-cover object-center" />
-                      </div>
-
-                  </div>
+             
                 </div>
         </li>
 
@@ -331,7 +314,7 @@
         $("#srcImage1").show();
         $("#srcImage2").show();
 
-        $("div.mydiv").hide();
+        //$("div.mydiv").hide();
       }
     });
 
@@ -342,8 +325,10 @@
         $("#srcImage2").hide();
 
         myvar = this.id;
+        console.log(myvar)
+
         $("div.mydiv").hide();
-        $("#div" + myvar).show();
+        $("#div"+myvar).show();
       });
     });
 
