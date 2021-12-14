@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %} Welcome to | {% endblock%}
+{% block content %}
+{% load static %}
+{% load tailwind_filters %}
+
+
+<!-- component -->
+<section class="px-4 xl:px-32">
+    <div class="">
+        {% include 'includes/alert.html' %}
+    </div>
+<div class="flex flex-col md:flex-row h-screen  my-24 bg-white border rounded-md shadow-md border-gray-200">
+
+    {% include 'includes/dashboard_sidebar.html' %}
+
+
+    <div class="w-full h-full p-3 md:w-9/12">
+        <div class="p-4 ">
+                
+            <div class="flex flex-col">
+                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                  <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-hidden">
+                      <table class="min-w-full">
+                        <thead class="bg-white border-b">
+                          <tr>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                              Order #
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                              Billing Name
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                              Phone Number
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                              OrderTotal
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Date
+                              </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                          <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                {{ order.order_number }}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{ order.full_name }}
+
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{ order.phone }}
+
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                €{{ order.order_total }}
+
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{ order.created_at }}
+
+                            </td>
+                          </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+               
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+
+{% endblock %}
