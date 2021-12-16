@@ -80,3 +80,21 @@ def get_absolute_url(self):
     return reverse('accounts:login_view', args=[self.slug])
 def get_absolute_url(self):
     return reverse('accounts:logout_view', args=[self.slug])
+
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    address = models.CharField(blank=True, max_length=100)
+    profile_picture = models.ImageField(blank=True, upload_to='userprofile')
+    city = models.CharField(blank=True, max_length=20)
+    state = models.CharField(blank=True, max_length=20)
+    country = models.CharField(blank=True, max_length=20)
+    municipality = models.CharField(blank=True, max_length=20)
+    post_code = models.CharField(blank=True, max_length=20)
+
+
+    def __str__(self):
+        return self.user.first_name
+
+    
