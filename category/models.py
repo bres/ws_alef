@@ -8,6 +8,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(max_length=255, blank=True)
     cat_image = models.ImageField(upload_to='images/categories', blank=True)
+    sort_number=models.CharField(max_length=50,unique=True)
 
 
     class Meta:
