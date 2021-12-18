@@ -12,5 +12,7 @@ def gallery_links(request):
 
 
 def default_link(request):
-    categories=Category.objects.get(category_name="default")
+    
+    categories=Category.objects.filter(category_name="default")
+    
     return dict(categories=categories)

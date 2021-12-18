@@ -5,8 +5,7 @@ from django.conf import settings #for development
 from django.conf.urls.static import static #for development
  
 urlpatterns = [
-    path('admin/',include('admin_honeypot.urls', namespace='admin_honeypot')),
-    path('securealefatelier2005/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('contact/',views.contact,name='contact'),
     path('about/',views.about,name='about'),

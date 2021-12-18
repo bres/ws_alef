@@ -16,7 +16,6 @@ blank = "*"
 requests = "*"
 django-admin-thumbnails = "*"
 python-decouple = "*"
-django-admin-honeypot = "*"
 
 [dev-packages]
 
