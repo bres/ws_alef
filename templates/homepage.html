@@ -100,7 +100,7 @@
         <div class="relative overflow-hidden transition duration-200  hover:shadow-xl border-4 border-white">
         <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="{{ product.images.url }}" alt="" />
         <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-        <p class="mb-4 text-lg font-bold text-gray-100 capitalize">{{ product.product_name }}</p>
+        <p class="mb-4 text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
         <p class="text-sm tracking-wide text-gray-300  ">
             {{ product.description|capfirst }}
         </p>
@@ -111,7 +111,7 @@
         {% endif %}
         </div>
         <div class="text-center mt-20">
-        <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-white hover:bg-gray-100 border border-gray-900 text-center text-gray-900 font-semibold capitalize uppercase  transition duration-200">
+        <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-white hover:bg-gray-100 border border-gray-900 text-center text-gray-900 font-semibold capitalize   transition duration-200">
         View gallery
     
         </a>
