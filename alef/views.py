@@ -7,11 +7,9 @@ from store.models import Product,Category
 def home(request):
     #return HttpResponse('this is the home page')
     products = Product.objects.filter().order_by('-created_date')[0:4]
-    categories=Category.objects.filter(category_name="default")
     context={
             'products': products,
-            'categories':categories
-
+ 
     }
     return render(request,'homepage.html',context)
 

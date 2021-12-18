@@ -161,10 +161,10 @@ border-radius: 50%;
               </div>
               <div class="col-span-4">
                 <div class="flex justify-end h-full">
-                    <img id="srcImage1" src='{% static "img/bags.jpg" %}'>
+                    <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 w-64 object-cover object-center"/>
                   {%  for category in links  %}
                     <div class="mydiv " id="div{{category.slug}}">
-                    <img src='{{ category.cat_image.url }}' alt="Manager" class="h-64 w-64 object-cover object-center" />
+                    <img src='{{ category.cat_image.url }}' alt="Category Photos" class="h-64 w-64 object-cover object-center"/>
                     </div>
                   {% endfor %}
                 </div>
@@ -286,23 +286,23 @@ border-radius: 50%;
       $("nav.inline-menu ul li").click(function() {
         $(this).siblings().find(".mega-menu").hide();
         $(this).find(".mega-menu").toggle();
+       
       });
 
       // hide grid mega menu after click anywhere on the page
       $("html").click(function(event) {
         if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
           $('.mega-menu').hide();
+        
         }
       });
     });
 
-    //restore main image on grid mega menu after click event anywhere on the page
+    //restore default image on grid mega menu after click event anywhere on the page
     $("html").click(function(event) {
       if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
         $("#srcImage1").show();
-        $("#srcImage2").show();
-
-        //$("div.mydiv").hide();
+        $("div.mydiv").hide();
       }
     });
 
@@ -310,11 +310,9 @@ border-radius: 50%;
     $(document).ready(function() {
       $(".mymultiplediv").mouseover(function() {
         $("#srcImage1").hide();
-        $("#srcImage2").hide();
 
         myvar = this.id;
-        console.log(myvar)
-
+ 
         $("div.mydiv").hide();
         $("#div"+myvar).show();
       });
