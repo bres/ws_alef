@@ -14,10 +14,7 @@
 
 
 <!-- Include google fonts -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+
 <title>{% block title %} {% endblock %}Alef Handmade</title>
 
 <style>
@@ -39,9 +36,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 display: none;
 } 
 
-.hero{
-height:800px;
-}
+
 .noscrollClass {
 position: fixed;
 left: 0;
@@ -62,88 +57,98 @@ border-radius: 50%;
 
 </head>
 
-<body class="antialiased py-12 sm:py-40 Syne" id="scroll">
+<body class="antialiased pt-20 lg:pt-40" id="scroll">
 
-  <div class="w-full fixed inset-x-0 top-0 h-12  sm:h-40 flex justify-between lg:justify-center bg-black border-b-2 border-gray-100 shadow z-50 ">
-<!--  Two Levels Menu -->
-      <div class="w-full flex flex-col text-white">
-        <div class="hidden lg:flex w-full  justify-center items-center bg-gray-100 h-10">
-          <p class="text-xs text-center text-black uppercase">
-            Free delivery from 50 € and easy returns!
-          </p>
-        </div>
-<!-- three columns top horizontal menu on a grid -->
-        <div class="w-full grid grid-cols-3  px-4 xl:px-32 h-20">
-
-
-        <form  class="hidden w-full max-w-xs items-center lg:flex mt-3" method='GET' action="{% url 'store:search'%}">
-        {% csrf_token %}
-        <div class="flex items-center border-b border-white py-2">
-
-        <button class="flex-shrink-0 text-sm px-2" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="white">
-        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-        </svg>
-        </button>
-        <input class="appearance-none bg-transparent border-none w-full text-white mr-3  px-2 leading-tight focus:bg-transparent
-        focus:outline-none  placeholder-gray-100 transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
-        </div>
-        </form>
-
-
-        <a aria-label="Alef Handmade" class="flex items-center lg:mx-auto" href="/" title="Alef Handmade">
-       <!-- <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
-       alef
-        </h1>-->
-       <img class="object-contain object-center w-20 lg:w-28 p-2 " src='{% static "img/logo.png" %}' alt="Hero image"> 
-        </a>
-        <div class="hidden items-center lg:flex justify-end">
-        <a href="{% url 'carts:cart' %}" class="relative text-white mr-6" aria-label="Cart">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-        </svg>
-        <span class="absolute bottom-5 ml-5">
-          <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-white text-black">
-            {{ cart_count }}
+  <div class="w-full fixed inset-x-0 top-0 h-20 lg:h-40 flex justify-between lg:justify-center z-50 ">
+<!--  Three Levels Menu -->
+    <div class="w-full flex flex-col">
+<!--Information First Level-->
+          <div class="w-full bg-black">
+            <p class="text-xs text-center text-white uppercase py-1 z-50">
+              Free delivery from 50 € and easy returns!
+            </p>
           </div>
-        </span>
-        </a>
+<!-- Four columns Second Level -->
+          <div class="w-full  items-center  grid grid-cols-2 lg:grid-cols-3 px-4 xl:px-32 h-24 bg-white">
+<!-- Search Form-->
+              <form  class="hidden lg:flex items-center mt-3 w-auto" method='GET' action="{% url 'store:search'%}">
+              {% csrf_token %}
+              <div class="flex items-center border-b border-black py-2">
+              <button class="flex-shrink-0 text-sm px-2" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+              </svg>
+              </button>
+              <input class="appearance-none bg-transparent border-none w-full text-black mr-3  px-2 leading-tight focus:bg-transparent
+              focus:outline-none  placeholder-gray-400 transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
+              </div>
+              </form>
+<!-- Logo-->
+              <a aria-label="Alef Handmade" class="flex items-center lg:justify-center" href="/" title="Alef Handmade">
+                <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
+                alef
+                </h1>
+             <!--  <img class="object-contain object-center w-20 lg:w-28 p-2 " src='{% static "img/logo.png" %}' alt="Hero image"> -->
+              </a>
+<!-- svg icons-->
+              <div class="hidden lg:flex justify-end items-center">
+      <!-- Basket-->
+                <a href="{% url 'carts:cart' %}" class="relative text-black mr-6" aria-label="Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                </svg>
+                <span class="absolute bottom-5 ml-5">
+                <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-black text-white">
+                {{ cart_count }}
+                </div>
+                </span>
+                </a>
+      <!-- dashboard-logout-login-welcome-->
+                {% if user.id is not None %}
+                <a href="{% url 'accounts:dashboard' %}" class="text-black mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
+                </svg>
+                </a>
+                <a href="{% url 'accounts:logout' %}" class="text-black mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+                </svg>
+                </a>
+                <p class="text-md capitalize ">Welcome <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
+                {% else %}
+                <a href="{% url 'accounts:login' %}" class="text-black mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                </a>
+                <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
+                {% endif %}
+              </div>
+<!-- right button for mobile-screens with flex -->
 
+              <div class="flex justify-end items-center lg:hidden my-2 px-4  lg:px-0 z-40 ">
+              <!--FIXME:FIX THE ONFOCUS  -->
+              <button class="mobile-menu-button text-black" onclick="myFunc()">
+              <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+              </path>
+              </svg>
+              </button>
+              </div>
 
-        {% if user.id is not None %}
-        <a href="{% url 'accounts:dashboard' %}" class="text-white mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
-        </svg>
-        </a>
-        <a href="{% url 'accounts:logout' %}" class="text-white mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
-        </svg>
-        </a>
-        <p class="text-md capitalize ">Welcome <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
-        {% else %}
-        <a href="{% url 'accounts:login' %}" class="text-white mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-        </a>
-        <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
-
-        {% endif %}
-        </div>
-        </div>
-<!-- horizontal second menu -->
-        <div class="hidden relative justify-center lg:flex w-full h-12 ">
-        <nav class="inline-menu flex text-sm xl:text-md items-center">
-<!-- hidden dropdown  with javascript configuration -->
-        <ul class="flex">
+          </div>
+<!-- third horizontal menu -->
+      <div class="hidden justify-center lg:flex w-full bg-white border-b border-gray-200 ">
+        <nav class="inline-menu relative flex text-sm xl:text-md items-center py-2 justify-center w-full  h-14 ">
+        <!-- hidden dropdown  with javascript configuration -->
+        <ul class="flex ">
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 ease-in-out border-b border-transparent hover:border-white uppercase" href="#">
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200  border-b border-transparent hover:border-black uppercase" href="#">
             Bags
           </a>
-          <div class="mega-menu absolute left-0 right-0 top-12 bg-black border-b border-white shadow-md ">
-            <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32  ">
+          <div class="mega-menu absolute left-0 right-0 top-14 bg-white border-b border-t border-gray-200 shadow ">
+            <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32 ">
               <div class="cols-span-1 pt-6">
                 <div class="flex flex-col space-y-2">
                   <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
@@ -160,44 +165,36 @@ border-radius: 50%;
                 </div>
               </div>
               <div class="col-span-4">
-                <div class="flex justify-end h-full">
-                    <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 w-64 object-cover object-center"/>
+                <div class="flex justify-end">
+                    <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 object-cover object-center"/>
                   {%  for category in links  %}
                     <div class="mydiv " id="div{{category.slug}}">
-                    <img src='{{ category.cat_image.url }}' alt="Category Photos" class="h-64 w-64 object-cover object-center"/>
+                    <img src='{{ category.cat_image.url }}' alt="Category Photos" class="w-full h-64 object-cover object-center"/>
                     </div>
                   {% endfor %}
                 </div>
+              </div>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-white  uppercase" href="#">
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
             About
           </a>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-white  uppercase" href="#">
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black   uppercase" href="#">
             Materials
           </a>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-white  uppercase" href="{% url 'contact' %}">
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black   uppercase" href="{% url 'contact' %}">
             Contact
           </a>
         </li>
         </ul>
         </nav>
-        </div>
       </div>
-<!-- right button for mobile-screens with flex -->
-      <div class="lg:hidden flex items-center my-2 px-4 lg:px-8 z-50">
-<!--FIXME:FIX THE ONFOCUS  -->
-      <button class="mobile-menu-button text-white" onclick="myFunc()">
-        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-          </path>
-        </svg>
-      </button>
-      </div>
+    </div>
+
   </div>
 <!-- Navbar ends -->
 <!-- Mobile responsive -->
@@ -247,7 +244,7 @@ border-radius: 50%;
 
   <!-- footer section-->
 
-  <section class="px-4 xl:px-32 py-12 bg-black text-white border-t border-white">
+  <section class="px-4 xl:px-32 py-12 bg-white text-black ">
     <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
         <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
@@ -272,7 +269,7 @@ border-radius: 50%;
       </div>
 
     </div>
-    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-white">
+    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-black">
       <p class="mt-6 text-xs">© 2020. All rights reserved.</p>
     </div>
   </section>
