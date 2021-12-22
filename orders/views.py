@@ -8,13 +8,12 @@ import json
 from store.models import Product
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-import json.decoder
 
 
-#    body = json.loads(request.body)
+
 def payments(request):
-    body_unicode = request.body.decode('utf-8')
-    body = json.loads(body_unicode)
+    body = request.body
+    body = json.loads(body)
     order = Order.objects.get(user=request.user, is_ordered=False, order_number=body['orderID'])
 
 
