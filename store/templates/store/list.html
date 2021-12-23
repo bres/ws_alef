@@ -5,114 +5,114 @@
 
 
 
-    <section class=" min-h-screen ">
-        <div class="mx-4 xl:mx-32 my-8  shadow-md rounded bg-white">
-            <div class="lg:flex ">
-                <div class="lg:w-1/5 ">
-                  {% if 'search' in request.path %}
-                  <p class="w-full bg-black py-1 font-bold text-xl text-white text-center uppercase tracking-widest">search results</p>
-                  {% else %}
-                  <p class="w-full bg-black py-1 font-bold text-xl text-white text-center uppercase tracking-widest">Store</p>
-                  {% endif %}
-                  <div class="space-y-3 lg:space-y-4  border border-gray-200 rounded-md p-4 mx-4 mt-6 ">
-                    <h1 class="pt-2 font-semibold text-lg text-gray-700">Categories</h1>
-                    <ul class="pb-10 space-y-1">
-                        <li class="capitalize text-gray-700"><a href="{% url 'store:product_list' %}">all products</a></li>
-                        {% for category in links %}
-                        <li class="capitalize text-gray-700"><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    <a class="p-2 text-md underline capitalize" href="">Create a product</a>
-                    </div>
-                </div>
-                <div class="lg:mt-0 lg:w-4/5 ">
-                    <div class="bg-black flex justify-between items-center  text-sm tracking-widest capitalize  ">
-                        <p class="text-white text-lg py-1"><span class="font-semibold pl-4">{{ product_count }}</span> Products Found
-                        </p>
-                        <div class="flex items-center">
-                            <p class="text-white">Sort by</p>
-                            <select class="font-medium text-white bg-black focus:outline-none">
-                                <option value="#">Recommended</option>
-                                <option value="#">Size</option>
-                                <option value="#">Price</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
-                      {% if products %}
-                        {% for product in products %}
-                            <div class="border border-gray-200 p-2 xl:p-4">
-                            <div class="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden">
-                            <a href="{{ product.get_url }}"> <img src="{% if product.images %}{{ product.images.url }}
-                            {% else %}
-                            {% static "img/default.png" %}
-                            {% endif %}" alt="" class="w-full h-full object-center object-cover">
-                            </a>
-                            </div>
-                            <div class="mt-4 flex justify-between">
-
-                            <h3 class="text-md xl:text-md text-gray-700 capitalize">
-                            <a href="{{ product.get_url }}">
-                            {{ product.product_name }}
-                            </a>
-                            </h3>
-                            <p class="text-md xl:text-md font-medium text-black">€ {{ product.price }}</p>
-                            </div>
-
-                            {% if product.stock <= 0 %}
-                            <small class="text-center font-medium text-red-500 capitalize">out of stock</small>
-                            {% else %}
-                            <div class="w-full flex justify-center items-center ">
-                            <a aria-label=""
-                                class="capitalize text-xs xl:text-sm rounded-sm font-bold my-2 px-4 py-2 xl:px-6 xl:py-3  text-white bg-black  hover:bg-gray-700 transition duration-200"
-                                href="{{ product.get_url }}">
-                                details
-                            </a>
-                            </div>
-                            {% endif %}
-                            </div>
-                        {% endfor %}
+    <section class="min-h-screen py-16">
+        <div class="mx-4 xl:mx-32 my-8 lg:flex">
+           
+                        <div class="lg:w-1/5">
+                        {% if 'search' in request.path %}
+                        <p class="w-full bg-black py-1 font-bold text-xl text-white text-center uppercase tracking-widest">search results</p>
                         {% else %}
-                        <p class="text-xl px-4 pt-10 font-medium tracking-wide">No result found. Please try again.</p>
+                        <p class="w-full bg-black py-1 font-bold text-xl text-white text-center uppercase tracking-widest">Store</p>
                         {% endif %}
-                    </div>
-                  <div class="mx-auto container my-20">
-                  {% if products.has_other_pages %}
-                  <div class="flex  ">
-                  {% if products.has_previous %}
-                  <a href="?page={{products.previous_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-sm   hover:bg-black  hover:text-white border border-black ">
-                  previous
-                  </a>
-                  {% else %}
-                  <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 bg-white border border-black rounded-sm   cursor-not-allowed">
-                  previous
-                  </a>
-                  {% endif %}
-                  {% for i in products.paginator.page_range %}
-                  {% if products.number == i %}
-                  <a href="#" class="bg-black flex  items-center px-4 py-2 mx-1 text-white transition-colors duration-200 transform border border-black rounded-sm hover:bg-black hover:text-white">
-                  {{i}}
-                  </a>
-                  {% else %}
-                  <a href="?page={{i}}" class="  flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white">
-                  {{i}}
-                  </a>
-                  {% endif %}
-                  {% endfor %}
-                  {% if products.has_next %}
-                  <a href="?page={{products.next_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
-                  Next
-                  </a>
-                  {% else %}
-                  <a href="#" class="cursor-not-allowed flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
-                  Next
-                  </a>
-                  {% endif%}
-                  </div>
-                  {% endif %}
-                  </div>
-                </div>
-            </div>
+                        <div class="space-y-3 lg:space-y-4  border border-gray-200 p-4 lg:mr-4 mt-6 ">
+                            <h1 class="pt-2 font-semibold text-lg text-gray-700">Categories</h1>
+                            <ul class="pb-10 space-y-1">
+                                <li class="capitalize text-gray-700"><a href="{% url 'store:product_list' %}">all products</a></li>
+                                {% for category in links %}
+                                <li class="capitalize text-gray-700"><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <a class="p-2 text-md underline capitalize" href="">Create a product</a>
+                            </div>
+                        </div>
+                        <div class="mt-4 lg:mt-0 lg:w-4/5 ">
+                            <div class="bg-black flex justify-between items-center  text-sm tracking-widest capitalize  ">
+                                <p class="text-white text-lg py-1"><span class="font-semibold pl-4">{{ product_count }}</span> Products Found
+                                </p>
+                                <div class="flex items-center">
+                                    <p class="text-white">Sort by</p>
+                                    <select class="font-medium text-white bg-black focus:outline-none">
+                                        <option value="#">Recommended</option>
+                                        <option value="#">Size</option>
+                                        <option value="#">Price</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+                            {% if products %}
+                                {% for product in products %}
+                                    <div class="border border-gray-200 p-2 xl:p-4">
+                                    <div class="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden">
+                                    <a href="{{ product.get_url }}"> <img src="{% if product.images %}{{ product.images.url }}
+                                    {% else %}
+                                    {% static "img/default_product.png" %}
+                                    {% endif %}" alt="default image product" class="w-full h-full object-center object-cover">
+                                    </a>
+                                    </div>
+                                    <div class="mt-4 flex justify-between">
+
+                                    <h3 class="text-md xl:text-md text-gray-700 capitalize">
+                                    <a href="{{ product.get_url }}">
+                                    {{ product.product_name }}
+                                    </a>
+                                    </h3>
+                                    <p class="text-md xl:text-md font-medium text-black">€ {{ product.price }}</p>
+                                    </div>
+
+                                    {% if product.stock <= 0 %}
+                                    <small class="text-center font-medium text-red-500 capitalize">out of stock</small>
+                                    {% else %}
+                                    <div class="w-full flex justify-center items-center ">
+                                    <a aria-label=""
+                                        class="capitalize text-xs xl:text-sm rounded-sm font-bold my-2 px-4 py-2 xl:px-6 xl:py-3  text-white bg-black  hover:bg-gray-700 transition duration-200"
+                                        href="{{ product.get_url }}">
+                                        details
+                                    </a>
+                                    </div>
+                                    {% endif %}
+                                    </div>
+                                {% endfor %}
+                                {% else %}
+                                <p class="text-xl px-4 pt-10 font-medium tracking-wide">No result found. Please try again.</p>
+                                {% endif %}
+                            </div>
+                        <div class="mx-auto container my-20">
+                        {% if products.has_other_pages %}
+                        <div class="flex  ">
+                        {% if products.has_previous %}
+                        <a href="?page={{products.previous_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-sm   hover:bg-black  hover:text-white border border-black ">
+                        previous
+                        </a>
+                        {% else %}
+                        <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 bg-white border border-black rounded-sm   cursor-not-allowed">
+                        previous
+                        </a>
+                        {% endif %}
+                        {% for i in products.paginator.page_range %}
+                        {% if products.number == i %}
+                        <a href="#" class="bg-black flex  items-center px-4 py-2 mx-1 text-white transition-colors duration-200 transform border border-black rounded-sm hover:bg-black hover:text-white">
+                        {{i}}
+                        </a>
+                        {% else %}
+                        <a href="?page={{i}}" class="  flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white">
+                        {{i}}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                        {% if products.has_next %}
+                        <a href="?page={{products.next_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
+                        Next
+                        </a>
+                        {% else %}
+                        <a href="#" class="cursor-not-allowed flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
+                        Next
+                        </a>
+                        {% endif%}
+                        </div>
+                        {% endif %}
+                        </div>
+                        </div>
+             
 
 
         </div>

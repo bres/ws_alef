@@ -6,6 +6,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<!-- Favorite icon-->
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'icons/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'icons/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'icons/site.webmanifest' %}">
+<link rel="mask-icon" href="{% static 'icons/safari-pinned-tab.svg' %}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <!-- Include JQUERY-->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
@@ -15,7 +28,7 @@
 
 <!-- Include google fonts -->
 
-<title>{% block title %} {% endblock %}Alef Handmade</title>
+<title>{% block title %} {% endblock %}Alef Atelier</title>
 
 <style>
 .paypal {
@@ -57,19 +70,19 @@ border-radius: 50%;
 
 </head>
 
-<body class="antialiased pt-20 lg:pt-40" id="scroll">
+<body class="antialiased " id="scroll">
 
-  <div class="w-full fixed inset-x-0 top-0 h-20 lg:h-40 flex justify-between lg:justify-center z-50 ">
+  <div class="w-full fixed inset-x-0 top-0  flex justify-between lg:justify-center z-50 bg-white">
 <!--  Three Levels Menu -->
     <div class="w-full flex flex-col">
 <!--Information First Level-->
           <div class="w-full bg-black">
-            <p class="text-xs text-center text-white uppercase py-1 z-50">
+            <p class="text-xs text-center text-white uppercase py-2 z-50">
               Free delivery from 50 € and easy returns!
             </p>
           </div>
 <!-- Four columns Second Level -->
-          <div class="w-full  items-center  grid grid-cols-2 lg:grid-cols-3 px-4 xl:px-32 h-24 bg-white">
+          <div class="w-full border-b border-gray-200 lg:border-transparent items-center px-4 xl:px-32 py-2 grid grid-cols-2 lg:grid-cols-3">
 <!-- Search Form-->
               <form  class="hidden lg:flex items-center mt-3 w-auto" method='GET' action="{% url 'store:search'%}">
               {% csrf_token %}
@@ -85,10 +98,10 @@ border-radius: 50%;
               </form>
 <!-- Logo-->
               <a aria-label="Alef Handmade" class="flex items-center lg:justify-center" href="/" title="Alef Handmade">
-                <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
+               <!--  <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
                 alef
-                </h1>
-             <!--  <img class="object-contain object-center w-20 lg:w-28 p-2 " src='{% static "img/logo.png" %}' alt="Hero image"> -->
+                </h1>-->
+              <img class="object-contain object-center w-20 lg:w-28  " src='{% static "img/logo.png" %}' alt="Hero image"> 
               </a>
 <!-- svg icons-->
               <div class="hidden lg:flex justify-end items-center">
@@ -140,21 +153,21 @@ border-radius: 50%;
           </div>
 <!-- third horizontal menu -->
       <div class="hidden justify-center lg:flex w-full bg-white border-b border-gray-200 ">
-        <nav class="inline-menu relative flex text-sm xl:text-md items-center py-2 justify-center w-full  h-14 ">
+        <nav class="inline-menu relative flex text-sm xl:text-md items-center py-3 justify-center w-full">
         <!-- hidden dropdown  with javascript configuration -->
         <ul class="flex ">
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200  border-b border-transparent hover:border-black uppercase" href="#">
-            Bags
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200  font-bold border-b-2 border-transparent hover:border-black uppercase" href="#">
+            Shop
           </a>
-          <div class="mega-menu absolute left-0 right-0 top-14 bg-white border-b border-t border-gray-200 shadow ">
+          <div class="mega-menu absolute left-0 right-0 top-11 bg-white border-b border-t border-gray-200 shadow ">
             <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32 ">
               <div class="cols-span-1 pt-6">
-                <div class="flex flex-col space-y-2">
-                  <a href="#" class="text-sm font-bold uppercase ">new arrivals</a>
-                  <a href="#" class="text-sm font-bold uppercase ">winter 2021</a>
-                  <a href="#" class="text-sm font-bold uppercase ">offers</a>
-                  <a href="#" class="text-sm font-bold uppercase ">collection x</a>
+                <div class="flex flex-col space-y-2 text-sm font-bold uppercase">
+                  <a href="#" class="">new arrivals</a>
+                  <a href="#" class="">winter 2021</a>
+                  <a href="#" class="">offers</a>
+                  <a href="#" class="">collection x</a>
                 </div>
               </div>
               <div class="col-span-2 pt-6 w-24">
@@ -176,20 +189,16 @@ border-radius: 50%;
               </div>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black  uppercase" href="#">
-            About
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="#">
+            Infos
           </a>
         </li>
-        <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black   uppercase" href="#">
-            Materials
-          </a>
-        </li>
-        <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-150 ease-in-out border-b border-transparent hover:border-black   uppercase" href="{% url 'contact' %}">
+     
+        <!-- <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold  ease-in-out border-b border-transparent hover:border-black   uppercase" href="{% url 'contact' %}">
             Contact
           </a>
-        </li>
+        </li> -->
         </ul>
         </nav>
       </div>
@@ -237,17 +246,19 @@ border-radius: 50%;
     </nav>
   </div>
   <!-- block content-->
+  <div class="mt-10 lg:mt-28">  
   {% block content %}
 
   {% endblock %}
+</div>
   <!-- end block content-->
 
   <!-- footer section-->
 
-  <section class="px-4 xl:px-32 py-12 bg-white text-black ">
-    <div class="flex flex-wrap mb-12 lg:mb-20  text-center lg:text-left">
+  <section class="px-4 xl:px-32 py-12 text-black border-t border-gray-200">
+    <div class="flex flex-wrap mb-12 lg:mb-20 pt-6 text-center lg:text-left ">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
-        <a class="inline-block mx-auto lg:mx-0 text-3xl  leading-none" href="#">
+        <a class="inline-block mx-auto lg:mx-0 text-3xl" href="#">
           <p class="text-lg">Alef Handmade</p>
           <p class="mt-4 text-2xl font-medium">WE CREATE BAGS<br>
             TO CARRY OUR WORLDS...</p>
@@ -262,7 +273,7 @@ border-radius: 50%;
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Office</p>
         <p class="lg:text-md">Kolokotroni 9, Chalandri 152 33</p>
       </div>
-      <div class="w-full lg:w-1/4 pr-3">
+      <div class="w-full lg:w-1/4 lg:pr-3">
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Contacts</p>
         <p class="lg:text-md">info@alefatelier.com</p>
         <p class="lg:text-md">+30 6980-256899</p>
