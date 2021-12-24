@@ -9,7 +9,7 @@
 
  <!-- Header -->
     <section class="relative flex  items-center">
-        <img class="object-cover object-right w-screen h-screen  filter brightness-90" src='{% static "img/hero.jpg" %}'
+        <img class="object-cover  object-right  h-screen w-screen filter brightness-90" src='{% static "img/hero.jpg" %}'
             alt="Hero image">
         <h1
     class="text-white sm:text-black text-left ml-4 xl:ml-32 font-bold text-2xl md:text-3xl xl:text-5xl  3xl:text-8xl
@@ -23,13 +23,13 @@
   
 <section class=" pt-4 xl:pt-5 3xl:pt-6">
     <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
-        {% for category in gallery_links  %}
+        {% for category in links  %}
         {% if  forloop.counter <= 3 %}  <!-- Here you can control the iteration-->
 
         <div class="relative">
             <a aria-label="View Item" href="{{ category.get_url }}">
                 <img alt="Grapefruit slice atop a pile of other slices"
-                    class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-160 3xl:h-192 w-full object-cover filter brightness-75"
+                    class="h-80 sm:h-96 lg:h-112 xl:h-144 2xl:h-160 3xl:h-192 w-full object-cover"
                     src="{{ category.cat_image.url }}"/>
                 <p
                     class=" text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
@@ -42,7 +42,7 @@
         <div class="relative md:col-span-2">
             <a aria-label="View Item" href="{{ category.get_url }}">
                 <img alt="Grapefruit slice atop a pile of other slices"
-                    class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-75"
+                    class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover"
                     src="{{ category.cat_image.url }}" />
                     <p
                     class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
@@ -55,7 +55,7 @@
    <div class="relative">
     <a aria-label="View Item" href="{{ category.get_url }}">
         <img alt="Grapefruit slice atop a pile of other slices"
-            class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-75"
+            class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover"
             src="{{ category.cat_image.url }}" />
         <p
             class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
@@ -72,22 +72,22 @@
 </section>
 
 <!-- Latest section -->
-    <section class="px-4 xl:px-32 py-16 lg:py-20 mt-6 bg-black">
+    <section class="px-4 xl:px-32 py-16 lg:py-20 mt-6 bg-white">
         <div class="flex flex-col mb-6 lg:justify-center lg:flex-row md:mb-8">
         <div class="space-y-8">
-        <h1 class="lg:text-3xl text-2xl text-white font-bold text-center tracking-widest uppercase">Our Latest
+        <h1 class="lg:text-3xl text-2xl text-black font-bold text-center tracking-widest uppercase">Our Latest
         </h1>
         <div class="flex justify-center max-w-lg mx-auto text-center py-2 uppercase space-x-12">
         <button
-        class="text-white hover:border-white py-1 border-b border-transparent transition duration-200 tracking-widest">
+        class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
         Latest
         </button>
         <button
-        class="text-white hover:border-white py-1 border-b border-transparent transition duration-200 tracking-widest">
+        class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
         Trending
         </button>
         <button
-        class="text-white hover:border-white py-1 border-b border-transparent transition duration-200 tracking-widest">
+        class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
         Discounts
         </button>
         </div>
@@ -98,8 +98,8 @@
         {% if products %}
         {% for product in products %}
         <a href="{{ product.get_url }}" aria-label="View Item">
-        <div class="relative overflow-hidden transition duration-200  hover:shadow-xl border-4 border-white">
-        <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="{{ product.images.url }}" alt="" />
+        <div class="relative overflow-hidden transition duration-200  hover:shadow-xl ">
+        <img class="object-cover w-full h-64 lg:h-80 xl:h-96" src="{{ product.images.url }}" alt="" />
         <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
         <p class="mb-4 text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
         <p class="text-sm tracking-wide text-gray-300  ">
@@ -112,7 +112,7 @@
         {% endif %}
         </div>
         <div class="text-center mt-20">
-        <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-white hover:bg-gray-100 border border-gray-900 text-center text-gray-900 font-semibold capitalize   transition duration-200">
+        <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-black hover:bg-gray-800 border text-center text-white font-semibold capitalize   transition duration-200">
         View gallery
     
         </a>

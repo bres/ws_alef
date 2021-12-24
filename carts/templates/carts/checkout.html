@@ -3,15 +3,15 @@
 {% load static %}
 {% block content %}
 
-<section class="py-20 mx-4">
-    <div class="container mx-auto  px-4 bg-white rounded shadow-md border border-gray-200">
+<section class="py-20 px-4 xl:px-32">
+    <div class=" px-4  bg-white rounded shadow-md border border-gray-200">
       <h2 class="mb-14 text-5xl font-bold py-6 ">Checkout</h2>
       <form action="{% url 'orders:place_order' %}" method="POST">
         {% csrf_token %}
 
-      <div class="flex flex-wrap -mx-4">
+      <div class="flex flex-col xl:flex-row">
 
-        <div class="w-full lg:w-1/2 px-4">
+        <div class="w-full xl:w-1/2 px-4">
 
             <div class="flex mb-10 items-center">
                <h3 class="text-2xl font-bold font-heading">Delivery</h3>
@@ -104,55 +104,15 @@
                 </div>
               </div>
             </div>
-            <div class="flex mb-10 items-center">
-               <h3 class="text-2xl font-bold font-heading">Order summary</h3>
-            </div>
-
-            <div>
-              <div class="flex flex-wrap -mx-4 mb-10">
-                <label class="flex px-4 w-full sm:w-auto items-center" for="">
-                  <input type="radio" name="paymentType" value="" checked="">
-                  <span class="ml-5 text-sm">Credit card</span>
-                </label>
-                <label class="flex px-4 w-full sm:w-auto items-center" for="">
-                  <input type="radio" name="paymentType" value="">
-                  <span class="ml-5 text-sm">Cash on Delivery</span>
-                </label>
-                <label class="flex px-4 w-full sm:w-auto items-center" for="">
-                  <input type="radio" name="paymentType" value="">
-                  <span class="ml-5 text-sm">PayPal</span>
-                </label>
-              </div>
-              <div class="mb-10">
-                <label class="font-bold text-gray-600" for="">Name on Card</label>
-                <input class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" type="text">
-              </div>
-              <div class="mb-10">
-                <label class="font-bold text-gray-600" for="">Credit Card Type</label>
-                <input class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" type="text">
-              </div>
-              <div class="flex flex-wrap -mx-4">
-                <div class="w-full w-2/3 px-4">
-                  <div class="mb-10">
-                    <label class="font-bold text-gray-600" for="">Credit Card Number</label>
-                    <input class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" type="text">
-                  </div>
-                </div>
-                <div class="w-full w-1/3 px-4">
-                  <div class="mb-10">
-                    <label class="font-bold text-gray-600" for="">CVV</label>
-                    <input class="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" type="text">
-                  </div>
-                </div>
-              </div>
-            </div>
+          
 
         </div>
-        <div class="w-full lg:w-1/2 px-4">
+        <div class="w-full xl:w-1/2 px-4">
           <div class="py-16 px-6 bg-gray-100 border border-gray-200">
             <div class="flex mb-8 items-center">
               <h2 class="text-4xl font-bold font-heading">Order summary</h2>
-              <span class="flex-shrink-0 inline-flex ml-4 w-8 h-8 items-center justify-center rounded-full bg-black text-white">            {{ cart_count }}
+              <span class="flex-shrink-0 inline-flex ml-4 w-8 h-8 items-center justify-center rounded-full bg-black text-white">
+                 {{ cart_count }}
               </span>
             </div>
                 <div class="inline-block w-full   ">
@@ -240,13 +200,17 @@
                 </div>
 
             </div>
-            <div class="mb-10">
+
+            <!-- apply code-->
+            <!-- <div class="mb-10">
               <span class="inline-block mb-4 font-medium">Apply discount code:</span>
               <div class="flex mb-12 flex-wrap lg:flex-nowrap items-center">
-                <input class="mb-4 md:mb-0 mr-6 w-full px-8 py-4 placeholder-gray-800 font-bold border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" type="text" placeholder="SUMMER30X">
+                <input class="mb-4 md:mb-0 mr-6 w-full px-8 py-4 placeholder-gray-800 font-bold border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" type="text" placeholder="on development">
                 <a class="inline-block mb-4 md:mb-0 px-8 py-4 text-white font-bold uppercase bg-gray-800 hover:bg-gray-700 rounded-md" href="#">Apply</a>
               </div>
-            </div>
+            </div> -->
+
+
             <button type="submit" name="submit" class="mt-2 block w-full py-4 bg-black hover:bg-gray-800 text-center text-white font-bold uppercase  transition duration-200">Confirm Order</button>
             <a class="mt-2 block w-full py-4 bg-white border border-black hover:bg-gray-100 text-center text-black font-bold uppercase  transition duration-200" href="{% url 'store:product_list' %}">continue shopping</a>
           </div>

@@ -80,7 +80,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',  # new
-                'category.context_processors.gallery_links',  # new
                 'category.context_processors.default_link',  # new
                 'carts.context_processors.counter',  # new
 

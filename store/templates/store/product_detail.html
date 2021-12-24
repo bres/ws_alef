@@ -7,107 +7,177 @@
 
 {% block content %}
 
-<section class="min-h-screen py-20">
-  
-    <div class="mx-4 xl:mx-32  bg-white">
-      <div class="flex flex-wrap -mx-4 mb-8">
-        <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-        <div class="relative mb-10 mainImage" style="height: 564px;">
+<!-- <div class="w-full md:w-1/2 px-4 left-1/2 md:fixed  md:max-w-4xl md:pr-16 "> -->
+<style>
 
-        <a class="absolute top-1/2 left-0 ml-8 transform translate-1/2" href="#">
-        <svg class="w-8 h-8 fill-current text-gray-900" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 16.0185C9.268 16.2905 9.268 16.7275 9 16.9975C8.732 17.2675 8.299 17.2685 8.031 16.9975L0.201 9.0895C-0.067 8.8195 -0.067 8.3825 0.201 8.1105L8.031 0.2025C8.299 -0.0675 8.732 -0.0675 9 0.2025C9.268 0.4735 9.268 0.9115 9 1.1815L1.859 8.6005L9 16.0185Z" ></path>
-        </svg>
-        </a>
+.header-fixed {
+  position: fixed;
+  top: 200;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
 
-        <img class="object-cover w-full h-full border border-gray-200 " src="{% if single_product.images %}{{ single_product.images.url }}{% else %}
+.header-relative {
+  position: relative;
+  bottom:500;
+  width: 100%;
+   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+</style>
+
+<section class="py-20 mx-4 xl:mx-32"  >
+<div class="flex flex-wrap -mx-4 mb-8">
+    <div class="w-full md:w-1/2  px-4 mb-8 md:mb-0">
+        <img class="aspect-w-1  mb-10 " src="{% if single_product.images %}{{ single_product.images.url }}{% else %}
         {% static "img/no_image.png" %}{% endif %}" alt="">
-
-        <a class="absolute top-1/2 right-0 mr-8 transform translate-1/2" href="#">
-        <svg class="w-8 h-8 fill-current text-gray-900" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.19922 1.1817C-0.0687795 0.909696 -0.0687794 0.472695 0.19922 0.202695C0.46722 -0.0673054 0.90022 -0.0683048 1.16822 0.202695L8.99822 8.11069C9.26622 8.3807 9.26622 8.81769 8.99822 9.08969L1.16822 16.9977C0.900219 17.2677 0.467218 17.2677 0.199219 16.9977C-0.0687809 16.7267 -0.0687808 16.2887 0.199219 16.0187L7.34022 8.5997L0.19922 1.1817Z"></path>
-        </svg>
-        </a>
-        </div>
-
-
         <div class="thumb flex flex-wrap -mx-2">
-          <div class="w-1/2 sm:w-1/4 p-2">
 
-          <a target="mainImage" class="block border border-gray-700" href="{{single_product.images.url}}">
-            <img class="w-full h-32 object-cover" src="{{single_product.images.url}}" alt="Product Image">
-            </a>
-          </div>
-          {% for i in product_gallery  %}
-        <div class="w-1/2 sm:w-1/4 p-2">
-        <a target="mainImage" class="block border border-gray-700" href="{{i.image.url}}">
-        <img class="w-full h-32 object-cover" src="{{ i.image.url}}" alt="Product Image">
+        {% for i in product_gallery  %}
+        <div class=" p-2">
+        <a  class="  block border border-gray-700" href="{{i.image.url}}">
+        <img  class=" aspect-w-1 object-cover" src="{{ i.image.url}}" alt="Product Image">
         </a>
         </div>
         {% endfor %}     
-
-
         </div>
-        </div>
-        <div class="w-full md:w-1/2 px-4">
-               <form method="POST" action="{% url 'carts:add_cart' single_product.id  %}">
-                 {% csrf_token %}
-                <div class="mb-10 pb-10 border-b">
-                <p class="mb-8 text-gray-700 text-lg capitalize">{{ single_product.product_name }}</p>
-            
-                <p class="inline-block mb-8 text-2xl font-bold font-heading text-gray-700">
-                <span>${{ single_product.price }}</span>
-                <span class="font-normal text-base text-gray-400 line-through">discount</span>
-                </p>
-                <p class="max-w-md text-gray-500">{{ single_product.description|linebreaks }}</p>
-                </div>
-                {% if single_product.stock <= 0 %}
-                <small class="font-medium text-red-500 px-2 w-full lg:w-2/5 mb-4 lg:mb-0 capitalize">out of stock</small>
-                {% else %}
-
-
-
-                <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 mb-10 pb-10 border-b">
-
-                  <select class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold  py-4 px-6 rounded-sm uppercase transition duration-200" name="hardware">
-                    <option value="" disabled selected>Choose Hardware</option>
-                    {% for i in single_product.variation_set.hardwares %}
-                    <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
-                    {% endfor %}
-                    </select>
-
-
-                  <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold  py-4 px-8 rounded-sm uppercase transition duration-200" name="strap">
-                    <option value="" disabled selected>Choose Strap</option>
-                    {% for i in single_product.variation_set.straps %}
-                    <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
-                    {% endfor %}
-                   </select>
-
-                    <button type="submit" class="flex justify-center items-center w-full block bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200">
-                      <p class="px-2 text-xs">Add to cart</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </button>
-                  </div>
-
-                {% endif %}
-               </form>
-        </div>
-      </div>
-      <div>
-        <ul class="flex flex-wrap my-12 border-b-2">
-        <li class="w-1/2 md:w-auto"><a class="inline-block py-6 px-10 text-gray-500 font-bold" href="#">Description</a></li>
-        <li class="w-1/2 md:w-auto"><a class="inline-block py-6 px-10 text-gray-500 font-bold " href="#">Customer reviews</a></li>
-        <li class="w-1/2 md:w-auto"><a class="inline-block py-6 px-10 text-gray-500 font-bold " href="#">Shipping &amp; returns</a></li>
-        <li class="w-1/2 md:w-auto"><a class="inline-block py-6 px-10 text-gray-500 font-bold " href="#">Brand</a></li>
-        </ul>
-        <h3 class="mb-8 text-3xl font-bold  text-gray-700">Summer collection and laoreet get</h3>
-        <p class="max-w-2xl text-gray-500">I had interdum at ante porta, eleifend feugiat nunc. In semper euismod mi a accums lorem sad. Morbi at auctor nibh. Aliquam tincidunt placerat mollis. Lorem euismod dignissim, felis tortor ollis eros, non ultricies turpis.</p>
-      </div>
     </div>
-  
+    <div id="cart" class="w-full md:w-1/2 px-4 left-1/2 md:fixed  md:max-w-4xl md:pr-16 ">
+        <form method="POST" action="{% url 'carts:add_cart' single_product.id  %}">
+        {% csrf_token %}
+        <div  class="mb-10 pb-10 border-b">
+        <p class="mb-8 text-gray-900 text-lg capitalize">{{ single_product.product_name }}</p>
+        <p class="inline-block mb-8 text-2xl  text-gray-900">
+        <span>€{{ single_product.price }}</span>
+        <!-- <span class="font-normal text-base text-gray-400 line-through">discount</span> -->
+        </p>
+        <p class="max-w-md text-gray-500">
+          {{ single_product.description|linebreaks|title }}
+        </p>
+        </div>
+        {% if single_product.stock <= 0 %}
+        <small class="font-medium text-red-500 px-2 w-full lg:w-2/5 mb-4 lg:mb-0 capitalize">out of stock</small>
+        {% else %}
+        <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 mb-10 pb-10 ">
+          <select class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold px-6 rounded-sm uppercase transition duration-200" name="hardware">
+          <option value="" disabled selected>Choose Hardware</option>
+          {% for i in single_product.variation_set.hardwares %}
+          <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+          {% endfor %}
+          </select>
+          <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold  px-8 rounded-sm uppercase transition duration-200" name="strap">
+          <option value="" disabled selected>Choose Strap</option>
+          {% for i in single_product.variation_set.straps %}
+          <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+          {% endfor %}
+          </select>
+          <button type="submit" class="flex justify-center items-center w-full bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200">
+          <p class="px-2 text-xs">Add to cart</p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          </button>
+        </div>
+        {% endif %}
+        </form>
+    </div>
+</div>
+
+ 
 </section>
+
+<script>
+
+$(window).scroll(() => { 
+// Distance from top of document to top of footer.
+topOfFooter = $('#footer').position().top;
+// Distance from top of document to top of cart.
+topOfCart = $('#cart').position().top;
+
+  // Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
+  scrollDistanceFromTopOfDoc = $(document).scrollTop() + 727;
+  // Difference between the two.
+  scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
+
+  console.log(topOfFooter);
+  //console.log(scrollDistanceFromTopOfDoc);
+ 
+  console.log(topOfCart);
+  //console.log(scrollDistanceFromTopOfDoc);
+
+   
+  console.log(scrollDistanceFromTopOfDoc);
+  //console.log(scrollDistanceFromTopOfDoc);
+
+  // var result = $("#cart").height();
+  // console.log(result);
+
+// If user has scrolled further than footer,
+  // pull sidebar up using a negative margin.
+  if (scrollDistanceFromTopOfDoc > topOfFooter) {
+    $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
+  } else  {
+    $('#cart').css('margin-top', 0);
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// var maxID = -1;
+//   $('.count').each(function() {
+//        var myid = parseInt($(this).attr('id'),10);
+//        if( maxID < myid ) maxID = myid;
+//        var pos=$("#"+maxID).offset();
+//        console.log(pos.top)
+
+//   });
+  // the value of maxID will be the max from id-s
+
+
+
+
+
+// const navbar = document.getElementById("navbar");
+// const sticky = navbar.offsetTop;
+// console.log(sticky)
+// function myFunction() {
+//   if (window.pageYOffset >= sticky) {
+//   navbar.classList.add("header-fixed");
+//   } else {
+//   navbar.classList.remove("header-relative");
+//   }
+// }
+
+
+
+
+
+ 
+// $(window).scroll(function(){
+// if ($(window).scrollTop() > 100) {
+// $('.rightpart').removeClass('header-fixed');
+// $('.rightpart').addClass('header-relative');
+// }
+// else {
+// $('.rightpart').removeClass('header-relative');
+// $('.rightpart').addClass('header-fixed');
+
+
+// }
+// });
+</script>
 
 {% endblock %}

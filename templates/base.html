@@ -34,7 +34,10 @@
 .paypal {
 position: relative;
 z-index: 0;
-}
+ }
+
+
+
 
 /* clears the ‘X’ from Internet Explorer */
 input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
@@ -172,6 +175,8 @@ border-radius: 50%;
               </div>
               <div class="col-span-2 pt-6 w-24">
                 <div class="flex flex-col space-y-2 capitalize">
+                  <p class="capitalize text-gray-700 font-semibold"><a href="{% url 'store:product_list' %}">all products</a></p>
+
                   {%  for category in links  %}
                         <a href="{{ category.get_url }}" class="mymultiplediv" id="{{category.slug}}"> {{ category.category_name }} </a>
                   {% endfor %}
@@ -179,7 +184,9 @@ border-radius: 50%;
               </div>
               <div class="col-span-4">
                 <div class="flex justify-end">
-                    <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 object-cover object-center"/>
+                  <img id="srcImage1" src='{% static "img/hero.jpg" %}' alt="Default Photo" class="h-64 object-cover object-center"/>
+
+                    <!-- <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 object-cover object-center"/> -->
                   {%  for category in links  %}
                     <div class="mydiv " id="div{{category.slug}}">
                     <img src='{{ category.cat_image.url }}' alt="Category Photos" class="w-full h-64 object-cover object-center"/>
@@ -190,15 +197,19 @@ border-radius: 50%;
         </li>
         <li>
           <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="#">
-            Infos
+            About
           </a>
         </li>
-     
-        <!-- <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold  ease-in-out border-b border-transparent hover:border-black   uppercase" href="{% url 'contact' %}">
+        <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="#">
+            WholeSales
+          </a>
+        </li>
+        <li>
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold  ease-in-out border-b-2 border-transparent hover:border-black   uppercase" href="{% url 'contact' %}">
             Contact
           </a>
-        </li> -->
+        </li>
         </ul>
         </nav>
       </div>
@@ -255,8 +266,8 @@ border-radius: 50%;
 
   <!-- footer section-->
 
-  <section class="px-4 xl:px-32 py-12 text-black border-t border-gray-200">
-    <div class="flex flex-wrap mb-12 lg:mb-20 pt-6 text-center lg:text-left ">
+  <section id="footer" class="pt-12 text-black border-t border-gray-200">
+    <div class="flex flex-wrap mb-12 lg:mb-20 pt-6 text-center lg:text-left px-4 xl:px-32">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
         <a class="inline-block mx-auto lg:mx-0 text-3xl" href="#">
           <p class="text-lg">Alef Handmade</p>
@@ -280,8 +291,10 @@ border-radius: 50%;
       </div>
 
     </div>
-    <div class="flex flex-col lg:flex-row items-center lg:justify-between border-t border-black">
-      <p class="mt-6 text-xs">© 2020. All rights reserved.</p>
+    <div class="flex flex-row items-center justify-between py-4 bg-black text-white px-4 xl:px-32">
+      <p class="text-sm">© 2022. All rights reserved.</p>
+      <p class="text-sm font-bold text-gray-400 tracking-wide font-mono">ZWIWI</p>
+
     </div>
   </section>
 
@@ -343,14 +356,16 @@ border-radius: 50%;
   </script>
 
 
-<script>
+<!-- <script>
+  //thumbs gallery
+
 	$(document).ready(function(){
 		$('.thumb a').click(function(e){
 			e.preventDefault();
 			$('.mainImage img').attr('src', $(this).attr("href"));
 		})
 	})
-</script>
+</script> -->
 </body>
 
 </html>
