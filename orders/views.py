@@ -112,6 +112,7 @@ def place_order(request, total=0, quantity=0):
             data.post_code = form.cleaned_data['post_code']
             data.city = form.cleaned_data['city']
             data.order_note = form.cleaned_data['order_note']
+            data.delivery = form.cleaned_data['delivery']
             data.tax = tax
             data.order_total = grand_total
             data.ip = request.META.get('REMOTE_ADDR')

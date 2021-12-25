@@ -27,16 +27,30 @@
 
 
 <!-- Include google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+
+
 
 <title>{% block title %} {% endblock %}Alef Atelier</title>
 
 <style>
+
+/* Font Styles */
+body {
+font-family: 'Quicksand', sans-serif;
+font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+font-weight: 500;
+}
+
+
+/* Paypal */
+
 .paypal {
 position: relative;
 z-index: 0;
  }
-
-
 
 
 /* clears the ‘X’ from Internet Explorer */
@@ -80,9 +94,10 @@ border-radius: 50%;
     <div class="w-full flex flex-col">
 <!--Information First Level-->
           <div class="w-full bg-black">
-            <p class="text-xs text-center text-white uppercase py-2 z-50">
-              Free delivery from 50 € and easy returns!
-            </p>
+            <div class="flex items-center justify-center text-xs font-bold text-white uppercase py-1 space-x-3">        
+            <p class="font-mono"> Free delivery in Greece</p>
+            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
+            </div>
           </div>
 <!-- Four columns Second Level -->
           <div class="w-full border-b border-gray-200 lg:border-transparent items-center px-4 xl:px-32 py-2 grid grid-cols-2 lg:grid-cols-3">
@@ -104,7 +119,7 @@ border-radius: 50%;
                <!--  <h1 class="text-3xl lg:text-5xl  font-semibold text-center tracking-widest uppercase">
                 alef
                 </h1>-->
-              <img class="object-contain object-center w-20 lg:w-28  " src='{% static "img/logo.png" %}' alt="Hero image"> 
+              <img class="object-contain object-center w-20 lg:w-28  " src='{% static "img/logo.png" %}' alt="Web site Logo"> 
               </a>
 <!-- svg icons-->
               <div class="hidden lg:flex justify-end items-center">
@@ -131,7 +146,7 @@ border-radius: 50%;
                 <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
                 </svg>
                 </a>
-                <p class="text-md capitalize ">Welcome <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
+                <p class="text-md capitalize ">Hi <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
                 {% else %}
                 <a href="{% url 'accounts:login' %}" class="text-black mr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
@@ -143,7 +158,7 @@ border-radius: 50%;
               </div>
 <!-- right button for mobile-screens with flex -->
 
-              <div class="flex justify-end items-center lg:hidden my-2 px-4  lg:px-0 z-40 ">
+              <div class="flex justify-end items-center lg:hidden my-2 z-40 ">
               <!--FIXME:FIX THE ONFOCUS  -->
               <button class="mobile-menu-button text-black" onclick="myFunc()">
               <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -196,13 +211,13 @@ border-radius: 50%;
               </div>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="#">
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'about' %}">
             About
           </a>
         </li>
         <li>
           <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="#">
-            WholeSales
+            Wholesale
           </a>
         </li>
         <li>
@@ -217,46 +232,83 @@ border-radius: 50%;
 
   </div>
 <!-- Navbar ends -->
-<!-- Mobile responsive -->
-  <div class="sidebar min-h-screen lg:hidden absolute transform -translate-x-full transition left-0 top-0 duration-300 ease-in-out w-64 rounded-tr-md bg-white border-r border-gray-200 shadow-md z-50">
+<!-- Mobile Sidebar Starts -->
+  <div class="sidebar min-h-screen lg:hidden absolute transform -translate-x-full transition left-0 top-0 duration-300 ease-in-out w-72 rounded-tr-md bg-white border-r border-gray-200 shadow-md z-50">
     <nav class="px-8">
+      <div class="flex lg:hidden  justify-center mt-6 items-center border-b border-black pb-2">
+        <!-- Basket-->
+                  <a href="{% url 'carts:cart' %}" class="relative text-black mr-6" aria-label="Cart">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                  </svg>
+                  <span class="absolute bottom-5 ml-5">
+                  <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-black text-white">
+                  {{ cart_count }}
+                  </div>
+                  </span>
+                  </a>
+        <!-- dashboard-logout-login-welcome-->
+                  {% if user.id is not None %}
+                  <a href="{% url 'accounts:dashboard' %}" class="text-black mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
+                  </svg>
+                  </a>
+                  <a href="{% url 'accounts:logout' %}" class="text-black mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+                  </svg>
+                  </a>
+                  <p class="text-md capitalize ">Hi <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
+                  {% else %}
+                  <a href="{% url 'accounts:login' %}" class="text-black mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  </a>
+                  <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
+                  {% endif %}
+                </div>
+
+
+  
+      <p class="text-black font-bold tracking-wide text-md mt-6 uppercase">
+        bags
+      </p>
+      <ul class="flex flex-col space-y-2 capitalize text-gray-800  p-2 my-2 text-sm">
+        <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a></li>
+            {%  for category in links  %}
+                <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a>
+                </li>
+            {% endfor %}
+      </ul>
       <div>
-        <form  class="w-full max-w-xs items-center my-2" method='GET' action="{% url 'store:search'%}"  />
-            {% csrf_token %}
+        <p class="text-black font-bold tracking-wide text-md mt-6 uppercase">
+        informations
+        </p>
+        <ul class="flex flex-col space-y-2 capitalize text-gray-800 p-2 my-2 text-sm">
+          <li class="capitalize"><a href="{% url 'about' %}">About</a></li>
+          <li class="capitalize"><a href="">Wholesale</a></li>
+          <li class="capitalize"><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+      </div>
+      
+
+      <form  class="w-full max-w-xs items-center mt-6" method='GET' action="{% url 'store:search'%}"  />
+      {% csrf_token %}
       <div class="flex items-center border-b border-black py-2">
         <button class="flex-shrink-0  text-sm py-0 px-2 rounded" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        </svg>
         </button>
-         <input class="appearance-none w-full text-black mr-3  px-2 leading-tight focus:outline-none placeholder-black transition duration-700" name="keyword" type="text" placeholder="Search Bag" aria-label="search bag">
+        <input class="appearance-none w-full text-black mr-3 px-2 leading-tight focus:outline-none placeholder-black transition duration-700" name="keyword" type="text" placeholder="Search" aria-label="search">
       </div>
     </form>
-        <p class="text-gray-400 font-medium tracking-wide text-md mt-6">
-          BAGS
-        </p>
-        <ul class="flex flex-col space-y-2 capitalize text-gray-800  p-2 my-2 text-sm">
-          <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a></li>
-              {%  for category in links  %}
-                  <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a>
-                  </li>
-              {% endfor %}
-        </ul>
-      </div>
-      <div>
-        <p class="text-gray-400 font-medium tracking-wide text-md mt-6  ">
-          INFORMATIONS
-        </p>
-        <ul class="flex flex-col space-y-2 capitalize text-gray-800  p-2 my-2 text-sm">
-          <li class="capitalize"><a href="">About</a></li>
-          <li class="capitalize"><a href="">Materials</a></li>
-          <li class="capitalize"><a href="">Contact</a></li>
-        </ul>
-   
-      </div>
     </nav>
   </div>
-  <!-- block content-->
+  <!-- Sitebar Ends-->
+  <!-- Block Content Starts-->
   <div class="mt-10 lg:mt-28">  
   {% block content %}
 
@@ -278,8 +330,7 @@ border-radius: 50%;
       <div class="w-full lg:w-1/4  lg:pl-24 mb-8 lg:mb-0">
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Social</p>
         <p class="lg:text-md"> Instagram</p>
-        <p class="lg:text-md"> Etsy</p>
-      </div>
+       </div>
       <div class="w-full lg:w-1/4 px-3 mb-8 lg:mb-0">
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Office</p>
         <p class="lg:text-md">Kolokotroni 9, Chalandri 152 33</p>

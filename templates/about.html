@@ -9,32 +9,63 @@
  
  
 
+<section class="px-4 xl:px-32">   
 
-<div class="grid grid-cols-2 mt-12">
+<div class="grid grid-cols-2 gap-12 pt-20">
 
-    <div class="bg-purple-300 h-224 w-full">
-    <img class="object-cover w-full h-224" src='{% static "img/krisana.jpg" %}'/>
+    <div class="col-span-2">
+        <img class="object-cover w-full h-144" src='{% static "img/krisana.jpg" %}'/>
     </div>
 
-    <div class="h-224 w-full">
-    <p class="text-xl px-4">
-         <span class="text-9xl font-bold tracking-widest font-mono">Aleph</span> is the Phoenician letter that led to the first letter of the greek alphabet “Alpha” .As a word it symbolizes the beginning of the creation as well as the starting point of human culture.
-        Our brand “Alef Handmade” ia a small atelier based in Athens,Greece.Our primary focus is on the creation of handmade bags and accesories,using several high quality eco friendly and materials with different textures.Our philosophy is based on finding the roots of human creativity in products made purely by hand.We are inspired by the past to create unique and timeless products.
-    </p>
+    <div class="w-full mt-24">
+    <img class="object-cover " src='{% static "img/aboutmain.jpg" %}'/>
     </div>
-
-    <div class="h-224 w-full mt-40">
-        <p class="text-xl px-4">
-             <span class="text-9xl font-bold tracking-widest font-mono">Aleph</span> is the Phoenician letter that led to the first letter of the greek alphabet “Alpha” .As a word it symbolizes the beginning of the creation as well as the starting point of human culture.
-            Our brand “Alef Handmade” ia a small atelier based in Athens,Greece.Our primary focus is on the creation of handmade bags and accesories,using several high quality eco friendly and materials with different textures.Our philosophy is based on finding the roots of human creativity in products made purely by hand.We are inspired by the past to create unique and timeless products.
-        </p>
+    <div class="w-full mt-24">
+        <div class="tracking-wider leading-loose">
+            <h1 class="text-6xl font-bold tracking-wider">About</h1>
+            <p class="mt-4"> Aleph is the Phoenician letter that led to the first letter of the greek alphabet “Alpha”.<br>
+                As a word it symbolizes the beginning of the creation as well as the starting point of human culture.<br>
+                Our primary focus is on the creation of handmade bags and accesories, using several high quality eco friendly and materials with different textures.<br>
+                Our philosophy is based on finding the roots of human creativity in products made purely by hand.<br>
+                We are inspired by the past to create unique and timeless products. 
+            </p>
         </div>
+    </div>
 
-        <div class="bg-purple-300 h-224 w-full mt-40">
-            <img class="object-cover w-full h-144" src= '{% static "img/crafting.jpg" %}'/>
-            </div>
+    <div class="w-full mt-24">
+        <div class="tracking-wider leading-loose">
+            <h1 class="text-6xl font-bold tracking-wider">Materials</h1>
+            <p class="mt-4">  
+                The collection of fabrics is based on sustainability and durability.<br>
+                Our leather bags are made from eco-friendly and/or recycled leather.<br>
+                That way we can ensure the best results for our products and less damage for the environment.
+            </p>
+        </div>
+    </div>
+    <div class="w-full h-full mt-24">
+        <img class="object-cover" src='{% static "img/aboutworkshop.jpg" %}'/>
+    </div>
+
+    <div class="w-full mt-24">
+        <img class="object-cover " src='{% static "img/handmade.jpg" %}'/>
+    </div>
+    <div class="w-full mt-24">
+        <div class="tracking-wider leading-loose">
+            <h1 class="text-6xl font-bold tracking-wider">Handmade</h1>
+            <p class="mt-4"> Our products are handmade and therefore, unique.<br>
+                 That makes ALEF collection literally limited edition.<br>
+                 Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
+                 We make our bags with love and joy so you can have a unique product.
+            </p>
+        </div>
+    </div>
 
 </div>
 
+
+
+
+
+</section>
 
 {% endblock %}

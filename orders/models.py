@@ -24,6 +24,8 @@ class Order(models.Model):
         ('Cancelled', 'Cancelled'),
     )
 
+  
+
     user = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     payment = models.ForeignKey(Payment, on_delete=models.SET_NULL, blank=True, null=True)
     order_number = models.CharField(max_length=20)
@@ -40,6 +42,7 @@ class Order(models.Model):
     order_total = models.FloatField()
     post_code =models.CharField(max_length=10)
     tax = models.FloatField()
+    delivery = models.CharField(max_length=30)
     status = models.CharField(max_length=10, choices=STATUS, default='New')
     ip = models.CharField(blank=True, max_length=20)
     is_ordered = models.BooleanField(default=False)
