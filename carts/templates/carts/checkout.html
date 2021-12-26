@@ -4,8 +4,8 @@
 {% block content %}
 
 <section class="py-20 px-4 xl:px-32">
-    <div class=" px-4  bg-white rounded shadow-md border border-gray-200">
-      <h2 class="mb-14 text-5xl font-bold py-6 ">Checkout</h2>
+    <div class=" lg:px-4  bg-white lg:rounded lg:shadow-md lg:border border-gray-200">
+      <h2 class="mb-10 text-4xl font-bold py-6 text-center">Checkout</h2>
       <form action="{% url 'orders:place_order' %}" method="POST">
         {% csrf_token %}
 
@@ -14,67 +14,67 @@
         <div class="w-full xl:w-1/2 px-4">
 
             <div class="flex mb-10 items-center">
-               <h3 class="text-2xl font-bold font-heading">Delivery</h3>
+               <h3 class="text-2xl font-bold">Delivery</h3>
             </div>
             <div class="mb-12">
                 <div class="flex flex-wrap -mx-4 mb-10">
                     <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
-                      <label class="font-bold text-gray-600" for="">Email</label>
+                      <label class="font-bold text-gray-600" for="">Email<small class="text-xl ml-1 text-red-500">*</small></label>
                       <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="email" type="email">
                     </div>
                     <div class="w-full md:w-1/2 px-4">
-                      <label class="font-bold text-gray-600" for="">Phone Number</label>
+                      <label class="font-bold text-gray-600" for="">Phone Number<small class="text-xl ml-1 text-red-500">*</small></label>
                       <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="phone" type="text">
                     </div>
                   </div>
             </div>
             <div class="flex mb-10 items-center">
-               <h3 class="text-2xl font-bold font-heading">Shipping informations</h3>
+               <h3 class="text-2xl font-bold">Shipping informations</h3>
             </div>
             <div class="mb-12">
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
-                  <label class="font-bold text-gray-600" for="">First name</label>
+                  <label class="font-bold text-gray-600" for="">First name<small class="text-xl ml-1 text-red-500">*</small></label>
                   <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="first_name" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                  <label class="font-bold text-gray-600" for="">Last name</label>
+                  <label class="font-bold text-gray-600" for="">Last name<small class="text-xl ml-1 text-red-500">*</small></label>
                   <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="last_name" type="text">
                 </div>
               </div>
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
-                  <label class="font-bold text-gray-600" for="">Street Address</label>
+                  <label class="font-bold text-gray-600" for="">Street Address<small class="text-xl ml-1 text-red-500">*</small></label>
                   <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="address" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                  <label class="font-bold text-gray-600" for="">Post Code</label>
+                  <label class="font-bold text-gray-600" for="">Post Code<small class="text-xl ml-1 text-red-500">*</small></label>
                   <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="post_code" type="text">
                 </div>
               </div>
 
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
-                  <label class="font-bold text-gray-600" for="">Municipality</label>
+                  <label class="font-bold text-gray-600" for="">Municipality<small class="text-xl ml-1 text-red-500">*</small></label>
                   <input required  class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="municipality" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                  <label class="font-bold text-gray-600" for="">State</label>
+                  <label class="font-bold text-gray-600" for="">State<small class="text-xl ml-1 text-red-500">*</small></label>
                   <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="state" type="text">
                 </div>
               </div>
               <div class="flex flex-wrap -mx-4 mb-10">
                 <div class="w-full md:w-1/2 px-4 mb-10 md:mb-0">
-                  <label class="font-bold text-gray-600" for="">City</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="city" type="text">
+                  <label class="font-bold text-gray-600" for="">City <small>(optional)</small></label>
+                  <input class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="city" type="text">
                 </div>
                 <div class="w-full md:w-1/2 px-4">
-                  <label class="font-bold text-gray-600" for="">Country</label>
-                  <input required class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="country" type="text">
+                  <label class="font-bold text-gray-600" for="">Country <small>(optional)</small></label>
+                  <input class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="country" type="text">
                 </div>
             </div>
             <div class="mb-10">
-                <label class="font-bold text-gray-600" for="">Order Note</label>
+                <label class="font-bold text-gray-600" for="">Order Note <small>(optional)</small></label>
                  <textarea class="block w-full mt-4 py-4 px-4 bg-gray-100 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md" name="order_note" rows="3"></textarea>
             </div>
 
@@ -82,9 +82,9 @@
             </div>
 
             <div class="flex mb-10 items-center">
-               <h3 class="text-2xl font-bold font-heading">Shipping methods</h3>
+               <h3 class="text-2xl font-bold">Shipping methods</h3>
             </div>
-            <div class="block">
+            <div class="block mb-10">
               <div class="mt-2 space-y-4">
                 <div>
                   <label class="inline-flex items-center">
@@ -102,15 +102,15 @@
             </div>
 
         </div>
-        <div class="w-full xl:w-1/2 px-4">
-          <div class="py-16 px-6 bg-gray-100 border border-gray-200">
-            <div class="flex mb-8 items-center">
-              <h2 class="text-4xl font-bold font-heading">Order summary</h2>
+        <div class="w-full xl:w-1/2 lg:px-4">
+          <div class="py-4 lg:py-10 lg:px-6 lg:bg-gray-100 lg:border border-gray-200">
+            <div class="flex mb-8 items-center justify-center lg:justify-start">
+              <h2 class="text-2xl font-bold">Order summary</h2>
               <span class="flex-shrink-0 inline-flex ml-4 w-8 h-8 items-center justify-center rounded-full bg-black text-white">
                  {{ cart_count }}
               </span>
             </div>
-                <div class="inline-block w-full   ">
+                <div class="inline-block w-full">
                   <div class="mb-10 border border-gray-200">
                     <table class="w-full border-collapse bg-black">
                       <thead>
@@ -118,7 +118,7 @@
                           <th class="px-2 sm:px-4 py-3 text-left text-xs font-semibold text-white uppercase ">
                           </th>
                           <th class="px-2 sm:px-4 py-3 text-center text-xs font-semibold text-white uppercase ">
-                            quantity
+                            items
                           </th>
 
                           <th class=" px-2 sm:px-4 py-3 text-center text-xs font-semibold text-white uppercase" >
@@ -132,12 +132,12 @@
                         {% for cart_item in cart_items %}
                         <tr class="bg-white">
                           <td class="px-2 sm:px-4 py-5 text-sm">
-                            <div class="flex ">
-                              <div class="flex-shrink-0 w-24 h-24 sm:w-40 sm:h-40">
+                            <div class="flex">
+                              <div class="flex-shrink-0 w-28 h-28 sm:w-40 sm:h-40">
                                 <img class="w-full h-full" src="{{ cart_item.product.images.url }}" alt="" />
                               </div>
                               <div class="flex flex-1 flex-col ml-3">
-                                <a href="{{ cart_item.product.get_url }}" class="text-gray-900 capitalize">
+                                <a href="{{ cart_item.product.get_url }}" class="text-gray-900 capitalize text-xs">
                                   {{cart_item.product.product_name}}
                                 </a>
                                 <p class="text-gray-900 capitalize">
@@ -174,23 +174,23 @@
             </div>
             <div class="mb-12 bg-white border border-gray-200">
 
-                <div class="py-3 px-10 ">
+                <div class="py-3 px-2 sm:px-4">
                   <div class="flex justify-between">
-                    <span class="font-medium">Subtotal <small>( Includes V.A.T )</small></span>
-                    <span class="font-medium">€{{ total }}</span>
+                    <span class="text-sm lg:text-xl font-medium capitalize">Subtotal <small>( Includes V.A.T )</small></span>
+                    <span class="text-sm lg:text-xl font-medium">€{{ total }}</span>
                   </div>
                 </div>
-                <div class="py-3 px-10 rounded-full">
+                <div class="py-3 px-2 sm:px-4">
                   <div class="flex justify-between">
-                    <span class="font-medium">Shipping</span>
-                    <span class="font-medium">Free Shipping on Greece</span>
+                    <span class="text-sm lg:text-xl font-medium capitalize">Shipping</span>
+                    <span class="text-sm lg:text-xl font-medium capitalize">Free Shipping on Greece</span>
                   </div>
                 </div>
 
-                <div class="py-3 px-10 rounded-full">
+                <div class="py-3 px-2 sm:px-4">
                   <div class="flex justify-between">
-                    <span class="text-base md:text-xl font-bold">Total <small>( Includes V.A.T )</small></span>
-                    <span class="text-base md:text-xl font-bold ">€{{ grand_total }}</span>
+                    <span class="text-sm lg:text-xl font-bold capitalize">Total <small>( Includes V.A.T )</small></span>
+                    <span class="text-sm lg:text-xl font-bold ">€{{ grand_total }}</span>
                   </div>
                 </div>
 
@@ -206,8 +206,8 @@
             </div> -->
 
 
-            <button type="submit" name="submit" class="mt-2 block w-full py-4 bg-black hover:bg-gray-800 text-center text-white font-bold uppercase  transition duration-200">Confirm Order</button>
-            <a class="mt-2 block w-full py-4 bg-white border border-black hover:bg-gray-100 text-center text-black font-bold uppercase  transition duration-200" href="{% url 'store:product_list' %}">continue shopping</a>
+            <button type="submit" name="submit" class="mt-2 block w-full py-4 bg-black hover:bg-gray-700 text-center text-white font-bold uppercase  transition duration-200">Confirm Order</button>
+            <a class="mt-2 block w-full py-4 bg-white border border-black hover:bg-gray-200 text-center text-black font-bold uppercase  transition duration-200" href="{% url 'store:product_list' %}">continue shopping</a>
           </div>
         </div>
 

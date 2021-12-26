@@ -22,19 +22,19 @@
                                 <li class="capitalize text-gray-700"><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
                                 {% endfor %}
                             </ul>
-                            <a class="p-2 text-md underline capitalize" href="">Create a product</a>
+                            <!-- <a class="p-2 text-md underline capitalize" href="">Create a product</a> -->
                             </div>
                         </div>
                         <div class="mt-4 lg:mt-0 lg:w-4/5 ">
-                            <div class="bg-black flex justify-between items-center  text-sm tracking-widest capitalize  ">
-                                <p class="text-white text-lg py-1"><span class="font-semibold pl-4">{{ product_count }}</span> Products Found
+                            <div class="bg-black flex justify-between items-center  text-sm tracking-widest capitalize px-4 ">
+                                <p class="text-white font-bold text-xs lg:text-sm py-2"><span class="font-semibold">{% if product_count ==  0 %} No Products Found
+                                    {% elif product_count ==  1 %} One Product Found  {% else %} {{ product_count }} Products Found {% endif %}</span>
                                 </p>
                                 <div class="flex items-center">
-                                    <p class="text-white">Sort by</p>
-                                    <select class="font-medium text-white bg-black focus:outline-none">
-                                        <option value="#">Recommended</option>
-                                        <option value="#">Size</option>
-                                        <option value="#">Price</option>
+                                    <p class="text-white font-bold text-xs lg:text-sm">Sort by</p>
+                                    <select class="text-white font-bold bg-black focus:outline-none">
+                                         <option value="#">Size</option>
+                                        <option value="#">Date</option>
                                     </select>
                                 </div>
                             </div>

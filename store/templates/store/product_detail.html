@@ -32,14 +32,13 @@
 <section class="py-20 mx-4 xl:mx-32"  >
 <div class="flex flex-wrap -mx-4 mb-8">
     <div class="w-full md:w-1/2  px-4 mb-8 md:mb-0">
-        <img class="aspect-w-1  mb-10 " src="{% if single_product.images %}{{ single_product.images.url }}{% else %}
+        <img class="aspect-w-1 mb-10 border border-gray-300" src="{% if single_product.images %}{{ single_product.images.url }}{% else %}
         {% static "img/no_image.png" %}{% endif %}" alt="">
         <div class="thumb flex flex-wrap -mx-2">
-
         {% for i in product_gallery  %}
-        <div class=" p-2">
-        <a  class="  block border border-gray-700" href="{{i.image.url}}">
-        <img  class=" aspect-w-1 object-cover" src="{{ i.image.url}}" alt="Product Image">
+        <div class="p-2">
+        <a  class="block border border-gray-300" href="{{i.image.url}}">
+        <img  class="aspect-w-1 object-cover" src="{{ i.image.url}}" alt="Product Image">
         </a>
         </div>
         {% endfor %}     
@@ -92,92 +91,29 @@
 <script>
 
 $(window).scroll(() => { 
+   var winWidth = $(window).width();
+   if(winWidth >= 1024) {
 // Distance from top of document to top of footer.
 topOfFooter = $('#footer').position().top;
 // Distance from top of document to top of cart.
 topOfCart = $('#cart').position().top;
 
-  // Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
-  scrollDistanceFromTopOfDoc = $(document).scrollTop() + 727;
-  // Difference between the two.
-  scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
-
-  console.log(topOfFooter);
-  //console.log(scrollDistanceFromTopOfDoc);
- 
-  console.log(topOfCart);
-  //console.log(scrollDistanceFromTopOfDoc);
-
-   
-  console.log(scrollDistanceFromTopOfDoc);
-  //console.log(scrollDistanceFromTopOfDoc);
-
-  // var result = $("#cart").height();
-  // console.log(result);
+// Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
+scrollDistanceFromTopOfDoc = $(document).scrollTop() + 727;
+// Difference between the two.
+scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
 
 // If user has scrolled further than footer,
-  // pull sidebar up using a negative margin.
-  if (scrollDistanceFromTopOfDoc > topOfFooter) {
-    $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
-  } else  {
-    $('#cart').css('margin-top', 0);
-  }
-
+// pull sidebar up using a negative margin.
+if (scrollDistanceFromTopOfDoc > topOfFooter) {
+  $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
+} else  {
+  $('#cart').css('margin-top', 0);
+}
+}
 });
 
 
-
-
-
-
-
-
-
-
-
-
-// var maxID = -1;
-//   $('.count').each(function() {
-//        var myid = parseInt($(this).attr('id'),10);
-//        if( maxID < myid ) maxID = myid;
-//        var pos=$("#"+maxID).offset();
-//        console.log(pos.top)
-
-//   });
-  // the value of maxID will be the max from id-s
-
-
-
-
-
-// const navbar = document.getElementById("navbar");
-// const sticky = navbar.offsetTop;
-// console.log(sticky)
-// function myFunction() {
-//   if (window.pageYOffset >= sticky) {
-//   navbar.classList.add("header-fixed");
-//   } else {
-//   navbar.classList.remove("header-relative");
-//   }
-// }
-
-
-
-
-
- 
-// $(window).scroll(function(){
-// if ($(window).scrollTop() > 100) {
-// $('.rightpart').removeClass('header-fixed');
-// $('.rightpart').addClass('header-relative');
-// }
-// else {
-// $('.rightpart').removeClass('header-relative');
-// $('.rightpart').addClass('header-fixed');
-
-
-// }
-// });
 </script>
 
 {% endblock %}

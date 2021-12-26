@@ -5,7 +5,7 @@
 
 
 <section class="py-10 bg-gray-100">
-  <div class="mx-auto container px-40 ">
+  <div class="px-3 xl:px-32 ">
     <div class="px-4 py-10 md:py-20 lg:px-20 shadow-md bg-white">
 
 <div class="flex justify-between items-center"> 
@@ -15,13 +15,13 @@
 
   </div>
   <div class="flex flex-col">
-    <h3 class="text-black font-bold pb-2 border-b border-black text-right">Invoiced To</h3>
-  <div class="text-sm my-4 flex-col capitalize text-gray-600 font-mono">
+    <h3 class=" text-black font-bold underline text-right">Invoiced To</h3>
+  <div class=" text-xs lg:text-sm my-4 flex-col capitalize text-gray-600 font-mono">
     <p class="text-right">{{ order.full_name }}</p>
     <p class="text-right">{{ order.address }}</p>
     <p class="text-right">{{ order.municipality }}, {{ order.post_code }}</p>
 
-    <p class="text-right">{{ order.city }},{{ order.state }}</p>
+    <p class="text-right">{% if not order.city %}Unknow city{% else %}{{ order.city }}{% endif %}, {% if not order.country %}Unknow Country {% else %}{{ order.state }}{%endif%}</p>
     <p class="text-right">{{ order.country }}</p>
   </div> 
   </div>
@@ -103,42 +103,42 @@
 
 
 
-      <div class="my-14 font-mono">
-        <div class="py-3 px-10 bg-gray-100 ">
-          <div class="flex justify-between">
-            <span class="font-bold">Subtotal</span>
-            <span class="font-bold">€{{ subtotal }}</span>
+        <div class="my-14 font-mono">
+          <div class="py-3 px-2 lg:px-10 bg-gray-100 ">
+            <div class="flex justify-between">
+              <span class="font-bold">Subtotal</span>
+              <span class="font-medium">€{{ subtotal }}</span>
+            </div>
+          </div>
+          <div class="py-3 px-2 lg:px-10 ">
+            <div class="flex justify-between">
+              <span class="font-bold">Shipping</span>
+              <span class="font-medium">Free In Greece</span>
+            </div>
+          </div>
+          <div class="py-3 px-2 lg:px-10 bg-gray-100 ">
+            <div class="flex justify-between">
+              <span class="font-bold">Tax</span>
+              <span class="font-medium">Includes V.A.T</span>
+            </div>
+          </div>
+          <div class="py-3 px-2 lg:px-10 ">
+            <div class="flex justify-between">
+              <span class="text-base md:text-xl font-bold">Order Total</span>
+              <span class="font-medium text-xl">€{{ subtotal }}</span>
+            </div>
           </div>
         </div>
-        <div class="py-3 px-10 ">
-          <div class="flex justify-between">
-            <span class="font-bold">Shipping</span>
-            <span class="font-bold">Free In Greece</span>
-          </div>
-        </div>
-        <div class="py-3 px-10 bg-gray-100 ">
-          <div class="flex justify-between">
-            <span class="font-bold">Tax</span>
-            <span class="font-bold">Includes V.A.T</span>
-          </div>
-        </div>
-        <div class="py-3 px-10 ">
-          <div class="flex justify-between">
-            <span class="text-base md:text-xl font-bold">Order Total</span>
-            <span class="font-bold text-xl">€{{ subtotal }}</span>
-          </div>
-        </div>
-      </div>
       
-      <div class="flex justify-end space-x-4 mt-20">
-<a class=" block bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200" href="{% url 'store:product_list' %}">Continue Shopping</a>
-<a class="inline-flex mt-6 lg:mt-0  text-center text-black  font-bold  py-4 px-8 rounded-sm  border border-black uppercase transition duration-200" href="#">
-<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1V0.25C0.585786 0.25 0.25 0.585786 0.25 1L1 1ZM15 19V19.75C15.4142 19.75 15.75 19.4142 15.75 19H15ZM1 19H0.25C0.25 19.4142 0.585786 19.75 1 19.75L1 19ZM10 1L10.5303 0.46967C10.3897 0.329018 10.1989 0.25 10 0.25V1ZM15 6H15.75C15.75 5.80109 15.671 5.61032 15.5303 5.46967L15 6ZM15 18.25H1V19.75H15V18.25ZM1.75 19V1H0.25V19H1.75ZM1 1.75H10V0.25H1V1.75ZM14.25 6V19H15.75V6H14.25ZM9.46967 1.53033L14.4697 6.53033L15.5303 5.46967L10.5303 0.46967L9.46967 1.53033ZM8.25 1V5H9.75V1H8.25ZM11 7.75H15V6.25H11V7.75ZM8.25 5C8.25 6.51878 9.48122 7.75 11 7.75V6.25C10.3096 6.25 9.75 5.69036 9.75 5H8.25Z" fill="black"></path>
-</svg>
-<span class="ml-4">Save Invoice</span>
-</a>
-</div>
+      <div class="flex justify-center lg:justify-end space-x-4 mt-20">
+        <a class="w-full lg:w-auto  block bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200" href="{% url 'store:product_list' %}">Continue Shopping</a>
+        <!-- <a class="inline-flex mt-6 lg:mt-0  text-center text-black  font-bold  py-4 px-8 rounded-sm  border border-black uppercase transition duration-200" href="#">
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1V0.25C0.585786 0.25 0.25 0.585786 0.25 1L1 1ZM15 19V19.75C15.4142 19.75 15.75 19.4142 15.75 19H15ZM1 19H0.25C0.25 19.4142 0.585786 19.75 1 19.75L1 19ZM10 1L10.5303 0.46967C10.3897 0.329018 10.1989 0.25 10 0.25V1ZM15 6H15.75C15.75 5.80109 15.671 5.61032 15.5303 5.46967L15 6ZM15 18.25H1V19.75H15V18.25ZM1.75 19V1H0.25V19H1.75ZM1 1.75H10V0.25H1V1.75ZM14.25 6V19H15.75V6H14.25ZM9.46967 1.53033L14.4697 6.53033L15.5303 5.46967L10.5303 0.46967L9.46967 1.53033ZM8.25 1V5H9.75V1H8.25ZM11 7.75H15V6.25H11V7.75ZM8.25 5C8.25 6.51878 9.48122 7.75 11 7.75V6.25C10.3096 6.25 9.75 5.69036 9.75 5H8.25Z" fill="black"></path>
+        </svg>
+        <span class="ml-4">Save Invoice</span>
+        </a> -->
+        </div>
     </div>
   </div>
 </section>

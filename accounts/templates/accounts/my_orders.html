@@ -6,20 +6,19 @@
 
 
 <!-- component -->
-<section class="px-4 xl:px-32 pt-20">
+<section class="px-4 xl:px-32 pt-20  ">
     <div class="">
         {% include 'includes/alert.html' %}
     </div>
-<div class="flex flex-col lg:flex-row h-screen  my-12 bg-white border rounded-md shadow-md border-gray-200">
+<div class="flex flex-col lg:flex-row min-h-full my-12 bg-white border rounded-md shadow-md border-gray-200">
 
     {% include 'includes/dashboard_sidebar.html' %}
 
 
-    <div class="w-full h-full p-3 lg:w-9/12">
-        <div class="p-4 ">
-                
+    <div class="w-full p-3 lg:w-9/12">
+        <div class="p-4">   
             <div class="flex flex-col">
-                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="overflow-x-auto  lg:-mx-8">
                   <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden">
                       <table class="min-w-full">
@@ -50,19 +49,15 @@
                              </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {{ order.full_name }}
-
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {{ order.phone }}
-
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 €{{ order.order_total }}
-
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {{ order.created_at }}
-
                             </td>
                           </tr>
                         {% endfor %}

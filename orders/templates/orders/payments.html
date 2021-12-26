@@ -7,12 +7,12 @@
 
 <section class="pt-20 min-h-screen px-4 xl:px-32">
   
-    <div class="bg-white shadow border border-gray-200 rounded py-4">
-      <h2 class="mb-12 px-6 text-4xl font-bold font-heading">Review Your Order And Procced To Payment</h2>
+    <div class="bg-white lg:shadow lg:border border-gray-200 lg:rounded py-4">
+      <h2 class="mb-12 text-center lg:px-6 text-4xl font-bold">Procced To Payment</h2>
 
        <div class="flex flex-col md:flex-row ">
 
-        <div class="w-full md:w-6/12 mb-8 lg:mb-0 px-4">
+        <div class="w-full md:w-6/12 mb-8 lg:mb-0 px-0 lg:px-4">
           <div class="w-full space-y-10 text-black ">
             <div class="shadow border border-gray-200">
             <h2 class="text-xl font-bold px-4 py-2 border-b border-gray-300 tracking-wide">Billing Address</h2>
@@ -27,10 +27,10 @@
              {% endif %}
 
             </div>
-            <div class="shadow border border-gray-200">
+            <!-- <div class="shadow border border-gray-200">
             <h2 class="text-xl font-bold px-4 py-2 border-b border-gray-300 tracking-wide">Payment Method</h2>
             <p class="text-gray-700 px-4 py-4">This is my cool new card!</p>
-            </div>
+            </div> -->
             <div class="shadow border border-gray-200">
             <h2 class="text-xl font-bold px-4 py-2 border-b border-gray-300 tracking-wide">Review Products</h2>
             <table class="w-full  bg-black">
@@ -54,11 +54,11 @@
                 <tr class="bg-white">
                   <td class="px-2 sm:px-4 py-5 text-sm">
                     <div class="flex ">
-                      <div class="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32">
+                      <div class="flex-shrink-0 w-28 h-28 sm:w-40 sm:h-40">
                         <img class="w-full h-full" src="{{ cart_item.product.images.url }}" alt="" />
                       </div>
-                      <div class="flex flex-1 flex-col ml-3">
-                        <a href="{{ cart_item.product.get_url }}" class="text-gray-900 capitalize">
+                      <div class="flex flex-1 flex-col ml-2">
+                        <a href="{{ cart_item.product.get_url }}" class="text-gray-900 capitalize text-xs">
                           {{cart_item.product.product_name}}
                         </a>
                         <p class="text-gray-900 capitalize">
@@ -93,25 +93,25 @@
           </div>
         </div>
 
-        <div class="w-full md:w-6/12 px-4">
+        <div class="w-full md:w-6/12 lg:px-4">
           <div class="p-6 md:p-8 bg-gray-100 border border-gray-200 shadow">
             <h2 class="mb-4 text-3xl font-semibold capitalize text-gray-900">Cart totals</h2>
             <div class="flex mb-4 items-center justify-between pb-4 border-b border-gray-300">
               <span class="text-gray-700">Subtotal <small>( Includes V.A.T )</small></span>
-              <span class="text-xl font-medium capitalize text-gray-900">€{{ total }}</span>
+              <span class="text-md lg:text-xl font-medium capitalize text-gray-900">€{{ total }}</span>
             </div>
-            <h4 class="mb-2 text-xl font-medium capitalize text-gray-900">Shipping</h4>
+            <h4 class="mb-2 text-md lg:text-xl font-medium capitalize text-gray-900">Shipping</h4>
             <div class="flex mb-2 justify-between items-center">
-              <span class="text-gray-700">Greece </span>
-               <span class="text-xl font-medium capitalize text-gray-900">Free Shipping</span>
+              <span class="font-bold text-gray-700">Greece </span>
+               <span class="text-md lg:text-xl font-medium capitalize text-gray-900">Free Shipping</span>
             </div>
             <!-- <div class="flex mb-10 justify-between items-center">
               <span class="text-gray-700">From store</span>
-              <span class="text-xl font-medium capitalize text-gray-900">Free</span>
+              <span class="text-md lg:text-xl font-medium capitalize text-gray-900">Free</span>
             </div> -->
             <div class="flex mb-10 justify-between items-center">
-              <span class="text-xl font-medium capitalize text-gray-900">Order total <small>( Includes V.A.T )</small> </span>
-              <span class="text-xl font-medium capitalize text-gray-900">€{{ grand_total }}</span>
+              <span class="text-md lg:text-xl font-medium capitalize text-gray-900">Order total <small>( Includes V.A.T )</small> </span>
+              <span class="text-md lg:text-xl font-medium capitalize text-gray-900">€{{ grand_total }}</span>
             </div>
               
              <!-- Set up a container element for the button -->
