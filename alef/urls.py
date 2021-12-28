@@ -13,6 +13,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls',namespace='accounts')),
     path('store/', include('store.urls', namespace='store')),
     path('cart/', include('carts.urls', namespace='carts')),
+    path('success/',views.success,name='success'),
 
     #orders
     path('orders/', include('orders.urls', namespace='orders'))

@@ -8,14 +8,32 @@
     <section class="min-h-screen py-16">
         <div class="mx-4 xl:mx-32 my-8 lg:flex">
            
-                        <div class="lg:w-1/5">
-                        {% if 'search' in request.path %}
-                        <p class="w-full bg-black py-1 font-bold text-xl text-white text-center uppercase tracking-widest">search results</p>
-                        {% else %}
-                        <p class="w-full bg-black py-1 font-bold text-xl text-white text-center uppercase tracking-widest">Store</p>
-                        {% endif %}
-                        <div class="space-y-3 lg:space-y-4  border border-gray-200 p-4 lg:mr-4 mt-6 ">
-                            <h1 class="pt-2 font-semibold text-lg text-gray-700">Categories</h1>
+                        <div class="lg:w-1/5 ">
+                            <div class="mr-4 border-b border-gray-200">
+                                <div class="flex items-center w-full font-bold text-md capitalize text-gray-700 text-center tracking-wide py-1">
+                                    <a href="{% url 'home' %}" class="text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                                    </svg>
+                                    </a>
+                                 
+                                    <span class="mx-2 text-gray-500 ">
+                                        /
+                                    </span>
+                                    <a href="{{ request.path }}" id="name" class="text-black  hover:underline">
+                                        <script>
+                                                // Store original location in loc
+                                                var loc = location.href; 
+                                                // If the last char is a slash trim it, otherwise return the original loc
+                                                loc = loc.lastIndexOf('/') == (loc.length -1) ? loc.substr(0,loc.length-1) : loc.substr(0,loc.lastIndexOf('/'));
+                                                var targetValue = loc.substr(loc.lastIndexOf('/') + 1);
+                                                document.write(targetValue)
+                                         </script>    
+                                   </a>  
+                                </div>
+                            </div>
+                        <div class="space-y-3 lg:space-y-4  border-r border-gray-200 p-0 lg:mr-4 mt-6 ">
+                            <h1 class="pt-2 font-semibold text-lg text-black">Categories</h1>
                             <ul class="pb-10 space-y-1">
                                 <li class="capitalize text-gray-700"><a href="{% url 'store:product_list' %}">all products</a></li>
                                 {% for category in links %}
@@ -26,14 +44,20 @@
                             </div>
                         </div>
                         <div class="mt-4 lg:mt-0 lg:w-4/5 ">
-                            <div class="bg-black flex justify-between items-center  text-sm tracking-widest capitalize px-4 ">
-                                <p class="text-white font-bold text-xs lg:text-sm py-2"><span class="font-semibold">{% if product_count ==  0 %} No Products Found
+                            <div class="flex justify-between items-center  tracking-widest px-1 ">
+                                <div class="flex items-center border-b border-gray-200 ">  
+                                    {% if 'search' in request.path %}
+                                    <p class="w-auto py-1 font-bold text-md uppercase text-black  tracking-wide mr-2">search results:</p>                       
+                                    {% endif %}
+                                    <p class="py-1 text-md capitalize text-gray-500 "><span class="">{% if product_count ==  0 %} no products found
                                     {% elif product_count ==  1 %} One Product Found  {% else %} {{ product_count }} Products Found {% endif %}</span>
-                                </p>
-                                <div class="flex items-center">
-                                    <p class="text-white font-bold text-xs lg:text-sm">Sort by</p>
-                                    <select class="text-white font-bold bg-black focus:outline-none">
-                                         <option value="#">Size</option>
+                                    </p>
+                                 </div>
+                          
+                                <div class="flex items-center space-x-4 py-1 ">
+                                    <p class="capitalize text-gray-500 text-md">Sort by</p>
+                                    <select class="capitalize text-black  focus:none appearance-none border-b border-gray-200">
+                                        <option value="#">Size</option>
                                         <option value="#">Date</option>
                                     </select>
                                 </div>

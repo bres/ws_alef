@@ -6,30 +6,50 @@
 {% load tailwind_filters %}
 
 <section class="min-h-screen py-20 px-4 xl:px-32">
-   
-     <div class="flex flex-col lg:flex-row lg:justify-center lg:space-x-32">  
-    <div class="w-full lg:max-w-xl mb-4 lg:mb-0 ">
-      <h2 class="mb-12 text-4xl font-semibold font-heading">Have questions?</h2>
-      <h3 class="mb-4 text-2xl font-semibold">Address</h3>
-      <a href="https://goo.gl/maps/ickKR1bWCTmPz5YPA" class="text-gray-500">Kolokotroni 9</a>
-      <p class="mb-10 text-gray-500"> Chalandri 152 33</p>
-      <h3 class="mb-4 text-2xl font-semibold">Contact Us</h3>
-      <p class="text-gray-500">info@alefatelier.com</p>
-      <p class="text-gray-500">+ 7-843-672-431</p>
-    </div>
+  <div class="w-full mx-auto container my-12 max-w-7xl">
+    {% include 'includes/alert.html' %}
 
-    <div class="w-full lg:max-w-xl lg:justify-self-end">
-      <form method="POST" action="#">{% csrf_token %}
-         {{ form|crispy }}
-         <button class="w-full mt-3 text-sm font-bold py-3 rounded-md text-white bg-gray-900 hover:bg-gray-700 transition duration-200">Send</button>
-      </form>
-    </div>
   </div>
-    <div class="w-full mx-auto lg:max-w-7xl h-120 mt-4  ">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12572.139573475433!2d23.7990725!3d38.022966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a198f9e26d0c6f%3A0x9629ff8c98376ecd!2sKolokotroni%209%2C%20Chalandri%20152%2033!5e0!3m2!1sen!2sgr!4v1638810091632!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
+
+    <div class="flex flex-col lg:flex-row lg:justify-center lg:space-x-32"> 
+
+      <div class="w-full lg:max-w-xl mb-4 lg:mb-0 ">
+        <h2 class="mb-12 text-4xl font-semibold font-heading">Have questions?</h2>
+            <div class="flex flex-wrap justify-between">  
+                <div class="">  
+                <h3 class="mb-4 text-2xl font-semibold underline">Address</h3>
+                <a href="https://goo.gl/maps/ickKR1bWCTmPz5YPA" class="text-gray-500">Kolokotroni 9</a>
+                <p class="mb-10 text-gray-500"> Chalandri 152 33</p>
+                <h3 class="mb-4 text-2xl font-semibold underline">Contact Us</h3>
+                <p class="text-gray-500">info@alefatelier.com</p>
+                <p class="text-gray-500">+ 7-843-672-431</p>
+                </div> 
+              <div class=""> 
+                <h1 class="mb-4 text-2xl font-semibold underline">Store Schedule</h1> 
+                <ul class="list-none text-gray-500">
+                  <li>Monday 12:00-21.00</li>
+                  <li>Tuesday 12:00-21.00</li>
+                  <li>Wednesday 12:00-21.00</li>
+                  <li>Thursday 12:00-21.00</li>
+                  <li>Friday 12:00-21.00</li>
+                  <li>Saturday 10:00-15.00</li>
+                </ul>
+              </div>
+            </div>
+      </div>
+
+      <div class="w-full lg:max-w-xl lg:justify-self-end">
+        <form method="POST" method="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" value="send" class="w-full mt-3 text-sm font-bold py-3 rounded-md text-white bg-gray-900 hover:bg-gray-700 transition duration-200">Send</button>
+        </form>
+      </div>
+
     </div>
-  
+    <div class="w-full mx-auto lg:max-w-7xl h-120 mt-4">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6286.098958297899!2d23.794650534894185!3d38.02262595521105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a199789a66e817%3A0x35aceff7cca029cb!2salefatelier!5e0!3m2!1sen!2sgr!4v1640630768546!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </iframe>
+    </div>
   </section>
 
     {% endblock %}

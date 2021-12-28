@@ -170,7 +170,7 @@ border-radius: 50%;
 
           </div>
 <!-- third horizontal menu -->
-      <div class="hidden justify-center lg:flex w-full bg-white border-b border-gray-200 ">
+      <div class="hidden justify-center lg:flex w-full bg-white border-b border-gray-200">
         <nav class="inline-menu relative flex text-sm xl:text-md items-center py-3 justify-center w-full">
         <!-- hidden dropdown  with javascript configuration -->
         <ul class="flex ">
@@ -204,11 +204,12 @@ border-radius: 50%;
                     <!-- <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 object-cover object-center"/> -->
                   {%  for category in links  %}
                     <div class="mydiv " id="div{{category.slug}}">
-                    <img src='{{ category.cat_image.url }}' alt="Category Photos" class="w-full h-64 object-cover object-center"/>
+                    <img src='{{ category.cat_image.url }}' alt="Category Photos" class="aspect-w-1 h-64 object-cover object-center"/>
                     </div>
                   {% endfor %}
                 </div>
               </div>
+            </div>
         </li>
         <li>
           <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'about' %}">
@@ -393,17 +394,26 @@ border-radius: 50%;
     // grab everything we need
     const btn = document.querySelector(".mobile-menu-button");
     const menu = document.querySelector(".sidebar");
+    var para = document.getElementById("scroll");
+
     // add event listeners
     //Toggle Nav //
     btn.addEventListener("click", () => {
       menu.classList.toggle("-translate-x-full");
+      para.classList.toggle("noscrollClass");
+
     });
 
-    //toggle noscroll
-    function myFunc() {
-      var para = document.getElementById("scroll");
-      para.classList.toggle("noscrollClass");
-    };
+
+    $(window).resize(function() {
+      var winWidth = $(window).width();
+      if(winWidth >= 640) {
+        menu.classList.add("-translate-x-full");
+        para.classList.remove("noscrollClass");}
+});
+    
+
+
   </script>
 
 

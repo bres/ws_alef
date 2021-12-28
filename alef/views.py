@@ -1,11 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render,redirect
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
 from store.models import Product,Category
+from django.conf import settings
+from django.core.mail import send_mail, BadHeaderError
+from django.contrib import messages
+
 # Create your views here.
 
 def home(request):
-    #return HttpResponse('this is the home page')
     products = Product.objects.filter().order_by('-created_date')[0:4]
     context={
             'products': products,
@@ -14,15 +17,30 @@ def home(request):
     return render(request,'homepage.html',context)
 
 def contact(request):
-    contact_form=ContactForm(request.POST or None)
-    context ={
-           "form":contact_form
-    }
-    if contact_form.is_valid():
-        print(contact_form.cleaned_data)
-    return render(request,'contact.html',context)
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            fullname = form.cleaned_data['fullname']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(
+                'message from'+' '+ fullname, #subject
+                     message, #message
+                     email, #from email
+                    [settings.EMAIL_HOST_USER], #to email
+                    )
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            form = ContactForm()
+            return redirect('success')
+    return render(request, "contact.html", {'form': form})
+
+def success(request):
+    return HttpResponse('Success! Thank you for your message.')
 
 
 def about(request):
-    #return HttpResponse('this is the home page')
     return render(request,'about.html')
