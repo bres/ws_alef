@@ -70,8 +70,8 @@
         <span>€{{ single_product.price }}</span>
         <!-- <span class="font-normal text-base text-gray-400 line-through">discount</span> -->
         </p>
-        <p class="max-w-md text-gray-500">
-          {{ single_product.description|linebreaks|title }}
+        <p class="max-w-md text-gray-500 capitalize">
+          {{ single_product.description }}
         </p>
         </div>
         {% if single_product.stock <= 0 %}

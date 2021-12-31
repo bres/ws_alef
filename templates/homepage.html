@@ -19,8 +19,7 @@
 
 
     </section>
-    <!-- First gallery section -->
-  <!-- h-88 lg:h-96 xl:h-144 2xl:h-160 3xl:h-192-->
+   
 <section class=" pt-4 xl:pt-5 3xl:pt-6">
 
     <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
@@ -29,7 +28,7 @@
 
         <div class="relative">
             <a aria-label="View Item" href="{{ category.get_url }}">
-                <img alt="Grapefruit slice atop a pile of other slices"
+                <img alt="category photo"
                     class="aspect-w-1 object-cover border border-gray-300"
                     src="{{ category.cat_image.url }}"/>
                 <p
@@ -41,49 +40,7 @@
 {% endfor %}
     </div>
 
-        <!-- <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
-            {% for category in links  %}
-            {% if  forloop.counter <= 3 %}  
-
-            <div class="relative">
-                <a aria-label="View Item" href="{{ category.get_url }}">
-                <img alt="Grapefruit slice atop a pile of other slices"
-                    class="aspect-w-1 object-cover border border-gray-300"
-                    src="{{ category.cat_image.url }}"/>
-                <p class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                    {{ category.category_name }}
-                </p>
-                </a>
-            </div>
-
-            {% elif forloop.counter == 4 %}
-            <div class="relative md:col-span-2">
-            <a aria-label="View Item" href="{{ category.get_url }}">
-            <img alt="Grapefruit slice atop a pile of other slices"
-                class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover border border-gray-300"
-                src="{{ category.cat_image.url }}" />
-                <p
-                class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                {{ category.category_name }}
-            </p>
-            </a>
-            </div>
-            {% else %}
-            <div class="relative">
-            <a aria-label="View Item" href="{{ category.get_url }}">
-            <img alt="Grapefruit slice atop a pile of other slices"
-            class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover border border-gray-300"
-            src="{{ category.cat_image.url }}" />
-            <p
-            class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-            {{ category.category_name }}
-            </p>
-            </a>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div> -->
-
+        
 </section>
 
 <!-- Latest section -->
