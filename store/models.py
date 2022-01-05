@@ -4,19 +4,21 @@ from django.urls import reverse
 
 # Create your models here.
 class Product(models.Model):
-    product_name   = models.CharField(max_length=200, unique=True)
-    slug           = models.SlugField(max_length=200, unique=True)
-    description    = models.TextField(max_length=500, blank=True)
-    dimensions     = models.TextField(max_length=500, blank=True)
-    shipping_rules = models.TextField(max_length=500, blank=True)
-    contact_info   = models.TextField(max_length=500, blank=True)
-    price         = models.IntegerField()
-    images        = models.ImageField(upload_to='images/products')
-    stock         = models.IntegerField()
-    is_available  = models.BooleanField(default=True)
-    category      = models.ForeignKey(Category, on_delete=models.CASCADE)
-    created_date  = models.DateTimeField(auto_now_add=True)
-    modified_date = models.DateTimeField(auto_now=True)
+    product_name    = models.CharField(max_length=200, unique=True)
+    slug            = models.SlugField(max_length=200, unique=True)
+    description     = models.TextField(max_length=500, blank=True)
+    length          = models.CharField(max_length=50, blank=True)
+    height          = models.CharField(max_length=50, blank=True)
+    depth           = models.CharField(max_length=50, blank=True)
+    weight          = models.CharField(max_length=50, blank=True)
+    composition     = models.CharField(max_length=50, blank=True)
+    price           = models.IntegerField()
+    images          = models.ImageField(upload_to='images/products')
+    stock           = models.IntegerField()
+    is_available    = models.BooleanField(default=True)
+    category        = models.ForeignKey(Category, on_delete=models.CASCADE)
+    created_date    = models.DateTimeField(auto_now_add=True)
+    modified_date    = models.DateTimeField(auto_now=True)
 
    
 

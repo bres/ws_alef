@@ -1,142 +1,98 @@
 
-
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Welcome to | {% endblock%}
+{% block title %} Welcome to | Alef Atelier{% endblock%}
 {% block content %}
 
+<!-- Header -->
+<section class="relative flex  items-center">
+    <img class="object-cover  object-right  h-screen w-screen filter brightness-100 border-b border-gray-200" src='{% static "img/hero.jpg" %}'
+        alt="Hero image">
+    <h1 class="text-white sm:text-black text-left ml-4 xl:ml-32 font-bold text-2xl md:text-3xl xl:text-6xl  3xl:text-8xl mt-10 md:pt-12 uppercase absolute">
+        We create bags<br />
+        To carry our worlds...
+    </h1>
+</section>
 
-
- <!-- Header -->
-    <section class="relative flex  items-center">
-        <img class="object-cover  object-right  h-screen w-screen filter brightness-90 border-b border-gray-300" src='{% static "img/hero.jpg" %}'
-            alt="Hero image">
-        <h1
-    class="text-white sm:text-black text-left ml-4 xl:ml-32 font-bold text-2xl md:text-3xl xl:text-6xl  3xl:text-8xl
-     mt-10 md:pt-12 uppercase absolute">
-    We create bags<br />
-    To carry our worlds...</h1>
-
-
-    </section>
-   
-<section class=" pt-4 xl:pt-5 3xl:pt-6">
-
-    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
-        {% for category in links  %}
-        
-
-        <div class="relative">
-            <a aria-label="View Item" href="{{ category.get_url }}">
-                <img alt="category photo"
-                    class="aspect-w-1 object-cover border border-gray-300"
-                    src="{{ category.cat_image.url }}"/>
-                <p
-                    class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-                    {{ category.category_name }}
-                </p>
-            </a>
+<!-- Category section -->
+<section class="pt-4 xl:pt-5 3xl:pt-6">
+<div class="mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-5 3xl:gap-6">
+    {% for category in links  %}
+    <a aria-label="View Item" href="{{ category.get_url }}">
+        <div class="aspect-w-1 aspect-h-1">
+            <img alt="category photo"
+            class="object-center object-cover border border-gray-200"
+            src="{{ category.cat_image.url }}"/>
+            <p class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+            {{ category.category_name }}
+            </p>
         </div>
-{% endfor %}
+    </a>
+    {% endfor %}
     </div>
-
-        
+</div>
 </section>
 
 <!-- Latest section -->
-    <section class="px-4 xl:px-32 py-16 lg:py-20 mt-6 bg-white">
-        <div class="flex flex-col mb-6 lg:justify-center lg:flex-row md:mb-8">
+<section class="px-4 xl:px-32 py-16 lg:py-20 mt-6 bg-white">
+    <div class="flex flex-col mb-6 lg:justify-center lg:flex-row md:mb-8">
         <div class="space-y-8">
-        <h1 class="lg:text-3xl text-2xl text-black font-bold text-center tracking-widest uppercase">Our Latest
-        </h1>
-        <div class="flex justify-center max-w-lg mx-auto text-center py-2 uppercase space-x-12">
-        <button
-        class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
-        Latest
-        </button>
-        <button
-        class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
-        Trending
-        </button>
-        <button
-        class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
-        Discounts
-        </button>
+            <h1 class="lg:text-3xl text-2xl text-black font-bold text-center tracking-widest uppercase">
+                Our Latest
+            </h1>
+            <div class="flex justify-center max-w-lg mx-auto text-center py-2 uppercase space-x-12">
+                <button
+                class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
+                Latest
+                </button>
+                <button
+                class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
+                Trending
+                </button>
+                <button
+                class="text-black hover:border-black py-1 border-b border-transparent transition duration-200 tracking-widest">
+                Discounts
+                </button>
+            </div>
         </div>
+    </div>
+    <div class="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
+    {% if products %}
+    {% for product in products %}
+    <a href="{{ product.get_url }}" aria-label="View Item">
+        <div class="relative overflow-hidden transition duration-200  hover:shadow-xl ">
+            <img class="aspect-w-1 border border-gray-200" src="{{ product.images.url }}" alt="product photo"/>
+            <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+                <p class="mb-4 text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
+                <p class="text-sm tracking-wide text-gray-300  ">
+                    {{ product.description|capfirst }}
+                </p>
+            </div>
         </div>
-
-        </div>
-        <div class="grid gap-6 row-gap-5 mb-8 lg:grid-cols-3 sm:row-gap-6 sm:grid-cols-2">
-        {% if products %}
-        {% for product in products %}
-        <a href="{{ product.get_url }}" aria-label="View Item">
-        <div class="relative overflow-hidden transition duration-200  hover:shadow-xl bg-yellow-300">
-        <img class="aspect-w-1  border border-gray-300" src="{{ product.images.url }}" alt="" />
-        <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-        <p class="mb-4 text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
-        <p class="text-sm tracking-wide text-gray-300  ">
-            {{ product.description|capfirst }}
-        </p>
-        </div>
-        </div>
-        </a>
-        {% endfor %}
-        {% endif %}
-        </div>
-        <div class="text-center mt-20">
+    </a>
+    {% endfor %}
+    {% endif %}
+    </div>
+    <div class="text-center mt-20">
         <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-black hover:bg-gray-800 border text-center text-white font-semibold capitalize   transition duration-200">
         View gallery
-    
         </a>
-        </div>
-    </section>
-   
-   
-
-
-
-
+    </div>
+</section>
 
 <!-- Banner section -->
 <section class="px-4 xl:px-32 py-16 " >
   <div class="relative border border-gray-300">
     <!-- <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1601924921557-45e6dea0a157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="image" /> -->
-    <img alt="Grapefruit slice atop a pile of other slices"
-                        class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-90"
-                        src='https://images.pexels.com/photos/7679473/pexels-photo-7679473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
+    <img alt="Grapefruit slice atop a pile of other slices" class="h-96 sm:h-112 lg:h-144 xl:h-160 2xl:h-176 3xl:h-224 w-full object-cover filter brightness-90"
+         src='https://images.pexels.com/photos/7679473/pexels-photo-7679473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'/>
     <div class="absolute inset-0 w-full py-2.5  text-white text-xs flex justify-center items-center">
-      <p class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">Visit Our New Store</p>
+      <p class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+          Visit Our New Store
+      </p>
     </div>
   </div>
 </section>
-
-<!-- sign up-->
-<section class="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-gray-800">
-    <div class="container py-6">
-        <h1 class="text-lg font-bold text-center lg:text-2xl">
-            Join 31,000+ other and never miss <br> out on new tips, tutorials, and more.
-        </h1>
-
-        <div class="flex justify-center mt-6">
-            <div class="bg-white border rounded-md focus-within:ring focus-within:border-blue-500">
-                <div class="flex flex-wrap justify-between md:flex-row">
-                    <input type="email" class="p-2 m-1 text-sm text-gray-700 appearance-none focus:outline-none focus:placeholder-transparent" placeholder="Enter your email" aria-label="Enter your email">
-                    <button class="w-full p-2 m-1 text-sm font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded-md lg:w-auto hover:bg-gray-700">subscribe</button>
-                </div>
-            </div>
-        </div>
-
-
-    
-    </div>
-</section>
-
- 
-
-
-
-
-
-
 
 {% endblock %}

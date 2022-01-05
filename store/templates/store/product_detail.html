@@ -170,13 +170,18 @@
        <g>
        </g>
        </svg>
-             <h3>Dimensions</h3>
+             <h3>Attributes</h3>
          </div>
          <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
-             <p class="leading-6 font-light pl-9 text-justify">
-              {{ single_product.dimensions|linebreaks }}
-
+             <p class="leading-6 text-justify">
+                <ul class="list-disc font-light pl-9 text-sm">
+                    <li><span class="capitalize font-medium mr-1">length:</span>{{ single_product.length }}</li>
+                    <li><span class="capitalize font-medium mr-1">height:</span>{{ single_product.height }}</li>
+                    <li><span class="capitalize font-medium mr-1">depth:</span>{{ single_product.depth }}</li>
+                    <li><span class="capitalize font-medium mr-1">weight:</span>{{ single_product.weight }}</li>
+                    <li><span class="capitalize font-medium mr-1">composition:</span>{{ single_product.composition }}</li>
+                </ul>
              </p>
           </div>
          </div>
@@ -190,9 +195,9 @@
          </div>
          <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
-             <p class="leading-6 font-light pl-9 text-justify">
-              {{ single_product.shipping_rules|linebreaks }}
-
+             <p class="leading-6 font-light pl-9 text-justify text-sm">
+                Free Shipping on all orders
+                Free returns within 14 days
              </p>
           </div>
          </div>
@@ -206,9 +211,8 @@
          </div>
          <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
-             <p class="leading-6 font-light pl-9 text-justify">
-              {{ single_product.contact_info|linebreaks }}
-
+             <p class="leading-6 font-light pl-9 text-justify text-sm">
+              Contact us +39 0633450130
              </p>
           </div>
          </div>
@@ -280,7 +284,7 @@ if (scrollDistanceFromTopOfDoc > topOfFooter) {
 }
 }
 else if (winWidth >1024){
-     var h=1200;
+     var h=1100;
 // Distance from top of document to top of footer.
 topOfFooter = $('#footer').position().top;
 // Distance from top of document to top of cart.
