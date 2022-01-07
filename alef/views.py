@@ -27,7 +27,7 @@ def contact(request):
             message = form.cleaned_data['message']
             try:
                 send_mail(
-                'message from'+' '+ fullname, #subject
+                'message from'+' '+ fullname +' with email address '+ email , #subject
                      message, #message
                      email, #from email
                     [settings.EMAIL_HOST_USER], #to email
