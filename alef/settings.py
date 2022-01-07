@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config('DEBUG',default=True,cast=bool)
 
-ALLOWED_HOSTS = ['wsalef.herokuapp.com', '127.0.0.1', 'alefatelier.com']
+ALLOWED_HOSTS = ['wsalef.herokuapp.com', '127.0.0.1', 'www.alefatelier.com']
 
 # Application definition
 
