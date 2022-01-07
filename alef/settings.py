@@ -81,6 +81,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',  # new
                 'category.context_processors.default_link',  # new
+                'category.context_processors.default_hero',  # new
                 'carts.context_processors.counter',  # new
 
             ],
