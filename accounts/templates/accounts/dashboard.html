@@ -1,43 +1,42 @@
 {% extends 'base.html' %}
-{% block title %} Welcome to | {% endblock%}
+{% block title %} The dashboard of| {% endblock%}
 {% block content %}
 {% load static %}
 {% load tailwind_filters %}
 
 
-<!-- component -->
-<section class="px-4 xl:px-32 pt-20">
-    <!-- Alert message-->
-<div class="">
-{% include 'includes/alert.html' %}
-</div>
-<div class="flex flex-col lg:flex-row h-full my-12 border rounded-md shadow-md border-gray-200">
-{% include 'includes/dashboard_sidebar.html' %}
-<div class="w-full lg:w-9/12">
-<div class="p-4 flex flex-wrap lg:flex-nowrap justify-between space-y-4 lg:space-y-0 lg:space-x-4 ">
-    <div class="w-full shadow rounded-md lg:w-1/2 p-4 bg-gray-100 font-mono">
-    <p class="text-sm lg:text-md text-black text-center">
-    Total Orders
-    </p>
-    <div class="flex flex-col justify-center items-center">
-    <p class="text-black text-sm lg:text-lg text-left font-bold my-4">
-    {{ orders_count }}
-    </p>
-    <a href="{% url 'accounts:my_orders' %}" class="text-gray-800 text-sm lg:text-md font-medium underline">
-    View Orders
-    </a>
+<section class="px-4 xl:px-32">
+<!-- Include message-->
+    <div class="">
+    {% include 'includes/alert.html' %}
     </div>
+    <div class="flex flex-col lg:flex-row h-full my-12 border rounded-md shadow-md border-gray-200">
+        {% include 'includes/dashboard_sidebar.html' %}
+        <div class="w-full lg:w-9/12">
+            <div class="p-4 flex flex-wrap lg:flex-nowrap justify-between space-y-4 lg:space-y-0 lg:space-x-4">
+                <div class="w-full shadow rounded-md lg:w-1/2 p-4 bg-gray-100 font-mono">
+                    <p class="text-sm lg:text-md text-black text-center">
+                    Total Orders
+                    </p>
+                    <div class="flex flex-col justify-center items-center">
+                        <p class="text-black text-sm lg:text-lg text-left font-bold my-4">
+                        {{ orders_count }}
+                        </p>
+                        <a href="{% url 'accounts:my_orders' %}" class="text-gray-800 text-sm lg:text-md font-medium underline">
+                        View Orders
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full shadow rounded-md lg:w-1/2 p-4 bg-gray-100">
+                    <div class="flex flex-col justify-center items-center space-y-2 text-black font-mono">
+                        <img src="{{ userprofile.profile_picture.url }}" alt="User Profile Picture" class="avatar">
+                        <p class="text-sm lg:text-md">{{ user.email }}</p>
+                        <p class="">{{ user.phone_number }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="w-full shadow rounded-md lg:w-1/2 p-4 bg-gray-100 ">
-    <div class="flex flex-col justify-center items-center space-y-2 text-black font-mono">
-    <img src="{{ userprofile.profile_picture.url }}" alt="User Profile Picture" class="avatar">
-    <p class="text-sm lg:text-md">{{ user.email }}</p>
-    <p class="">{{ user.phone_number }}</p>
-    </div>
-    </div>
-</div>
-</div>
-</div>
 </section>
 
 {% endblock %}

@@ -1,5 +1,7 @@
 {% load static %}
+
 <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+
 <!DOCTYPE html>
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
@@ -18,17 +20,15 @@
 <!-- Font Awesome-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
 <!-- Include JQUERY-->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+ 
 
 <!-- Include the PayPal JavaScript SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=ATjpLJCgZ2UMDbyVYVeE7zT9gvmR-N6eaJRdFn1MdDhbXGpe16ac1eH-9RQbD_hQbeh7VGi2HDVwcGHS&currency=EUR"></script>
-
+<script src="https://www.paypal.com/sdk/js?client-id=AV_ckGtOwl07PlBsgUOwZ1FofvZN_wkZCNuTHQfar-InXDw-XWolDfSZ_4Jrty1TA1uj_ko0lxE6Eh2p&currency=EUR"></script>
 
 <!-- Include google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
 
 
 <title>{% block title %} {% endblock %}Alef Atelier</title>
@@ -37,11 +37,11 @@
 
 /* Font Styles */
 body {
-font-family: 'Quicksand', sans-serif;
-font-weight: 400;
+  Font-Family: 'Open Sans', Sans-Serif;
+
 }
 h1, h2, h3, h4, h5, h6 {
-font-weight: 500;
+  Font-Family: 'Raleway', Sans-Serif;
 }
 
 
@@ -51,7 +51,6 @@ font-weight: 500;
 position: relative;
 z-index: 0;
  }
-
 
 /* clears the ‘X’ from Internet Explorer */
 input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
@@ -65,7 +64,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .mydiv {
 display: none;
 } 
-
 
 .noscrollClass {
 position: fixed;
@@ -94,9 +92,16 @@ border-radius: 50%;
     <div class="w-full flex flex-col">
 <!--Information First Level-->
           <div class="w-full bg-black">
-            <div class="flex items-center justify-center text-xs font-bold text-white uppercase py-1 space-x-3">        
-            <p class="font-mono"> Free delivery in Greece</p>
-            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
+            <!-- <div class="flex items-center justify-center text-xs font-bold text-white uppercase py-1 space-x-3">        
+                <p class="font-mono">Free delivery in Greece</p>
+                 <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
+            </div> -->
+            <div class=" sm:grid sm:grid-cols-3">
+               <div class="hidden sm:flex text-yellow-200 font-bold text-sm items-center tracking-wide mx-2 font-mono">Beta Vesion</div>
+                 <div class="flex items-center justify-center text-xs font-bold text-white uppercase py-1 space-x-3">        
+                  <p class="font-mono">Free delivery in Greece</p>
+                   <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
+               </div>
             </div>
           </div>
 <!-- Four columns Second Level -->
@@ -115,7 +120,7 @@ border-radius: 50%;
               </div>
               </form>
 <!-- Logo-->
-              <a aria-label="Alef Handmade" class="flex items-center lg:justify-center" href="/" title="Alef Handmade">
+              <a aria-label="Alef Handmade" class="flex items-center lg:justify-center" href="{% url 'home'%}" title="Alef Handmade">
               <img class="object-contain object-center w-20 lg:w-28" src='{% static "img/logo.png" %}' alt="Web site Logo">
               </a>
 <!-- svg icons-->
@@ -150,11 +155,10 @@ border-radius: 50%;
                 <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
                 </a>
-                <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
+                <p class="text-md capitalize">Welcome<span class="font-bold"> Guest</span></p>
                 {% endif %}
               </div>
 <!-- right button for mobile-screens with flex -->
-
               <div class="flex justify-end items-center lg:hidden my-2 z-40 ">
               <!--FIXME:FIX THE ONFOCUS  -->
               <button class="mobile-menu-button text-black" onclick="myFunc()">
@@ -164,7 +168,6 @@ border-radius: 50%;
               </svg>
               </button>
               </div>
-
           </div>
 <!-- third horizontal menu -->
       <div class="hidden justify-center lg:flex w-full bg-transparent border-b border-gray-100">
@@ -179,16 +182,15 @@ border-radius: 50%;
             <div class="grid grid-cols-4 lg:grid-cols-7 pl-4 lg:pl-32 ">
               <div class="cols-span-1 pt-6">
                 <div class="flex flex-col space-y-2 text-sm font-bold uppercase">
-                  <a href="#" class="">new arrivals</a>
-                  <a href="#" class="">winter 2021</a>
-                  <a href="#" class="">offers</a>
-                  <a href="#" class="">collection x</a>
+<!--                  <a href="#" class="">new arrivals</a>-->
+<!--                  <a href="#" class="">winter 2021</a>-->
+<!--                  <a href="#" class="">offers</a>-->
+<!--                  <a href="#" class="">collection x</a>-->
                 </div>
               </div>
               <div class="col-span-2 pt-6 w-24">
                 <div class="flex flex-col space-y-2 capitalize">
                   <p class="capitalize text-gray-700 font-semibold"><a href="{% url 'store:product_list' %}">all products</a></p>
-
                   {%  for category in links  %}
                         <a href="{{ category.get_url }}" class="mymultiplediv" id="{{category.slug}}"> {{ category.category_name }} </a>
                   {% endfor %}
@@ -197,8 +199,6 @@ border-radius: 50%;
               <div class="col-span-4">
                 <div class="flex justify-end">
                   <img id="srcImage1" src='{% static "img/default_menu.jpg" %}' alt="Default Photo" class="h-64 object-cover object-center"/>
-
-                    <!-- <img id="srcImage1" src='{{ categories.cat_image.url }}' alt="Default Photo" class="h-64 object-cover object-center"/> -->
                   {%  for category in links  %}
                     <div class="mydiv " id="div{{category.slug}}">
                     <img src='{{ category.cat_image.url }}' alt="Category Photos" class="aspect-w-1 h-64 object-cover object-center"/>
@@ -214,7 +214,7 @@ border-radius: 50%;
           </a>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'environment' %}">
+          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'wholesale' %}">
             Wholesale
           </a>
         </li>
@@ -227,7 +227,6 @@ border-radius: 50%;
         </nav>
       </div>
     </div>
-
   </div>
 <!-- Navbar ends -->
 <!-- Mobile Sidebar Starts -->
@@ -235,50 +234,47 @@ border-radius: 50%;
     <nav class="px-8">
       <div class="flex lg:hidden  justify-center mt-6 items-center border-b border-black pb-2">
         <!-- Basket-->
-                  <a href="{% url 'carts:cart' %}" class="relative text-black mr-6" aria-label="Cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                  </svg>
-                  <span class="absolute bottom-5 ml-5">
-                  <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-black text-white">
-                  {{ cart_count }}
-                  </div>
-                  </span>
-                  </a>
-        <!-- dashboard-logout-login-welcome-->
-                  {% if user.id is not None %}
-                  <a href="{% url 'accounts:dashboard' %}" class="text-black mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
-                  </svg>
-                  </a>
-                  <a href="{% url 'accounts:logout' %}" class="text-black mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
-                  </svg>
-                  </a>
-                  <p class="text-md capitalize ">Hi <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
-                  {% else %}
-                  <a href="{% url 'accounts:login' %}" class="text-black mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  </a>
-                  <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
-                  {% endif %}
-                </div>
+          <a href="{% url 'carts:cart' %}" class="relative text-black mr-6" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+          </svg>
+          <span class="absolute bottom-5 ml-5">
+          <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-black text-white">
+          {{ cart_count }}
+          </div>
+          </span>
+          </a>
+<!-- dashboard-logout-login-welcome-->
+          {% if user.id is not None %}
+          <a href="{% url 'accounts:dashboard' %}" class="text-black mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
+          </svg>
+          </a>
+          <a href="{% url 'accounts:logout' %}" class="text-black mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+          </svg>
+          </a>
+          <p class="text-md capitalize ">Hi <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
+          {% else %}
+          <a href="{% url 'accounts:login' %}" class="text-black mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          </a>
+          <p class="text-md capitalize">Welcome<span class="font-bold"> Guest </span> </p>
+          {% endif %}
+    </div>
 
-
-  
       <p class="text-black font-bold tracking-wide text-md mt-6 uppercase">
         bags
       </p>
       <ul class="flex flex-col space-y-2 capitalize text-gray-800  p-2 my-2 text-sm">
         <li class="capitalize"><a href="{% url 'store:product_list' %}">all products</a></li>
-            {%  for category in links  %}
-                <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a>
-                </li>
-            {% endfor %}
+        {%  for category in links  %}
+            <li><a href="{{ category.get_url }}"> {{ category.category_name }} </a></li>
+        {% endfor %}
       </ul>
       <div>
         <p class="text-black font-bold tracking-wide text-md mt-6 uppercase">
@@ -286,22 +282,21 @@ border-radius: 50%;
         </p>
         <ul class="flex flex-col space-y-2 capitalize text-gray-800 p-2 my-2 text-sm">
           <li class="capitalize"><a href="{% url 'about' %}">Inside Alef</a></li>
-          <li class="capitalize"><a href="">Wholesale</a></li>
+          <li class="capitalize"><a href="{% url 'wholesale' %}">Wholesale</a></li>
           <li class="capitalize"><a href="{% url 'contact' %}">Contact</a></li>
-          </ul>
+        </ul>
       </div>
-      
 
-      <form  class="w-full max-w-xs items-center mt-6" method='GET' action="{% url 'store:search'%}"  />
-      {% csrf_token %}
-      <div class="flex items-center border-b border-black py-2">
+    <form  class="w-full max-w-xs items-center mt-6" method='GET' action="{% url 'store:search'%}"/>
+        {% csrf_token %}
+        <div class="flex items-center border-b border-black py-2">
         <button class="flex-shrink-0  text-sm py-0 px-2 rounded" type="submit">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
-        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
         </svg>
         </button>
         <input class="appearance-none w-full text-black mr-3 px-2 leading-tight focus:outline-none placeholder-black transition duration-700" name="keyword" type="text" placeholder="Search for" aria-label="search">
-      </div>
+        </div>
     </form>
     </nav>
   </div>
@@ -315,7 +310,6 @@ border-radius: 50%;
   <!-- end block content-->
 
   <!-- footer section-->
-
   <section id="footer" class="pt-12 text-black border-t border-gray-200">
     <div class="flex flex-wrap mb-12 lg:mb-20 pt-6 text-center lg:text-left px-4 xl:px-32">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
@@ -335,7 +329,7 @@ border-radius: 50%;
       </div>
       <div class="w-full lg:w-1/4 lg:pr-3">
         <p class="mb-2 lg:mb-4 lg:text-md font-semibold">Contacts</p>
-        <p class="lg:text-md">info@alefatelier.com</p>
+        <p class="lg:text-md">alefatelierbeta@gmail.com</p>
         <p class="lg:text-md"><a href="tel:+30-6947-885-132">+30 6947885132</a></p>
       </div>
     </div>
@@ -345,72 +339,67 @@ border-radius: 50%;
     </div>
   </section>
 
-  <script>
-    //toggle mega menu
-    $('.mega-menu').hide();
-    $(window).ready(function() {
-      $("nav.inline-menu ul li").click(function() {
-        $(this).siblings().find(".mega-menu").hide();
-        $(this).find(".mega-menu").toggle();
 
-      });
-      // hide grid mega menu after click anywhere on the page
-      $("html").click(function(event) {
-        if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
-          $('.mega-menu').hide();
-        }
-      });
-    });
-
-    //restore default image on grid mega menu after click event anywhere on the page
-    $("html").click(function(event) {
-      if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
-        $("#srcImage1").show();
-        $("div.mydiv").hide();
-      }
-    });
-
-    //change image on hover inside on grid mega menu
-    $(document).ready(function() {
-      $(".mymultiplediv").mouseover(function() {
-        $("#srcImage1").hide();
-        myvar = this.id;
-        $("div.mydiv").hide();
-        $("#div"+myvar).show();
-      });
-    });
-
-    // grab everything we need
-    const btn = document.querySelector(".mobile-menu-button");
-    const menu = document.querySelector(".sidebar");
-    var para = document.getElementById("scroll");
-
-    // add event listeners
-    //Toggle Nav //
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("-translate-x-full");
-      para.classList.toggle("noscrollClass");
-    });
-
-    $(window).resize(function() {
-      var winWidth = $(window).width();
-      if(winWidth >= 640) {
-        menu.classList.add("-translate-x-full");
-        para.classList.remove("noscrollClass");}
-});
-
-</script>
-
-<!-- <script>
-  //thumbs gallery
-
-	$(document).ready(function(){
-		$('.thumb a').click(function(e){
-			e.preventDefault();
-			$('.mainImage img').attr('src', $(this).attr("href"));
-		})
-	})
-</script> -->
 </body>
+
+
+<script> 
+  
+  //toggle mega menu
+     $('.mega-menu').hide();
+     $(window).ready(function() {
+       $("nav.inline-menu ul li").click(function() {
+         $(this).siblings().find(".mega-menu").hide();
+         $(this).find(".mega-menu").toggle();
+ 
+       });
+       // hide grid mega menu after click anywhere on the page
+       $("html").click(function(event) {
+         if ($(event.target).closest('nav.inline-menu ul li').length == 0) {
+           $('.mega-menu').hide();
+         }
+       });
+     });
+ 
+     //restore default image on grid mega menu after click event anywhere on the page
+     $("html").click(function(event) {
+       if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
+         $("#srcImage1").show();
+         $("div.mydiv").hide();
+       }
+     });
+ 
+     //change image on hover inside on grid mega menu
+     $(document).ready(function() {
+       $(".mymultiplediv").mouseover(function() {
+         $("#srcImage1").hide();
+         myvar = this.id;
+         $("div.mydiv").hide();
+         $("#div"+myvar).show();
+       });
+     });
+ 
+     // grab everything we need
+     const btn = document.querySelector(".mobile-menu-button");
+     const menu = document.querySelector(".sidebar");
+     var para = document.getElementById("scroll");
+ 
+     // add event listeners
+     //Toggle Nav //
+     btn.addEventListener("click", () => {
+       menu.classList.toggle("-translate-x-full");
+       para.classList.toggle("noscrollClass");
+     });
+ 
+     $(window).resize(function() {
+       var winWidth = $(window).width();
+       if(winWidth >= 640) {
+         menu.classList.add("-translate-x-full");
+         para.classList.remove("noscrollClass");}
+ });
+ 
+ 
+ 
+ </script>
 
 </html>

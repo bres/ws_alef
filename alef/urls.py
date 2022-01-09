@@ -14,7 +14,7 @@ urlpatterns = [
     path('store/', include('store.urls', namespace='store')),
     path('cart/', include('carts.urls', namespace='carts')),
     path('success/',views.success,name='success'),
-    path('environment/',views.environment,name='environment'),
+    path('wholesale/',views.wholesale,name='wholesale'),
 
     #orders
     path('orders/', include('orders.urls', namespace='orders'))

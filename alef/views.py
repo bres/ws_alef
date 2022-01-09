@@ -47,5 +47,5 @@ def about(request):
 
 
 
-def environment(request):
-    return render(request,'environment.html')
+def wholesale(request):
+    return render(request,'wholesale.html')

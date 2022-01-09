@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config('DEBUG',default=True,cast=bool)
 
-ALLOWED_HOSTS = ['wsalef.herokuapp.com', '127.0.0.1', 'www.alefatelier.com']
+ALLOWED_HOSTS = ['wsalef.herokuapp.com', '127.0.0.1','www.alefatelier.com']
 
 # Application definition
 
@@ -57,7 +57,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-     'whitenoise.middleware.WhiteNoiseMiddleware',  # new
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -189,13 +189,11 @@ MESSAGE_TAGS = {
 
 #smtp configuration
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('MAILGUN_SMTP_SERVER', '')
-EMAIL_PORT = os.environ.get('MAILGUN_SMTP_PORT', '')
-EMAIL_HOST_USER = os.environ.get('MAILGUN_SMTP_LOGIN', '')
-EMAIL_HOST_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD', '')
-
-
-
+EMAIL_HOST =config('EMAIL_HOST')
+EMAIL_PORT =config('EMAIL_PORT',cast=int)
+EMAIL_HOST_USER =config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS=config('EMAIL_USE_TLS',cast=bool)
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)

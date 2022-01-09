@@ -5,81 +5,69 @@
 {% load tailwind_filters %}
 
 
-<!-- component -->
-<section class="px-4 xl:px-32 pt-20 min-h-screen">
-<!-- alert message -->
-<div class="">
-{% include 'includes/alert.html' %}
-</div>
-<!-- -->
-<div class="flex flex-col lg:flex-row my-12 border shadow-md rounded">
-{% include 'includes/dashboard_sidebar.html' %}
-<div class="w-full p-4 lg:w-9/12">
- 
-<div class="flex justify-between"> 
-<h2 class="text-2xl font-semibold text-black capitalize">Account settings</h2>
-
- <img class="h-24 rounded-full" src="{{ userprofile.profile_picture.url }}" alt="Profile Picture">
- 
-</div>
-<form action="{% url 'accounts:edit_profile' %}" method="POST" enctype="multipart/form-data">
-{% csrf_token %}
-<div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
-<div>
-<label class="text-gray-700 " >First Name</label>
-{{ user_form.first_name }}
-</div>
-<div>
-<label class="text-gray-700 " >Last Name </label>
-{{ user_form.last_name }}
-</div>
-<div>
-<label class="text-gray-700 " >Phone Number</label>
-{{ user_form.phone_number }}
-</div>
-<div>
-<label class="text-gray-700 " >Profile Picture</label>
-{{ profile_form.profile_picture}}                       
-</div>
-
-<div>
-<label class="text-gray-700 " >Street Address</label>
-{{ profile_form.address}}
-</div>
-
-<div>
-<label class="text-gray-700 " >Post Code</label>
-{{ profile_form.post_code}}
-</div>
-<div>
-<label class="text-gray-700 ">Municipality</label>
-{{ profile_form.municipality}}
-</div>
-
-<div>
-<label class="text-gray-700 " >State</label>
-{{ profile_form.state}}
-</div>
-<div>
-<label class="text-gray-700 " >City</label>
-{{ profile_form.city}}
-</div>
-
-<div>
-<label class="text-gray-700 dark:text-gray-200" >Country</label>
-{{ profile_form.country}}
-</div>
-</div>
-
-<div class="flex justify-end mt-6">
-<button type="submit" value="save" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-black  hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
-</div>
-</form>
- 
- 
-</div>
-</div>
-
+<section class="px-4 xl:px-32  min-h-screen">
+<!-- Include message -->
+    <div class="">
+    {% include 'includes/alert.html' %}
+    </div>
+<!-- Include Sidebar-->
+    <div class="flex flex-col lg:flex-row my-12 border shadow-md rounded">
+    {% include 'includes/dashboard_sidebar.html' %}
+        <div class="w-full p-4 lg:w-9/12">
+            <div class="flex justify-between"> 
+            <h2 class="text-2xl font-semibold text-black capitalize">Account settings</h2>
+            <img class="h-24 rounded-full" src="{{ userprofile.profile_picture.url }}" alt="Profile Picture">
+        </div>
+            <form action="{% url 'accounts:edit_profile' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+                <div>
+                <label class="text-gray-700 " >First Name</label>
+                {{ user_form.first_name }}
+                </div>
+                <div>
+                <label class="text-gray-700 " >Last Name </label>
+                {{ user_form.last_name }}
+                </div>
+                <div>
+                <label class="text-gray-700 " >Phone Number</label>
+                {{ user_form.phone_number }}
+                </div>
+                <div>
+                <label class="text-gray-700 " >Profile Picture</label>
+                {{ profile_form.profile_picture}}                       
+                </div>
+                <div>
+                <label class="text-gray-700 " >Street Address</label>
+                {{ profile_form.address}}
+                </div>
+                <div>
+                <label class="text-gray-700 " >Post Code</label>
+                {{ profile_form.post_code}}
+                </div>
+                <div>
+                <label class="text-gray-700 ">Municipality</label>
+                {{ profile_form.municipality}}
+                </div>
+                <div>
+                <label class="text-gray-700 " >State</label>
+                {{ profile_form.state}}
+                </div>
+                <div>
+                <label class="text-gray-700 " >City</label>
+                {{ profile_form.city}}
+                </div>
+                <div>
+                <label class="text-gray-700 dark:text-gray-200" >Country</label>
+                {{ profile_form.country}}
+                </div>
+                </div>
+                <div class="flex justify-end mt-6">
+                    <button type="submit" value="save" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-black hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </section>
 
 

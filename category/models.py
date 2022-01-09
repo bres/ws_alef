@@ -6,7 +6,7 @@ from django.urls import reverse
 class Category(models.Model):
     category_name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
-    cat_image = models.ImageField(upload_to='images/categories', blank=True)
+    cat_image = models.ImageField(upload_to='images/categories')
     sort_number=models.CharField(max_length=50,unique=True)
 
 
