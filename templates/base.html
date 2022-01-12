@@ -1,10 +1,7 @@
 {% load static %}
-
 <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
-
 <!DOCTYPE html>
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 <meta charset="UTF-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -22,14 +19,14 @@
 
 <!-- Include JQUERY-->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
- 
 
 <!-- Include the PayPal JavaScript SDK -->
 <script src="https://www.paypal.com/sdk/js?client-id=AV_ckGtOwl07PlBsgUOwZ1FofvZN_wkZCNuTHQfar-InXDw-XWolDfSZ_4Jrty1TA1uj_ko0lxE6Eh2p&currency=EUR"></script>
 
 <!-- Include google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto&display=swap" rel="stylesheet">
 
 <title>{% block title %} {% endblock %}Alef Atelier</title>
 
@@ -37,16 +34,13 @@
 
 /* Font Styles */
 body {
-  Font-Family: 'Open Sans', Sans-Serif;
-
+  font-family: 'Nunito', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-  Font-Family: 'Raleway', Sans-Serif;
-}
+  font-family: 'Roboto', sans-serif;}
 
 
-/* Paypal */
-
+/* PayPal */
 .paypal {
 position: relative;
 z-index: 0;
@@ -81,13 +75,28 @@ height: 60px;
 border-radius: 50%;
 }
 
+.coloring {
+background-color: #000000;
+  color:#ffffff;
+        }
+
 </style>
 
+    <script>
+   $(function($) {
+ let url = window.location.href;
+  $("p a").each(function() {
+   if (this.href === url) {
+   $(this).parent().addClass('coloring');
+  }
+ });
+});
+</script>
 </head>
 
 <body class="antialiased pt-20 lg:pt-40" id="scroll">
 
-  <div class="w-full fixed inset-x-0 top-0  flex justify-between lg:justify-center z-50 bg-white">
+<div class="w-full fixed inset-x-0 top-0  flex justify-between lg:justify-center z-50 bg-white">
 <!--  Three Levels Menu -->
     <div class="w-full flex flex-col">
 <!--Information First Level-->
@@ -96,11 +105,11 @@ border-radius: 50%;
                 <p class="font-mono">Free delivery in Greece</p>
                  <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
             </div> -->
-            <div class=" sm:grid sm:grid-cols-3">
-               <div class="hidden sm:flex text-yellow-200 font-bold text-sm items-center tracking-wide mx-2 font-mono">Beta Vesion</div>
+            <div class="sm:grid sm:grid-cols-3">
+               <div class="hidden sm:flex text-yellow-200 font-bold text-sm items-center tracking-wide mx-2 font-mono">Beta Version</div>
                  <div class="flex items-center justify-center text-xs font-bold text-white uppercase py-1 space-x-3">        
                   <p class="font-mono">Free delivery in Greece</p>
-                   <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
+                   <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"  version="1.1"   x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z" fill="#ffffff" data-original="#000000" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z" fill="#ffffff" data-original="#000000" /></g></svg>
                </div>
             </div>
           </div>
@@ -109,14 +118,14 @@ border-radius: 50%;
 <!-- Search Form-->
               <form  class="hidden lg:flex items-center mt-3 w-auto" method='GET' action="{% url 'store:search'%}">
               {% csrf_token %}
-              <div class="flex items-center border-b border-black py-2">
+              <div class="flex items-center border-b border-black py-2 w-48">
               <button class="flex-shrink-0 text-sm px-2" type="submit">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="black">
               <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
               </svg>
               </button>
               <input class="appearance-none bg-transparent border-none w-full text-black mr-3  px-2 leading-tight focus:bg-transparent
-              focus:outline-none  placeholder-gray-400 transition duration-700" name="keyword" type="text" placeholder="Search for" aria-label="search">
+              focus:outline-none  placeholder-gray-500 transition duration-700" name="keyword" type="text" placeholder="Search for" aria-label="search">
               </div>
               </form>
 <!-- Logo-->
@@ -130,30 +139,30 @@ border-radius: 50%;
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                 </svg>
-                <span class="absolute bottom-5 ml-5">
+                <div class="absolute bottom-5 ml-5">
                 <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-black text-white">
                 {{ cart_count }}
                 </div>
-                </span>
+                </div>
                 </a>
 <!-- dashboard-logout-login-welcome-->
                 {% if user.id is not None %}
                 <a href="{% url 'accounts:dashboard' %}" class="text-black mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
+                    </svg>
                 </a>
                 <a href="{% url 'accounts:logout' %}" class="text-black mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+                    </svg>
                 </a>
                 <p class="text-md capitalize ">Hi <span class="font-bold pl-1 ">{{ user.first_name }}</span> </p>
                 {% else %}
                 <a href="{% url 'accounts:login' %}" class="text-black mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
                 </a>
                 <p class="text-md capitalize">Welcome<span class="font-bold"> Guest</span></p>
                 {% endif %}
@@ -162,10 +171,10 @@ border-radius: 50%;
               <div class="flex justify-end items-center lg:hidden my-2 z-40 ">
               <!--FIXME:FIX THE ONFOCUS  -->
               <button class="mobile-menu-button text-black" onclick="myFunc()">
-              <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-              </path>
-              </svg>
+                  <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                  </path>
+                  </svg>
               </button>
               </div>
           </div>
@@ -173,8 +182,8 @@ border-radius: 50%;
       <div class="hidden justify-center lg:flex w-full bg-transparent border-b border-gray-100">
         <nav class="inline-menu relative flex text-sm xl:text-md items-center py-3 justify-center w-full">
         <!-- hidden dropdown  with javascript configuration -->
-        <ul class="flex ">
-        <li>
+        <ul id="findme" class="flex ">
+        <li class="">
           <a class="mx-7 3xl:mx-10 py-1 transition duration-200  font-bold border-b-2 border-transparent hover:border-black uppercase" href="#">
             Shop
           </a>
@@ -207,6 +216,7 @@ border-radius: 50%;
                 </div>
               </div>
             </div>
+          </div>
         </li>
         <li>
           <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'about' %}">
@@ -238,11 +248,11 @@ border-radius: 50%;
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
           <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
           </svg>
-          <span class="absolute bottom-5 ml-5">
+          <div class="absolute bottom-5 ml-5">
           <div class="inline-flex justify-center  items-center w-5 h-5 p-0.5  rounded-full text-xs font-semibold leading-4 bg-black text-white">
           {{ cart_count }}
           </div>
-          </span>
+          </div>
           </a>
 <!-- dashboard-logout-login-welcome-->
           {% if user.id is not None %}
@@ -278,7 +288,7 @@ border-radius: 50%;
       </ul>
       <div>
         <p class="text-black font-bold tracking-wide text-md mt-6 uppercase">
-        informations
+        information
         </p>
         <ul class="flex flex-col space-y-2 capitalize text-gray-800 p-2 my-2 text-sm">
           <li class="capitalize"><a href="{% url 'about' %}">Inside Alef</a></li>
@@ -287,7 +297,7 @@ border-radius: 50%;
         </ul>
       </div>
 
-    <form  class="w-full max-w-xs items-center mt-6" method='GET' action="{% url 'store:search'%}"/>
+    <form class="w-full max-w-xs items-center mt-6" method='GET' action="{% url 'store:search'%}">
         {% csrf_token %}
         <div class="flex items-center border-b border-black py-2">
         <button class="flex-shrink-0  text-sm py-0 px-2 rounded" type="submit">
@@ -339,19 +349,15 @@ border-radius: 50%;
     </div>
   </section>
 
-
 </body>
 
-
-<script> 
-  
-  //toggle mega menu
+<script>
+//toggle mega menu
      $('.mega-menu').hide();
      $(window).ready(function() {
        $("nav.inline-menu ul li").click(function() {
          $(this).siblings().find(".mega-menu").hide();
          $(this).find(".mega-menu").toggle();
- 
        });
        // hide grid mega menu after click anywhere on the page
        $("html").click(function(event) {
@@ -361,7 +367,7 @@ border-radius: 50%;
        });
      });
  
-     //restore default image on grid mega menu after click event anywhere on the page
+ //restore default image on grid mega menu after click event anywhere on the page
      $("html").click(function(event) {
        if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
          $("#srcImage1").show();
@@ -369,7 +375,7 @@ border-radius: 50%;
        }
      });
  
-     //change image on hover inside on grid mega menu
+ //change image on hover inside on grid mega menu
      $(document).ready(function() {
        $(".mymultiplediv").mouseover(function() {
          $("#srcImage1").hide();
@@ -379,12 +385,12 @@ border-radius: 50%;
        });
      });
  
-     // grab everything we need
+ // grab everything we need
      const btn = document.querySelector(".mobile-menu-button");
      const menu = document.querySelector(".sidebar");
      var para = document.getElementById("scroll");
  
-     // add event listeners
+ // add event listeners
      //Toggle Nav //
      btn.addEventListener("click", () => {
        menu.classList.toggle("-translate-x-full");
@@ -397,9 +403,6 @@ border-radius: 50%;
          menu.classList.add("-translate-x-full");
          para.classList.remove("noscrollClass");}
  });
- 
- 
- 
  </script>
 
 </html>

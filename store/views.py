@@ -6,27 +6,33 @@ from carts.models import *
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from django.db.models import Q
+from .forms import ShortForm
 
 
 # Create your views here.
 
 def product_list(request, category_slug=None):
+    temp = '-created_date'
+    form = ShortForm()
+    if request.GET:
+        temp = request.GET['short_field']
+
     categories = None
     if category_slug:
         categories = get_object_or_404(Category, slug=category_slug)
-        products = Product.objects.filter(category=categories, is_available=True)
+        products = Product.objects.filter(category=categories, is_available=True).order_by(temp)
         paginator = Paginator(products, 6)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         product_count = products.count()
     else:
-        products = Product.objects.all().filter(is_available=True).order_by('product_name', 'created_date')
+        products = Product.objects.all().filter(is_available=True).order_by(temp)
         paginator = Paginator(products, 6)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         product_count = products.count()
     context = {
-        'products': paged_products, 'product_count': product_count
+        'products': paged_products, 'product_count': product_count, 'temp': temp, 'form': form
     }
     return render(request, 'store/list.html', context)
 

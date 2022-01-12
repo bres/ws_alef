@@ -29,7 +29,7 @@
 }
 </style>
 
-<section class="py-20 mx-4 xl:mx-32"  >
+<section class="py-10 mx-4 xl:mx-32"  >
 <div class="flex flex-wrap -mx-4 mb-8">
     <div class="w-full md:w-1/2  px-4 mb-8 md:mb-0">
         <img class="aspect-w-1 mb-10 border border-gray-300" src="{% if single_product.images %}{{ single_product.images.url }}{% else %}
@@ -38,7 +38,7 @@
         {% for i in product_gallery  %}
         <div class="p-2">
         <a  class="block border border-gray-300" href="{{i.image.url}}">
-        <img  class=" aspect-w-1 " src="{{ i.image.url}}" alt="Product Image">
+        <img  class="aspect-w-1" src="{{ i.image.url}}" alt="Product Image">
         </a>
         </div>
         {% endfor %}     
@@ -46,13 +46,13 @@
     </div>
     <div id="cart" class="w-full md:w-1/2 px-4 left-1/2 md:fixed  md:max-w-4xl md:pr-16 ">
 
-        <div class="flex items-center w-full py-1 font-medium text-md text-black text-center tracking-wide mb-4">
+        <div class="flex items-center w-full py-1 font-medium text-md text-black text-center tracking-wide mb-3">
         <a href="{% url 'home' %}" class="text-black">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
         </svg>
         </a>
-        <span class="mx-4 text-gray-700 ">
+        <span class="mx-4 text-gray-700">
         /
         </span>
         <a href="{% url 'store:product_list' %}" class="text-gray-700  hover:underline">
@@ -62,13 +62,14 @@
       
         <form method="POST" action="{% url 'carts:add_cart' single_product.id  %}">
         {% csrf_token %}
-        <div  class="mb-4 pb-4 border-b">
-        <p class="mb-4 text-gray-900 text-lg capitalize">{{ single_product.product_name }}</p>
-        <p class="inline-block mb-4 text-2xl  text-gray-900">
-        <span>€{{ single_product.price }}</span>
-        <!-- <span class="font-normal text-base text-gray-400 line-through">discount</span> -->
-        </p>
-        <p class="max-w-3xl text-gray-700">
+        <div class="mb-4 pb-4  ">
+        <p class="mb- text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
+        <p class="text-sm font-mono text-gray-900"> item No. {{ single_product.code }}</p>
+        <p class="text-lg mt-2">€{{ single_product.price }}</p>
+
+        <div class="inline-block my-4 text-lg text-gray-900">
+
+        <p class="max-w-3xl text-gray-900 tracking-wide">
           {{ single_product.description }}
         </p>
         </div>
@@ -103,8 +104,8 @@
 
  <div class="grid place-items-center">
      <div class="w-full mx-auto mb-24">
-     <div class="bg-white  shadow-sm">
-         <!-- Dimensions-->
+     <div class="bg-white   ">
+         <!-- Attributes-->
          <div class="transition hover:bg-gray-100">
          <!-- header -->
          <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
@@ -181,9 +182,8 @@
                     <li><span class="capitalize font-medium mr-1">depth:</span>{{ single_product.depth }}</li>
                     <li><span class="capitalize font-medium mr-1">weight:</span>{{ single_product.weight }}</li>
                     <li><span class="capitalize font-medium mr-1">composition:</span>{{ single_product.composition }}</li>
-                    <li><span class="capitalize font-medium mr-1">Minimum Length Strap:</span>{{ single_product.min_strap }}</li>
-                    <li><span class="capitalize font-medium mr-1">Maximum Length Strap:</span>{{ single_product.max_strap }}</li>
-                </ul>
+                    <li><span class="capitalize font-medium mr-1">Min-Max length strap:</span>{{ single_product.min_max }}</li>
+                 </ul>
              </p>
           </div>
          </div>
@@ -198,8 +198,8 @@
          <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
              <p class="leading-6 font-light pl-9 text-justify text-sm">
-                Free Shipping on all orders
-                Free returns within 14 days
+                Free Shipping on all orders in Greece.
+                Free returns within 7 days.
              </p>
           </div>
          </div>
@@ -214,7 +214,7 @@
          <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
              <p class="leading-6 font-light pl-9 text-justify text-sm">
-              Call us <a href="tel:+30-6947-885-132">+30 6947885132</a> or Chat wit us <a href="whatsapp://send?&phone=+306947885132">WhatsApp</a>
+              Mobile number: <a class="font-mono mr-2" href="tel:+30-6947-885-132">(+30)-6947885132,</a> <a class="underline font-mono" href="whatsapp://send?&phone=+306947885132">WhatsApp</a>
              </p>
           </div>
          </div>

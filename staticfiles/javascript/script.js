@@ -1,4 +1,5 @@
-<script>  
+<script> 
+  
  //toggle mega menu
     $('.mega-menu').hide();
     $(window).ready(function() {
