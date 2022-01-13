@@ -5,12 +5,7 @@
 {% load static %}
 
 
-<!-- about section -->
- 
- 
-
-<section class="px-4 xl:px-32">
-
+<section class="px-4 xl:px-32 text-black">
 <!-- hero image-->
 <div class="w-full flex flex-col justify-center items-center">
 <img class="object-cover h-112 w-full" src='{% static "img/abouthero.jpg" %}'/>
@@ -21,40 +16,37 @@
             Our philosophy is based on finding the roots of human creativity in products made purely by hand.<br>
             We are inspired by the past to create unique and timeless products.
     </p>
-
 </div>
-
 <!-- zic zag -->
-    <div class="flex flex-col my-20">
-        <div class="flex flex-wrap items-center  mb-4">
-                        <div class="w-full h-full lg:w-2/5">
-                            <img class="object-cover " src='{% static "img/abouthandmade.jpg" %}'/>
-                        </div>
-                        <div class="w-full h-full lg:w-3/5  mt-4 lg:mt-0 lg:pl-10">
-                           <h1 class="font-bold text-4xl py-0 xl:py-3">Handmade</h1>
-                           <p class="text-lg leading-relaxed tracking-wide">
-                            Our products are handmade and therefore, unique.<br>
-                               That makes ALEF collection literally limited edition.<br>
-                        Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
-                        We make our bags with love and joy so you can have a unique product.
-                         </p>
-                        </div>
-                    </div>
-        <div class="flex flex-wrap  items-center mb-4 ">
-        <div class="order-2	lg:order-1 w-full h-full lg:w-3/5  mt-4 lg:mt-0 ">
-        <h1 class="font-bold text-4xl py-0 xl:py-3">Materials</h1>
-        <p class="text-lg leading-relaxed tracking-wide ">
-        The collection of fabrics is based on sustainability and durability.<br>
-        Our leather bags are made from eco-friendly and/or recycled leather.<br>
-        That way we can ensure the best results for our products and less damage for the environment.
-        </p>
+<div class="flex flex-col my-20">
+    <div class="flex flex-wrap items-center mb-4">
+        <div class="w-full h-full lg:w-2/5">
+            <img class="object-cover " src='{% static "img/abouthandmade.jpg" %}'/>
         </div>
-        <div class="order-1	lg:order-2 w-full lg:w-2/5 ">
-        <img class="object-cover " src='{% static "img/aboutmaterials.jpg" %}'/>
-        </div>
+        <div class="w-full h-full lg:w-3/5  mt-4 lg:mt-0 lg:pl-10">
+            <h1 class="font-bold text-4xl py-0 xl:py-3">Handmade</h1>
+            <p class="text-lg leading-relaxed tracking-wide">
+            Our products are handmade and therefore, unique.<br>
+            That makes ALEF collection literally limited edition.<br>
+            Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
+            We make our bags with love and joy so you can have a unique product.
+            </p>
         </div>
     </div>
-
+    <div class="flex flex-wrap  items-center mb-4 ">
+    <div class="order-2	lg:order-1 w-full h-full lg:w-3/5  mt-4 lg:mt-0 ">
+    <h1 class="font-bold text-4xl py-0 xl:py-3">Materials</h1>
+    <p class="text-lg leading-relaxed tracking-wide ">
+    The collection of fabrics is based on sustainability and durability.<br>
+    Our leather bags are made from eco-friendly and/or recycled leather.<br>
+    That way we can ensure the best results for our products and less damage for the environment.
+    </p>
+    </div>
+    <div class="order-1	lg:order-2 w-full lg:w-2/5 ">
+    <img class="object-cover " src='{% static "img/aboutmaterials.jpg" %}'/>
+    </div>
+    </div>
+</div>
 </section>
 
 {% endblock %}

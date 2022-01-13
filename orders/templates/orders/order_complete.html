@@ -11,7 +11,7 @@
 <div class="flex justify-between items-center"> 
   <div class="flex items-center w-32 h-24  border-2 border-black p-2">
 
-  <img src="{% static 'img/invoice_logo.png' %}" alt="imvoice" class="object-contain object-center w-full" />
+  <img src="{% static 'img/invoice_logo.png' %}" alt="invoice" class="object-contain object-center w-full" />
 
   </div>
   <div class="flex flex-col">
@@ -55,7 +55,10 @@
           <thead>
             <tr class="border-b-2 border-gray-200 ">
               <th class="px-2 sm:px-4 py-3 text-xs font-semibold text-white text-center uppercase ">
-                Product
+                Item Name
+              </th>
+                <th class="px-2 sm:px-4 py-3 text-xs font-semibold text-white text-center uppercase ">
+                Item Code
               </th>
               <th class=" px-2 sm:px-4 py-3 text-xs font-semibold text-white text-center uppercase">
                 Quantity
@@ -80,7 +83,11 @@
                   {% endfor %}
                 {% endif %}
                 </p>
-
+              </td>
+                 <td class=" px-2 sm:px-4 py-5 text-sm  text-center capitalize">
+                <p class="text-gray-900   ">
+                  {{ item.product.code }}
+                </p>
               </td>
               <td class=" px-2 sm:px-4 py-5 text-sm  text-center capitalize">
                 <p class="text-gray-900   ">
@@ -90,11 +97,8 @@
               <td class="px-2 sm:px-4 py-5 text-sm  text-center capitalize  ">
                 <p class="text-gray-900">
                    €{{ item.product.price }}
-
                 </p>
               </td>
-         
-       
             </tr>
             {% endfor %}
 

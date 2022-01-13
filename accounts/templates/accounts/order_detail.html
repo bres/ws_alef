@@ -55,7 +55,10 @@
           <thead>
             <tr class="border-b-2 border-gray-200 ">
               <th class="px-2 sm:px-4 py-3 text-xs font-semibold text-white text-center uppercase ">
-                Product
+                Item Name
+              </th>
+                <th class="px-2 sm:px-4 py-3 text-xs font-semibold text-white text-center uppercase ">
+                Item Code
               </th>
               <th class=" px-2 sm:px-4 py-3 text-xs font-semibold text-white text-center uppercase">
                 Quantity
@@ -81,6 +84,11 @@
                 {% endif %}
                 </p>
 
+              </td>
+                  <td class=" px-2 sm:px-4 py-5 text-sm  text-center capitalize">
+                <p class="text-gray-900   ">
+                  {{ item.product.code }}
+                </p>
               </td>
               <td class=" px-2 sm:px-4 py-5 text-sm  text-center capitalize">
                 <p class="text-gray-900   ">

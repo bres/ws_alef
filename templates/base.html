@@ -21,15 +21,17 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 <!-- Include the PayPal JavaScript SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=AV_ckGtOwl07PlBsgUOwZ1FofvZN_wkZCNuTHQfar-InXDw-XWolDfSZ_4Jrty1TA1uj_ko0lxE6Eh2p&currency=EUR"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AU7tKO6Hiwr0mUB1mtDg7t6beDfka-WNoLILYJmzmKRM19g6U9sHAUvSNnXi3OwTJ2oJ5nKwafq1hNye&currency=EUR"></script>
 
 <!-- Include google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto&display=swap" rel="stylesheet">
 
+<!-- Title -->
 <title>{% block title %} {% endblock %}Alef Atelier</title>
 
+<!-- Internal Css -->
 <style>
 
 /* Font Styles */
@@ -82,20 +84,20 @@ background-color: #000000;
 
 </style>
 
-    <script>
-   $(function($) {
- let url = window.location.href;
-  $("p a").each(function() {
-   if (this.href === url) {
-   $(this).parent().addClass('coloring');
-  }
- });
+<!-- Active Links-->
+<script>
+$(function($) {
+let url = window.location.href;
+$("p a").each(function() {
+if (this.href === url) {
+$(this).parent().addClass('coloring');
+}
+});
 });
 </script>
 </head>
 
 <body class="antialiased pt-20 lg:pt-40" id="scroll">
-
 <div class="w-full fixed inset-x-0 top-0  flex justify-between lg:justify-center z-50 bg-white">
 <!--  Three Levels Menu -->
     <div class="w-full flex flex-col">
@@ -130,7 +132,7 @@ background-color: #000000;
               </form>
 <!-- Logo-->
               <a aria-label="Alef Handmade" class="flex items-center lg:justify-center" href="{% url 'home'%}" title="Alef Handmade">
-              <img class="object-contain object-center w-20 lg:w-28" src='{% static "img/logo.png" %}' alt="Web site Logo">
+              <img class="object-contain object-center w-20 lg:w-28" src='{% static "img/logo.jpg" %}' alt="Web site Logo">
               </a>
 <!-- svg icons-->
               <div class="hidden lg:flex justify-end items-center">
@@ -184,7 +186,7 @@ background-color: #000000;
         <!-- hidden dropdown  with javascript configuration -->
         <ul id="findme" class="flex ">
         <li class="">
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200  font-bold border-b-2 border-transparent hover:border-black uppercase" href="#">
+          <a class="mx-7 3xl:mx-10 py-1 font-bold  uppercase" href="#">
             Shop
           </a>
           <div class="mega-menu absolute left-0 right-0 top-11 bg-white border-t border-gray-200 shadow">
@@ -219,17 +221,17 @@ background-color: #000000;
           </div>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'about' %}">
+          <a class="mx-7 3xl:mx-10 py-1 font-bold uppercase" href="{% url 'about' %}">
             Inside Alef
           </a>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black  uppercase" href="{% url 'wholesale' %}">
+          <a class="mx-7 3xl:mx-10 py-1 font-bold uppercase" href="{% url 'wholesale' %}">
             Wholesale
           </a>
         </li>
         <li>
-          <a class="mx-7 3xl:mx-10 py-1 transition duration-200 font-bold ease-in-out border-b-2 border-transparent hover:border-black   uppercase" href="{% url 'contact' %}">
+          <a class="mx-7 3xl:mx-10 py-1 font-bold uppercase" href="{% url 'contact' %}">
             Contact
           </a>
         </li>
@@ -312,20 +314,17 @@ background-color: #000000;
   </div>
   <!-- Sidebar Ends-->
   <!-- Block Content Starts-->
-
   {% block content %}
 
   {% endblock %}
-
   <!-- end block content-->
-
   <!-- footer section-->
   <section id="footer" class="pt-12 text-black border-t border-gray-200">
     <div class="flex flex-wrap mb-12 lg:mb-20 pt-6 text-center lg:text-left px-4 xl:px-32">
       <div class="w-full lg:w-1/4 px-3 mb-6 lg:mb-0">
         <a class="inline-block mx-auto lg:mx-0 text-3xl" href="#">
-          <p class="text-lg">Alef Handmade</p>
-          <p class="mt-4 text-2xl font-medium">WE CREATE BAGS<br>
+          <p class="text-lg font-bold">Alef Handmade</p>
+          <p class="mt-4 text-2xl font-bold">WE CREATE BAGS<br>
             TO CARRY OUR WORLDS...</p>
         </a>
       </div>
@@ -350,7 +349,7 @@ background-color: #000000;
   </section>
 
 </body>
-
+<!-- FIXME:PUT TO EXTERNAL JS FILE -->
 <script>
 //toggle mega menu
      $('.mega-menu').hide();
@@ -366,7 +365,7 @@ background-color: #000000;
          }
        });
      });
- 
+
  //restore default image on grid mega menu after click event anywhere on the page
      $("html").click(function(event) {
        if ($(event.target).closest('nav.inline-menu ul li').length > 0) {
@@ -374,7 +373,7 @@ background-color: #000000;
          $("div.mydiv").hide();
        }
      });
- 
+
  //change image on hover inside on grid mega menu
      $(document).ready(function() {
        $(".mymultiplediv").mouseover(function() {
@@ -384,19 +383,19 @@ background-color: #000000;
          $("#div"+myvar).show();
        });
      });
- 
+
  // grab everything we need
      const btn = document.querySelector(".mobile-menu-button");
      const menu = document.querySelector(".sidebar");
      var para = document.getElementById("scroll");
- 
+
  // add event listeners
      //Toggle Nav //
      btn.addEventListener("click", () => {
        menu.classList.toggle("-translate-x-full");
        para.classList.toggle("noscrollClass");
      });
- 
+
      $(window).resize(function() {
        var winWidth = $(window).width();
        if(winWidth >= 640) {

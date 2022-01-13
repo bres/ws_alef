@@ -2,6 +2,7 @@
 {% block title %}{% endblock %}
 {% load static %}
 {% block content %}
+{% load tailwind_filters %}
 
 
 
@@ -23,14 +24,16 @@
                         <div class="mt-4 lg:mt-0 w-full">
                             <div class="flex justify-between items-center  tracking-wide px-1 ">
                                  <div class="flex items-center border-b border-gray-700 ">
-                                    <p class="py-1 text-sm capitalize text-gray-700 "><span class="">{% if product_count ==  0 %} no products found
+                                    <p class="py-0 text-sm capitalize text-gray-700 "><span class="">{% if product_count ==  0 %} no products found
                                     {% elif product_count ==  1 %} One Product Found  {% else %} {{ product_count }} Products Found {% endif %}</span>
                                     </p>
                                  </div>
-                                <div class="flex items-center space-x-4 py-1 ">
-                                    <form method = "GET">
-                                    {{ form }}
+                                <div class="flex items-center space-x-4 py-0">
+                                    <form method ="POST" class="text-sm mt-4">
+                                        {% csrf_token %}
+                                    {{ form|crispy }}
                                     </form>
+
                                 </div>
                             </div>
 

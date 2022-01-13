@@ -12,11 +12,14 @@ from .forms import ShortForm
 # Create your views here.
 
 def product_list(request, category_slug=None):
+    # temp = '-price'
+    # form = ShortForm()
+    # if request.GET:
+    #     temp = request.GET['short_field']
+    form = ShortForm(request.POST or None)
     temp = '-created_date'
-    form = ShortForm()
-    if request.GET:
-        temp = request.GET['short_field']
-
+    if form.is_valid():
+        temp = form.cleaned_data.get('short_field')
     categories = None
     if category_slug:
         categories = get_object_or_404(Category, slug=category_slug)

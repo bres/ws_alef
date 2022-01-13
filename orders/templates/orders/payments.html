@@ -8,7 +8,7 @@
 <section class="pt-20 min-h-screen px-4 xl:px-32">
   
     <div class="bg-white lg:shadow lg:border border-gray-200 lg:rounded py-4">
-      <h2 class="mb-12 text-center lg:px-6 text-4xl font-bold">Procced To Payment</h2>
+      <h2 class="mb-12 text-center lg:px-6 text-4xl font-bold">Proceed To Payment</h2>
 
        <div class="flex flex-col md:flex-row ">
 
@@ -21,7 +21,7 @@
             <p class="text-gray-700 px-4 py-1 capitalize">{{ order.phone }}</p>
             <p class="text-gray-700 px-4 py-1 capitalize">{{ order.address }}, {{ order.post_code }}</p>
             <p class="text-gray-700 px-4 py-1 capitalize">{{ order.municipality }}, {{ order.state }}</p>
-            <p class="text-gray-700 px-4 py-1 capitalize">{{ order.city }}, {{ order.country }}</p>
+            <p class="text-gray-700 px-4 py-1 capitalize">{{ order.city }} {% if order.country %} ,{% endif %} {{ order.country }}</p>
             {% if order.order_note %}
             <p class="block px-4 py-2 capitalize border-t font-bold tracking-wide">Note : <span class="font-medium">{{ order.order_note }}</span></p>
              {% endif %}
@@ -69,7 +69,7 @@
                         {% endif %}
                         </p>
                         <small class="text-gray-900 flex flex-1 items-end">
-                          In stock
+                        Item Code: {{ cart_item.product.code}}
                         </small>
                       </div>
                     </div>
@@ -103,15 +103,15 @@
             <h4 class="mb-2 text-md lg:text-xl font-medium capitalize text-gray-900">Shipping</h4>
             <div class="flex mb-2 justify-between items-center">
               <span class="font-bold text-gray-700">Greece </span>
-               <span class="text-md lg:text-xl font-medium capitalize text-gray-900">Free Shipping</span>
+               <span class="text-md lg:text-lg font-medium capitalize text-gray-900">Free Shipping</span>
             </div>
             <!-- <div class="flex mb-10 justify-between items-center">
               <span class="text-gray-700">From store</span>
               <span class="text-md lg:text-xl font-medium capitalize text-gray-900">Free</span>
             </div> -->
             <div class="flex mb-10 justify-between items-center">
-              <span class="text-md lg:text-xl font-medium capitalize text-gray-900">Order total <small>( Includes V.A.T )</small> </span>
-              <span class="text-md lg:text-xl font-medium capitalize text-gray-900">€{{ grand_total }}</span>
+              <span class="text-md lg:text-lg font-medium capitalize text-gray-900">Order total <small>( Includes V.A.T )</small> </span>
+              <span class="text-md lg:text-lg font-medium capitalize text-gray-900">€{{ grand_total }}</span>
             </div>
               
              <!-- Set up a container element for the button -->
