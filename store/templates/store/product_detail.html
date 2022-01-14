@@ -2,124 +2,97 @@
 {% block title %}
 {{ product.name }}
 {% endblock %}
-
 {% load static %}
 
 {% block content %}
 
-<!-- <div class="w-full md:w-1/2 px-4 left-1/2 md:fixed  md:max-w-4xl md:pr-16 "> -->
-<style>
-
-.header-fixed {
-  position: fixed;
-  top: 200;
-  width: 100%;
-  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-}
-
-.header-relative {
-  position: relative;
-  bottom:500;
-  width: 100%;
-   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-}
-</style>
-
-<section class="py-10 mx-4 xl:mx-32"  >
+<section class="py-10 mx-4 xl:mx-32">
 <div class="flex flex-wrap -mx-4 mb-8">
-    <div class="w-full md:w-1/2  px-4 mb-8 md:mb-0">
-        <img class="aspect-w-1 mb-10 border border-gray-300" src="{% if single_product.images %}{{ single_product.images.url }}{% else %}
-        {% static "img/no_image.png" %}{% endif %}" alt="">
+    <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+        <img class="aspect-w-1 mb-10 border border-gray-300"
+             src="
+             {% if single_product.images %}
+                {{ single_product.images.url }}
+             {% else %}
+                {% static 'img/no_image.png' %}
+             {% endif %}" alt="Product Image">
         <div class="thumb flex flex-wrap -mx-2">
         {% for i in product_gallery  %}
-        <div class="p-2">
-        <a  class="block border border-gray-300" href="{{i.image.url}}">
-        <img  class="aspect-w-1" src="{{ i.image.url}}" alt="Product Image">
-        </a>
-        </div>
+            <div class="p-2">
+                <a  class="block border border-gray-300" href="{{i.image.url}}">
+                    <img class="aspect-w-1" src="{{ i.image.url}}" alt="Product Image">
+                </a>
+            </div>
         {% endfor %}     
         </div>
     </div>
-    <div id="cart" class="w-full md:w-1/2 px-4 left-1/2 md:fixed  md:max-w-4xl md:pr-16 ">
+    <div id="cart" class="w-full md:w-1/2 px-4 md:left-1/2 {% if product_gallery.count > 0 %} md:fixed {% else %} md:static {% endif %} md:max-w-4xl md:pr-16">
 
         <div class="flex items-center w-full py-1 font-medium text-md text-black text-center tracking-wide mb-3">
-        <a href="{% url 'home' %}" class="text-black">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-        </svg>
-        </a>
-        <span class="mx-4 text-gray-700">
-        /
-        </span>
-        <a href="{% url 'store:product_list' %}" class="text-gray-700  hover:underline">
-          Back 
-         </a>
+            <a href="{% url 'home' %}" class="text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+            </a>
+            <span class="mx-4 text-gray-700">
+            /
+            </span>
+            <a href="{% url 'store:product_list' %}" class="text-gray-700  hover:underline">
+              Back
+             </a>
         </div>
       
         <form method="POST" action="{% url 'carts:add_cart' single_product.id  %}">
         {% csrf_token %}
         <div class="mb-4 pb-4  ">
-        <p class="mb- text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
-        <p class="text-sm font-mono text-gray-900"> item No. {{ single_product.code }}</p>
-        <p class="text-lg mt-2">€{{ single_product.price }}</p>
-
+            <p class="mb- text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
+            <p class="text-sm font-mono text-gray-900"> item No. {{ single_product.code }}</p>
+            <p class="text-lg mt-2">€{{ single_product.price }}</p>
         <div class="inline-block my-4 text-lg text-gray-900">
-
-        <p class="max-w-3xl text-gray-900 tracking-wide">
-          {{ single_product.description }}
-        </p>
+            <p class="max-w-3xl text-gray-900 tracking-wide">
+              {{ single_product.description }}
+            </p>
         </div>
         {% if single_product.stock <= 0 %}
-        <small class="font-medium text-red-500 px-2 w-full lg:w-2/5 mb-4 lg:mb-0 capitalize">out of stock</small>
+            <p class="inline-block text-sm font-medium text-red-500 px-1 py-2  border border-red-500   mb-4  capitalize">out of stock</p>
         {% else %}
-        <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 mb-4 pb-4 ">
-          <select class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold px-6 rounded-sm uppercase transition duration-200" name="hardware">
-          <option value="" disabled selected>Choose Hardware</option>
-          {% for i in single_product.variation_set.hardwares %}
-          <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
-          {% endfor %}
-          </select>
-          <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold  px-8 rounded-sm uppercase transition duration-200" name="strap">
-          <option value="" disabled selected>Choose Strap</option>
-          {% for i in single_product.variation_set.straps %}
-          <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
-          {% endfor %}
-          </select>
-          <button type="submit" class="flex justify-center items-center w-full bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200">
-          <p class="px-2 text-xs">Add to cart</p>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-          </button>
+        <div class="my-4 flex flex-col 2xl:flex-row w-full space-y-4 2xl:space-y-0 2xl:space-x-2 my-4 pb-4 ">
+              <select class="w-full block py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold px-6 rounded-sm uppercase transition duration-200" name="hardware">
+                  <option value="" disabled selected>Choose Hardware</option>
+                  {% for i in single_product.variation_set.hardwares %}
+                  <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+              {% endfor %}
+              </select>
+              <select class="w-full block  py-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-xs text-center text-black font-bold  px-8 rounded-sm uppercase transition duration-200" name="strap">
+                  <option value="" disabled selected>Choose Strap</option>
+                  {% for i in single_product.variation_set.straps %}
+                  <option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+              {% endfor %}
+              </select>
+              <button type="submit" class="flex justify-center items-center w-full bg-gray-900 hover:bg-gray-800 text-center text-white font-bold  py-4 px-8 rounded-sm uppercase transition duration-200">
+                  <p class="px-2 text-xs">Add to cart</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+              </button>
         </div>
-       
-
-
- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
-    
-
+ {% endif %}
  <div class="grid place-items-center">
      <div class="w-full mx-auto mb-24">
      <div class="bg-white">
-         <!-- Attributes-->
+ <!-- Attributes-->
          <div class="transition hover:bg-gray-100">
-         <!-- header -->
+ <!-- header -->
          <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-             <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"  version="1.1" viewBox="-132 0 579 579.191" >
-<g id="surface1">
-<path d="M 167.996094 0 L 10.992188 0 C 4.953125 0 0.0507812 4.902344 0.0507812 10.941406 L 0.0507812 568.058594 C 0.0507812 574.097656 4.953125 579 10.992188 579 L 167.996094 579 C 174.035156 579 178.9375 574.097656 178.9375 568.058594 L 178.9375 10.941406 C 178.9375 4.902344 174.035156 0 167.996094 0 Z M 157.054688 73.851562 L 130.03125 73.851562 C 123.992188 73.851562 119.089844 78.753906 119.089844 84.792969 C 119.089844 90.832031 123.992188 95.734375 130.03125 95.734375 L 157.054688 95.734375 L 157.054688 132.277344 L 130.03125 132.277344 C 123.992188 132.277344 119.089844 137.179688 119.089844 143.21875 C 119.089844 149.257812 123.992188 154.160156 130.03125 154.160156 L 157.054688 154.160156 L 157.054688 191.03125 L 105.414062 191.03125 C 99.375 191.03125 94.472656 195.933594 94.472656 201.972656 C 94.472656 208.011719 99.375 212.914062 105.414062 212.914062 L 157.054688 212.914062 L 157.054688 249.457031 L 130.03125 249.457031 C 123.992188 249.457031 119.089844 254.359375 119.089844 260.398438 C 119.089844 266.4375 123.992188 271.339844 130.03125 271.339844 L 157.054688 271.339844 L 157.054688 307.992188 L 130.03125 307.992188 C 123.992188 307.992188 119.089844 312.894531 119.089844 318.933594 C 119.089844 324.972656 123.992188 329.875 130.03125 329.875 L 157.054688 329.875 L 157.054688 366.089844 L 105.414062 366.089844 C 99.375 366.089844 94.472656 370.992188 94.472656 377.03125 C 94.472656 383.070312 99.375 387.972656 105.414062 387.972656 L 157.054688 387.972656 L 157.054688 424.515625 L 130.03125 424.515625 C 123.992188 424.515625 119.089844 429.417969 119.089844 435.457031 C 119.089844 441.496094 123.992188 446.398438 130.03125 446.398438 L 157.054688 446.398438 L 157.054688 482.941406 L 130.03125 482.941406 C 123.992188 482.941406 119.089844 487.84375 119.089844 493.882812 C 119.089844 499.921875 123.992188 504.824219 130.03125 504.824219 L 157.054688 504.824219 L 157.054688 556.792969 L 21.933594 556.792969 L 21.933594 21.882812 L 157.054688 21.882812 Z M 157.054688 73.851562 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" />
-<path d="M 303.992188 107.332031 C 310.03125 107.332031 314.933594 102.429688 314.933594 96.390625 C 314.933594 93.785156 314.003906 91.257812 312.308594 89.277344 L 278.5 30.414062 C 275.46875 25.1875 268.773438 23.414062 263.546875 26.445312 C 261.890625 27.394531 260.523438 28.773438 259.574219 30.414062 L 224.671875 90.921875 C 221.652344 96.148438 223.445312 102.847656 228.675781 105.863281 C 230.351562 106.828125 232.253906 107.34375 234.191406 107.332031 L 258.152344 107.332031 L 258.152344 471.667969 L 234.191406 471.667969 C 228.152344 471.644531 223.226562 476.527344 223.207031 482.566406 C 223.195312 484.503906 223.707031 486.40625 224.671875 488.078125 L 259.574219 548.585938 C 262.605469 553.8125 269.300781 555.585938 274.53125 552.554688 C 276.183594 551.605469 277.550781 550.226562 278.5 548.585938 L 313.402344 488.078125 C 316.421875 482.851562 314.628906 476.152344 309.398438 473.136719 C 307.722656 472.171875 305.820312 471.65625 303.882812 471.667969 L 279.921875 471.667969 L 279.921875 107.332031 Z M 285.066406 493.550781 L 269.09375 521.230469 L 253.117188 493.550781 Z M 253.117188 85.449219 L 269.09375 57.769531 L 285.066406 85.449219 C 285.066406 85.449219 253.117188 85.449219 253.117188 85.449219 Z M 253.117188 85.449219 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" />
-</g>
-</svg>
-             <h3>Attributes</h3>
+            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"  version="1.1" viewBox="-132 0 579 579.191" ><g id="surface1">
+            <path d="M 167.996094 0 L 10.992188 0 C 4.953125 0 0.0507812 4.902344 0.0507812 10.941406 L 0.0507812 568.058594 C 0.0507812 574.097656 4.953125 579 10.992188 579 L 167.996094 579 C 174.035156 579 178.9375 574.097656 178.9375 568.058594 L 178.9375 10.941406 C 178.9375 4.902344 174.035156 0 167.996094 0 Z M 157.054688 73.851562 L 130.03125 73.851562 C 123.992188 73.851562 119.089844 78.753906 119.089844 84.792969 C 119.089844 90.832031 123.992188 95.734375 130.03125 95.734375 L 157.054688 95.734375 L 157.054688 132.277344 L 130.03125 132.277344 C 123.992188 132.277344 119.089844 137.179688 119.089844 143.21875 C 119.089844 149.257812 123.992188 154.160156 130.03125 154.160156 L 157.054688 154.160156 L 157.054688 191.03125 L 105.414062 191.03125 C 99.375 191.03125 94.472656 195.933594 94.472656 201.972656 C 94.472656 208.011719 99.375 212.914062 105.414062 212.914062 L 157.054688 212.914062 L 157.054688 249.457031 L 130.03125 249.457031 C 123.992188 249.457031 119.089844 254.359375 119.089844 260.398438 C 119.089844 266.4375 123.992188 271.339844 130.03125 271.339844 L 157.054688 271.339844 L 157.054688 307.992188 L 130.03125 307.992188 C 123.992188 307.992188 119.089844 312.894531 119.089844 318.933594 C 119.089844 324.972656 123.992188 329.875 130.03125 329.875 L 157.054688 329.875 L 157.054688 366.089844 L 105.414062 366.089844 C 99.375 366.089844 94.472656 370.992188 94.472656 377.03125 C 94.472656 383.070312 99.375 387.972656 105.414062 387.972656 L 157.054688 387.972656 L 157.054688 424.515625 L 130.03125 424.515625 C 123.992188 424.515625 119.089844 429.417969 119.089844 435.457031 C 119.089844 441.496094 123.992188 446.398438 130.03125 446.398438 L 157.054688 446.398438 L 157.054688 482.941406 L 130.03125 482.941406 C 123.992188 482.941406 119.089844 487.84375 119.089844 493.882812 C 119.089844 499.921875 123.992188 504.824219 130.03125 504.824219 L 157.054688 504.824219 L 157.054688 556.792969 L 21.933594 556.792969 L 21.933594 21.882812 L 157.054688 21.882812 Z M 157.054688 73.851562 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" />
+            <path d="M 303.992188 107.332031 C 310.03125 107.332031 314.933594 102.429688 314.933594 96.390625 C 314.933594 93.785156 314.003906 91.257812 312.308594 89.277344 L 278.5 30.414062 C 275.46875 25.1875 268.773438 23.414062 263.546875 26.445312 C 261.890625 27.394531 260.523438 28.773438 259.574219 30.414062 L 224.671875 90.921875 C 221.652344 96.148438 223.445312 102.847656 228.675781 105.863281 C 230.351562 106.828125 232.253906 107.34375 234.191406 107.332031 L 258.152344 107.332031 L 258.152344 471.667969 L 234.191406 471.667969 C 228.152344 471.644531 223.226562 476.527344 223.207031 482.566406 C 223.195312 484.503906 223.707031 486.40625 224.671875 488.078125 L 259.574219 548.585938 C 262.605469 553.8125 269.300781 555.585938 274.53125 552.554688 C 276.183594 551.605469 277.550781 550.226562 278.5 548.585938 L 313.402344 488.078125 C 316.421875 482.851562 314.628906 476.152344 309.398438 473.136719 C 307.722656 472.171875 305.820312 471.65625 303.882812 471.667969 L 279.921875 471.667969 L 279.921875 107.332031 Z M 285.066406 493.550781 L 269.09375 521.230469 L 253.117188 493.550781 Z M 253.117188 85.449219 L 269.09375 57.769531 L 285.066406 85.449219 C 285.066406 85.449219 253.117188 85.449219 253.117188 85.449219 Z M 253.117188 85.449219 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" /></g>
+            </svg>
+         <h3>Attributes</h3>
          </div>
-         <!-- Content -->
+ <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
-             <p class="leading-6 text-justify">
+             <div class="leading-6 text-justify">
                 <ul class="list-disc font-light pl-9 text-sm">
                     <li><span class="capitalize font-medium mr-1">length:</span>{{ single_product.length }}</li>
                     <li><span class="capitalize font-medium mr-1">height:</span>{{ single_product.height }}</li>
@@ -128,18 +101,17 @@
                     <li><span class="capitalize font-medium mr-1">composition:</span>{{ single_product.composition }}</li>
                     <li><span class="capitalize font-medium mr-1">Min-Max length strap:</span>{{ single_product.min_max }}</li>
                  </ul>
-             </p>
+             </div>
           </div>
          </div>
- 
-         <!-- Shipping -->
+ <!-- Shipping -->
          <div class="transition hover:bg-gray-100">
-         <!-- header -->
+ <!-- header -->
          <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
           <svg class="h-7 w-7" enable-background="new 0 0 24 24"  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="m6.5 19h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m22.75 19h-1.25c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h.835l.674-3.592c-.009-1.838-1.579-3.408-3.509-3.408h-3.283l-1.591 7h2.874c.276 0 .5.224.5.5s-.224.5-.5.5h-3.5c-.152 0-.296-.069-.391-.188-.095-.118-.131-.274-.097-.422l1.818-8c.052-.229.254-.39.488-.39h3.682c2.481 0 4.5 2.019 4.5 4.5l-.759 4.092c-.044.237-.25.408-.491.408z"/><path d="m19.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"/><path d="m8.5 21c-1.378 0-2.5-1.121-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.121 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"/><path d="m6.5 10h-4c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h4c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m6.5 13h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m6.5 16h-6c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h6c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m14 19h-3.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3.101l2.272-10h-11.373c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.152 0 .296.069.391.188.095.118.131.274.097.422l-2.5 11c-.052.229-.255.39-.488.39z"/></svg>
              <h3>Shipping</h3>
          </div>
-         <!-- Content -->
+ <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
              <p class="leading-6 font-light pl-9 text-justify text-sm">
                 Free Shipping on all orders in Greece.
@@ -147,25 +119,22 @@
              </p>
           </div>
          </div>
- 
-         <!-- Contact -->
+ <!-- Contact -->
          <div class="transition hover:bg-gray-100">
-         <!-- header -->
+ <!-- header -->
          <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
           <svg id="Layer_1" class="w-7 h-7" viewBox="0 0 256 256"  xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m200.676 228.054h-145.352a3 3 0 1 1 0-6h145.352a3 3 0 0 1 0 6z"/><path d="m180.643 256h-105.286a23.06 23.06 0 0 1 -23.033-23.034v-209.932a23.06 23.06 0 0 1 23.033-23.034h105.286a23.06 23.06 0 0 1 23.033 23.034v209.932a23.06 23.06 0 0 1 -23.033 23.034zm-105.286-250a17.053 17.053 0 0 0 -17.033 17.034v209.932a17.053 17.053 0 0 0 17.033 17.034h105.286a17.053 17.053 0 0 0 17.033-17.034v-209.932a17.053 17.053 0 0 0 -17.033-17.034z"/><path d="m200.676 33.946h-145.352a3 3 0 0 1 0-6h145.352a3 3 0 1 1 0 6z"/><path d="m139.949 242.167h-23.9a3 3 0 0 1 0-6h23.9a3 3 0 0 1 0 6z"/></svg> 
-                      <h3>Contact</h3>
+              <h3>Contact</h3>
          </div>
-         <!-- Content -->
+ <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
              <p class="leading-6 font-light pl-9 text-justify text-sm">
               Mobile number: <a class="font-mono mr-2" href="tel:+30-6947-885-132">(+30)-6947885132,</a> <a class="underline font-mono" href="whatsapp://send?&phone=+306947885132">WhatsApp</a>
              </p>
           </div>
          </div>
- 
-      
      </div>
-     </div>
+ </div>
  </div>
  
  <style>
@@ -198,7 +167,7 @@
  </script>
 
 
-        {% endif %}
+
         </form>
     </div>
 </div>
@@ -207,47 +176,50 @@
 </section>
 
 <script>
+var nop = "{{product_gallery.count}}";
+$(window).scroll(() => {
 
-$(window).scroll(() => { 
-   var winWidth = $(window).width();
-   if(winWidth>640 && winWidth <= 1024) {
+    var winWidth = $(window).width();
+
+
+    if(winWidth>640 && winWidth <= 1020 && nop>0) {
      var h=1300;
-// Distance from top of document to top of footer.
-topOfFooter = $('#footer').position().top;
-// Distance from top of document to top of cart.
-topOfCart = $('#cart').position().top;
-// Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
-scrollDistanceFromTopOfDoc = $(document).scrollTop() + h;
-// Difference between the two.
-scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
+    // Distance from top of document to top of footer.
+    topOfFooter = $('#footer').position().top;
+    // Distance from top of document to top of cart.
+    topOfCart = $('#cart').position().top;
+    // Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
+    scrollDistanceFromTopOfDoc = $(document).scrollTop() + h;
+    // Difference between the two.
+    scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
 
-// If user has scrolled further than footer,
-// pull sidebar up using a negative margin.
-if (scrollDistanceFromTopOfDoc > topOfFooter) {
-  $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
-} else  {
-  $('#cart').css('margin-top', 0);
-}
-}
-else if (winWidth >1024){
-     var h=1100;
-// Distance from top of document to top of footer.
-topOfFooter = $('#footer').position().top;
-// Distance from top of document to top of cart.
-topOfCart = $('#cart').position().top;
-// Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
-scrollDistanceFromTopOfDoc = $(document).scrollTop() + h;
-// Difference between the two.
-scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
+    // If user has scrolled further than footer,
+    // pull sidebar up using a negative margin.
+    if (scrollDistanceFromTopOfDoc > topOfFooter) {
+      $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
+    } else  {
+      $('#cart').css('margin-top', 0);
+    }
+    }
+    else if (winWidth >1024 && nop>0){
+         var h=1100;
+    // Distance from top of document to top of footer.
+    topOfFooter = $('#footer').position().top;
+    // Distance from top of document to top of cart.
+    topOfCart = $('#cart').position().top;
+    // Distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding).
+    scrollDistanceFromTopOfDoc = $(document).scrollTop() + h;
+    // Difference between the two.
+    scrollDistanceFromTopOfFooter = scrollDistanceFromTopOfDoc - topOfFooter;
 
-// If user has scrolled further than footer,
-// pull sidebar up using a negative margin.
-if (scrollDistanceFromTopOfDoc > topOfFooter) {
-  $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
-} else  {
-  $('#cart').css('margin-top', 0);
-}
-}
+    // If user has scrolled further than footer,
+    // pull sidebar up using a negative margin.
+    if (scrollDistanceFromTopOfDoc > topOfFooter) {
+      $('#cart').css('margin-top', 0 - scrollDistanceFromTopOfFooter);
+    } else  {
+      $('#cart').css('margin-top', 0);
+    }
+    }
 
 
 });

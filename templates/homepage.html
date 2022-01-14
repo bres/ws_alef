@@ -77,11 +77,8 @@
     {% endfor %}
 </div>
 <div class="swiper-pagination"></div>
-
 </div>
 </section>
-
-
 
 <!-- Category section -->
 <section class="pt-4 xl:pt-5 3xl:pt-6">
@@ -133,8 +130,8 @@
         <div class="relative overflow-hidden transition duration-200 hover:shadow-xl">
             <img class="aspect-w-1 border border-gray-200" src="{{ product.images.url }}" alt="product photo"/>
             <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-100 opacity-0 hover:opacity-100">
-                <p class="mb-2 text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
-                <p class="mb-2 text-sm font-bold tracking-wide text-white">
+                <p class="mb-2 text-md xl:text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
+                <p class="mb-2 text-xs xl:text-sm font-bold tracking-wide text-white">
                     {{ product.short_desc|capfirst }}</p>
                 <p class="text-sm font-bold tracking-wide text-white">€ {{ product.price }}</p>
             </div>
@@ -144,7 +141,7 @@
     {% endif %}
     </div>
     <div class="text-center mt-20">
-        <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-black hover:bg-gray-800 border text-center text-white font-semibold capitalize   transition duration-200">
+        <a href="{% url 'store:product_list' %}" aria-label="" class="px-4 py-3  bg-black hover:bg-gray-800 border text-center text-white font-semibold capitalize transition duration-200">
         View gallery
         </a>
     </div>
@@ -153,12 +150,11 @@
 <!-- Banner section -->
 <section class="px-4 xl:px-32 py-16 " >
   <div class="relative border border-gray-300">
-    <!-- <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1601924921557-45e6dea0a157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="image" /> -->
-    <img alt="Grapefruit slice atop a pile of other slices" class="h-96 sm:h-112  w-full object-cover "
+    <img alt="Banner image" class="h-96 sm:h-112 w-full object-cover"
          src='{% static "img/abouthero.jpg" %}'/>
     <div class="absolute inset-0 w-full py-2.5  text-white text-xs flex justify-center items-center">
-      <p class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-            <a href="{% url 'contact' %}" aria-label="" class="">
+      <p class="text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+            <a href="{% url 'contact' %}" aria-label="" class="text-center">
         Visit our new store
         </a>
       </p>
