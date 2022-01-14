@@ -16,7 +16,6 @@
         <div class="w-full p-4 lg:w-9/12">
             <div class="flex justify-between"> 
             <h2 class="text-2xl font-semibold text-black capitalize">Account settings</h2>
-            <img class="h-24 rounded-full" src="{{ userprofile.profile_picture.url }}" alt="Profile Picture">
         </div>
             <form action="{% url 'accounts:edit_profile' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
