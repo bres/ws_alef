@@ -15,6 +15,7 @@ class Product(models.Model):
     composition     = models.TextField(max_length=500, blank=True)
     care            = models.TextField(max_length=500, blank=True)
     length_strap    = models.TextField(max_length=50, blank=True)
+    handle          = models.TextField(max_length=50, blank=True)
     price           = models.IntegerField()
     images          = models.ImageField(upload_to='images/products')
     stock           = models.IntegerField()
