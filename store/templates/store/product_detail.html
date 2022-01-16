@@ -45,7 +45,7 @@
         <form method="POST" action="{% url 'carts:add_cart' single_product.id  %}">
         {% csrf_token %}
         <div class="mb-4 pb-4  ">
-            <p class="mb- text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
+            <p class="text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
             <p class="text-sm font-mono text-gray-900"> item No. {{ single_product.code }}</p>
             <p class="text-lg mt-2">€{{ single_product.price }}</p>
         <div class="inline-block my-4 text-lg text-gray-900">
@@ -94,12 +94,27 @@
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
              <div class="leading-6 text-justify">
                 <ul class="list-disc font-light pl-9 text-sm">
+                    {% if single_product.length %}
                     <li><span class="capitalize font-medium mr-1">length:</span>{{ single_product.length }}</li>
+                    {% endif %}
+                    {% if single_product.height %}
                     <li><span class="capitalize font-medium mr-1">height:</span>{{ single_product.height }}</li>
+                    {% endif %}
+                    {% if single_product.depth  %}
                     <li><span class="capitalize font-medium mr-1">depth:</span>{{ single_product.depth }}</li>
+                    {% endif %}
+                    {% if single_product.weight %}
                     <li><span class="capitalize font-medium mr-1">weight:</span>{{ single_product.weight }}</li>
+                    {% endif %}
+                    {% if single_product.length_strap %}
+                    <li><span class="capitalize font-medium mr-1">length strap:</span>{{ single_product.length_strap }}</li>
+                    {% endif %}
+                    {% if single_product.composition %}
                     <li><span class="capitalize font-medium mr-1">composition:</span>{{ single_product.composition }}</li>
-                    <li><span class="capitalize font-medium mr-1">Min-Max length strap:</span>{{ single_product.min_max }}</li>
+                    {% endif %}
+                    {% if single_product.care %}
+                    <li><span class="capitalize font-medium mr-1">care:</span>{{ single_product.care }}</li>
+                    {% endif %}
                  </ul>
              </div>
           </div>
