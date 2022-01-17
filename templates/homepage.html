@@ -59,8 +59,8 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-        <div class="flex flex-col absolute top-1/2 left-0 text-white sm:text-black text-left ml-4 xl:ml-32 z-50">
-            <div class="font-bold text-2xl md:text-3xl xl:text-6xl 3xl:text-8xl">
+        <div class="flex flex-col absolute top-1/2 xl:left-0  text-white sm:text-black  text-left ml-4 xl:ml-32    z-50">
+            <div class="flex justify-center font-bold text-5xl xl:text-7xl 3xl:text-8xl">
                 <p class="">{{ hero.hero_title|linebreaks }} </p>
             </div>
         {% if hero.hero_link %}
