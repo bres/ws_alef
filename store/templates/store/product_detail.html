@@ -116,7 +116,7 @@
                     <li><span class="capitalize font-medium mr-1">composition:</span>{{ single_product.composition }}</li>
                     {% endif %}
                     {% if single_product.care %}
-                    <li><span class="capitalize font-medium mr-1">care:</span>{{ single_product.care }}</li>
+                    <li><span class="capitalize font-medium mr-1">care_guide:</span>{{ single_product.care|linebreaks }}</li>
                     {% endif %}
                  </ul>
              </div>
@@ -220,7 +220,7 @@ $(window).scroll(() => {
     }
     }
     else if (winWidth >1024 && nop>0){
-         var h=1100;
+         var h=1250;
     // Distance from top of document to top of footer.
     topOfFooter = $('#footer').position().top;
     // Distance from top of document to top of cart.

@@ -77,35 +77,37 @@
                                 <p class="text-xl px-4 pt-10 font-medium tracking-wide">No result found. Please try again.</p>
                                 {% endif %}
                             </div>
-                        <div class="mx-auto container my-20">
+                        <div class="my-20">
                         {% if products.has_other_pages %}
-                        <div class="flex  ">
+                        <div class="flex">
                         {% if products.has_previous %}
-                        <a href="?page={{products.previous_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-sm   hover:bg-black  hover:text-white border border-black ">
+                        <a href="?page={{products.previous_page_number}}" class="flex items-center mx-1 px-2 py-1 text-xs lg:text-lg  text-gray-700 transition-colors duration-200 transform bg-white rounded-sm hover:bg-black hover:text-white border border-black ">
                         previous
                         </a>
                         {% else %}
-                        <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 bg-white border border-black rounded-sm   cursor-not-allowed">
+                        <a href="#" class="flex items-center px-2 py-1 text-xs lg:text-lg mx-1 text-gray-700 bg-white border border-black rounded-sm   cursor-not-allowed">
                         previous
                         </a>
                         {% endif %}
+
                         {% for i in products.paginator.page_range %}
                         {% if products.number == i %}
-                        <a href="#" class="bg-black flex  items-center px-4 py-2 mx-1 text-white transition-colors duration-200 transform border border-black rounded-sm hover:bg-black hover:text-white">
+                        <a href="#" class="bg-black flex  items-center px-2 py-1 text-xs lg:text-lg mx-1  text-white transition-colors duration-200 transform border border-black rounded-sm hover:bg-black hover:text-white">
                         {{i}}
                         </a>
                         {% else %}
-                        <a href="?page={{i}}" class="  flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white">
+                        <a href="?page={{i}}" class="  flex items-center px-2 py-1 text-xs lg:text-lg mx-1  text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white">
                         {{i}}
                         </a>
                         {% endif %}
                         {% endfor %}
+
                         {% if products.has_next %}
-                        <a href="?page={{products.next_page_number}}" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
+                        <a href="?page={{products.next_page_number}}" class="flex items-center px-2 py-1 text-xs lg:text-lg mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
                         Next
                         </a>
                         {% else %}
-                        <a href="#" class="cursor-not-allowed flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
+                        <a href="#" class="cursor-not-allowed flex items-center px-2 py-1 text-xs lg:text-lg mx-1 text-gray-700 transition-colors duration-200 transform bg-white border border-black rounded-sm   hover:bg-black  hover:text-white ">
                         Next
                         </a>
                         {% endif%}
