@@ -17,9 +17,8 @@
       .swiper-slide {
         text-align: center;
         background: #ffffff;
-        font-size: 40px;
-        font-weight: bold;
-
+         font-weight: bold;
+       
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -38,8 +37,7 @@
       @media only screen and (min-width: 768px) and (max-width: 1600px){
         .swiper-slide {
         text-align: center;
-        font-size: 45px;
-        background: #ffffff;
+         background: #ffffff;
         font-weight: bold;
 
         /* Center slide text vertically */
@@ -61,10 +59,9 @@
 @media only screen and (min-width: 1605px) {
         .swiper-slide {
         text-align: center;
-        font-size: 65px;
-        background: #ffffff;
+         background: #ffffff;
         font-weight: bold;
-
+        color:red;
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -80,8 +77,33 @@
         align-items: center;
       }
 }
+.swiper-slide h1 {
+   background: linear-gradient( to right, rgb(255, 170, 0) , rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:30px;
+
+      }
 
 
+@media only screen and (min-width: 768px) and (max-width: 1600px){
+.swiper-slide h1 {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+font-size:40px;
+
+}
+}
+@media only screen and (min-width: 1605px) {
+.swiper-slide h1 {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+font-size:65px;
+
+}
+}
       .swiper-slide img {
         display: block;
         width: 100%;
@@ -107,9 +129,9 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-        <div class="flex flex-col absolute    text-white sm:text-black  text-left ml-4 xl:ml-32    z-50">
+        <div class="flex flex-col absolute   sm:text-black  text-left ml-4 xl:ml-32    z-50">
             <div class="flex justify-center font-bold text-5xl xl:text-7xl 3xl:text-8xl">
-                <p class="">{{ hero.hero_title|linebreaks }} </p>
+                <h1 class="">{{ hero.hero_title|linebreaks }} </h1>
             </div>
         {% if hero.hero_link %}
             <div class="font-bold text-sm md:text-lg mt-8 subpixel-antialiased">
