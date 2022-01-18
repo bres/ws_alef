@@ -20,7 +20,7 @@
         text-align: center;
         font-size: 35px;
         background: #ffffff;
-
+        color:rgb(255, 200, 0);
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -86,7 +86,7 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-      <div class="flex flex-col absolute top-1/2 text-yellow-400 md:text-black text-left ml-4 xl:ml-32 z-50">
+      <div class="flex flex-col absolute top-1/2  md:text-black text-left ml-4 xl:ml-32 z-50">
         <div class="font-bold ">
             <p class="shadow-md">{{ hero.hero_title|linebreaks }} </p>
         </div>
