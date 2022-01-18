@@ -34,6 +34,31 @@
         align-items: center;
       }
 
+      @media only screen and (min-width: 768px) {
+        .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #ffffff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+}
+
+
+
+
       .swiper-slide img {
         display: block;
         width: 100%;
@@ -59,7 +84,7 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-        <div class="flex flex-col absolute top-1/2 xl:left-0  text-white sm:text-black  text-left ml-4 xl:ml-32    z-50">
+        <div class="flex flex-col absolute    text-white sm:text-black  text-left ml-4 xl:ml-32    z-50">
             <div class="flex justify-center font-bold text-5xl xl:text-7xl 3xl:text-8xl">
                 <p class="">{{ hero.hero_title|linebreaks }} </p>
             </div>
