@@ -14,11 +14,13 @@
         height: 100%;
       }
 
+
+      @media only screen and (max-width:1023px) {
       .swiper-slide {
         text-align: center;
+        font-size: 35px;
         background: #ffffff;
-         font-weight: bold;
-       
+
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -33,12 +35,13 @@
         -webkit-align-items: center;
         align-items: center;
       }
+    }
 
-      @media only screen and (min-width: 768px) and (max-width: 1600px){
-        .swiper-slide {
+    @media only screen and (min-width: 1024px) {
+      .swiper-slide {
         text-align: center;
-         background: #ffffff;
-        font-weight: bold;
+        font-size: 60px;
+        background: #ffffff;
 
         /* Center slide text vertically */
         display: -webkit-box;
@@ -54,56 +57,10 @@
         -webkit-align-items: center;
         align-items: center;
       }
-}
-
-@media only screen and (min-width: 1605px) {
-        .swiper-slide {
-        text-align: center;
-         background: #ffffff;
-        font-weight: bold;
-        color:red;
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: start;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-}
-.swiper-slide h1 {
-   background: linear-gradient( to right, rgb(255, 170, 0) , rgb(255, 255, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size:30px;
-
-      }
+    }
 
 
-@media only screen and (min-width: 768px) and (max-width: 1600px){
-.swiper-slide h1 {
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-font-size:40px;
 
-}
-}
-@media only screen and (min-width: 1605px) {
-.swiper-slide h1 {
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-font-size:65px;
-
-}
-}
       .swiper-slide img {
         display: block;
         width: 100%;
@@ -129,18 +86,18 @@ font-size:65px;
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-        <div class="flex flex-col absolute   sm:text-black  text-left ml-4 xl:ml-32    z-50">
-            <div class="flex justify-center font-bold text-5xl xl:text-7xl 3xl:text-8xl">
-                <h1 class="">{{ hero.hero_title|linebreaks }} </h1>
-            </div>
-        {% if hero.hero_link %}
-            <div class="font-bold text-sm md:text-lg mt-8 subpixel-antialiased">
-                <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-3 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
-                Visit {{ hero.hero_link }}
-            </a>
-            </div>
-        {% endif %}
+      <div class="flex flex-col absolute top-1/2 text-yellow-400 md:text-black text-left ml-4 xl:ml-32 z-50">
+        <div class="font-bold ">
+            <p class="shadow-md">{{ hero.hero_title|linebreaks }} </p>
         </div>
+    {% if hero.hero_link %}
+        <div class="font-bold text-sm md:text-lg mt-8 subpixel-antialiased">
+            <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-3 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
+            Visit {{ hero.hero_link }}
+        </a>
+        </div>
+    {% endif %}
+    </div>
     <img class="object-right filter brightness-100"
     src='{{ hero.hero_image.url }}' alt="Hero image">
     </div>
