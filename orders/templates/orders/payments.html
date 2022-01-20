@@ -21,7 +21,7 @@
             <p class="text-gray-700 px-4 py-1 capitalize">{{ order.phone }}</p>
             <p class="text-gray-700 px-4 py-1 capitalize">{{ order.address }}, {{ order.post_code }}</p>
             <p class="text-gray-700 px-4 py-1 capitalize">{{ order.municipality }}, {{ order.state }}</p>
-            <p class="text-gray-700 px-4 py-1 capitalize">{{ order.city }} {% if order.country %} ,{% endif %} {{ order.country }}</p>
+            <p class="text-gray-700 px-4 py-1 capitalize">{% if order.city %}  {{ order.city }},{% endif %} {{ order.country }}</p>
             {% if order.order_note %}
             <p class="block px-4 py-2 capitalize border-t font-bold tracking-wide">Note : <span class="font-medium">{{ order.order_note }}</span></p>
              {% endif %}
@@ -102,8 +102,8 @@
             </div>
             <h4 class="mb-2 text-md lg:text-xl font-medium capitalize text-gray-900">Shipping</h4>
             <div class="flex mb-2 justify-between items-center">
-              <span class="font-bold text-gray-700">Greece </span>
-               <span class="text-md lg:text-lg font-medium capitalize text-gray-900">Free Shipping</span>
+              <span class="font-bold text-gray-700"> {{order.country}} </span>
+               <span class="text-md lg:text-lg font-medium capitalize text-gray-900">€{{ shipping }}</span>
             </div>
             <!-- <div class="flex mb-10 justify-between items-center">
               <span class="text-gray-700">From store</span>

@@ -120,8 +120,8 @@
           </div>
           <div class="py-3 px-2 lg:px-10 ">
             <div class="flex justify-between">
-              <span class="font-bold">Shipping</span>
-              <span class="font-medium">Free In Greece</span>
+              <span class="font-bold">Shipping on {{ order.country }}</span>
+              <span class="font-medium">€{{ order.shipping }}</span>
             </div>
           </div>
           <div class="py-3 px-2 lg:px-10 bg-gray-100 ">
@@ -133,7 +133,7 @@
           <div class="py-3 px-2 lg:px-10 ">
             <div class="flex justify-between">
               <span class="text-base md:text-xl font-bold">Order Total</span>
-              <span class="font-medium text-xl">€{{ subtotal }}</span>
+              <span class="font-medium text-xl">€{{ order.order_total }}</span>
             </div>
           </div>
         </div>

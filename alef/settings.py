@@ -199,6 +199,5 @@ EMAIL_USE_TLS=config('EMAIL_USE_TLS',cast=bool)
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True

@@ -10,11 +10,9 @@ from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 
 
-
 def payments(request):
     body = json.loads(request.body)
     order = Order.objects.get(user=request.user, is_ordered=False, order_number=body['orderID'])
-
 
     # Store transaction details inside Payment model
     payment = Payment(
@@ -30,8 +28,8 @@ def payments(request):
     order.is_ordered = True
     order.save()
 
-    #move the cart items to Order Product table
-    cart_items=CartItem.objects.filter(user=request.user)
+    # move the cart items to Order Product table
+    cart_items = CartItem.objects.filter(user=request.user)
     for item in cart_items:
         orderproduct = OrderProduct()
         orderproduct.order_id = order.id
@@ -54,9 +52,8 @@ def payments(request):
         product.stock -= item.quantity
         product.save()
 
-    #clear cart
+    # clear cart
     CartItem.objects.filter(user=request.user).delete()
-
 
     # Send order recieved email to customer
     mail_subject = 'Thank you for your order!'
@@ -75,7 +72,6 @@ def payments(request):
     }
     return JsonResponse(data)
 
-
     return render(request, 'orders/payments.html', )
 
 
@@ -89,11 +85,11 @@ def place_order(request, total=0, quantity=0):
 
     grand_total = 0
     tax = 0
+    shipping = 0
     for cart_item in cart_items:
         total += (cart_item.product.price * cart_item.quantity)
         quantity += cart_item.quantity
     # tax =0 (2 * total)/100
-    grand_total = total + tax
 
     if request.method == 'POST':
         form = OrderForm(request.POST)
@@ -114,9 +110,29 @@ def place_order(request, total=0, quantity=0):
             data.order_note = form.cleaned_data['order_note']
             data.delivery = form.cleaned_data['delivery']
             data.tax = tax
-            data.order_total = grand_total
             data.ip = request.META.get('REMOTE_ADDR')
+
+            if data.delivery == 'Collect From Store':
+                shipping = 0
+                data.shipping = shipping
+
+            else:
+                if data.country == 'greece' or data.country == 'Greece' or data.country == 'GREECE':
+                    shipping = 0
+                    data.shipping = shipping
+
+                else:
+                    shipping = 13
+                    data.shipping = shipping
+
+            grand_total = total + tax + shipping
+
+            data.order_total = grand_total
+
+
             data.save()
+
+
             # Generate order number
             yr = int(datetime.date.today().strftime('%Y'))
             dt = int(datetime.date.today().strftime('%d'))
@@ -133,6 +149,7 @@ def place_order(request, total=0, quantity=0):
                 'cart_items': cart_items,
                 'total': total,
                 'tax': tax,  # optional
+                'shipping': shipping,
                 'grand_total': grand_total,
             }
             return render(request, 'orders/payments.html', context)
@@ -148,15 +165,14 @@ def order_complete(request):
     try:
         order = Order.objects.get(order_number=order_number, is_ordered=True)
         ordered_products = OrderProduct.objects.filter(order_id=order.id)
-    
+
         subtotal = 0
-        unique_sub=0
+        unique_sub = 0
         for i in ordered_products:
             subtotal += i.product_price * i.quantity
-            
 
         payment = Payment.objects.get(payment_id=transID)
-    
+
         context = {
             'order': order,
             'ordered_products': ordered_products,
