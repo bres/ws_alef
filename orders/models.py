@@ -43,7 +43,7 @@ class Order(models.Model):
     post_code =models.CharField(max_length=10)
     tax = models.FloatField()
     delivery = models.CharField(max_length=30)
-    shipping = models.CharField(max_length=50)
+    shipping = models.CharField(max_length=50, blank=True)
     status = models.CharField(max_length=10, choices=STATUS, default='New')
     ip = models.CharField(blank=True, max_length=20)
     is_ordered = models.BooleanField(default=False)
