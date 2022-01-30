@@ -9,8 +9,8 @@
 <!-- hero image-->
 <div class="w-full flex flex-col justify-center items-center">
 <img class="object-cover h-112 w-full" src='{% static "img/abouthero.jpg" %}'/>
-    <p class="text-lg leading-relaxed tracking-wide pt-10 pb-3 max-w-2xl">
-        <span class="text-4xl font-bold">Aleph</span> is the Phoenician letter that led to the first letter of the greek alphabet “Alpha”.<br>
+    <p class="text-md lg:text-lg leading-relaxed tracking-wide pt-10 pb-3 max-w-2xl">
+        <span class="text-3xl lg:text-4xl font-bold">Aleph</span> is the Phoenician letter that led to the first letter of the greek alphabet “Alpha”.<br>
             As a word it symbolizes the beginning of the creation as well as the starting point of human culture.<br>
             Our primary focus is on the creation of handmade bags and accesories, using several high quality eco friendly and materials with different textures.<br>
             Our philosophy is based on finding the roots of human creativity in products made purely by hand.<br>
@@ -18,53 +18,55 @@
     </p>
 </div>
 <!-- zic zag -->
-<div class="flex flex-col my-20">
-    <div class="flex flex-wrap items-center mb-4">
-        <div class="w-full h-full lg:w-2/5">
-            <img class="object-cover " src='{% static "img/abouthandmade.jpg" %}'/>
-        </div>
-        <div class="w-full h-full lg:w-3/5  mt-4 lg:mt-0 lg:pl-10">
-            <h1 class="font-bold text-4xl py-0 xl:py-3">Handmade</h1>
-            <p class="text-lg leading-relaxed tracking-wide">
-            Our products are handmade and therefore, unique.<br>
-            That makes ALEF collection literally limited edition.<br>
-            Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
-            We make our bags with love and joy so you can have a unique product.
-            </p>
-        </div>
-    </div>
-    <div class="flex flex-wrap  items-center mb-4 ">
-    <div class="order-2	lg:order-1 w-full h-full lg:w-3/5  mt-4 lg:mt-0 ">
-    <h1 class="font-bold text-4xl py-0 xl:py-3">Materials</h1>
-    <p class="text-lg leading-relaxed tracking-wide ">
-    The collection of fabrics is based on sustainability and durability ensuring they are of the highest possible quality and produced in an environmentally friendly way.
-    <br>Our top priority is to create the best product possible and at the same time be part of the solution for a sustainable green planet.
 
-    </p>
-    </div>
-    <div class="order-1	lg:order-2 w-full lg:w-2/5 ">
-    <img class="object-cover " src='{% static "img/aboutmaterials.jpg" %}'/>
-    </div>
-    </div>
 
-     <div class="flex flex-wrap items-center mb-4">
-        <div class="w-full h-full lg:w-2/5">
-            <img class="object-cover " src='{% static "img/aboutbrand.jpg" %}'/>
-        </div>
-        <div class="w-full h-full lg:w-3/5  mt-4 lg:mt-0 lg:pl-10">
-            <h1 class="font-bold text-4xl py-0 xl:py-3">Behind the brand</h1>
-            <p class="text-lg leading-relaxed tracking-wide">
-                ALEF brand was born in July of 2020, during a difficult season of humanity, from Krisana Alefantinou.<br>
-                We felt that through the insecurity and fear that was all around us at the time,
-                we needed to place our focus in regeneration and consequently in creation.<br>
-                Krisana studied Industrial Design and Theatre in Greece.<br>
-                Those two paths and her insurmountable need to create, led her to design women’s bags with minimal design.
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center mt-20">
+  <div class=" ">
+      <img class="object-cover" src='{% static "img/abouthandmade.jpg" %}'/>
+  </div>
+    <div class="sm:self-center">
+         <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Handmade</h1>
+            <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
+                Our products are handmade and therefore, unique.<br>
+                That makes ALEF collection literally limited edition.<br>
+                Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
+                We make our bags with love and joy so you can have a unique product.
             </p>
-        </div>
+    </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center mt-20 ">
+    <div class="sm:self-center order-2 sm:order-1">
+    <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Materials</h1>
+    <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
+        The collection of fabrics is based on sustainability and durability ensuring they are<br>
+        of the highest possible quality and produced in an environmentally friendly way.
+        <br>
+        Our top priority is to create the best product possible and at the same time <br>
+        be part of the solution for a sustainable green planet.
+        </p>
+    </div>
+    <div class="order-1 sm:order-2">
+        <img class="object-cover " src='{% static "img/aboutmaterials.jpg" %}'/>
     </div>
 </div>
 
-<!-- behind the brand -->
+
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center my-20">
+  <div class="">
+      <img class="object-cover" src='{% static "img/aboutbrand.jpg" %}'/>
+  </div>
+    <div class="sm:self-center">
+        <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Behind the brand</h1>
+            <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
+                ALEF brand was born in July of 2020, during a difficult season of humanity<br> from Krisana Alefantinou.<br>
+                That makes ALEF collection literally limited edition.<br>
+                Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
+                We make our bags with love and joy so you can have a unique product.
+            </p>
+    </div>
+</div>
+
 
 </section>
 

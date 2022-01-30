@@ -132,8 +132,8 @@
             <img alt="category photo"
             class="object-center object-cover border border-gray-200"
             src="{{ category.cat_image.url }}"/>
-            <p class="text-white flex justify-center items-center text-3xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-            {{ category.category_name }}
+            <p class="text-white flex justify-center items-center text-3xl lg:text-4xl  uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+            <span class="border-2 border-gray-100 p-4 ">{{ category.category_name }}</span>
             </p>
         </div>
     </a>
@@ -195,8 +195,8 @@
     <img alt="Banner image" class="h-96 sm:h-112 w-full object-cover"
          src='{% static "img/abouthero.jpg" %}'/>
     <div class="absolute inset-0 w-full py-2.5  text-white text-xs flex justify-center items-center">
-      <p class="text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
-            <a href="{% url 'contact' %}" aria-label="" class="text-center">
+      <p class="text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold ">
+            <a href="{% url 'contact' %}" aria-label="" class="text-center border-2 border-gray-100 p-10">
         Visit our new store
         </a>
       </p>

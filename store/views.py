@@ -16,7 +16,7 @@ def product_list(request, category_slug=None):
     # form = ShortForm()
     # if request.GET:
     #     temp = request.GET['short_field']
-    form = ShortForm(request.POST or None)
+    form = ShortForm(request.GET or None)
     temp = '-created_date'
     if form.is_valid():
         temp = form.cleaned_data.get('short_field')
@@ -67,9 +67,9 @@ def search(request):
                 Q(description__icontains=keyword) | Q(product_name__icontains=keyword))
             product_count = products.count()
 
-    context = {
-        'products': products,
-        'product_count': product_count
-    }
+        context = {
+            'products': products,
+            'product_count': product_count
+        }
 
     return render(request, 'store/list.html', context)
