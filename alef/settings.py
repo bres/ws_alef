@@ -65,6 +65,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+
 ROOT_URLCONF = 'alef.urls'
 LOGIN_URL = '/login/'
 
@@ -206,6 +209,9 @@ MESSAGE_TAGS = {
 }
 
 
+
+
+
 #smtp configuration
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST =config('EMAIL_HOST')
@@ -213,6 +219,8 @@ EMAIL_PORT =config('EMAIL_PORT',cast=int)
 EMAIL_HOST_USER =config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS=config('EMAIL_USE_TLS',cast=bool)
+
+
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)
