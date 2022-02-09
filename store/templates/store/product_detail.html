@@ -47,8 +47,14 @@
         <div class="mb-4 pb-4  ">
             <p class="text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
             <p class="text-sm font-mono text-gray-900"> item No. {{ single_product.code }}</p>
-            <p class="text-lg mt-2">€{{ single_product.price }}</p>
-        <div class="inline-block my-4 text-lg text-gray-900">
+            {% if single_product.discount_percentage %}
+            <p class="text-md lg:text-lg  font-bold mt-2 text-red-500">€{{ single_product.get_sale }} <span class="text-gray-700 line-through mx-2">€ {{  single_product.price }}</span></p>
+        {% else %}
+              <p class="text-md lg:text-lg  font-bold text-gray-700 mt-2">€{{ single_product.price }}</p>
+            {% endif %}
+
+
+        <div class="inline-block my-4 text-md text-gray-900">
             <p class="max-w-3xl text-gray-900 tracking-wide">
               {{ single_product.description }}
             </p>
@@ -146,9 +152,10 @@
          </div>
  <!-- Content -->
          <div class="accordion-content px-5 pb-1 overflow-hidden max-h-0">
-             <p class="leading-6 font-light pl-9 text-justify text-sm">
-              Mobile number: <a class="font-mono mr-2" href="tel:+30-6947-885-132">(+30)-6947885132,</a> <a class="underline font-mono" href="whatsapp://send?&phone=+306947885132">WhatsApp</a>
-             </p>
+             <div class="leading-6 font-light pl-9 text-sm">
+                <p clas="  ">Mobile number: <a class="font-mono mr-2" href="tel:+30-6947-885-132">(+30)-6947885132</a><p>
+                <p clas=" "> <a class="underline font-mono" href="whatsapp://send?&phone=+306947885132">WhatsApp</a></p>
+             </div>
           </div>
          </div>
      </div>

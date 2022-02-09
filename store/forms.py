@@ -5,6 +5,7 @@ SHORT_CHOICES = (
     ("-created_date", "New first "),
     ("price", "Price low first "),
     ("-price", "Price high first "),
+    ("discount_percentage", "Discounts "),
 
 )
 

@@ -16,16 +16,28 @@ class Product(models.Model):
     care            = models.TextField(max_length=500, blank=True)
     length_strap    = models.TextField(max_length=50, blank=True)
     handle          = models.TextField(max_length=50, blank=True)
-    price           = models.IntegerField()
+    price           = models.DecimalField(max_digits = 5,decimal_places = 2)
     images          = models.ImageField(upload_to='images/products')
     stock           = models.IntegerField()
     is_available    = models.BooleanField(default=True)
     category        = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
-    code            =models.CharField(max_length=30,unique=True)
+    code            = models.CharField(max_length=30,unique=True)
+    discount_percentage = models.SmallIntegerField(blank=True)
 
-   
+    # def get_starting_price(self):
+    #     starting_price=100*self.price/(100-self.discount_percentage)
+    #     return starting_price
+
+    def get_sale(self):
+        price = self.price * (100 - self.discount_percentage) / 100
+        return price
+
+    # def save(self, *args, **kwargs):
+    #     self.price = self.get_sale()
+    #     super().save(*args, **kwargs)
+
 
     def get_url(self):
         return reverse('store:product_detail', args=[self.category.slug, self.slug])

@@ -7,29 +7,39 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from django.db.models import Q
 from .forms import ShortForm
-
+from django.db.models import Count
 
 # Create your views here.
 
 def product_list(request, category_slug=None):
-    # temp = '-price'
-    # form = ShortForm()
-    # if request.GET:
-    #     temp = request.GET['short_field']
+
     form = ShortForm(request.GET or None)
     temp = '-created_date'
     if form.is_valid():
         temp = form.cleaned_data.get('short_field')
     categories = None
     if category_slug:
-        categories = get_object_or_404(Category, slug=category_slug)
-        products = Product.objects.filter(category=categories, is_available=True).order_by(temp)
-        paginator = Paginator(products, 8)
-        page = request.GET.get('page')
-        paged_products = paginator.get_page(page)
-        product_count = products.count()
+        if temp == "discount_percentage":
+            categories = get_object_or_404(Category, slug=category_slug)
+            products = Product.objects.exclude(discount_percentage__lte=0).filter(category=categories, is_available=True).order_by("-discount_percentage")
+            paginator = Paginator(products, 8)
+            page = request.GET.get('page')
+            paged_products = paginator.get_page(page)
+            product_count = products.count()
+        else:
+            categories = get_object_or_404(Category, slug=category_slug)
+            products = Product.objects.filter(category=categories, is_available=True).order_by(temp)
+            paginator = Paginator(products, 8)
+            page = request.GET.get('page')
+            paged_products = paginator.get_page(page)
+            product_count = products.count()
     else:
-        products = Product.objects.all().filter(is_available=True).order_by(temp)
+        if temp == "discount_percentage":
+            products = Product.objects.exclude(discount_percentage__lte=0).order_by("-discount_percentage")
+        else:
+            products = Product.objects.all().filter(is_available=True).order_by(temp)
+            #products= sorted(Product.objects.all(), key=lambda m: m.get_sale())
+
         paginator = Paginator(products, 8)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)

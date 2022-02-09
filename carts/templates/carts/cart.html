@@ -28,15 +28,15 @@
         <table class="w-full border-collapse bg-black ">
           <thead>
             <tr class="border-b-2 border-gray-200">
-              <th class=" py-3 text-left text-xs font-semibold text-white uppercase ">
+              <th class=" py-3 text-left text-xs font-semibold text-white uppercase">
               </th>
-              <th class=" py-3 text-center text-xs font-semibold text-white uppercase ">
+              <th class="py-3 text-center text-xs font-semibold text-white uppercase">
                 items
               </th>
-              <th class="hidden md:table-cell  py-3 text-center text-xs font-semibold text-white uppercase ">
+              <th class="hidden md:table-cell py-3 text-center text-xs font-semibold text-white uppercase">
                 price
               </th>
-              <th class="  py-3  text-xs text-center font-semibold text-white uppercase" >
+              <th class="py-3 text-xs text-center font-semibold text-white uppercase">
                 total
               </th>
 
@@ -92,7 +92,7 @@
               </td>
               <td class="hidden md:table-cell text-center py-5 text-md">
                 <p class="text-gray-900">
-                  €{{ cart_item.product.price }}
+                  €{{ cart_item.product.get_sale }}
                 </p>
               </td>
               <td class="text-center py-5  text-md">
