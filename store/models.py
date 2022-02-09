@@ -24,7 +24,7 @@ class Product(models.Model):
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
     code            = models.CharField(max_length=30,unique=True)
-    discount_percentage = models.SmallIntegerField(blank=True)
+    discount_percentage = models.SmallIntegerField(null=True,blank=True)
 
     # def get_starting_price(self):
     #     starting_price=100*self.price/(100-self.discount_percentage)
