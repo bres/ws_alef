@@ -21,7 +21,7 @@ def product_list(request, category_slug=None):
     if category_slug:
         if temp == "discount_percentage":
             categories = get_object_or_404(Category, slug=category_slug)
-            products = Product.objects.exclude(discount_percentage__lte=0).filter(category=categories, is_available=True).order_by("-discount_percentage")
+            products = Product.objects.filter(discount_percentage__gte=1).filter(category=categories, is_available=True).order_by("-discount_percentage")
             paginator = Paginator(products, 8)
             page = request.GET.get('page')
             paged_products = paginator.get_page(page)
@@ -35,7 +35,7 @@ def product_list(request, category_slug=None):
             product_count = products.count()
     else:
         if temp == "discount_percentage":
-            products = Product.objects.exclude(discount_percentage__lte=0).order_by("-discount_percentage")
+            products = Product.objects.filter(discount_percentage__gte=1).order_by("-discount_percentage")
         else:
             products = Product.objects.all().filter(is_available=True).order_by(temp)
             #products= sorted(Product.objects.all(), key=lambda m: m.get_sale())
