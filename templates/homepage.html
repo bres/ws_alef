@@ -177,7 +177,7 @@
                     {{ product.short_desc|capfirst }}</p>
 
                 {% if product.discount_percentage %}
-                <p class="text-sm  font-bold tracking-wide text-red-500">€ {{ product.price }}<span class="line-through mx-2 text-white ">€ {{ product.get_sale }}</span></p>
+                <p class="text-sm  font-bold tracking-wide text-red-500">€ {{ product.get_sale }}<span class="line-through mx-2 text-white ">€ {{ product.price }}</span></p>
                 {% else %}
                 <p class="text-sm  font-bold tracking-wide text-white">€ {{ product.price }}</p>
                 {% endif %}
