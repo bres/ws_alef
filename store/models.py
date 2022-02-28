@@ -16,7 +16,7 @@ class Product(models.Model):
     care            = models.TextField(max_length=500, blank=True)
     length_strap    = models.TextField(max_length=50, blank=True)
     handle          = models.TextField(max_length=50, blank=True)
-    price           = models.DecimalField(max_digits = 5,decimal_places = 2)
+    price           = models.IntegerField()
     images          = models.ImageField(upload_to='images/products')
     stock           = models.IntegerField()
     is_available    = models.BooleanField(default=True)

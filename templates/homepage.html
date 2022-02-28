@@ -101,14 +101,14 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-      <div class="flex flex-col absolute top-1/2  text-yellow-100 sm:text-black text-left ml-4 xl:ml-32 z-50">
+      <div class="flex flex-col absolute top-1/2 text-yellow-100 sm:text-black text-left ml-4 xl:ml-32 z-50">
           <div class="font-bold ">
               <p class="">{{ hero.hero_title|linebreaks }} </p>
           </div>
       {% if hero.hero_link %}
           <div class="font-bold text-sm md:text-lg mt-8 subpixel-antialiased">
               <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-3 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
-              Visit {{ hero.hero_link }}
+               {{ hero.hero_link }}
           </a>
           </div>
       {% endif %}

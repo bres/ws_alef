@@ -10,5 +10,5 @@ def default_link(request):
     return dict(categories=categories)
 
 def default_hero(request):
-    heros=HeroImages.objects.all()
+    heros=HeroImages.objects.all().order_by("hero_number")
     return dict(heros=heros)
