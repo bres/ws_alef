@@ -79,7 +79,7 @@ font-weight: 900;
 display: block;
 width: 100%;
 height: 100%;
-object-fit: cover;
+ 
 }
 .bullets{
 background-color: #000000;
@@ -111,8 +111,18 @@ background-color: #000000;
           </div>
       {% endif %}
       </div>
-  <img class="object-left filter brightness-100"
-  src='{{ hero.hero_image.url }}' alt="Hero image">
+      
+         {% if hero.hero_position == 'left' %}
+          <img class="object-cover object-{{ hero.hero_position}}"  src='{{ hero.hero_image.url }}' alt="Hero image">
+
+        {% elif hero.hero_position == 'right' %}  
+        <img class="object-cover object-{{ hero.hero_position}}"  src='{{ hero.hero_image.url }}' alt="Hero image">
+        
+        {% else %}  
+        <img class="object-cover object-center"  src='{{ hero.hero_image.url }}' alt="Hero image">
+        {% endif %}
+       
+
   </div>
     {% endfor %}
 </div>
@@ -128,7 +138,7 @@ background-color: #000000;
     <a aria-label="View Item" href="{{ category.get_url }}">
         <div class="aspect-w-1 aspect-h-1">
             <img alt="category photo"
-            class="object-center object-cover border border-gray-200"
+            class="object-left md:object-center  border border-gray-200"
             src="{{ category.cat_image.url }}"/>
             <p class="text-white flex justify-center items-center text-3xl lg:text-4xl  uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
            {{ category.category_name }}
