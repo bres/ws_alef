@@ -75,12 +75,13 @@ font-weight: 900;
 }
 
 
-.swiper-slide img {
+/* .swiper-slide img {
 display: block;
 width: 100%;
 height: 100%;
- 
-}
+object-fit: cover;
+object-position: 30%;
+} */
 .bullets{
 background-color: #000000;
 }
@@ -99,7 +100,7 @@ background-color: #000000;
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-      <div class="absolute bottom-8  lg:bottom-12 lg:right-10 text-black text-left  px-4 xl:pl-32 z-50">
+      <div class="absolute bottom-10 lg:bottom-14 lg:right-10 text-black text-left  px-4 xl:pl-32 z-50">
           <div class=" ">
               <p class="">{{ hero.hero_title }} </p>
           </div>
@@ -111,17 +112,8 @@ background-color: #000000;
           </div>
       {% endif %}
       </div>
-      
-         {% if hero.hero_position == 'left' %}
-          <img class="object-cover object-{{ hero.hero_position}}"  src='{{ hero.hero_image.url }}' alt="Hero image">
-
-        {% elif hero.hero_position == 'right' %}  
-        <img class="object-cover object-{{ hero.hero_position}}"  src='{{ hero.hero_image.url }}' alt="Hero image">
-        
-        {% else %}  
-        <img class="object-cover object-center"  src='{{ hero.hero_image.url }}' alt="Hero image">
-        {% endif %}
-       
+      <img style="display: block; width: 100%; height: 100%; object-fit: cover; object-position:{{ hero.hero_position}}%;" 
+                  src='{{ hero.hero_image.url }}' alt="Hero image">
 
   </div>
     {% endfor %}

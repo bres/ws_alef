@@ -121,9 +121,9 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 # capture, download and restore a pg
 
-# heroku pg:backups capture --app appname
-# heroku pg:backups:download --app appname
-# pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d local_db latest.dump
+# heroku pg:backups capture --app wsalef
+# heroku pg:backups:download --app wsalef
+# pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d local_db latest.dump.2
 
 DATABASES = {
 
