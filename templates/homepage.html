@@ -9,44 +9,43 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <style>
 
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 
-      @media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px) {
+.swiper-slide {
+  text-align: left;
+  background: #ffffff;
 
-      .swiper-slide {
-        text-align: center;
-        background: #ffffff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: start;
+  justify-content: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: start;
+  align-items: start;
+}
+}
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-    }
-      
-      @media only screen and (max-width: 850px) {
-        .swiper-slide p{
-          color:rgb(249, 238, 216);
-          font-size:30px;
+@media only screen and (max-width: 850px) {
+.swiper-slide p{
+color:#000000;
+font-size:25px;
+font-weight: 900;
+}
+}
 
-        }
 
-      }
 
-      @media only screen and (min-width: 851px) {
-
+@media only screen and (min-width: 851px) {
 .swiper-slide {
   text-align: center;
   background: #ffffff;
@@ -63,29 +62,27 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
-  align-items: center;
+   align-items: center;
 }
 }
 
-@media only screen and (min-width: 850px) {
-        .swiper-slide p{
-          color:rgb(0, 0, 0);
-          font-size:60px;
+@media only screen and (min-width: 851px) {
+.swiper-slide p{
+  color:rgb(0, 0, 0);
+  font-size:40px;
+  font-weight: 900;
+}
+}
 
-        }
 
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .bullets{
-        background-color: #000000;
-
-      }
+.swiper-slide img {
+display: block;
+width: 100%;
+height: 100%;
+}
+.bullets{
+background-color: #000000;
+}
 
       .swiper-pagination-bullet-active {
      background-color: #000 !important;
@@ -93,7 +90,7 @@
 </style>
 
 <!-- Header -->
-<section class="h-full">
+<section class="h-full mt-0">
     <!-- Slider main container -->
 <div class="relative swiper mySwiper">
 
@@ -101,20 +98,27 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-      <div class="flex flex-col absolute top-1/2  text-yellow-100 sm:text-black text-left ml-4 xl:ml-32 z-50">
-          <div class="font-bold ">
-              <p class="">{{ hero.hero_title|linebreaks }} </p>
+      <div class="absolute bottom-8  lg:bottom-14 lg:right-10 text-black text-left  px-4 xl:pl-32 z-50">
+          <div class=" ">
+              <p class="">{{ hero.hero_title }} </p>
           </div>
       {% if hero.hero_link %}
-          <div class="font-bold text-sm md:text-lg mt-8 subpixel-antialiased">
-              <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-3 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
-              Visit {{ hero.hero_link }}
+          <div class="font-bold text-sm md:text-lg mt-3 subpixel-antialiased">
+              <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-40 px-6 py-2 bg-black hover:bg-gray-800 lg:text-center  text-white font-bold capitalize transition duration-200">
+               {{ hero.hero_link }}
           </a>
           </div>
       {% endif %}
       </div>
-  <img class="object-right filter brightness-100"
-  src='{{ hero.hero_image.url }}' alt="Hero image">
+      {% if hero.hero_position == 'left' %}
+      <img class="object-cover object-{{ hero.hero_position}}"  src='{{ hero.hero_image.url }}' alt="Hero image">
+
+    {% elif hero.hero_position == 'right' %}  
+    <img class="object-cover object-{{ hero.hero_position}}"  src='{{ hero.hero_image.url }}' alt="Hero image">
+
+    {% else %}  
+    <img class="object-cover object-center"  src='{{ hero.hero_image.url }}' alt="Hero image">
+    {% endif %}
   </div>
     {% endfor %}
 </div>
@@ -130,7 +134,7 @@
     <a aria-label="View Item" href="{{ category.get_url }}">
         <div class="aspect-w-1 aspect-h-1">
             <img alt="category photo"
-            class="object-center object-cover border border-gray-200"
+            class="object-left md:object-center  border border-gray-200"
             src="{{ category.cat_image.url }}"/>
             <p class="text-white flex justify-center items-center text-3xl lg:text-4xl  uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
            {{ category.category_name }}
@@ -172,10 +176,16 @@
         <div class="relative overflow-hidden transition duration-200 hover:shadow-xl">
             <img class="aspect-w-1 border border-gray-200" src="{{ product.images.url }}" alt="product photo"/>
             <div class="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-100 opacity-0 hover:opacity-100">
-                <p class="mb-2 text-md xl:text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
-                <p class="mb-2 text-xs xl:text-sm font-bold tracking-wide text-white">
+                <p class="mb-2 text-md xl:text-mlg font-bold text-gray-100 underline ">{{ product.product_name|capfirst }}</p>
+                <p class="mb-2 text-sm xl:text-md   font-bold tracking-wide text-white">
                     {{ product.short_desc|capfirst }}</p>
-                <p class="text-sm font-bold tracking-wide text-white">€ {{ product.price }}</p>
+
+                {% if product.discount_percentage %}
+                <p class="text-sm  font-bold tracking-wide text-red-500">€ {{ product.get_sale }}<span class="line-through mx-2 text-white ">€ {{ product.price }}</span></p>
+                {% else %}
+                <p class="text-sm  font-bold tracking-wide text-white">€ {{ product.price }}</p>
+                {% endif %}
+
             </div>
         </div>
     </a>
@@ -189,14 +199,45 @@
     </div>
 </section>
 
+
+<!-- Anima Banner -->
+
+
+<section class="py-16 " >
+
+  <div class="relative">
+    {% for b in anima  %}
+
+    <img alt="Banner image" class="h-80 md:h-auto w-full object-cover"
+         src='{{ b.banner_image.url }}'/>
+    <div class="absolute tracking-wide flex flex-col justify-start top-20 left-0 text-white text-left text-xl md:text-4xl px-4 xl:pl-32 z-50">
+      <a aria-label="Anima logo" class="pb-8 " href="https://www.wild-anima.gr/" title="Wild Anima">
+      <img class="object-contain object-center w-40 lg:w-64" src='{% static "img/anima-logo.png" %}' alt="Anima logo">
+      </a>
+      <p class=" ">{{ b.banner_title|safe|linebreaks }} </p>
+      {% if b.banner_link %}
+      <div class="font-bold text-sm md:text-lg mt-6 subpixel-antialiased">
+      <a href="{{ b.banner_href }}" aria-label="Buy product" class="text-center border-2 border-gray-100 px-4 py-2 ">
+      {{ b.banner_link }}
+      </a>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+
+
 <!-- Banner section -->
 <section class="px-4 xl:px-32 py-16 " >
   <div class="relative border border-gray-300">
     <img alt="Banner image" class="h-96 sm:h-112 w-full object-cover"
          src='{% static "img/abouthero.jpg" %}'/>
     <div class="absolute inset-0 w-full py-2.5  text-white text-xs flex justify-center items-center">
-      <p class="text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold ">
-            <a href="{% url 'contact' %}" aria-label="" class="text-center border-2 border-gray-100 p-10">
+      <p class="text-white flex justify-center items-center text-2xl lg:text-3xl xl:text-4xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold ">
+            <a href="{% url 'contact' %}" aria-label="" class="text-center border-2 border-gray-100 p-4 md:p-10">
         Visit our new store
         </a>
       </p>

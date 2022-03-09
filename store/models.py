@@ -24,7 +24,7 @@ class Product(models.Model):
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
     code            =models.CharField(max_length=30,unique=True)
-    discount_percentage=models.IntegerField(blank=True,null=True)
+    #discount_percentage=models.IntegerField(blank=True,null=True)
 
    
 

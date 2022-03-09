@@ -32,6 +32,8 @@ class HeroImages(models.Model):
     hero_image = models.ImageField(upload_to='images/heros')
     hero_number = models.CharField(max_length=50, unique=True)
     hero_href =models.CharField(max_length=200,blank=True)
+    hero_position=models.CharField(max_length=50,blank=True)
+
     class Meta:
         verbose_name = 'hero_image'
         verbose_name_plural = 'hero_images'
