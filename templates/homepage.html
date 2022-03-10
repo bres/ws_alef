@@ -8,83 +8,35 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <style>
 
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      @media only screen and (max-width: 809px) {
-
-      .swiper-slide {
-        
- 
-        /* Center slide text vertically */
-        /* display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: start;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center; */
-      }
-    }
-      
-      @media only screen and (max-width: 809px) {
-        .swiper-slide p{
-          color:rgb(17, 15, 12);
-          font-size:28px;
-
-        }
-
-      }
-
-      @media only screen and (min-width: 810px) {
-
-.swiper-slide {
-   
- 
-  /* Center slide text vertically */
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
- 
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center; */
+.swiper {
+width: 100%;
+height: 100%;
+}
+@media only screen and (max-width: 809px) {
+.swiper-slide p{
+color:rgb(17, 15, 12);
+font-size:28px;
 }
 }
 
 @media only screen and (min-width: 810px) {
-        .swiper-slide p{
-          color:rgb(0, 0, 0);
-          font-size:40px;
+.swiper-slide p{
+color:rgb(0, 0, 0);
+font-size:40px;
+}
+}
 
-        }
+.swiper-slide img {
+display: block;
+width: 100%;
+height: 100%;
+}
+.bullets{
+background-color: #000000;
+}
 
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-       
-      }
-      .bullets{
-        background-color: #000000;
-
-      }
-
-      .swiper-pagination-bullet-active {
-     background-color: #000 !important;
+.swiper-pagination-bullet-active {
+background-color: #000 !important;
 }
 </style>
 
@@ -97,7 +49,7 @@
     {% for hero in heros  %}
 
     <div class="swiper-slide">
-      <div class="flex flex-col absolute  bottom-10 md:bottom-20 left-0 md:left-auto md:right-12  ml-4 xl:ml-32 z-50">
+      <div class="flex flex-col absolute bottom-12 md:bottom-20 left-0 md:left-auto md:right-12  ml-4 xl:ml-32 z-50">
           <div class="font-bold ">
               <p class="">{{ hero.hero_title|linebreaks }} </p>
           </div>
@@ -185,14 +137,34 @@
     </div>
 </section>
 
+<!-- Anima Banner -->
+<section class="py-16">
+  <div class="relative">
+    <img alt="Banner image" class="h-96 md:h-176 w-full object-cover"
+    src='{% static "img/anima_web.jpg" %}'/>
+    <div class="absolute flex flex-col justify-start top-1/3 left-0 text-white text-left px-4 xl:pl-32 z-50">
+      <a aria-label="Anima logo" class="pb-2" href="https://www.wild-anima.gr/" title="Wild Anima">
+      <img class="object-contain object-center w-40 lg:w-52" src='{% static "img/anima-logo.png" %}' alt="Anima logo">
+      </a>
+      <p class="tracking-wider  text-xl md:text-5xl">Our donation to Anima<br>For Life And Freedom </p>
+     
+      <div class="font-bold text-sm md:text-lg mt-10 subpixel-antialiased">
+      <a href=" {% url 'about' %}#link" aria-label="Buy product" class="text-center border-2 border-gray-100 px-4 py-2 ">
+      Learn more
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Banner section -->
 <section class="px-4 xl:px-32 py-16 " >
   <div class="relative border border-gray-300">
     <img alt="Banner image" class="h-96 sm:h-112 w-full object-cover"
          src='{% static "img/abouthero.jpg" %}'/>
     <div class="absolute inset-0 w-full py-2.5  text-white text-xs flex justify-center items-center">
-      <p class="text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold ">
-            <a href="{% url 'contact' %}" aria-label="" class="text-center border-2 border-gray-100 p-10">
+      <p class="text-white flex justify-center items-center text-2xl lg:text-3xl xl:text-4xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold ">
+            <a href="{% url 'contact' %}" aria-label="" class="text-center border-2 border-gray-100 p-4 md:p-10">
         Visit our new store
         </a>
       </p>
