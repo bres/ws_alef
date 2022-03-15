@@ -61,9 +61,19 @@ background-color: #000 !important;
           </div>
       {% endif %}
       </div>
-  <img class="object-cover object-{{hero.hero_position}}"
+      {% if hero.hero_position == 'left' %}
+  <img class="object-cover object-left"
   src='{{ hero.hero_image.url }}' alt="Hero image">
   </div>
+  {% elif hero.hero_position == 'right' %}
+  <img class="object-cover object-right"
+  src='{{ hero.hero_image.url }}' alt="Hero image">
+  </div>
+  {% else %}
+  <img class="object-cover object-center"
+  src='{{ hero.hero_image.url }}' alt="Hero image">
+  </div>
+  {% endif %}
     {% endfor %}
 </div>
 <div class="swiper-pagination"></div>
