@@ -17,11 +17,11 @@
     </p>
 </div>
 <!-- zic zag -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center mt-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mt-20">
   <div class=" ">
       <img class="object-cover" src='{% static "img/abouthandmade.jpg" %}'/>
   </div>
-    <div class="sm:self-center">
+    <div class="">
          <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Handmade</h1>
             <p class="text-sm lg:text-lg leading-relaxed tracking-wide mt-2">
                 Our products are handmade and therefore, unique.<br>
@@ -31,27 +31,34 @@
             </p>
     </div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center mt-20 ">
-    <div class="sm:self-center order-2 sm:order-1">
-    <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Materials</h1>
+<div id="link_materials" class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center pt-24 -mt-4 lg:pt-40 lg:-mt-20">
+    <div class="lg:self-center  order-2 lg:order-1 ">
+    <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3 ">Materials</h1>
     <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
         The collection of fabrics is based on sustainability and durability ensuring they are
-        of the highest possible quality and produced in an environmentally friendly way.
-
+        of the highest possible quality and produced in an environmentally friendly way.<br>
         Our top priority is to create the best product possible and at the same time
-        be part of the solution for a sustainable green planet.
+        be part of the solution for a sustainable green planet.<br><br>
+        <span class="text-lg lg:text-xl font-extrabold">“The Golden Ratio”.</span><br>
+        
+        Our new collection for S/S ‘22, The Golden Ratio, is made from Italian fabric with leather fibres, 
+        skilled by excellent technical performances. Leather fibres are a waste product of leather production.
+        In that way, we use all accessible recourses in order to ensure sustainability.<br>
+        It is an advanced leather collection with refined characteristics. 
+        It has flame retardant features, is water repellent, easy to clean, sun proofed and has high resistance properties,
+        guarantee an everlasting quality.<br>Designed and manufactured in Italy.
         </p>
     </div>
-    <div class="order-1 sm:order-2">
-        <img class="object-cover " src='{% static "img/aboutmaterials.jpg" %}'/>
+    <div class="order-1 lg:order-2">
+        <img class="object-cover" src='{% static "img/aboutmaterials.jpg" %}'/>
     </div>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center my-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center my-20">
   <div class="">
       <img class="object-cover" src='{% static "img/aboutbrand.jpg" %}'/>
   </div>
-    <div class="sm:self-center">
+    <div class="md:self-center">
         <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Behind the brand</h1>
             <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
                 ALEF brand was born in July of 2020, during a difficult season of humanity, from Krisana Alefantinou.<br>
@@ -65,20 +72,25 @@
 </section>
 
 <!-- Anima Banner -->
-<section id="link" class="pt-16 " >
+<section id="link_anima" class="pt-24 -mt-4 lg:pt-40 lg:-mt-20 " >
 <div class="relative ">
-    <img alt="Banner image" class="h-176  w-full   object-center  object-cover" src='{% static "img/anima_web.jpg" %}'/>
-    <div class="absolute  flex flex-col justify-start top-4 md:top-40 text-white text-left mx-4 xl:ml-32 p-4 md:p-7 z-10 bg-gradient-to-r from-green-800 to-green-700 rounded-lg shadow-md filter opacity-75 ">
-        <a aria-label="Anima logo" class="pb-3" href="https://www.wild-anima.gr/" title="Wild Anima">
-        <img class="object-contain object-center w-40 lg:w-52" src='{% static "img/anima-logo.png" %}' alt="Anima logo">
-        </a>
-    <p class="tracking-wide  leading-relaxed font-medium text-md md:text-lg max-w-3xl">
-    <b>Our world needs more caring.</b><br> With that in mind, we choose to donate every year,
-    in different foundation, 2% of our online sales.
+    <img alt="Banner image" class="h-176 w-full  object-cover" src='{% static "img/anima_web.jpg" %}'/>
+    <div  class="absolute flex flex-col justify-start top-4 md:top-16 text-white text-left mx-4 xl:ml-32">
+        <p class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Our Donations</p>
+    </div>
+
+    <div class="absolute  flex flex-col justify-start top-16 md:top-40 text-white text-left mx-4 xl:ml-32 p-4 md:p-10 z-10 bg-gradient-to-r from-green-800 to-transparent rounded-lg  filter opacity-100 ">
+
+    <a aria-label="Anima logo" class="pb-3" href="https://www.wild-anima.gr/" title="Wild Anima">
+    <img class="object-contain object-center w-40 lg:w-48" src='{% static "img/anima-logo.png" %}' alt="Anima logo">
+    </a>
+    <p class="tracking-wide leading-relaxed  text-md md:text-lg max-w-4xl">
+    <span class="font-extrabold uppercase">Our world needs more caring.</span><br> With that in mind, we choose to donate every year,
+    in different foundation, 2% of our online sales.<br>
     That way, we can spread the love that you so openly give us.<br>
     For 2022, we chose to donate to ANIMA organization.<br>
     ANIMA is a foundation that cares and protects the wild life that resides in urban environments and often get injured.
-    Anima count exclusively on donations and subscribers. 
+    Anima count exclusively on donations and subscribers. <br>
     Having seen up close their efforts and from our deep appreciation of all people that consist Anima,
     we would like to contribute in the way we can. <br>
     Every life is important and we can help to find its path.<br>
