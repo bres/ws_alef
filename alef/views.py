@@ -49,3 +49,10 @@ def about(request):
 
 def wholesale(request):
     return render(request,'wholesale.html')
+
+
+def terms(request):
+    return render(request,'terms.html')
+
+def shipping(request):
+    return render(request,'shipping.html')

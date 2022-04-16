@@ -85,7 +85,7 @@ background-color: #000 !important;
             <img alt="category photo"
             class="object-center object-cover border border-gray-200"
             src="{{ category.cat_image.url }}"/>
-            <p class="text-white flex justify-center items-center text-3xl lg:text-4xl  uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
+            <p class="text-white flex justify-center items-center text-2xl lg:text-4xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
            {{ category.category_name }}
             </p>
         </div>
@@ -103,7 +103,7 @@ background-color: #000 !important;
     src='{% static "img/materials_banner.jpg" %}'/>
     <div class="absolute flex flex-col  top-1/2 md:top-80 right-auto lg:right-12 text-black text-left px-4 xl:pl-32 z-10">
      
-      <p class="tracking-wide font-bold text-2xl md:text-4xl">The new generation of leather</p>
+      <p class="tracking-wide font-bold text-2xl lg:text-4xl">The new generation of leather</p>
      
       <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
       <a href=" {% url 'about' %}#link_materials" aria-label="learn more" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
@@ -187,7 +187,7 @@ background-color: #000 !important;
       <a aria-label="Anima logo" class="pb-2" href="https://www.wild-anima.gr/" title="Wild Anima">
       <img class="object-contain object-center w-40 lg:w-48" src='{% static "img/anima-logo.png" %}' alt="Anima logo">
       </a>
-      <p class="tracking-wide font-bold text-2xl md:text-4xl text-white pt-1">Our donation to Anima<br>For Life And Freedom </p>
+      <p class="tracking-wide font-bold text-2xl lg:text-4xl text-white pt-1">Our donation to Anima<br>For Life And Freedom </p>
      
       <div class="font-bold text-sm md:text-lg mt-8 subpixel-antialiased">
       <a href="{% url 'about' %}#link_anima" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-green-800 hover:bg-green-700 text-center text-white font-bold capitalize transition duration-200 ">
