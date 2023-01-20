@@ -24,9 +24,11 @@ class Product(models.Model):
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
     code            =models.CharField(max_length=30,unique=True)
-    #discount_percentage=models.IntegerField(blank=True,null=True)
+    discount_percentage=models.IntegerField(blank=True,default=0)
 
-   
+    def get_sale(self):
+        price = self.price * (100 - self.discount_percentage) / 100
+        return price
 
     def get_url(self):
         return reverse('store:product_detail', args=[self.category.slug, self.slug])

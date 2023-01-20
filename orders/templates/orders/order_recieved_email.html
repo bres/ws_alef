@@ -1,10 +1,29 @@
 {% autoescape off %}
-ALEF ATELIER
 
+--------------------------------------------------------------------------
+ALEF ATELIER
+--------------------------------------------------------------------------
 Hello {{ user.last_name|capfirst }} {{ user.first_name|capfirst }},
 your order has been received.
 
 Order Number:{{ order.order_number }}.
 
+Order Date Created at:{{ order.created_at }}.
+
+Order Shipping Cost:€{{ order.shipping }}
+ 
+Order Total:€{{ order.order_total }}
+
+
 Thank you!
+--------------------------------------------------------------------------
+This website is owned to 'ALEF ΚΟΙΝ.Σ.ΕΠ.' company.
+
+Greece, Athens
+
+Kolokotroni 9, Chalandri 152 33
+
+(+30)-6947885132
+--------------------------------------------------------------------------
+
 {% endautoescape %}

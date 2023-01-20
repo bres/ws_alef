@@ -37,7 +37,7 @@ def payments(request):
         orderproduct.user_id = request.user.id
         orderproduct.product_id = item.product_id
         orderproduct.quantity = item.quantity
-        orderproduct.product_price = item.product.price
+        orderproduct.product_price = item.product.get_sale()
         orderproduct.ordered = True
         orderproduct.save()
 
@@ -56,11 +56,21 @@ def payments(request):
     CartItem.objects.filter(user=request.user).delete()
 
     # Send order recieved email to customer
+    # import html message.html file
+    # mail_subject = 'Thank you for your order!'
+    # to_email = request.user.email
+    # html_template = 'orders/order_recieved_email.html'
+    # context = {'user': request.user,'order': order,'orderproduct':orderproduct,  }
+    # html_message = render_to_string(html_template, { 'context': context, })
+    # send_email = EmailMessage(mail_subject, html_message, to=[to_email])
+    # send_email.content_subtype = "html" 
+    # send_email.send()
+
+
+
     mail_subject = 'Thank you for your order!'
-    message = render_to_string('orders/order_recieved_email.html', {
-        'user': request.user,
-        'order': order,
-    })
+    context = {'user': request.user,'order': order,'orderproduct':orderproduct,  }
+    message = render_to_string('orders/order_recieved_email.html',context=context )
     to_email = request.user.email
     send_email = EmailMessage(mail_subject, message, to=[to_email])
     send_email.send()
@@ -87,7 +97,7 @@ def place_order(request, total=0, quantity=0):
     tax = 0
     shipping = 0
     for cart_item in cart_items:
-        total += (cart_item.product.price * cart_item.quantity)
+        total += (cart_item.product.get_sale() * cart_item.quantity)
         quantity += cart_item.quantity
     # tax =0 (2 * total)/100
 
@@ -117,7 +127,7 @@ def place_order(request, total=0, quantity=0):
                 data.shipping = shipping
 
             else:
-                if data.country == 'greece' or data.country == 'Greece' or data.country == 'GREECE':
+                if data.country == 'greece' or data.country == 'Greece' or data.country == 'GREECE' or data.country == 'Ελλάδα' or data.country == 'ελλάδα':
                     shipping = 0
                     data.shipping = shipping
 

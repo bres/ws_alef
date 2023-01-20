@@ -148,7 +148,13 @@ background-color: #000 !important;
                 <p class="mb-2 text-md xl:text-lg font-bold text-gray-100 ">{{ product.product_name|capfirst }}</p>
                 <p class="mb-2 text-xs xl:text-sm font-bold tracking-wide text-white">
                     {{ product.short_desc|capfirst }}</p>
-                <p class="text-sm font-bold tracking-wide text-white">€ {{ product.price }}</p>
+
+                    {% if product.discount_percentage %}
+                    <p class="text-sm  font-bold tracking-wide text-red-500">€ {{ product.get_sale }}<span class="line-through mx-2 text-white ">€ {{ product.price }}</span></p>
+                    {% else %}
+                    <p class="text-sm  font-bold tracking-wide text-white">€ {{ product.price }}</p>
+                    {% endif %}
+
             </div>
         </div>
     </a>

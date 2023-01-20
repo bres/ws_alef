@@ -47,7 +47,13 @@
         <div class="mb-4 pb-4  ">
             <p class="text-gray-900 font-bold text-lg capitalize">{{ single_product.product_name }}</p>
             <p class="text-sm font-mono text-gray-900"> item No. {{ single_product.code }}</p>
-            <p class="text-lg mt-2">€{{ single_product.price }}</p>
+
+            {% if single_product.discount_percentage %}
+            <p class="text-md lg:text-lg  font-bold mt-2 text-red-500">€{{ single_product.get_sale }} <span class="text-gray-700 line-through mx-2">€ {{  single_product.price }}</span></p>
+            {% else %}
+              <p class="text-md lg:text-lg  font-bold text-gray-700 mt-2">€{{ single_product.price }}</p>
+            {% endif %}
+
         <div class="inline-block my-4 text-lg text-gray-900">
             <p class="max-w-3xl text-gray-900 tracking-wide">
               {{ single_product.description }}
