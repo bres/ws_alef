@@ -103,7 +103,7 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'local_db',
+        'NAME': 'localdb',
 
         'USER': 'postgres',
 

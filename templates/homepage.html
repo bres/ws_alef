@@ -19,8 +19,6 @@ color:rgb(17, 15, 12);
 }
 }
 */
-
-
 .swiper-slide img {
 display: block;
 width: 100%;
@@ -33,46 +31,152 @@ background-color: #000000;
 .swiper-pagination-bullet-active {
 background-color: #000 !important;
 }
+
 </style>
 
 <!-- Header -->
 <section class="h-full">
-    <!-- Slider main container -->
+  <!-- Slider main container -->
 <div class="relative swiper mySwiper">
 
 <div class="swiper-wrapper">
-    {% for hero in heros  %}
+  {% for hero in heros  %}
 
-    <div class="swiper-slide">
-      <div class="flex flex-col absolute bottom-14 lg:bottom-20 left-auto lg:right-12  ml-4 xl:ml-32 z-50">
-          <div class="tracking-wide font-bold text-2xl md:text-4xl">
-              <p class="">{{ hero.hero_title|linebreaks }} </p>
-          </div>
-      {% if hero.hero_link %}
-          <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
-              <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
-              {{ hero.hero_link }}
-          </a>
-          </div>
+  <div class="swiper-slide">
+    <!-- herotitle  and subtitle position -->
+    {% if hero.herotitle_position == 'right'%}
+      <div class="flex flex-col absolute bottom-14 lg:bottom-20 ml-4 md:right-12 xl:right-32 z-50">
+      <div class="tracking-wide text-left">
+          {% if hero.herotitle_color == 'black' %}
+            <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black">{{ hero.hero_title }} </p>
+            <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black">{{ hero.hero_subtitle }} </p>
+            {% elif hero.herotitle_color == 'white'  %}
+            <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">{{ hero.hero_title }} </p>
+            <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">{{ hero.hero_subtitle }} </p>
+            {% elif hero.herotitle_color == 'yellow'  %}
+            <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-yellow-500">{{ hero.hero_title }} </p>
+            <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-yellow-500">{{ hero.hero_subtitle }} </p>
+            {% elif hero.herotitle_color == 'green'  %}
+            <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-green-500">{{ hero.hero_title }} </p>
+            <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-green-500">{{ hero.hero_subtitle }} </p>
+            {% elif hero.herotitle_color == 'red'  %}
+            <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-red-500">{{ hero.hero_title }} </p>
+            <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-red-500">{{ hero.hero_subtitle }} </p>
+            {% elif hero.herotitle_color == 'blue'  %}
+            <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-blue-500">{{ hero.hero_title }} </p>
+            <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-500">{{ hero.hero_subtitle }} </p>
+          {% endif %} 
+      </div>
+    {% elif hero.herotitle_position == 'left'%}
+      <div class="flex flex-col absolute bottom-14 lg:bottom-20  left-4 lg:left-12 xl:left-32 z-50">
+      <div class="tracking-wide text-left">
+      {% if hero.herotitle_color == 'black' %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'white'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'yellow'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-yellow-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-yellow-500">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'green'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-green-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-green-500">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'red'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-red-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-red-500">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'blue'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-blue-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-500">{{ hero.hero_subtitle }} </p>
       {% endif %}
       </div>
-      {% if hero.hero_position == 'left' %}
-  <img class="object-cover object-left"
-  src='{{ hero.hero_image.url }}' alt="Hero image">
+    {% elif hero.herotitle_position == 'center'%}
+      <div class="absolute h-full w-full flex flex-col items-center justify-center z-50">
+      <div class="tracking-wide text-center">
+      {% if hero.herotitle_color == 'black' %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'white'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'yellow'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-yellow-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-yellow-500">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'green'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-green-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-green-500">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'red'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-red-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-red-500">{{ hero.hero_subtitle }} </p>
+      {% elif hero.herotitle_color == 'blue'  %}
+      <p class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-blue-500">{{ hero.hero_title }} </p>
+      <p class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-500">{{ hero.hero_subtitle }} </p>
+      {% endif %}
+      </div>
+    {% endif %}
+
+<!-- if hero_link exists-->
+{% if hero.hero_link_state == 'on' %}
+    {% if hero.hero_link_bgcolor == 'black' %}
+        <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
+          <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
+          {{ hero.hero_link }}
+          </a>
+        </div>
+        {% elif hero.hero_link_bgcolor == 'white' %}
+        <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
+          <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-white hover:bg-gray-100 text-center text-black font-bold capitalize transition duration-200">
+          {{ hero.hero_link }}
+          </a>
+        </div>
+        {% elif hero.hero_link_bgcolor == 'yellow' %}
+        <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
+          <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-yellow-500 hover:bg-yellow-600 text-center text-black font-bold capitalize transition duration-200">
+          {{ hero.hero_link }}
+          </a>
+        </div>
+        {% elif hero.hero_link_bgcolor == 'green' %}
+        <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
+          <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-green-500 hover:bg-green-600 text-center text-white font-bold capitalize transition duration-200">
+          {{ hero.hero_link }}
+          </a>
+        </div>
+        {% elif hero.hero_link_bgcolor == 'blue' %}
+        <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
+          <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-blue-500 hover:bg-blue-600 text-center text-white font-bold capitalize transition duration-200">
+          {{ hero.hero_link }}
+          </a>
+        </div>
+        {% elif hero.hero_link_bgcolor == 'red' %}
+        <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
+          <a href="{{ hero.hero_href }}" aria-label="Buy product" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-red-500 hover:bg-red-600 text-center text-white font-bold capitalize transition duration-200">
+          {{ hero.hero_link }}
+          </a>
+        </div>
+    {% endif %}
+    {% elif hero.hero_link_state == 'off' %}
+    <!-- do nothing -->
+    {% endif %}
   </div>
-  {% elif hero.hero_position == 'right' %}
-  <img class="object-cover object-right"
-  src='{{ hero.hero_image.url }}' alt="Hero image">
-  </div>
-  {% else %}
-  <img class="object-cover object-center"
-  src='{{ hero.hero_image.url }}' alt="Hero image">
-  </div>
-  {% endif %}
-    {% endfor %}
+
+    {% if hero.hero_position == 'left' %}
+    <img class="object-cover object-left"
+    src='{{ hero.hero_image.url }}' alt="Hero image">
+    </div>
+    {% elif hero.hero_position == 'right' %}
+    <img class="object-cover object-right"
+    src='{{ hero.hero_image.url }}' alt="Hero image">
+    </div>
+    {% else %}
+    <img class="object-cover object-center"
+    src='{{ hero.hero_image.url }}' alt="Hero image">
+    </div>
+    {% endif %}
+  {% endfor %}
 </div>
 <div class="swiper-pagination"></div>
 </div>
+
 </section>
 
 <!-- Category section -->
@@ -106,7 +210,7 @@ background-color: #000 !important;
       <p class="tracking-wide font-bold text-2xl lg:text-4xl">The new generation of leather</p>
      
       <div class="font-bold text-sm md:text-lg mt-4 md:mt-6 subpixel-antialiased">
-      <a href=" {% url 'about' %}#link_materials" aria-label="learn more" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
+      <a href="{% url 'about' %}#link_materials" aria-label="learn more" class="w-32 px-4 py-2 md:px-4 md:py-2 bg-black hover:bg-gray-800 text-center text-white font-bold capitalize transition duration-200">
       Learn more
       </a>
       </div>
@@ -169,10 +273,11 @@ background-color: #000 !important;
 </section>
 
 
+
 <!-- Banner section -->
 <section class="px-4 xl:px-32 pt-16">
   <div class="relative border border-gray-300">
-    <img alt="Banner image" class="h-96 sm:h-112 w-full object-cover"
+    <img alt="Banner image" class="h-96 sm:h-112 w-full object-right object-cover"
          src='{% static "img/abouthero.jpg" %}'/>
     <div class="absolute inset-0 w-full py-2.5  text-white text-xs flex justify-center items-center">
       <p class="text-white flex justify-center items-center text-2xl lg:text-3xl xl:text-4xl uppercase absolute top-0 left-0 right-0 bottom-0 font-bold">
@@ -182,7 +287,9 @@ background-color: #000 !important;
       </p>
     </div>
   </div>
-</section>
+</section>  
+
+
 
 <!-- Anima Banner -->
 <section class="pt-16">
@@ -202,8 +309,7 @@ background-color: #000 !important;
       </div>
     </div>
   </div>
-</section>
-
+</section>  
 
 
  <!-- Initialize Swiper -->
@@ -222,7 +328,6 @@ background-color: #000 !important;
         },
 
       });
-
 
     </script>
 {% endblock %}
