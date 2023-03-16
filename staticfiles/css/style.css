@@ -658,6 +658,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
 .bottom-14 {
   bottom: 3.5rem;
 }
@@ -676,6 +680,10 @@ video {
 
 .right-0 {
   right: 0px;
+}
+
+.right-10 {
+  right: 2.5rem;
 }
 
 .right-auto {
@@ -1179,10 +1187,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.resize {
-  resize: both;
 }
 
 .list-disc {
@@ -2413,10 +2417,6 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:self-center {
-    align-self: center;
   }
 
   .md\:p-1 {
