@@ -1,6 +1,7 @@
 {
   "name": "jstools",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tailwind build ../static/css/tailwind.css -o ../static/css/style.css && cleancss -o ../static/css/style.min.css ../static/css/style.css"
@@ -9,11 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "clean-css-cli": "^5.6.2",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.7"
   },
-  "description": "",
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2"
   }

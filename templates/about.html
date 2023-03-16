@@ -3,10 +3,37 @@
 {% block content %}
 {% load static %}
 
+<style>
+/* fix anchor tag position
+#link_materials {
+    scroll-margin-top:110px;
+    }   
+
+/* When the browser is at least 1024 and above */
+@media screen and (min-width: 1024px) {
+    #link_materials {
+    scroll-margin-top: 165px;
+    }
+    #link_handmade {
+    scroll-margin-top: 165px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #link_materials {
+    scroll-margin-top: 100px;
+    }
+    #link_handmade {
+    scroll-margin-top: 100px;
+    }
+}
+
+</style>
+
 <section class="px-4 xl:px-32 text-black">
 <!-- hero image-->
 <div class="w-full flex flex-col justify-center items-center">
-<img class="object-cover h-112 w-full" src='{% static "img/abouthero.jpg" %}'/>
+<img class="object-cover object-right h-112 w-full" src='{% static "img/abouthero.jpg" %}'/>
     <p class="text-md lg:text-lg leading-relaxed tracking-wide pt-10 pb-3 max-w-2xl">
         <span class="text-3xl lg:text-4xl font-bold">Aleph</span> is the Phoenician letter that led to the first letter of the greek alphabet “Alpha”.<br>
             As a word it symbolizes the beginning of the creation as well as the starting point of human culture.<br>
@@ -15,49 +42,52 @@
             We are inspired by the past to create unique and timeless products.
     </p>
 </div>
-<!-- zic zag -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mt-20">
-  <div class=" ">
-      <img class="object-cover" src='{% static "img/abouthandmade.jpg" %}'/>
-  </div>
-    <div class="">
-         <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Handmade</h1>
-            <p class="text-sm lg:text-lg leading-relaxed tracking-wide mt-2">
-                Our products are handmade and therefore, unique.<br>
-                That makes ALEF collection literally limited edition.<br>
-                Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
-                We make our bags with love and joy so you can have a unique product.
-            </p>
+
+<!-- video handmade zic zag-->
+<div id="link_handmade"  class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mt-20"> 
+    <div class="aspect-w-16 aspect-h-9">
+        <iframe src="{% static 'videos/alef_video.mp4' %}" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-</div>
-<div id="link_materials" class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center pt-24 -mt-4 lg:pt-40 lg:-mt-20">
-    <div class="lg:self-center  order-2 lg:order-1 ">
-    <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3 ">Materials</h1>
-    <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
-        The collection of fabrics is based on sustainability and durability ensuring they are
-        of the highest possible quality and produced in an environmentally friendly way.<br>
-        Our top priority is to create the best product possible and at the same time
-        be part of the solution for a sustainable green planet.<br><br>
-        <span class="text-lg lg:text-xl font-extrabold">“The Golden Ratio”.</span><br>
-        
-        Our collection, The Golden Ratio, is made from Italian fabric with leather fibres, 
-        skilled by excellent technical performances. Leather fibres are a waste product of leather production.
-        In that way, we use all accessible recourses in order to ensure sustainability.<br>
-        It is an advanced leather collection with refined characteristics. 
-        It has flame retardant features, is water repellent, easy to clean, sun proofed and has high resistance properties,
-        guarantee an everlasting quality.<br>Designed and manufactured in Italy.
+    <div>
+        <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Handmade</h1>
+        <p class="text-sm lg:text-lg leading-relaxed tracking-wide mt-2">
+        Our products are handmade and therefore, unique.<br>
+        That makes ALEF collection literally limited edition.<br>
+        Our bags are made exclusively in ALEF atelier that’s based in Athens.<br>
+        We make our bags with love and joy so you can have a unique product.
         </p>
-    </div>
-    <div class="order-1 lg:order-2">
-        <img class="object-cover" src='{% static "img/aboutmaterials.jpg" %}'/>
     </div>
 </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center my-20">
-  <div class="">
-      <img class="object-cover" src='{% static "img/aboutbrand.jpg" %}'/>
-  </div>
-    <div class="md:self-center">
+<!-- materials zic zag-->
+<div  id="link_materials" class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mt-20"> 
+    <div class="lg:self-center order-2 lg:order-1">
+        <h1 id="" class="font-bold text-3xl lg:text-4xl py-0 xl:py-3 ">Materials</h1>
+        <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
+            The collection of fabrics is based on sustainability and durability ensuring they are
+            of the highest possible quality and produced in an environmentally friendly way.<br>
+            Our top priority is to create the best product possible and at the same time
+            be part of the solution for a sustainable green planet.<br><br>
+            <span class="text-lg lg:text-xl font-extrabold">“The Golden Ratio”.</span><br>
+            Our collection, The Golden Ratio, is made from Italian fabric with leather fibres, 
+            skilled by excellent technical performances. Leather fibres are a waste product of leather production.
+            In that way, we use all accessible recourses in order to ensure sustainability.<br>
+            It is an advanced leather collection with refined characteristics. 
+            It has flame retardant features, is water repellent, easy to clean, sun proofed and has high resistance properties,
+            guarantee an everlasting quality.<br>Designed and manufactured in Italy.
+            </p>
+        </div>
+    <div class="order-1 lg:order-2 aspect-w-16 aspect-h-9">
+        <img class="object-cover object-center" src='{% static "img/aboutmaterials.jpg" %}'/>
+    </div>
+</div>
+
+<!-- behind the brand-->
+<div  class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mt-20"> 
+    <div class="aspect-w-16 aspect-h-9">
+        <img class="object-cover" src='{% static "img/aboutbrand.jpg" %}'/>
+    </div>
+    <div>
         <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Behind the brand</h1>
             <p class="text-md lg:text-lg leading-relaxed tracking-wide mt-2">
                 ALEF brand was born in July of 2020, during a difficult season of humanity, from Krisana Alefantinou.<br>
@@ -77,13 +107,11 @@
     <div  class="absolute flex flex-col justify-start top-4 md:top-16 text-white text-left mx-4 xl:ml-32">
         <p class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Our Donations</p>
     </div>
-
     <div class="absolute  flex flex-col justify-start top-16 md:top-40 text-white text-left mx-4 xl:ml-32 p-4 md:p-10 z-10 bg-gradient-to-r from-green-800 to-transparent rounded-lg  filter opacity-100 ">
-
     <a aria-label="Anima logo" class="pb-3" href="https://www.wild-anima.gr/" title="Wild Anima">
     <img class="object-contain object-center w-40 lg:w-48" src='{% static "img/anima-logo.png" %}' alt="Anima logo">
     </a>
-    <p class="tracking-wide leading-relaxed  text-md md:text-lg max-w-4xl">
+    <p class="tracking-wide leading-relaxed  text-sm md:text-lg max-w-4xl">
     <span class="font-extrabold uppercase">Our world needs more caring.</span><br> With that in mind, we choose to donate every year,
     in different foundation, 2% of our online sales.<br>
     That way, we can spread the love that you so openly give us.<br>
