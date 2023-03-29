@@ -75,6 +75,8 @@ TEMPLATES = [
                 'category.context_processors.menu_links',  # new
                 'category.context_processors.default_link',  # new
                 'category.context_processors.default_hero',  # new
+                'category.context_processors.front_banner',  # new
+                'category.context_processors.inside_banner',  # new
                 'carts.context_processors.counter',  # new
 
             ],
@@ -107,7 +109,7 @@ DATABASES = {
 
         'USER': 'postgres',
 
-        'PASSWORD': '1q1q',
+        'PASSWORD': '1;1;',
 
         'HOST': 'localhost',
 

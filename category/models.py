@@ -50,3 +50,24 @@ class HeroImages(models.Model):
         return self.hero_title+ " " + self.hero_number
 
 
+class VideoBannerFront(models.Model):
+    video_title = models.TextField(max_length=200)
+    video_file = models.FileField(upload_to='videos/front',null=True)
+ 
+    class Meta:
+        verbose_name = 'video_title_front'
+        verbose_name_plural = 'video_title_front'
+        
+    def __str__(self):
+        return self.video_title
+
+class VideoBannerInside(models.Model):
+    video_title = models.TextField(max_length=200)
+    video_file = models.FileField(upload_to='videos/inside',null=True)
+ 
+    class Meta:
+        verbose_name = 'video_title_inside'
+        verbose_name_plural = 'video_title_inside'
+        
+    def __str__(self):
+        return self.video_title

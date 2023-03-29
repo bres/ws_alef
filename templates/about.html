@@ -46,7 +46,15 @@
 <!-- video handmade zic zag-->
 <div id="link_handmade"  class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mt-20"> 
     <div class="aspect-w-16 aspect-h-9">
-        <iframe src="{% static 'videos/alef_video.mp4' %}" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- {% for video in front  %}
+        <video playsinline autoplay muted loop>
+          <source src='{{ video.video_file.url }}' type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        {% endfor %} -->
+        {% for video in inside  %}
+        <iframe src="{{ video.video_file.url }}" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% endfor %}
     </div>
     <div>
         <h1 class="font-bold text-3xl lg:text-4xl py-0 xl:py-3">Handmade</h1>
